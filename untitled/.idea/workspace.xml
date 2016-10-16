@@ -22,9 +22,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="边框:圆角.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/day42HTML5第二天/边框:圆角/边框:圆角.html">
+        <entry file="file://$PROJECT_DIR$/day43CSS3第一天/边框:圆角/边框:圆角.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5858">
+            <state relative-caret-position="5452">
               <caret line="202" column="22" selection-start-line="202" selection-start-column="22" selection-end-line="202" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#22;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -181,56 +181,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="day42HTML5第二天" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="边框:圆角" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="day42HTML5第二天" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="day42HTML5第二天" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="定位练习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -260,18 +210,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day43CSS3第一天" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/day32 前端基本功js特效3/改变页面颜色" />
+      <recent name="$PROJECT_DIR$/day31 前端基本功js特效2/拖拽案例" />
+      <recent name="$PROJECT_DIR$/day20 前端基本功CSS1/京东/images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/day42HTML5第二天/歌词显示" />
       <recent name="$PROJECT_DIR$/day41HTML5第一天/HTML5新标签体验" />
       <recent name="$PROJECT_DIR$/day39 jQuery第四天/省份选择" />
       <recent name="$PROJECT_DIR$/day39 jQuery第四天/城市选择" />
       <recent name="$PROJECT_DIR$/day39 jQuery第四天/使用JSON创建表格" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/day32 前端基本功js特效3/改变页面颜色" />
-      <recent name="$PROJECT_DIR$/day31 前端基本功js特效2/拖拽案例" />
-      <recent name="$PROJECT_DIR$/day20 前端基本功CSS1/京东/images" />
     </key>
   </component>
   <component name="RunManager">
@@ -386,12 +337,12 @@
       <workItem from="1476413995189" duration="49000" />
       <workItem from="1476427030831" duration="385000" />
       <workItem from="1476427489797" duration="154000" />
-      <workItem from="1476591048053" duration="9997000" />
+      <workItem from="1476591048053" duration="10191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357703000" />
+    <option name="totallyTimeSpent" value="357897000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,9 +355,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="22" width="1855" height="1058" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.129771" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.129771" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285124" sideWeight="0.5087241" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -763,7 +714,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day42HTML5第二天/边框:圆角/边框:圆角.css">
+    <entry file="file://$PROJECT_DIR$/day43CSS3第一天/边框:圆角/边框:圆角.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -771,7 +722,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day42HTML5第二天/边框:圆角/边框:圆角.js">
+    <entry file="file://$PROJECT_DIR$/day43CSS3第一天/边框:圆角/边框:圆角.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -795,9 +746,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day42HTML5第二天/边框:圆角/边框:圆角.html">
+    <entry file="file://$PROJECT_DIR$/day43CSS3第一天/边框:圆角/边框:圆角.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5858">
+        <state relative-caret-position="5452">
           <caret line="202" column="22" selection-start-line="202" selection-start-column="22" selection-end-line="202" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#22;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
