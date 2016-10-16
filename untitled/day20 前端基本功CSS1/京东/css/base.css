@@ -1,0 +1,492 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.w {  /*版心 提取 */
+    width: 1210px;
+    margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+
+/*!*头部导航开始*!
+.shortcut {
+    height: 30px;
+    line-height: 30px;
+    background-color: #f1f1f1;
+}
+.dt,
+.shortcut .fore
+{
+    padding:0 20px 0 10px;
+    position: relative;
+}
+.dt i,
+.fore i
+{
+    font: 400 15px/15px "宋体";
+    position: absolute;
+    top:3px;
+    right:3px;
+    height: 7px;
+    overflow: hidden;
+    width: 15px;
+}
+.dt s,
+.fore s{
+    position: absolute;
+    top: -8px;
+    left: 0;
+}
+.fr li {
+    float: left;
+    padding: 0 10px;
+}
+.fr .line {
+    width: 1px;
+    height: 12px;
+    background-color: #ddd;
+    margin-top: 9px;
+    padding:0;
+}
+.shortcut .tel-jd{
+    padding:0 20px 0 25px;
+}
+.tel{
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    background: url(../images/sprite.png) no-repeat;
+    left: 5px;
+    top:5px;
+}
+!*顶部end*!
+!*topbanner start*!
+.topbanner {
+    background-color: #8A25C6;
+}
+.close-banner {
+    position: absolute;
+    right:0;
+    top:5px;
+    width: 19px;
+    height: 19px;
+    background: url(../images/close.png) no-repeat;
+}
+.close-banner:hover {
+    background-position:bottom;
+}
+.tp{
+    position: relative;
+}
+
+!*topbanner end*!
+
+.logo {
+    width: 360px;
+    height: 75px;
+    background-color: pink;
+    float:left;
+    padding-top: 25px;
+    background: url(../images/logo.png) no-repeat 0 25px;
+    position: relative;
+}
+.jd-a{
+    display: block;
+    width: 270px;
+    height: 60px;
+    text-indent:-2000em;
+}
+.db11 {
+    position: absolute;
+    width: 180px;
+    height: 80px;
+    background-color: pink;
+    top: 10px;
+    left: 168px;
+}
+
+
+.search {
+    width: 538px;
+    height: 75px;
+    background-color: purple;
+    float: left;
+    padding-top: 25px;
+}
+.car {
+    width: 139px;
+    height: 34px;
+    background-color: blue;
+    float: right;
+    margin:25px 65px 0 0 ;
+}*/
+/*<!--京东头部导航开始-->*/
+.top {
+    height: 30px;
+    line-height: 30px;
+    background: #F1F1F1;
+}
+.top-w {
+    height: 30px;
+}
+.top-fl
+,.top-fr .sp {
+    height: 30px;
+    padding: 0 18px 0 10px;
+    /*background: pink;*/
+    position: relative;
+    font: normal 400 12px/30px "宋体";
+}
+.top-fr .ph-jd {
+    padding: 0 20px 0 25px;
+}
+.top-fr .ph-img {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    background: url("../images/jd2015img.png") no-repeat 0 0;
+    width: 15px;
+    height: 20px;
+}
+.top-fl i
+,.top-fr i {
+    position: absolute;
+    right: 3px;
+    top: 12px;
+    height: 7px;
+    width: 12px;
+    overflow: hidden;
+    /*background: red;*/
+}
+.top-fl s
+,.top-fr s {
+    position: absolute;
+    top: -15px;
+
+}
+.fr li {
+    float: left;
+    padding: 0 10px;
+}
+.fr a {
+    cursor: pointer;
+}
+.fr .line {
+    padding: 0;
+    height: 12px;
+    width: 1px;
+    background-color: #DDDDDD;
+    margin-top: 9px;
+}
+/*<!--京东头部导航结束-->*/
+/*<!--京东top-banner开始-->*/
+.topbanner {
+    background: #8B25C6;
+}
+.topbanner-w {
+    position: relative;
+}
+.closebanner {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 19px;
+    height: 19px;
+    background: url("../images/close.png") no-repeat 0 0;
+
+}
+.closebanner:hover {
+    background: url("../images/close.png") no-repeat 0 -19px;
+}
+/*<!--京东top-banner结束-->*/
+/*<!--京东logo开始-->*/
+.logo {
+    width: 360px;
+    height: 75px;
+    background: paleturquoise;
+    padding-top: 25px;
+    background: url("../images/logo.png") no-repeat 0 25px;
+    position: relative;
+    float: left;
+}
+.logo .jd {
+    width: 270px;
+    height: 60px;
+    display: block;
+    text-indent: -20000px;
+}
+.logo-gif {
+    width: 180px;
+    height: 80px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+/*<!--京东logo结束-->*/
+/*京东搜索框开始*/
+.search {
+    width: 536px;
+    height: 36px;
+    margin-top: 25px;
+}
+.search input {
+    width: 447px;
+    height: 32px;
+    border: 2px solid #B61D1D;
+    font: normal normal 14px/32px "microsoft yahei";
+    color: #666666;
+    padding-left: 5px;
+    float: left;
+}
+.search button {
+    width: 80px;
+    height: 36px;
+    background: #B61D1D;
+    float: right;
+    font: normal normal 16px/36px "microsoft yahei";
+    color: #fff;
+    cursor: pointer;
+}
+/*京东搜索框结束*/
+/*京东购物车开始*/
+.car {
+    width: 95px;
+    height: 34px;
+    border: 1px solid #DFDFDF;
+    color: #F9F9F9;
+    padding-left: 44px;
+    font: normal normal 12px/34px "microsoft yahei";
+    background: #F9F9F9;
+    margin: 25px 65px 0 0;
+    position: relative;
+}
+.icon1 {
+    width: 15px;
+    height: 13px;
+    background: url("../images/jd2015img.png") no-repeat -2px -59px;
+    position: absolute;
+    top: 10px;
+    left: 19px;
+}
+.icon2 {
+    position: absolute;
+    right: 11px;
+    top: 13px;
+    font: normal normal 13px/13px "宋体";
+    color: #000;
+}
+.icon3 {
+    width: 16px;
+    height: 14px;
+    background: #C81623;
+    border-radius: 7px 7px 7px 0;
+    font: normal normal 12px/14px "microsoft yahei";
+    position: absolute;
+    top: -4px;
+    right: 15px;
+    text-align: center;
+}
+/*京东购物车结束*/
+/*京东关键字开始*/
+.hotwords {
+    width: 550px;
+    padding-top: 8px;
+    /*background: pink;*/
+}
+.hotwords a {
+    margin-right: 6px;
+
+}
+/*京东关键字结束*/
+/*京东底部部分开始*/
+/*京东底部上开始*/
+.slogen {
+    height: 54px;
+    padding: 20px 0;
+    margin-bottom: 15px;
+    background: #F5F5F5;
+    position: relative;
+    margin-bottom: 15px;
+}
+.slogen span {
+    width: 302px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+}
+.slogen1 {
+    margin-left: -608px;
+}
+.slogen2 {
+    margin-left: -304px;
+}
+.slogen3 {
+    margin-left: 2px;
+}
+.slogen4 {
+    margin-left: 304px;
+}
+.shopping dl {
+    width: 199px;
+    float: left;
+}
+.shopping dt
+,.coverage .dt
+{
+    font: normal normal 16px "microsoft yahei";
+    height: 30px;
+    padding-top: 10px;
+}
+.shopping dd {
+    height: 20px;
+}
+.coverage {
+    width: 190px;
+    height: 169px;
+    background: url("../images/china.png") no-repeat left bottom;
+    padding-left: 17px;
+}
+.coverage p {
+    line-height: 18px;
+}
+.coverage .anchor {
+    text-align: right;
+    margin-top: 5px;
+}
+.service-down {
+    border-top: 1px solid #E5E5E5;
+    padding: 23px 0 30px;
+    text-align: center;
+}
+.links a {
+    margin: 0 10px;
+}
+.copyright {
+    margin: 15px 0 14px;
+    line-height: 20px;
+}
+.low a {
+    margin-left: 13px;
+}
+.category {
+    height: 44px;
+    border-bottom: 2px solid #B1191A;
+}
+.category-left {
+    width: 211px;
+    height: 44px;
+    float: left;
+    position: relative;
+    z-index: 10;
+}
+.category-left .all {
+    width: 211px;
+    height: 44px;
+    background: #B1191A;
+}
+.category-left .all a {
+    display: block;
+    width: 191px;
+    padding: 0 10px;
+    color: #fff;
+    font: normal 400 15px/44px "microsoft yahei";
+}
+.category-left .detail {
+    width: 200px;
+    height: 466px;
+    background: #C81623;
+    padding-left: 10px;
+    border-left: 1px solid #B61D1D;
+}
+.category-left .item {
+    height: 31px;
+    font: normal 400 14px/31px "microsoft yahei";
+    color: #fff;
+}
+.category-left .item h3 {
+    float: left;
+}
+.category-left .item span {
+    float: right;
+    margin-right: 12px;
+    font: normal 700 14px/31px "宋体";
+}
+.category-mid {
+    width: 740px;
+    height: 44px;
+    float: left;
+}
+.category-mid .new {
+    background: url("../images/new.jpg") no-repeat right top;
+}
+.category-mid li {
+    float: left;
+
+}
+.category-mid li a {
+    font: 400 15px/44px "microsoft yahei";
+    color: #000;
+    padding: 0 20px;
+    height: 44px;
+    display: block;
+}
+.category-mid li a:hover {
+    color: #C81623;
+}
+.category-right {
+    width: 140px;
+    height: 44px;
+    float: right;
+    background: url("../images/bike.jpg");
+}
+.category-right a {
+    width: 140px;
+    height: 44px;
+    display: block;
+}
+/*京东底部上结束*/
+/*京东底部部分结束*/

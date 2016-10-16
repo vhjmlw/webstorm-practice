@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #scroll {
+            width: 400px;
+            height: 8px;
+            position: relative;
+            background: #ccc;
+            margin: 100px;
+        }
+        #bar {
+            width: 10px;
+            height: 22px;
+            background: #369;
+            position: absolute;
+            top: -7px;
+            left: 0;
+            cursor: pointer;
+        }
+        #mask {
+            width: 0;
+            height: 100%;
+            background: #369;
+            position: absolute;
+            top: 0;
+            left:0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var scroll = document.getElementById("scroll");
+            var bar = document.getElementById("bar");
+            var mask = document.getElementById("mask");
+            var text = document.getElementById("text");
+            bar.onmousedown = function (event) {
+                var event = event || window.event;
+                //这种计算很精妙
+                var leftVal = event.clientX - this.offsetLeft;
+                var that = this;
+                document.onmousemove = function (event) {
+                    var event = event || window.event;
+                    var lf = event.clientX - leftVal;
+                    //对lf的取值范围进行规范
+                    if (lf <= 0) {
+                        lf = 0;
+                    } else if (lf >= scroll.offsetWidth - that.offsetWidth) {
+                        lf = scroll.offsetWidth - that.offsetWidth;
+                    }
+                    //lf得计算为核心,将值赋给bar对象的left
+                    bar.style.left = lf + "px";
+                    //将lf值赋给mask对象的width
+                    mask.style.width = lf + "px";
+                    text.innerHTML = "拖动的百分比为:" + (lf / (scroll.offsetWidth - that.offsetWidth)) * 100 + "%";
+                    //防止拖动的时候选中文本内容
+                    window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+                }
+                document.onmouseup = function (event) {
+                    document.onmousemove = null;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="scroll">
+    <div id="bar"></div>
+    <div id="mask"></div>
+</div>
+<div id="text"></div>
+</body>
+</html>

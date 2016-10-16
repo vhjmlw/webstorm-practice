@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #only {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            margin: 100px auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.onclick = function (event) {
+                var event = event || window.event;
+                console.log(event.clientX);
+                console.log(event.clientY);
+                console.log(event.screenX);
+                console.log(event.screenY);
+                console.log(event.pageX);
+                console.log(event.pageY);
+            }
+            var div = document.getElementById("only");
+            console.log(div.style.width);
+            console.log(div.offsetWidth);
+            console.log(div.offsetParent);
+            console.log(div.offsetLeft);
+            console.log(div.offsetTop);
+        }
+    </script>
+</head>
+<body>
+<div id="only" style="width:200px"></div>
+</body>
+</html>

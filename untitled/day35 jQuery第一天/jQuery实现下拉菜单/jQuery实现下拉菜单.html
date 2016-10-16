@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            width: 330px;
+            height: 30px;
+            margin: 100px auto;
+            padding-left: 10px;
+            background: url("imgs/bg.jpg") no-repeat;
+        }
+        .wrap ul {
+            list-style: none;
+        }
+        .wrap li {
+            float: left;
+            width: 100px;
+            height: 30px;
+            margin-right: 10px;
+            line-height: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .wrap li ul {
+            position: absolute;
+            display: none;
+        }
+        .wrap a {
+            text-decoration: none;
+            color: black;
+            width: 100px;
+            height: 30px;
+            background: url("imgs/libg.jpg") no-repeat;
+            display: block;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //第一种方式(错误),必须设置li标签的悬浮事件,li包含ul,放在ul身上时仍然显示
+            // 否则设置在a标签身上的话,一移出a标签ul就会隐藏
+            $(".wrap a").mouseenter(function () {
+                $(this).siblings("ul").stop().slideDown(500);
+            });
+            $(".wrap a").mouseleave(function () {
+                $(this).siblings("ul").stop().slideUp(500);
+            });
+            //第二种方式
+            /*$(".wrap li").hover(function () {
+                $(this).children("ul").show();//第一个函数负责显示
+            }, function () {
+                $(this).children("ul").hide();//第二个函数负责隐藏
+            })*/
+            //第三种方式
+            /*$(".wrap li").hover(function () {
+                var ul = $(this).children("ul");//判断ul的状态,如果是隐藏的话,就显示;如果是显示的话,就隐藏
+                if (ul.css("display") === "none") {
+                    ul.show();
+                } else {
+                    ul.hide();
+                }
+            });*/
+            //第四种方式
+            /*$(".wrap li").hover(function () {
+                $(this).children("ul").slideToggle();
+            });*/
+        });
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li><a href="#">一级菜单</a>
+            <ul>
+                <li><a href="#">1级菜单</a></li>
+                <li><a href="#">2级菜单</a></li>
+                <li><a href="#">3级菜单</a></li>
+            </ul>
+        </li>
+        <li><a href="javascript:;">一级菜单</a>
+            <ul>
+                <li><a href="#">1级菜单</a></li>
+                <li><a href="#">2级菜单</a></li>
+                <li><a href="#">3级菜单</a></li>
+            </ul>
+        </li>
+        <li><a href="javascript:;">一级菜单</a>
+            <ul>
+                <li><a href="#">1级菜单</a></li>
+                <li><a href="#">2级菜单</a></li>
+                <li><a href="#">3级菜单</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

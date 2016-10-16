@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father {
+            width: 500px;
+            height: 500px;
+            border: 10px solid black;
+            padding-right: 100px;
+            position: relative;
+        }
+        .father div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background: red;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .grandfather {
+            width: 500px;
+            height: 500px;
+            border: 20px solid blue;
+        }
+        .father2 {
+            width: 300px;
+            height: 300px;
+            border: 20px solid red;
+            padding: 50px;
+            position: relative;
+        }
+        .son2 {
+            width: 50px;
+            height: 50px;
+            background: gold;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<div class="grandfather">
+    <div class="father2">
+        <div class="son2"></div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {  background: url("images/1.jpg") no-repeat;  }
+    </style>
+    <script>
+        window.onload = function () {
+            var sel = document.getElementById("sel");
+            sel.onchange = function () {
+                switch (this.value) {
+                    case "1":
+                        document.body.style.backgroundImage = "url(images/1.jpg)";
+                        break;
+                    case "2":
+                        document.body.style.backgroundImage = "url(images/2.jpg)";
+                        break;
+                    case "3":
+                        document.body.style.backgroundImage = "url(images/3.jpg)";
+                        break;
+                    case "4":
+                        document.body.style.backgroundImage = "url(images/4.jpg)";
+                        break;
+                    case "5":
+                        document.body.style.backgroundImage = "url(images/5.jpg)";
+                        break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<select name="" id="sel">
+    <option value="1" selected>图片1</option>
+    <option value="2">图片2</option>
+    <option value="3">图片3</option>
+    <option value="4">图片4</option>
+    <option value="5">图片5</option>
+</select>
+</body>
+</html>

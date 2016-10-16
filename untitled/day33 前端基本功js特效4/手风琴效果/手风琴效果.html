@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{list-style: none}
+        *{margin:0; padding:0;}
+        div{
+            width: 1200px;
+            height: 400px;
+            margin:50px auto;
+            border:1px solid red;
+            overflow: hidden;
+        }
+        div li {
+            width: 240px;
+            height: 400px;
+            float: left;
+            /*border: 1px solid red;*/
+        }
+        div ul {
+            width: 1200px;
+        }
+    </style>
+    <script src="animate.js"></script>
+    <script>
+        window.onload = function () {
+            var ul = document.getElementsByTagName("ul")[0];
+            var arrul = ul.children;
+            for (var i = 0; i < arrul.length; i++) {
+                arrul[i].style.backgroundImage = "url(images/" + (i + 1) + ".jpg)";
+                arrul[i].onmouseover = function (event) {
+                    var id = event.target?event.target.id:event.srcElement.id;
+                    for (var j = 0; j < arrul.length; j++) {
+                            animate(arrul[j], {width: 100});
+                    }
+                    animate(this, {width: 800});
+                }
+                document.onmouseout = function () {
+                    for (var m = 0; m < arrul.length; m++) {
+                        animate(arrul[m], {width: 240});
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li id="id1"></li>
+        <li id="id2"></li>
+        <li id="id3"></li>
+        <li id="id4"></li>
+        <li id="id5"></li>
+    </ul>
+</div>
+</body>
+</html>

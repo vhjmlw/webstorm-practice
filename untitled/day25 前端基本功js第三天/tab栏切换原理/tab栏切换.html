@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bottom div {
+            width: 250px;
+            height: 250px;
+            background: paleturquoise;
+            display: none;
+        }
+        .bottom .div-display {
+            display: block;
+        }
+        .top .bt {
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btns = document.getElementsByTagName("button");
+            var divs = document.getElementById("bt-div").getElementsByTagName("div");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].index = i;
+                btns[i].onclick = function () {
+                    for (var j = 0; j < btns.length; j++) {
+                        btns[j].className = "";
+                    }
+                    this.className = "bt";
+                    for (var m = 0; m < divs.length; m++) {
+                        divs[m].style.display = "none";
+                    }
+                    divs[this.index].style.display = "block";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="out">
+    <div class="top">
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+        <button>按钮5</button>
+    </div>
+    <div class="bottom" id="bt-div">
+        <div style="display: block;">盒子1</div>
+        <div>盒子2</div>
+        <div>盒子3</div>
+        <div>盒子4</div>
+        <div>盒子5</div>
+    </div>
+</div>
+</body>
+</html>

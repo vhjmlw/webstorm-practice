@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #song {
+            width: 220px;
+            height: 100%;
+            background: #eee;
+            float: left;
+        }
+        #song ul {
+            list-style: none;
+            font-size: 20px;
+        }
+        #song ul li {
+            height: 50px;
+            cursor: pointer;
+        }
+        #content {
+            width: 100%;
+            height: 100%;
+            margin-left: 220px;
+            font-size: 25px;
+        }
+    </style>
+    <script src="data.js"></script>
+    <script>
+        window.onload = function () {
+            var list = document.querySelector("#list");
+            var lyric = document.querySelector("#lyric");
+            for (var title in data) {
+                var li = document.createElement("li");
+                li.innerHTML = title;
+                //为li标签添加data-list属性,很是巧妙
+                li.setAttribute("data-list", title);
+                list.appendChild(li);
+            }
+            var lis = document.querySelectorAll("li");
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].addEventListener("click",function () {
+                    var title = this.dataset.list;
+                    lyric.innerHTML = data[title];
+                    //为什么data.title调用value不可以,而data[title]就可以???
+                    //操作历史记录,浏览器能力判断
+                    if (window.history && history.pushState) {
+                        //添加状态(添加历史记录),相当于跳转了页面,state是存放在栈结构中的,先进后出
+                        history.pushState(title,"title浏览器一般不支持","?t=" + title);
+                    } else {
+                        console.log("浏览器不支持");
+                    }
+                });
+            }
+
+            //注册浏览器的回退事件popstate(删除state),当点击浏览器的返回按钮时执行
+            window.addEventListener("popstate",function (e) {
+                console.log(e);//PopStateEvent {isTrusted: true, state: "我的滑板鞋", type: "popstate", target: Window, currentTarget: Window…}事件对象里面存储了state状态,state是存放在栈结构中的,先进后出
+                //state状态存的是pushState时存入的title,取出title
+                lyric.innerHTML = data[e.state];
+            });
+
+            // window.location = "https://www.baidu.com";页面劫持,当打开页面的时候自动跳转到指定的地址
+            // 第一次请求过来 获取地址栏中的t参数
+            // window.location可以拿到当前网页中跟搜索地址相关的信息
+            console.log(window.location);//Location {hash: "", search: "?t=%E6%88%91%E7%9A%84%E6%BB%91%E6%9D%BF%E9%9E%8B", pathname: "/untitled/day42HTML5%E7%AC%AC%E4%BA%8C%E5%A4%A9/%E…7%A4%BA/%E6%AD%8C%E8%AF%8D%E6%98%BE%E7%A4%BA.html", port: "63342", hostname: "localhost"…}
+            //获取链接中的参数,搜索框中的地址已经被编码为特殊字符
+            var search = window.location.search;
+            var url = search.split("=")[1];
+            if (url) {
+                //如果url不为空,则对url进行解码,解码为正常的字符串
+                lyric.innerHTML = data[decodeURI(url)];
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="song">
+    <ul id="list"></ul>
+</div>
+<div id="content">
+    <p id="lyric"></p>
+</div>
+</body>
+</html>

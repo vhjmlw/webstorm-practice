@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .liClass {
+            color: red;
+            margin-top: 8px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById("btn");
+            var lst = document.getElementById("list");
+            btn.onclick = function () {
+               var li = document.createElement("li");
+                li.setAttribute("class", "liClass");
+                li.innerHTML = "hello world";
+                lst.appendChild(li);
+                btn.parentNode.appendChild(btn.cloneNode(true));
+//                document.body.appendChild(btn.cloneNode(true));
+//                document.body.removeChild(btn);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">点击生成文字</button>
+    <ul id="list">
+    </ul>
+</body>
+</html>

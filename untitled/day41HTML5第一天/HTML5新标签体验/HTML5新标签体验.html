@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>datalist</title>
+</head>
+<body>
+<!--datalist标签-->
+<input type="text" list="data_list"><!--list属性值是datalist标签的id-->
+<datalist id="data_list"><!--文本框里面输入内容有内容自动匹配功能-->
+    <option value="option1"></option><!--选项的内容要写在value属性里面-->
+    <option value="option2"></option>
+</datalist>
+<!--progress标签--><!--该标签默认最大值为1,可以手动的设置max最大值属性,value是当前的进度-->
+<progress value=".5" max="2"></progress>
+<!--meter标签--><!--各浏览器对meter标签的支持很少-->
+<meter min="0" max="100" value="50" low="20" high="80" optimum="100"></meter>
+<!--label和input的两种用法,他们两个是最佳搭档-->
+<label for="name">姓名:</label>
+<input type="text" id="name">
+<label for="birthday">生日:<input id="birthday"/></label>
+<!--audio标签--><!--audio标签的controls属性为音频的播放控制器,无法自定义-->
+<audio src="胡歌%20-%20逍遥叹.mp3" controls></audio>
+<button id="btn1">开始</button>
+<button id="btn2">暂停</button>
+<script>
+    var audio = document.getElementsByTagName("audio")[0];
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    btn1.addEventListener("click",function () {
+        audio.play();//音频播放
+    });
+    btn2.addEventListener("click",function () {
+        audio.pause();//音频暂停
+        console.log(audio.paused);//返回Boolean类型,如果音频已经暂停则返回true否则返回false
+    });
+</script>
+<!--video标签-->
+<!--video使用的第一种方式,autoplay视频自动播放,controls控制条,poster指明默认显示的图片-->
+<video src="movie.mp4" controls poster="123.png" autoplay></video>
+<!--video的第二种方式-->
+<video controls>
+    <!--source标签用来指明视频的路径,和格式,如果浏览器所有的格式都不支持,最好再加个Flash播放的解决方案-->
+    <source src="movie.mp4" type="video/mp4"/>
+    <source src="movie.ogg" type="video/ogg"/>
+    <!--如果浏览器所有指定的格式都不支持,则会按照div的方式解析-->
+    <!--以下内容作为提示信息-->
+    <p>浏览器不支持</p>
+</video>
+<!--页面中引入SVG的三种方式,建议使用iframe的方式-->
+<iframe src="image.svg" frameborder="0"></iframe>
+<object data="image.svg" type=""></object>
+<embed src="image.svg" type="">
+    <!--H5 JavaScript新API-->
+    <script>
+        (function () {
+
+        })();
+    </script>
+<!--classList练习-->
+<div class="box out head"></div>
+    <script>
+        (function () {
+          var div = document.querySelector(".box");
+            console.log(div.classList);
+            div.classList.add("newClass");
+            console.log(div.classList);
+            div.classList.remove("newClass");
+            console.log(div.classList);
+        })();
+    </script>
+</body>
+</html>

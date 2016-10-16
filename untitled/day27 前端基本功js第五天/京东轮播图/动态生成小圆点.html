@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      .out {
+          width: 730px;
+          height: 454px;
+          overflow: hidden;
+          margin: 100px auto;
+          position: relative;
+      }
+        .up ul {
+            list-style: none;
+        }
+        .down {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -50px;
+        }
+        .down span {
+            float: left;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            margin-left: 5px;
+            background: teal;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+      .down span.current {
+          background: red;
+      }
+    </style>
+    <script>
+        window.onload = function () {
+            function $id(id) {
+                return document.getElementById(id);
+            }
+            var outdiv = $id("outid");
+            var newdiv = document.createElement("div");
+            //newdiv.className = "down";
+            newdiv.setAttribute("class", "down");
+            outdiv.appendChild(newdiv);
+            var ul = $id("ulid");
+            var ularr = ul.children;
+            for (var i = 0; i < ularr.length; i++) {
+                var span = document.createElement("span");
+                span.innerHTML = i + 1;
+                newdiv.appendChild(span);
+            }
+            newdiv.children[0].setAttribute("class", "current");
+        }
+    </script>
+</head>
+<body>
+<div class="out" id="outid">
+    <div class="up">
+        <ul id="ulid">
+            <li><img src="images/11.jpg" alt=""></li>
+            <li><img src="images/22.jpg" alt=""></li>
+            <li><img src="images/33.jpg" alt=""></li>
+            <li><img src="images/44.jpg" alt=""></li>
+            <li><img src="images/55.jpg" alt=""></li>
+            <li><img src="images/66.jpg" alt=""></li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {  margin: 0; padding: 0;  }
+        ul,ol {
+            list-style: none;
+        }
+        /*设置每个li标签占满一个屏幕*/
+        html,body,ul,ul li {
+            width: 100%;
+            height: 100%;
+        }
+        ul li {
+            font: normal bold 30px "microsoft yahei" ;
+        }
+        ol {
+            position: fixed;
+            top: 50px;
+            left: 100px;
+        }
+        ol li {
+            width:50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="global.js" defer></script>
+    <script>
+        window.onload = function () {
+            var uls = document.getElementsByTagName("ul")[0];
+            var arrul = uls.children;
+            var ols = document.getElementsByTagName("ol")[0];
+            var arrol = ols.children;
+            var arr = ["green", "red", "blue", "yellow", "pink"];
+            var leader = 0, target = 0, timer = null;
+            window.onscroll = function () {
+                //只有在onscroll时获取到的leader才可能和target完全相等
+                //不可以在onclick时对leader赋值,这样leader很难和target完全相等
+                leader = getScroll().top;
+            }
+            for (var i = 0; i < arrul.length; i++) {
+                arrul[i].style.backgroundColor = arr[i];
+                arrol[i].style.backgroundColor = arr[i];
+                arrol[i].index = i;//巧妙的变量
+                arrol[i].onclick = function () {
+                    clearInterval(timer);//点击之前先清除之前的定时器
+                    //获取每个olli相对应的ulli的offset,对target进行赋值
+                    target = arrul[this.index].offsetTop;//核心代码
+                    timer = setInterval(fn, 10);//设置定时器,进行减速运动
+                    function fn() {
+                        leader = leader + (target - leader) / 10;
+                        window.scrollTo(0, leader);
+                        console.log(leader + "--" + target);
+                        if (leader == target) {//当到达预定的位置后清除定时器
+                            clearInterval(timer);
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li>一</li>
+    <li>二</li>
+    <li>三</li>
+    <li>四</li>
+    <li>五</li>
+</ul>
+<ol>
+    <li>一</li>
+    <li>二</li>
+    <li>三</li>
+    <li>四</li>
+    <li>五</li>
+</ol>
+</body>
+</html>

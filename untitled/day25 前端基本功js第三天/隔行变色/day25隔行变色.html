@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        span {
+            margin: 0 5px;
+        }
+        li {
+            width: 500px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid #DDDDDD;
+        }
+        li.clna {
+            background: pink!important;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var lis = document.getElementsByTagName("li");
+            for (var i = 0; i < lis.length; i++) {
+                if (i % 2 == 0) {
+                    lis[i].style.background = "#aaa";
+                }
+                lis[i].onmouseover = function () {
+                    this.className = "clna";
+                }
+                lis[i].onmouseout = function () {
+                    this.className = "";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li><span>hello world</span><span>hello world</span><span>hello world</span><span>hello world</span></li>
+    <li><span>hello world</span><span>hello world</span><span>hello world</span><span>hello world</span></li>
+    <li><span>hello world</span><span>hello world</span><span>hello world</span><span>hello world</span></li>
+    <li><span>hello world</span><span>hello world</span><span>hello world</span><span>hello world</span></li>
+    <li><span>hello world</span><span>hello world</span><span>hello world</span><span>hello world</span></li>
+    <li><span>hello world</span><span>hello world</span><span>hello world</span><span>hello world</span></li>
+    <li><span>hello world</span><span>hello world</span><span>hello world</span><span>hello world</span></li>
+    <li><span>hello world</span><span>hello world</span><span>hello world</span><span>hello world</span></li>
+    <li><span>hello world</span><span>hello world</span><span>hello world</span><span>hello world</span></li>
+    <li><span>hello world</span><span>hello world</span><span>hello world</span><span>hello world</span></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 边框</title>
+    <style>
+        body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F7F7F7;
+        }
+
+        .wrapper {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 20px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header h3 {
+            line-height: 1;
+            font-weight: normal;
+            font-size: 28px;
+        }
+
+        .main {
+            /*overflow: hidden;*/
+        }
+
+        .main:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .main .item {
+            width: 210px;
+            height: 210px;
+            margin: 0 30px 30px 0;
+            display: flex;
+            position: relative;
+            background-color: #FFF;
+            float: left;
+            box-shadow: 2px 2px 5px #CCC;
+        }
+
+        .main .item:after {
+            content: attr(data-brief);
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 210px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FFF;
+            font-family: '微软雅黑';
+            font-size: 18px;
+            background-color: rgba(170, 170, 170, 0);
+            z-index: -1;
+            transition: all 0.3s ease-in;
+        }
+
+        .main .item:hover:after {
+            background-color: rgba(170, 170, 170, 0.6);
+            z-index: 100;
+        }
+
+        .main .item:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        /*.main .item:nth-last-child(-n+5) {
+            margin-bottom: 0;
+        }*/
+
+        /* 以上是骨架样式 */
+        /* 1、2、3、4 顺时针 */
+        .border-radius {
+            width: 180px;
+            height: 180px;
+            margin: auto;
+            border: 1px solid red;
+            /*border-radius: 50% 30% 20%;*/
+        }
+
+        .square {
+            border-radius: 0;
+        }
+        .item:nth-child(1) .border-radius {
+            border-radius: 90px;
+        }
+        .item:nth-child(2) .border-radius {
+            /*border-radius一个属性值的话,为角1234*/
+            /*border-radius两个属性值的话,为角13,24*/
+            /*border-radius三个属性值的话,为角1,24,3*/
+            /*border-radius四个属性值的话,为角1,2,3,4*/
+            border-radius: 90px 90px 0 0;
+        }
+        .item:nth-child(3) .border-radius {
+            height: 90px;
+            border-radius: 90px 90px 0 0;
+        }
+        .item:nth-child(4) .border-radius {
+            border-radius: 90px 0 0 0;
+        }
+        .item:nth-child(5) .border-radius {
+            width: 90px;
+            height: 90px;
+            border-radius: 90px 0 0 0;
+        }
+        .item:nth-child(6) .border-radius {
+            width: 180px;
+            height: 90px;
+            /*border-radius可以设置椭圆的边框*/
+            /*90px表示设置椭圆X轴的半径,45px表示设置椭圆Y轴的半径*/
+            /*同时也可以分别设置四个角的椭圆半径:X轴1 2 3 4/Y轴1 2 3 4*/
+            border-radius: 90px/45px;
+            /*效果等同于border-radius:90px 90px 90px 90px/45px 45px 45px 45px*/
+        }
+        .item:nth-child(7) .border-radius {
+            width: 90px;
+            height: 180px;
+            border-radius: 45px/90px;
+        }
+        .item:nth-child(8) .border-radius {
+            width: 180px;
+            height: 45px;
+            border-radius: 90px 90px 0 0/45px 45px 0 0;
+        }
+        .item:nth-child(9) .border-radius {
+            width: 45px;
+            height: 180px;
+            border-radius: 45px 0 0 45px/90px 0 0 90px;
+            /*border-radius: 45px/90px;*/
+        }
+        .item:nth-child(10) .border-radius {
+            width: 45px;
+            height: 90px;
+            border-radius: 45px 0 0 0/90px 0 0 0;
+        }
+        .item:nth-child(11) .border-radius {
+            width: 50px;
+            height: 50px;
+            border: 65px solid red;
+            /*当border-radius为盒子宽度(包含border)一半时,
+            内外均显示为正圆*/
+            /*当border-radius为border宽度时,内外达到临界点,
+            内刚好不显示为圆,半径再增加的话 内 也开始变圆,
+            增加到盒子整个宽度一半的话 内 刚好变为正圆*/
+            border-radius: 90px;
+        }
+        .item:nth-child(12) .border-radius {
+            width: 50px;
+            height: 50px;
+            border: 65px solid red;
+            border-radius: 65px;
+        }
+        .item:nth-child(13) .border-radius {
+            width: 50px;
+            height: 50px;
+            border: 65px solid red;
+            border-radius: 90px 0 0 0;
+        }
+        .item:nth-child(14) .border-radius {
+            width: 50px;
+            height: 50px;
+            border: 65px solid red;
+            border-radius: 90px 0 90px 0;
+        }
+        .item:nth-child(15) .border-radius {
+            width: 0;
+            height: 0;
+            border-color: red green yellow blue;
+            border-width: 90px;
+        }
+        .item:nth-child(16) .border-radius {
+            width: 0;
+            height: 0;
+            border-width: 90px;
+            /*transparent为透明*/
+            border-color: red transparent yellow blue;
+        }
+        .item:nth-child(17) .border-radius {
+            width: 0;
+            height: 0;
+            border-width: 90px;
+            border-radius: 90px;
+            border-color: red transparent red red;
+        }
+        .item:nth-child(18) .border-radius {
+            width: 0;
+            height: 0;
+            border-width: 90px;
+            border-color: transparent red transparent transparent;
+            border-radius: 90px;
+        }
+        .item:nth-child(19) .border-radius {
+            width: 180px;
+            height: 0;
+            border-top: 90px solid red;
+            border-bottom: 90px solid green;
+            border-radius: 90px;
+        }
+        .item:nth-child(20) .border-radius {
+            width: 180px;
+            height: 90px;
+            background: red;
+            border-bottom: 90px solid green;
+            border-radius: 90px;
+        }
+        .item:nth-child(21) .border-radius {
+            width: 180px;
+            height: 0;
+            border-top: 90px solid red;
+            border-bottom: 90px solid green;
+            border-radius: 90px;
+        }
+        .item:nth-child(21) .border-radius::before {
+            content: '';
+            width:30px;
+            height: 30px;
+            /*通过::before和::after添加的伪元素为行内元素inline*/
+            display: block;
+            background: red;
+            border: 30px solid green;
+            margin-top: -45px;
+            float: left;
+            border-radius: 45px;
+        }
+        .item:nth-child(21) .border-radius::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            display: block;
+            background: green;
+            border: 30px solid red;
+            margin-top: -45px;
+            float: right;
+            border-radius: 45px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h3>CSS3 边框圆角</h3>
+    </header>
+    <div class="main">
+        <div class="item" data-brief="整圆">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="拱形">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="半圆">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="左上角">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="四分之一圆">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="横着的椭圆">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="竖着的椭圆">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="半个横着的椭圆">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="半个竖着的椭圆">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="四分之一竖着的椭圆">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="饼环">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="圆饼">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="左上角圆饼">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="对角圆饼">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="四边不同色">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="右透明色">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="圆右透明色">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="圆右红透明色">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="阴阳图前世">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="阴阳图前世2">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="阴阳图今生">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="border-radius"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="border-radius" style="border:3px solid blue;"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

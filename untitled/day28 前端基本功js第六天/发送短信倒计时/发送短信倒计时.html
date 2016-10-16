@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByTagName("button")[0];
+            var ipt = document.getElementsByTagName("input")[0];
+            var intervalId = null;
+            //var i = 5;//i的位置不同,造成的效果会不同
+            btn.onclick = function () {
+                clearInterval(intervalId);//如果按钮可以继续点击,则每次点击前先清除掉上次的定时器
+                //this.disabled = true;
+                var _this = this;
+                intervalId = setInterval(fn, 1000);
+                var i = 5;//i的位置不同,造成的效果会不同
+                function fn() {
+                    if (i >= 0) {
+                        btn.innerHTML = i + "秒后重新发送";
+                        i--;
+                    } else {
+                        btn.innerHTML = "点击倒计时发送";
+                        _this.disabled = false;
+                        //i = 5;
+                        clearInterval(intervalId);
+                    }
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text">
+<button>点击倒计时发送</button>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementsByTagName("div")[0];
+            window.onresize = resize(function () {
+                var wid = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                box.innerHTML = wid;
+            }, 300);
+            function resize(fn, time) {
+                var timer = null;
+                return function () {
+                    clearTimeout(timer);
+                    timer = setTimeout(fn, time);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

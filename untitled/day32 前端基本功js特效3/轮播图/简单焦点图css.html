@@ -1,0 +1,132 @@
+<! DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+*{ padding:0; margin:0; list-style:none; border:0;}
+.all{
+  width:500px;
+  height:200px;
+  padding:7px;
+  border:1px solid #ccc;
+  margin:100px auto;
+  position:relative;
+}
+.screen{
+	width:500px;
+	height:200px;
+	 overflow:hidden;
+	position:relative;
+}
+
+.screen li{ width:500px; height:200px; overflow:hidden; float:left;}
+.screen ul{ position:absolute; left:0; top:0px; width:3000px;}
+.all ol{ position:absolute; right:10px; bottom:10px; line-height:20px; text-align:center;}
+.all ol li{ float:left; width:20px; height:20px; background:#fff; border:1px solid #ccc; margin-left:10px; cursor:pointer;}
+.all ol li.current{ background:yellow;}
+
+</style>
+<script type="text/javascript">
+window.onload = function () {
+    var ul = document.getElementById("ul");
+    ul.appendChild(ul.children[0].cloneNode(true));
+    var ol = document.createElement("ol");
+    document.getElementById("all").appendChild(ol);
+    var arrUl = ul.children;
+    for (var i = 0; i < arrUl.length - 1; i++) {
+        var li = document.createElement("li");
+        li.innerHTML = i + 1;
+        ol.appendChild(li);
+    }
+
+    var arrOl = ol.children;
+    arrOl[0].className = "current";
+    for (var j = 0; j < arrOl.length; j++) {
+        arrOl[j].index = j;
+        arrOl[j].onmouseover = function () {
+            for (var m = 0; m < arrOl.length; m++) {
+                arrOl[m].className = "";
+            }
+            this.className = "current";
+            animate(ul, -this.index*arrUl[0].offsetWidth);
+            square = key = this.index;
+        }
+    }
+    function animate(obj, target) {
+        clearInterval(obj.timer);
+        var speed = obj.offsetLeft < target ? 5 : -5;
+        obj.timer = setInterval(function () {
+            var abs = Math.abs(target - obj.offsetLeft);
+            if (abs <= 5) {
+                clearInterval(obj.timer);
+                obj.style.left = target + "px";
+            } else {
+                obj.style.left = obj.offsetLeft + speed + "px";
+            }
+        }, 5);
+    }
+
+
+    var timer = null;
+    var key = 0;
+    var square = 0;
+    timer = setInterval(fn, 1000);
+    function fn() {
+        key++;
+        /*if (key <= 5) {
+            animate(ul, -1*key*arrUl[0].offsetWidth);
+        } else {
+            ul.style.left = 0;
+            key = 1;
+//            animate(ul, -1*key*arrUl[0].offsetWidth);
+        }*/
+        if (key > 5) {
+            ul.style.left = 0;
+            key = 1;
+        }
+        animate(ul, -1*key*arrUl[0].offsetWidth);
+        square++;
+        for (var i = 0; i < arrOl.length; i++) {
+            arrOl[i].className = "";
+        }
+        if (square > 4) {
+            square = 0;
+        }
+        arrOl[square].className = "current";
+        /*for (var i = 0; i < arrOl.length; i++) {
+            arrOl[i].className = "";
+        }
+        if (key == 5) {
+            arrOl[0].className = "current";
+        } else {
+            arrOl[key].className = "current";
+        }*/
+    }
+    var box = document.getElementById("all");
+    box.onmouseover = function () {
+        clearInterval(timer);
+    }
+    box.onmouseout = function () {
+        timer = setInterval(fn, 1000);
+    }
+
+}
+</script>
+
+</head>
+
+<body>
+<div class="all" id='all'>
+	<div class="screen">
+        <ul id="ul">
+            <li><img src="images/taobao/1.jpg" width="500" height="200" /></li>
+            <li><img src="images/taobao/2.jpg" width="500" height="200" /></li>
+            <li><img src="images/taobao/3.jpg" width="500" height="200" /></li>
+            <li><img src="images/taobao/4.jpg" width="500" height="200" /></li>
+            <li><img src="images/taobao/5.jpg" width="500" height="200" /></li>
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>

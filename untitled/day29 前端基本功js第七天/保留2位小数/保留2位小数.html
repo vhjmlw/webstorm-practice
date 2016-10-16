@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var num = 31415.1415;
+            //第一种方法
+            var str = num + "";//查找"."的索引+1,然后加上保留的小数点的位数
+            var str2 = str.substr(0, str.indexOf(".")+1+2);//
+            console.log(str2);//31415.14
+            //第二种方法
+            var str3= parseInt(num * 100) / 100;//先乘以100向下取整,后除以100
+            console.log(str3);//31415.14
+            //第三种方法
+            var str4 = num.toFixed(2);//返回String类型
+            console.log(str4);//31415.14
+            console.log(typeof str4);//String
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            float: left;
+        }
+        select {
+            width: 70px;
+            height: 100px;
+        }
+        button {
+            display: block;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+           $("div:eq(1) button:nth-child(1)").on("click",function () {
+               $("div:eq(0) option").appendTo("div:eq(2) select");
+           });
+            $("div:eq(1) button:nth-child(2)").on("click",function () {
+                $("div:eq(2) option").appendTo("div:eq(0) select");
+            });
+            $("div:eq(1) button:nth-child(3)").on("click",function () {
+                $("div:eq(0) option:selected").appendTo("div:eq(2) select");
+            });
+            $("div:eq(1)").on("click","button:nth-child(4)",function () {
+                $("div:eq(2) option:selected").appendTo("div:eq(0) select");
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+    <select name="" id="left" multiple>
+        <option value="">城市1</option>
+        <option value="">城市2</option>
+        <option value="">城市3</option>
+        <option value="">城市4</option>
+        <option value="">城市5</option>
+    </select>
+</div>
+<div>
+    <button>&gt;&gt;</button>
+    <button>&lt;&lt;</button>
+    <button>&gt;</button>
+    <button>&lt;</button>
+</div>
+<div>
+    <select name="" id="right" multiple>
+
+    </select>
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #out {
+            width: 490px;
+            height: 170px;
+            background: pink;
+            border: 1px solid #999999;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #ul,#ol {
+            list-style: none;
+        }
+        #ul li,#ol li {
+            float: left;
+        }
+        #ul {
+            width: 2450px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #ol {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -50px;
+        }
+        #ol li {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            margin-left: 5px;
+            background: white;
+            cursor: pointer;
+        }
+        #ol .current {
+            background: orange;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var ul = document.getElementById("ul");
+            var ol = document.getElementById("ol");
+            var arr = ol.children;
+            var leader = 0, target = 0;
+            var timer = null;
+            for (var i = 0; i < arr.length; i++) {
+                arr[i].index = i;//为每个li对象添加自定义属性
+                arr[i].onmouseover = function () {
+                    //先清除其他li的样式单独给被悬浮的添加样式
+                    for (var j = 0; j < arr.length; j++) {
+                        arr[j].className = "";
+                    }
+                    this.className = "current";
+                    //注意不要写成target = -490*i;代码在onmouseover方法内
+                    //核心代码,为每个li设置target值,this.index
+                    target = -490*this.index;
+                }
+            }
+            timer = setInterval(fn, 10);
+            function fn() {
+                leader = leader + (target - leader) / 10;
+                ul.style.left = leader + "px";
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="out">
+    <ul id="ul">
+        <li><img src="images/01.jpg" alt=""></li>
+        <li><img src="images/02.jpg" alt=""></li>
+        <li><img src="images/03.jpg" alt=""></li>
+        <li><img src="images/04.jpg" alt=""></li>
+        <li><img src="images/05.jpg" alt=""></li>
+    </ul>
+    <ol id="ol">
+        <li class="current">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+</div>
+</body>
+</html>

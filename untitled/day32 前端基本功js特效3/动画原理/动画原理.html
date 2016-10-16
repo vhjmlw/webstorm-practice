@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #move {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function fn(obj, target) {
+                clearInterval(obj.timer);
+                var speed = obj.offsetLeft < target ? 5 : -5;
+                obj.timer = setInterval(function () {
+                    var abs = Math.abs(target - obj.offsetLeft);
+                    if (abs <= 5) {
+                        clearInterval(obj.timer);
+                        obj.style.left = target + "px";
+                    } else {
+                        obj.style.left = obj.offsetLeft + speed + "px";
+                    }
+                }, 5);
+            }
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            var move = document.getElementById("move");
+            btn1.onclick = function () {
+                fn(move, 200);
+            }
+            btn2.onclick = function () {
+                fn(move, 400);
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="btn1">200</button>
+<button id="btn2">400</button>
+<div id="move"></div>
+</body>
+</html>

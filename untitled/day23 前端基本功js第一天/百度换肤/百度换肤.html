@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top img {
+            width: 200px;
+            cursor: pointer;
+        }
+
+        .top {
+            height: 200px;
+            background: rgba(255, 255, 255, .3);
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        body {
+            background: url("images/1.jpg") no-repeat top center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var arrar_img = document.getElementsByTagName("img");
+            arrar_img[0].onclick = function () {
+                document.body.style.backgroundImage = "url(images/1.jpg)";
+            }
+            arrar_img[1].onclick = function () {
+                document.body.style.backgroundImage = "url(images/2.jpg)";
+            }
+            arrar_img[2].onclick = function () {
+                document.body.style.backgroundImage = "url(images/3.jpg)";
+            }
+            arrar_img[3].onclick = function () {
+                document.body.style.backgroundImage = "url(images/4.jpg)";
+            }
+            arrar_img[4].onclick = function () {
+                document.body.style.backgroundImage = "url(images/5.jpg)";
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="top">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/3.jpg" alt="">
+    <img src="images/4.jpg" alt="">
+    <img src="images/5.jpg" alt="">
+</div>
+</body>
+</html>

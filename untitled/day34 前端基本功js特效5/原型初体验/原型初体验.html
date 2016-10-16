@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            function Person(name, age) {
+                this.name = name;
+                this.age = age;
+                this.makeLove = function () {
+                    console.log(this.name + "只想要和旭楠做爱");
+                }
+            }
+            var man = new Person("建磊", 26);
+            var woman = new Person("旭楠", 23);
+            man.makeLove();
+            woman.makeLove();
+            Person.prototype.aiai = function () {
+                console.log(this.name + "调用了爱爱方法");
+            };
+            man.aiai();
+            woman.aiai();
+            console.log(man.aiai === woman.aiai);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

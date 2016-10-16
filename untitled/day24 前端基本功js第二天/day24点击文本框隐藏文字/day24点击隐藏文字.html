@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #out {
+            margin: 100px auto;
+            text-align: center;
+            width: 257px;
+            overflow: hidden;
+        }
+        #ipt {
+            width: 205px;
+            height: 40px;
+            background: url("images/left.jpg") no-repeat;
+            border: 0 none;
+            padding: 0;
+            outline-style: none;
+            padding-left: 10px;
+            float: left;
+            color: #ccc;
+        }
+        #btn {
+            width: 42px;
+            height: 40px;
+            background: url("images/right.jpg") no-repeat;
+            float: right;
+            border: 0 none;
+            padding: 0;
+            outline-style: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $id(id) {
+                return document.getElementById(id);
+            }
+            var put = $id("ipt");
+            put.onfocus = function () {
+                if (put.value == "请输入...") {
+                    put.value = "";
+                }
+                put.style.color = "#333";
+            }
+            put.onblur = function () {
+                if (put.value == "") {
+                    put.value = "请输入...";
+                    put.style.color = "#ccc";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="out">
+    <input type="text" id="ipt" value="请输入...">
+    <button id="btn"></button>
+</div>
+</body>
+</html>

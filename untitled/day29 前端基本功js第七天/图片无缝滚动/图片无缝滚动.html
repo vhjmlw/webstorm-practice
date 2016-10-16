@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .out {
+            width: 600px;
+            height: 200px;
+            border: 1px solid #999999;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .up {
+            list-style: none;
+            width: 2500px;
+            background: pink;
+            position: absolute;
+            top: 0;
+        }
+        .up li {
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var timer = null;
+            timer = setInterval(fn, 10);
+            var num = 0;
+            function fn() {
+                num--;
+                //核心代码,滚动了4张图片的宽度后,恢复起始位置
+                //由于最后有两张图片做掩饰,所以看不出ul恢复了left位置
+                num <= -1200 ? num = 0 : num;
+                //设置定时器,不断向左移动ul
+                document.getElementById("ul").style.left = num + "px";
+            }
+            //鼠标悬停div时,清除定时器,ul停止滚动
+            document.getElementById("out").onmousemove = function () {
+                clearInterval(timer);
+            }
+            //鼠标离开div时,开启定时器,ul又开始滚动
+            document.getElementById("out").onmouseout = function () {
+                timer = setInterval(fn, 10);
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="out" id="out">
+        <ul class="up" id="ul">
+            <li><img src="images/01.jpg" alt=""></li>
+            <li><img src="images/02.jpg" alt=""></li>
+            <li><img src="images/03.jpg" alt=""></li>
+            <li><img src="images/04.jpg" alt=""></li>
+            <li><img src="images/01.jpg" alt=""></li>
+            <li><img src="images/02.jpg" alt=""></li>
+        </ul>
+</div>
+</body>
+</html>

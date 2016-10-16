@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 300px;
+            height: 300px;
+            background: darkred;
+        }
+        button {
+            /*width: 100px;*/
+            height: 30px;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div").css("display", "none");
+            //show() hide()
+            $("button:eq(0)").click(function () {
+                //动画1000毫秒执行完毕,动画执行完毕之后接着执行function函数
+                //speed第一个参数可以是数字,表示毫秒数,也可以是关键字"slow" "normal" "fast"
+                //easing第二个参数表示动画显示的效果,默认"swing"类似秋千摆动效果,还有"linear"线性的,表示匀速运动
+                //第二个参数可省略,只写第一个和第三个,当然三个参数可以同时省略
+                //fn回调函数,第三个参数表示显示动画执行完毕之后,才执行的函数
+                //如果show()不加参数则显示过程立刻完成,没有动画过度效果
+                //动画效果:从左上角开始,向右下角逐渐展开
+                $("div").show("normal","linear",function () {
+                    alert("动画执行完毕了");
+                });
+            });
+            $("button:eq(1)").click(function () {
+                $("div").hide(1000);
+            });
+            //slideDown() slideUp() slideToggle()
+            $("button:eq(2)").click(function () {
+                //slideDown()和slideUp()方法的形参与show和hide完全相同
+                //自上而下的展开,类似于卷帘门
+                $("div").slideDown(500, "linear", function () {
+                    alert("执行完毕");
+                });
+            });
+            $("button:eq(3)").click(function () {
+                $("div").slideUp();
+            });
+            $("button:eq(4)").click(function () {
+                //slideToggle()方法的形参与show和hide完全相同
+                //第一次点击向下展开显示,第二次点击向上关闭隐藏
+                //动画效果同slideDown和slideUp完全相同
+                $("div").slideToggle();
+            });
+            //fadeIn() fadeOut() fadeToggle()
+            $("button:eq(5)").click(function () {
+                //fadeIn() fadeOut() fadeToggle()的形参使用与show和hide完全相同
+                //淡入淡出的显示或隐藏
+                //fadeToggle点击第一次显示,点击第二次隐藏
+                $("div").fadeIn();
+            });
+            $("button:eq(6)").click(function () {
+                $("div").fadeOut();
+            });
+            $("button:eq(7)").click(function () {
+                $("div").fadeToggle();
+            });
+            //fadeTo 将目标元素显示到指定的不透明度
+            //四个参数,1speed,2opacity,3easing,4fn
+            //只写两个的话是1,2;只写三个是1,2,4;
+            $("button:eq(8)").click(function () {
+                $("div").fadeTo(1000,0.3);
+            });
+            //animate()自定义动画
+            //可以四个参数,1JSON对象,2speed,3easing,4回调函数
+            //参数一JSON对象里面存放的是目标CSS属性值
+            $("button:eq(9)").click(function () {
+                $("div").animate({
+                    "width": "500px",
+                    "height": "500px"
+                },"normal","swing",function () {
+                    alert("执行完毕");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<button>show()显示</button>
+<button>hide()隐藏</button>
+<button>slideDown()显示</button>
+<button>slideUP()隐藏</button>
+<button>slideToggle()显示和隐藏</button>
+<button>fadeIn()显示</button>
+<button>fadeOutlook()隐藏</button>
+<button>fadeToggle()显示和隐藏</button>
+<button>fadeTo()显示到指定的透明度</button>
+<button>animate()自定义动画</button>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #out {
+            width: 300px;
+            height: 500px;
+            border: 1px solid red;
+            position: relative;
+            margin: 100px;
+            overflow: hidden;
+        }
+        #text {
+            /*background: ghostwhite;*/
+            padding-right: 18px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #scroll {
+            width:18px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: gainsboro;
+        }
+        #bar {
+            width: 100%;
+            height: 100px;
+            background: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var bar = document.getElementById("bar");
+            var text = document.getElementById("text");
+            var scroll = document.getElementById("scroll");
+            //计算滚动条的高度,根据比例来计算:根据盒子里面内容的高度，计算滚动条合适的高度
+            //scroll / text = bar / scroll;注意盒子之间的比例关系,通过该比例计算bar合适的height
+            bar.style.height = scroll.offsetHeight * (scroll.offsetHeight / text.offsetHeight) + "px";
+            bar.onmousedown = function (event) {
+                var event = event || window.event;
+                //计算固定的两段距离之和
+                var y = event.clientY - this.offsetTop;
+                var _this = this;
+                document.onmousemove = function (event) {
+                    var event = event || window.event;
+                    var newY = event.clientY - y;
+                    if (newY <= 0) {
+                        newY = 0;
+                    } else if (newY >= scroll.offsetHeight - bar.offsetHeight) {
+                        newY = scroll.offsetHeight - bar.offsetHeight;
+                    }
+                    _this.style.top = newY + "px";
+                    //通过盒子之间的比例关系,计算bar每移动1px,text应该移动多少px
+                    //此处用到一个数学公式:a/b=c/d=(a+c)/(b+d)=(a-c)/(b-d)
+                    text.style.top = -newY * (text.offsetHeight /  scroll.offsetHeight) + "px";
+                    window.getSelection?window.getSelection().removeAllRanges():document.selection.empty();
+                }
+            }
+            document.onmouseup = function () {
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="out">
+    <div id="text">
+        文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+        文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+        文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+        文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+        文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+        文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内     文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+        文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+        文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+    </div>
+    <div id="scroll">
+        <div id="bar"></div>
+    </div>
+</div>
+</body>
+</html>

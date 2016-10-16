@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script defer="defer">
+//        var number = prompt("请输入内容");
+//        document.write(number);
+        var fn = function () {
+            var array = document.getElementsByTagName("div");
+//            array[0].style.visibility = "hidden";
+            array[0].style.display = "none";
+        }
+        var chwid = function () {
+            var arrbt1 = document.getElementsByTagName("div");
+            arrbt1[0].style.width = "1000px";
+        }
+        var chhei = function () {
+            var arrbt2 = document.getElementsByTagName("div");
+            arrbt2[0].style.height = "1000px";
+        }
+        var chbac = function () {
+            var arrbt3 = document.getElementsByTagName("div");
+            arrbt3[0].style.background = "pink";
+        }
+//        为啥以下操作不起效果??
+        /*var btn = document.getElementsByTagName("button");
+        btn[0].onclick = function () {
+            this.style.width = "500px";
+           var divv = document.getElementsByTagName("div");
+            divv[0].style.borderColor = "black";
+        }*/
+    </script>
+    <style>
+        .chstyle {
+            width: 500px;
+            height: 500px;
+            border: 5px solid red;
+            background: cadetblue;
+        }
+        button {
+            width: 100px;
+            height: 50px;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div onclick="fn();" class="chstyle">
+    </div>
+    <button>按钮</button>
+    <script>
+        var btn = document.getElementsByTagName("button");
+        btn[0].onclick = function () {
+            var divv = document.getElementsByTagName("div");
+            divv[0].style.borderColor = "black";
+        }
+    </script>
+    <button onclick="chwid()">换宽</button>
+
+    <button onclick="chhei()">换高</button>
+    <button onclick="chbac()">换色</button>
+<h1>hello world</h1>
+<div>
+    <img src="images/jd1.png" alt="" id="change-img">
+</div>
+    <script>
+        var image = document.getElementById("change-img");
+        image.onmouseover = function () {
+            this.src = "images/jd2.png";
+        }
+        image.onmouseout = function () {
+            this.src = "images/jd1.png";
+        }
+    </script>
+</body>
+</html>

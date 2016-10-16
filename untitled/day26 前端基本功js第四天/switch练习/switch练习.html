@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var inpt = document.getElementsByTagName("input");
+            var btn = document.getElementsByTagName("button");
+            btn[0].onclick = function () {
+                var txt = inpt[0].value;
+                switch (txt) {
+                    case "苹果":
+                        this.innerHTML = "苹果";
+                        break;
+                    case "香蕉":
+                        this.innerHTML = "香蕉";
+                        break;
+                    case "梨子":
+                        this.innerHTML = "梨子";
+                        break;
+                    default :
+                        this.innerHTML = "查无此水果";
+                        break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text">
+<button>点击搜索</button>
+</body>
+</html>

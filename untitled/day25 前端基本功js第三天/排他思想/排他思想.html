@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btn {
+            background: pink;
+            color: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btns = document.getElementsByTagName("button");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].index = i;
+                btns[i].onmouseover = function () {
+                    alert(this.index);
+                    for (var j = 0; j < btns.length; j++) {
+                        btns[j].className = "";
+                    }
+                    this.className = "btn";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button>排他思想</button>
+<button>排他思想</button>
+<button>排他思想</button>
+<button>排他思想</button>
+<button>排他思想</button>
+</body>
+</html>

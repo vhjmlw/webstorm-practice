@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #out {
+            width: 600px;
+            height: auto;
+            margin: 100px auto;
+            border: 1px solid #333;
+            padding: 30px 0;
+        }
+
+        #out textarea {
+            resize: none;
+            width: 450px;
+        }
+
+        #out li {
+            border-bottom: 1px solid #666;
+            list-style: none;
+            margin-left: 80px;
+            width: 450px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        #out li a {
+            float: right;
+            text-decoration: none;
+            color: orangered;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var outdiv = document.getElementById("out");
+            var ul = document.createElement("ul");//创建ul标签,并添加
+            outdiv.appendChild(ul);
+            var chi = outdiv.children;
+            var arr = ul.children;
+            chi[1].onclick = function () {
+                if (chi[0].value == "") {//点击按钮时若textarea文本框为空,则弹出提示
+                    alert("请输入内容");
+                    return;
+                }
+                var li = document.createElement("li");//每次点击按钮时创建li标签,添加li标签的标签体
+                li.innerHTML = chi[0].value + "<a href='javascript:;'>删除</a>";
+                if (arr.length == 0) {//第一次创建li标签时调用
+                    ul.appendChild(li);
+                } else {//之后每次创建添加到第一个li标签的前面
+                    ul.insertBefore(li, arr[0]);
+                }
+                chi[0].value = "";//发布完之后,将textarea文本框里面的内容清空
+                //以下代码必须写在onclick点击事件之内
+                for (var i = 0; i < arr.length; i++) {
+                    arr[i].children[0].onclick = function () {//每次点击按钮的时候,设置a标签的点击事件
+                        ul.removeChild(this.parentNode);//将被点击的a标签所在的li标签删除
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="out">
+    发布微博:
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>发射</button>
+    <!--<ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>-->
+</div>
+</body>
+</html>

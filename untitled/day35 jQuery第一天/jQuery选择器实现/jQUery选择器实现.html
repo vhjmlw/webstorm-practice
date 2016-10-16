@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            border: 1px solid purple;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".out").children("div").css("width", "50px");
+            $(".out").siblings(".two").css({
+                "width": "200px",
+                "height": "200px",
+                "background": "#666"
+            });
+            $("div:eq(2)").css("width", "50px");
+            $("div:eq(2)").css("height", "50px");
+            $("div:first").css("background", "purple");
+            $("div:last").css("background", "green");
+            $("div:gt(1)").css({"width": "200px","height": "200px"});
+            console.log($("div"));
+            $("div").eq(1).css({"width": "50px","height": "50px"});
+            $("div:eq(1)").parent().css("background", "yellow");
+            $("div:odd").css("border-color", "black");
+            $("div:first").find("div").css("background", "blue");
+            $("div[id='three']").css("background", "purple");
+            $("div[id != 'three']").css("border", "5px solid purple");
+            var three = document.getElementById("three");
+            $(three).click(function () {
+                $(this).css("background",function (index, value) {
+                    value = "pink";
+                    return value;
+                });
+            });
+            $("div:first")[0].onclick = function () {
+                this.style.width = "300px";
+                this.style.height = "300px";
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="out">
+    <div></div>
+</div>
+<div class="two"></div>
+<div id="three"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="global.js" defer></script>
+    <script>
+        window.onload = function () {
+            resize();//页面加载完成后,先调用一次
+            window.onresize = resize;//将函数赋给onresize
+            function resize() {//自定义函数
+                if (getClient().width > 960) {//调用自己封装好的函数
+                    document.body.style.backgroundColor = "green";
+                } else if ( getClient().width > 640) {
+                    document.body.style.backgroundColor = "blue";
+                } else {
+                    document.body.style.backgroundColor = "red";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

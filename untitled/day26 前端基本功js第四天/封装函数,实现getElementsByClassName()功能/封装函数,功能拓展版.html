@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background: pink;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var getByClassName = function (className, id) {
+                if (id) {
+                    return document.getElementById(id).getElementsByClassName(className);
+                } else {
+                    return document.getElementsByClassName(className);
+                }
+                var arr = [];
+                if (id) {
+                    var dom = document.getElementById(id).getElementsByTagName("*");
+                } else {
+                    var dom = document.getElementsByTagName("*");
+                }
+                for (var i = 0; i < dom.length; i++) {
+                    var arr2 = dom[i].className.split(" ");
+                    for (var j = 0; j < arr2.length; j++) {
+                        if (arr2[j] == className) {
+                            arr.push(dom[i]);
+                            break;
+                        }
+                    }
+                }
+                return arr;
+            }
+            console.log(getByClassName("demo","out").length);
+        }
+    </script>
+</head>
+<body>
+<div class="demo">1</div>
+<div>2</div>
+<div>3</div>
+<div id="out">
+    <div class="demo">4</div>
+    <div class="demo">5</div>
+    <div>6</div>
+    <div class="text">7</div>
+</div>
+</body>
+</html>

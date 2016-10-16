@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证表单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        span {
+            width: 150px;
+            height: 20px;
+            background: #eee;
+            color: #999;
+            display: inline-block;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 20px;
+            padding-left: 15px;
+            font-size: 14px;
+        }
+        #out {
+            width: 500px;
+            margin: 50px auto;
+        }
+        .right {
+            background: #DFFFDF url("images/right.png") no-repeat;
+            color: greenyellow;
+            border: 1px solid green;
+        }
+        .wrong {
+            background: #FFDCD0 url("images/wrong.png") no-repeat;
+            color: red;
+            border: 1px solid darkred;
+        }
+        .line {
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $id(id) {return document.getElementById(id);}
+            var sp = $id("sp");
+            $id("ipt").focus();
+            $id("ipt").onmouseover = function () {
+                this.select();
+            }
+            $id("ipt").onblur = function () {
+                if (this.value == "") {
+                    sp.className = "wrong";
+                    sp.innerHTML = "哦噢,表单不可以为空的";
+                }else if (isNaN(this.value)) {
+                    sp.className = "wrong";
+                    sp.innerHTML = "输入的内容要是数字";
+                }else if (this.value>150 || this.value<0) {
+                    sp.className = "wrong";
+                    sp.innerHTML = "您输入的有误";
+                }else{
+                    sp.innerHTML = "终于输入正确了";
+                    sp.className = "right";
+                }
+            }
+            /*for (var i = 1; i <= 100; i++) {
+                document.write("<hr width="+i+"%/>");
+            }*/
+        }
+    </script>
+</head>
+<body>
+    <div id="out">
+        语文:
+        <input type="text" id="ipt">
+        <span id="sp">请输入成绩</span>
+    </div>
+</body>
+</html>

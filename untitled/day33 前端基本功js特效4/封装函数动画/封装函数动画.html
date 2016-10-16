@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 400px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByTagName("button")[0];
+            var box = document.getElementsByTagName("div")[0];
+            btn.onclick = function () {
+                var timer = null;
+                var target = 0;
+                timer = setInterval(fn, 30);
+                function fn() {
+                    //缓动动画公式,核心代码
+                    var step = (target - box.offsetLeft) / 10;
+                    //如果step>0则向上取整;step<0则向下取整
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    console.log(step);
+                    box.style.left = box.offsetLeft + step + "px";
+                    if (box.offsetLeft == target) {
+                        clearInterval(timer);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button>点击开始运动</button>
+<div></div>
+</body>
+</html>

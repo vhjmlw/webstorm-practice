@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            function Person(name, age) {
+                var obj = {};
+                obj.name = name;
+                obj.age = age;
+                obj.makeLove = function () {
+                    console.log("旭楠是我的挚爱");
+                }
+                return obj;
+            }
+            var per = Person("建磊",26);
+            console.log(per.name);
+            console.log(per.age);
+            per.makeLove();
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

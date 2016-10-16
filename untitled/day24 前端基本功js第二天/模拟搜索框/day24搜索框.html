@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            function $id(id) {
+                return document.getElementById(id);
+            }
+
+            $id("search").onclick = function () {
+                if ($id("name").value == "hello world") {
+                    alert("你好,世界");
+                }else{
+                    alert("what the hell");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" value="请输入你爱的人" id="name">
+<button id="search">搜索</button>
+</body>
+</html>

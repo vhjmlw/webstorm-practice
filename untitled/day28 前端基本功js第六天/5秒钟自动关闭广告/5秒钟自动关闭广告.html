@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding:0;}
+        img {
+            position: absolute;
+            top: 0;
+        }
+        #left {
+            left: 0;
+        }
+        #right {
+            right: 0;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $id(id) {
+                return document.getElementById(id);
+            }
+            function hide(id) {
+                $id(id).style.display = "none";
+            }
+            function show(id) {
+                $id(id).style.display = "block";
+            }
+            setTimeout(fn, 5000);
+            function fn() {
+                hide("left");
+                hide("right");
+            }
+        }
+    </script>
+</head>
+<body>
+<img src="images/1.gif" alt="" id="left">
+<img src="images/2.gif" alt="" id="right">
+<p>hello world</p>
+<p>hello world</p>
+<p>hello world</p>
+<p>hello world</p>
+<p>hello world</p>
+<p>hello world</p>
+<p>hello world</p>
+<p>hello world</p>
+<p>hello world</p>
+<p>hello world</p>
+</body>
+</html>

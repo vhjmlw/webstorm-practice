@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var div = document.getElementsByTagName("div")[0];
+            var count = 5;
+            setTimeout(goIndexPage, 1000);
+            function goIndexPage() {
+                if (count < 0) {
+                    window.location.href = "http://www.baidu.com";
+                } else {
+                    div.innerHTML = "<a href='http://www.baidu.com'>"+count+"秒之后将会跳转到百度页面</a>";
+                    count--;
+                    setTimeout(arguments.callee, 1000);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

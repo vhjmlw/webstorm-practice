@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# version 1.0.0
+
+CACHE:
+    网页缓存.css
+    网页缓存.js
+    网页缓存.html
+
+NETWORK:
+    *

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var img = document.getElementById("image");
+            document.onclick = function (event) {
+                var event = event || window.event;
+                targetX = event.clientX - img.offsetWidth / 2;
+                targetY = event.clientY - img.offsetHeight / 2;
+            }
+            //缓动动画,X轴和Y轴一起运动
+            var leaderX = 0;
+            var leaderY = 0;
+            var targetX = 0;
+            var targetY = 0;
+            setInterval(function () {
+                leaderX = leaderX + (targetX - leaderX) / 10;
+                leaderY = leaderY + (targetY - leaderY) / 10;
+                img.style.left = leaderX + "px";
+                img.style.top = leaderY + "px";
+            },10);
+        }
+    </script>
+</head>
+<body>
+<img src="img.jpg" alt="" id="image">
+</body>
+</html>

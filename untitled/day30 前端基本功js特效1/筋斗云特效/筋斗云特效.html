@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #999999;
+        }
+        #out {
+            width: 900px;
+            height: 42px;
+            margin: 100px auto;
+            background: white url(images/rss.png) no-repeat right center;
+            position: relative;
+            border-radius: 10px;
+        }
+        #out span {
+            width: 83px;
+            height: 42px;
+            background: url("images/cloud.gif") no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #out ul {
+            list-style: none;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #out li {
+            float: left;
+            height: 42px;
+            line-height: 42px;
+            width: 83px;
+            cursor: pointer;
+        }
+        #out li.current {
+            color: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var sp = document.getElementById("out").children[0];
+            var ul = document.getElementById("out").children[1];
+            var arr = ul.children;
+            var current = 0;
+            for (var i = 0; i < arr.length; i++) {
+                arr[i].onmouseover = function () {
+                    this.className = "current";
+                    target = this.offsetLeft;
+                }//鼠标悬停时获取当前li的offsetLeft作为target
+                arr[i].onmouseout = function () {
+                    this.className = "";
+                    target = current;//核心代码,精妙
+                }//如果li被点击了,则获取被点击li的offsetLeft作为target
+                arr[i].onclick = function () {
+                    current = this.offsetLeft;//核心代码
+                }
+            }
+            //缓动动画
+            var leader = 0, target = 0;
+            setInterval(fn, 10);
+            function fn() {
+                leader = leader + (target - leader) / 10;
+                sp.style.left = leader + "px";
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="out">
+    <span></span>
+    <ul>
+        <li>首页新闻</li>
+        <li>师资力量</li>
+        <li>活动策划</li>
+        <li>企业文化</li>
+        <li>招聘信息</li>
+        <li>公司简介</li>
+        <li>上海校区</li>
+        <li>广州校区</li>
+    </ul>
+</div>
+</body>
+</html>

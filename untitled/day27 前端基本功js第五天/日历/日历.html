@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .out {
+            margin: 100px auto;
+            width: 150px;
+            height: 180px;
+            background: #369;
+            text-align: center;
+        }
+        .out p {
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            font-size: 12px;
+        }
+        .out span {
+            width: 75px;
+            height: 75px;
+            background: yellowgreen;
+            display: inline-block;
+            line-height: 75px;
+            text-align: center;
+            color: #000;
+            font-size: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var day = date.getDate();
+            var week = date.getDay();
+            var div = document.getElementById("outid");
+            var P = div.getElementsByTagName("p")[0];
+            var arr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            P.innerHTML = year + "年" + (month + 1) + "月" + day + "日 " + arr[week];
+            var span = div.getElementsByTagName("span")[0];
+            span.innerHTML = day;
+        }
+    </script>
+</head>
+<body>
+<div id="outid" class="out">
+    <p></p>
+    <span></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+@charset "UTF-8";
+.banner {
+    position: relative;
+}
+.banner a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 602px;
+    background: url("../images/banner.jpg") no-repeat center top;
+}
+.main {
+    position: relative;
+}
+.main .slider-left {
+    margin: 12px 0 0 220px;
+    width: 730px;
+    height: 454px;
+    position: relative;
+}
+.slider-left .circle {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    margin-left: -66px;
+}
+.slider-left li {
+    float: left;
+    line-height: 18px;
+    width: 18px;
+    height: 18px;
+    margin: 0 2px;
+    text-align: center;
+    color: #fff;
+    background: #3E3E3E;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.slider-left li.current {
+    background: #B61B1F;
+}
+.bt-l,.bt-r {
+    position: absolute;
+    width: 28px;
+    height: 62px;
+    font: normal 700 18px "宋体";
+    top: 50%;
+    margin-top: -31px;
+    color: #fff;
+    line-height: 62px;
+    text-align: center;
+    background: rgba(0,0,0,.2);
+}
+.bt-l {
+    left: 0;
+}
+.bt-r {
+    right: 0;
+}
+.bt-l:hover,.bt-r:hover {
+    color: #fff;
+    background: rgba(0,0,0,.4);
+}
+.main .slider-right {
+    width: 248px;
+    height: 452px;
+    margin-top: 12px;
+    border: 1px solid #E4E4E4;
+    float: right;
+}
+.paper {
+    height: 200px;
+    border-bottom: 1px dashed #E4E4E4;
+}
+.paper .dt,.lifeservice .dt {
+    height: 43px;
+    line-height: 43px;
+    border-bottom: 1px dotted #E4E4E4;
+}
+.paper h3,.lifeservice h3 {
+    padding-left: 15px;
+    font: 14px/43px "microsoft yahei";
+    float: left;
+    color: #727272;
+}
+.paper .dt a {
+    float: right;
+    font: 13px/43px "宋体";
+    margin-right: 16px;
+}
+.paper .dd ul {
+    padding: 6px 0 0 16px;
+}
+.paper .dd li {
+    line-height: 28px;
+}
+.paper .dd span {
+    font: 500 12px/28px "microsoft yahei";
+    margin-right: 6px;
+}
+.lifeservice {
+    width: 248px;
+    height: 251px;
+    overflow: hidden;
+}
+.lifeservice .dd ul {
+    width: 252px;
+}
+.lifeservice .dd li {
+    float: left;
+    text-align: center;
+    border: 1px solid #E8E8E7;
+    margin: -1px 0 0 -1px;
+}
+.lifeservice .dd a {
+    width: 62px;
+    height: 21px;
+    display: block;
+    padding-top: 49px;
+    position: relative;
+}
+.lifeservice .dd i {
+    width: 25px;
+    height: 25px;
+    background: url("../images/icon.png") no-repeat top right;
+    position: absolute;
+    top: 13px;
+    left: 18px;
+}
+.lifeservice .dd .song {
+    background: url("../images/new.jpg") no-repeat right top;
+}
+.activity {
+    position: relative;
+}
+.activity1 {
+    margin: 10px 0 28px 0;
+}
+.activity-r {
+    width: 1000px;
+    height: 160px;
+    overflow: hidden;
+    float: right;
+}
+.activity-r li {
+    float: left;
+    margin-left: 1px;
+}
+.activity-r ul {
+    width: 500%;
+    /*height: 164px;*/
+}
+

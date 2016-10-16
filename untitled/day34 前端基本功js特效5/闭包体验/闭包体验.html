@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //闭包初体验
+        window.onload = function () {
+            function out() {
+                var i = 0;
+                function inner() {
+                    i++;
+                    alert(i);
+                };
+                alert(i);
+                return inner;
+            }
+            out();//0
+            //赋值的时候out()会被调用执行,但inner()里面的代码不会执行执行后的返回值赋值给变量attr
+            var attr = out();//0
+            attr();//1
+            attr();//2
+            //out()函数被重新执行,i = 0,i被重新赋值
+            var attr2 = out();//0
+            attr2();//1
+            attr2();//2
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

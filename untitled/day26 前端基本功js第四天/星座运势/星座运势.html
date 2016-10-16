@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .out {
+            width: 80px;
+            height: 16px;
+            background: url("icon_star.gif");
+            margin-top: 5px;
+        }
+
+        .out .inner {
+            height: 16px;
+            background: url("icon_star.gif") repeat bottom left;
+        }
+
+        .img {
+            width: 83px;
+            height: 90px;
+            background: url("nav_astro.png") no-repeat 0 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var texts = ["白羊座的内容", "金牛座的内容", "双子座的内容", "巨蟹座的内容", "狮子座的内容", "处女座的内容", "天秤座的内容", "天蝎座的内容", "射手座的内容", "摩羯座的内容", "水瓶座的内容", "双鱼座的内容"];
+            var weights = [10, 9, 5, 3, 8, 9, 0, 6, 2, 5, 1, 6];
+            var $id = function (id) {
+                return document.getElementById(id);
+            }
+            var sel = $id("choice");
+            sel.onchange = function () {
+                $id("imgid").style.backgroundPosition = (-83 * this.value) + "px 0";
+                $id("innerid").style.width = 8 * weights[this.value] + "px";
+                $id("textid").innerHTML = texts[this.value];
+            }
+        }
+    </script>
+</head>
+<body>
+<select name="" id="choice">
+    <option value="0">白羊座</option>
+    <option value="1">金牛座</option>
+    <option value="2">双子座</option>
+    <option value="3">巨蟹座</option>
+    <option value="4">狮子座</option>
+    <option value="5">处女座</option>
+    <option value="6">天秤座</option>
+    <option value="7">天蝎座</option>
+    <option value="8">射手座</option>
+    <option value="9">摩羯座</option>
+    <option value="10">水瓶座</option>
+    <option value="11">双鱼座</option>
+</select>
+<div class="out">
+    <div class="inner" id="innerid"></div>
+</div>
+<div class="img" id="imgid"></div>
+<div class="text" id="textid">白羊座的内容</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var arr = [1, 2, 3, 4, 5];
+                //push()
+            console.log(arr.push(6));//返回长度6
+            console.log(arr);//原数组改变[1, 2, 3, 4, 5, 6]
+                //unshift()
+            console.log(arr.unshift(0));//返回长度7
+            console.log(arr);//原数组改变[0, 1, 2, 3, 4, 5, 6]
+                //pop()
+            console.log(arr.pop());//返回删除的值6
+            console.log(arr);//原数组改变[0, 1, 2, 3, 4, 5]
+                //shift()
+            console.log(arr.shift());//返回删除的值0
+            console.log(arr);//原数组改变[1, 2, 3, 4, 5]
+                //concat()
+            var arr2 = ["a", "b", "c"];
+            console.log(arr.concat(arr2));//返回拼接后新的数组[1, 2, 3, 4, 5, "a", "b", "c"]
+            console.log(arr);//原数组不变[1, 2, 3, 4, 5]
+            console.log(arr2);//原数组不变["a", "b", "c"]
+                //join()
+            console.log(arr.join("-"));//返回新生成的字符串1-2-3-4-5
+            console.log(arr);//原数组不变[1, 2, 3, 4, 5]
+                //split()
+            var str = "1-2-3-4-5";
+            console.log(str.split("-"));//返回拆分后的一个新的数组["1", "2", "3", "4", "5"]
+            console.log(str);//原字符串不变1-2-3-4-5
+            var dem = "demo";
+            console.log(dem.split(" "));
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

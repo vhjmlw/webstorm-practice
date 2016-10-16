@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            var data = [{
+                "title": "title1",
+                "url": "url1",
+                "empty": "empty1"
+            }, {
+                "title": "title2",
+                "url": "url2",
+                "empty": "empty2"
+            }, {
+                "title": "title3",
+                "url": "url3",
+                "empty": "empty3"
+            }];
+            //方法一
+            var str = "";
+            for (var i = 0; i < data.length; i++) {
+//                var str = "";
+                str += "<tr>";
+                str += "<td>" + data[i].title + "</td>";
+                str += "<td>" + data[i].url + "</td>";
+                str += "<td>" + data[i].empty + "</td>";
+                str += "</tr>";
+//                $("tbody").append(str);
+                $("tbody").html(str);
+            }
+            //方法二
+            for (var j = 0; j < data.length; j++) {
+                var $tr = $("<tr></tr>");//动态的创意标签,并且生成一个jQuery对象
+                $tr.append("<td>" + data[j].title + "</td>");
+                $tr.append("<td>" + data[j].url + "</td>");
+                $tr.append("<td>" + data[j].empty + "</td>");
+//                $("tbody").append($tr);
+                $tr.appendTo("tbody");
+            }
+        });
+    </script>
+</head>
+<body>
+<table>
+    <thead>
+    <th>标题</th>
+    <th>URL</th>
+    <th>无</th>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+                     margin: 0;
+                     padding: 0;
+                 }
+        div {
+            text-align: center;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script src="global.js" defer></script>
+    <script>
+        window.onload = function () {
+            var nav = document.getElementsByTagName("div")[1];
+            var y = nav.offsetTop;//该行代码不可以放在onscroll事件里面
+            //当页面加载的时候,先获取nav的offsetTop值,该值是固定的
+            window.onscroll = function () {
+                if (getScroll().top >= y) {
+                    nav.className = "nav";
+                } else {
+                    nav.className = "";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div><img src="images/top.png" alt=""></div>
+<div><img src="images/nav.png" alt=""></div>
+<div><img src="images/main.png" alt=""></div>
+</body>
+</html>

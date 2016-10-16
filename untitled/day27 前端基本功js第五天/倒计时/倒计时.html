@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            font: normal normal 30px/30px "microsoft yahei";
+            color: red;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var endTime = new Date("2016/12/31 23:59:59").getTime();
+            setInterval(fn, 1000);
+            function fn() {
+                var nowTime = new Date().getTime();
+                var seconds = (endTime - nowTime) / 1000;
+                var day = parseInt(seconds / 3600 / 24);
+                var hour = parseInt(seconds / 3600 % 24);
+                var minute = parseInt(seconds / 60 % 60);
+                var second = parseInt(seconds % 60);
+                day < 10?day = "0" + day:day;
+                hour < 10?hour = "0" + hour:hour;
+                minute < 10?minute = "0" + minute:minute;
+                second < 10?second = "0" + second:second;
+                var div = document.getElementsByTagName("div")[0];
+                div.innerHTML = "离今年结束还有: " + day + "天 " + hour + "小时 " + minute + "分钟 " + second + "秒";
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

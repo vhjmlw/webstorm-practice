@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 322px;
+            position: fixed;
+            bottom:0;
+            right:0;
+        }
+        span{
+            position: absolute;
+            top:0;
+            right:0;
+            width:30px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var span = document.getElementsByTagName("span")[0];
+            var bto = document.getElementById("b");
+            span.onclick = function () {
+                animate(bto, {height: 0}, function () {
+                    animate(bto.parentNode, {right: -bto.offsetWidth} ,function () {
+                        alert("整个动画都执行完啦");/*width:0;也可以达到效果*/
+                    })
+                })
+            }
+
+            function animate(obj, json, fun) {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(fn, 10);
+                function fn() {
+                    var flag = true;//设置一个标记变量,来标记其值有没有被修改
+                    for (var key in json) {
+                        var target = json[key];
+                        var current = parseInt(getStyle(obj, key));
+                        var step = (target - current) / 10;
+                        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                        obj.style[key] = current + step + "px";
+                        if (current != target) {
+                            flag = false;
+                        }
+                    }
+                    //使用flag判断JSON里面所有的属性有没有都到达目标位置,取消定时器
+                    if (flag) {
+                        clearInterval(obj.timer);
+                        console.log("哎呀,定时器终于结束了");
+                        if (fun) {
+                            fun();
+                        }
+                    }
+                }
+            }
+            function getStyle(obj, attr) {
+                if (obj.currentStyle) {
+                    return obj.currentStyle[attr];
+                } else {
+                    return window.getComputedStyle(obj, null)[attr];
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <span></span>
+    <div class="hd" id="t">
+        <img src="images/t.jpg" alt=""/>
+    </div>
+    <div class="bd" id="b">
+        <img src="images/b.jpg" alt=""/>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var f = document.getElementById("file");
+            f.onchange = function () {
+                var str = f.value;//所选取文件的绝对路径
+                console.log(str);
+                //获取文件的扩展名,同时转换为大写
+                var newstr = str.substr(str.lastIndexOf(".")+1).toUpperCase();
+                if (newstr == "JPG" || newstr == "PNG") {
+                    this.nextElementSibling.innerHTML = "格式正确";
+                } else {
+                    this.nextElementSibling.innerHTML = "格式错误";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="file" id="file"><!--文件域-->
+<span id="sp"></span>
+</body>
+</html>

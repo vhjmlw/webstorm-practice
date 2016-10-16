@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 2px solid pink;
+        }
+        .current {
+            width:200px;
+            height: 200px;
+            background: deepskyblue;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#out").addClass("current");
+            $("#out").removeClass("current").siblings().addClass("current");
+//            $("div").hasClass("current")?$("div").removeClass("current"):$("div").addClass("current");
+            console.log($("div"));
+            console.log($("div").eq(1).index());
+            $("div:eq(0)").attr("height", "300px");
+            $("div").eq(3).html("<p>我是一个p标签</p>");
+            console.log($("div").eq(3).text());
+        });
+    </script>
+</head>
+<body>
+<div id="out">
+    <div></div>
+</div>
+<div class="kj"></div>
+<div></div>
+</body>
+</html>

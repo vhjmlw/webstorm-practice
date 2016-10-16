@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--在manifest属性里面指定缓存文件的路径,
+缓存文件的名字为cache.manifest
+当然可以自己定义文件的名字-->
+<html lang="en" manifest="cache.manifest">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--文件中使用了CSS和js文件,所以要在缓存文件里面写明
+    需要缓存的文件的明细,包含CSS和js文件-->
+    <link rel="stylesheet" href="网页缓存.css">
+    <script src="网页缓存.js" defer></script>
+</head>
+<body>
+<p id="first">css设置的标签</p>
+<p id="second">js设置的标签</p>
+<p>默认的标签</p>
+</body>
+</html>

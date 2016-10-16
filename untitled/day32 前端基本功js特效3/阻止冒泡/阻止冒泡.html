@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByTagName("button")[0];
+            document.onclick = function () {
+                alert("点击了HTML文档");
+            }
+            btn.onclick = function (event) {
+                alert("点击了按钮");
+                event = event || window.event;
+                if (event && event.stopPropagation) {
+                    event.stopPropagation();
+                } else {
+                    event.cancelBubble = true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button>按钮</button>
+</body>
+</html>

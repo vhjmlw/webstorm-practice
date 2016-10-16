@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            function getLength(str) {
+                var len = 0;//用来统计字节的长度
+                for (var i = 0; i < str.length; i++) {
+                    var code = str.charCodeAt(i);//遍历字符串内的每个字符
+                    if (code >= 0 && code <= 127) {//说明在Unicode编码表内
+                        len++;
+                    } else {//不在Unicode编码表内,一个字符占2个字节
+                        len += 2;
+                    }
+                }
+                return len;
+            }
+            console.log(getLength("123四"));//5
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var ipt = document.getElementsByTagName("input");
+            var btn = document.getElementsByTagName("button");
+            console.log(ipt);
+            //工资涨幅查询
+            btn[0].onclick = function () {
+                if (ipt[1].value < 2) {
+                    ipt[2].value = ipt[0].value * (1 + 0.1);
+                } else if (ipt[1].value <= 4) {
+                    ipt[2].value = ipt[0].value * (1 + 0.15);
+                } else if (ipt[1].value >= 5) {
+                    ipt[2].value = ipt[0].value * (1 + 0.2);
+                } else {
+                    ipt[2].value = ipt[0].value;
+                    alert("您输入的有误");
+                }
+            }
+            //递归实现阶乘
+            var product = function (n) {
+                if (n <= 0) {
+                    alert("您输入的有误,必须是正整数");
+                    return;
+                }
+                if (n == 1) {
+                    return 1;
+                }
+                 return n*product(n-1);
+            }
+            /*var product = function (n) {
+                var pd = 1;
+                for (var i = n; i > 0; i--) {
+                    pd *= i;
+                }
+                return pd;
+            }*/
+            ipt[3].onblur = function () {
+                ipt[4].value = product(ipt[3].value);
+            }
+            //
+
+        }
+    </script>
+</head>
+<body>
+工资:<input type="text">
+工龄:<input type="text">
+<button>计算</button>
+调整后工资:<input type="text">
+<br>
+<br>
+<br>
+请输入一个数字: <input type="text">
+该数字的阶乘为: <input type="text">
+</body>
+</html>

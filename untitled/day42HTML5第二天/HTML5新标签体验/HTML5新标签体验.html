@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--历史API练习-->
+<a href="http://www.baidu.com">百度</a>
+<input type="button" value="前进">
+<input type="button" value="后退">
+<input type="button" value="刷新">
+<script>
+    var ipt = document.querySelectorAll("input");
+    console.log(ipt);//返回数组[input, input, input]
+    ipt[0].addEventListener("click",function () {
+        window.history.forward();//实现的功能类似浏览器的前进按钮
+    });
+    ipt[1].addEventListener("click",function () {
+        window.history.back();//实现的功能类似浏览器的后退按钮
+    });
+    ipt[2].addEventListener("click",function () {
+        window.history.go();//实现的功能类似浏览器的刷新按钮F5
+    });
+</script>
+</body>
+</html>

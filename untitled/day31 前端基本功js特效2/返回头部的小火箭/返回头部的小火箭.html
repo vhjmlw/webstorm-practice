@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 10000px;
+        }
+        div {
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+    <script src="global.js"></script>
+    <script>
+        window.onload = function () {
+            var div = document.getElementsByTagName("div")[0];
+            window.onscroll = function () {
+                leader = getScroll().top;//leader的值一定要写在onscroll事件内
+                console.log(leader + "++");
+               if (getScroll().top >= 1000) {//向上滚动1000px时火箭显示
+                   div.style.display = "block";
+               } else {
+                   div.style.display = "none";
+               }
+            }
+            var leader = 0, target = 0, timer = null;
+            div.onclick = function () {
+                clearInterval(timer);
+                target = 0;//不可以在onclick事件内对leader赋值,否则leader永远不可能等于target
+                timer = setInterval(fn, 10);//运动的出发点leader随意改变,终点target是确定的0
+                function fn() {
+                    leader = leader + (target - leader) / 10;
+                    window.scrollTo(0, leader);
+                    if (leader <= target) {
+                        clearInterval(timer);
+                    }
+                    console.log(leader + "--");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <img src="images/Top.jpg" alt="">
+</div>
+</body>
+</html>

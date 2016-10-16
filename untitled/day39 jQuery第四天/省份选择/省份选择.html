@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var arr = {
+                "河南省": ["商丘", "洛阳", "郑州", "南阳"],
+                "江苏省": ["苏州", "南京", "无锡", "徐州"],
+                "上海市": ["浦东区", "奉贤区", "陆家嘴", "东方明珠"]
+            };
+            for (var key in arr) {
+                $("<option>" + key + "</option>").appendTo("select:first");
+            }
+            $("select:first").on("change", function () {
+                var key = $("select:first option:selected").text();
+                var cityArr = arr[key];
+                $("select:last").empty();//每次append之前先清空下里面的option
+                for (var i = 0; i < cityArr.length; i++) {
+                    $("<option>" + cityArr[i] + "</option>").appendTo("select:last");
+                }
+            });
+            //首次加载页面的时候,默认选择了"河南省",调用change事件的函数,取出河南省的城市
+            $("select:first").triggerHandler("change");//效率最高,不触发事件
+//          $("select:first").change();
+//          $("select:first").trigger("change");效果同change()相同
+        });
+    </script>
+</head>
+<body>
+<select name="" id="province">
+</select>
+<select name="" id="city">
+</select>
+</body>
+</html>

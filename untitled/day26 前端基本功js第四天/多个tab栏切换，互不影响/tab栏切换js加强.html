@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .out {
+            margin: 50px auto;
+            width: 550px;
+        }
+        .top {
+            border: 1px solid black;
+            height: 40px;
+            width: 550px;
+        }
+        .top span {
+            width: 100px;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .bottom ul {
+            list-style: none;
+        }
+        .bottom li {
+            height: 550px;
+            width: 552px;
+            background: paleturquoise;
+            display: none;
+        }
+        .bottom .bt-current {
+            display: block;
+        }
+        .top .tp-current {
+            background: paleturquoise;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+           var fn = function (id) {
+               var div = document.getElementById(id);
+               var sn = div.getElementsByTagName("span");
+               var lis = div.getElementsByTagName("li");
+               for (var i = 0; i < sn.length; i++) {
+                   sn[i].index = i;
+                   sn[i].onmouseover = function () {
+                       for (var j = 0; j < sn.length; j ++) {
+                           sn[j].className = "";
+                           lis[j].className= "";
+                       }
+                       this.className = "tp-current";
+                       lis[this.index].className = "bt-current";
+                   }
+               }
+           }
+            fn("firstDiv");
+            fn("secondDiv");
+            fn("thirdDiv");
+        }
+    </script>
+</head>
+<body>
+<div class="out" id="firstDiv">
+    <div class="top">
+        <span>按钮1</span>
+        <span>按钮2</span>
+        <span>按钮3</span>
+        <span>按钮4</span>
+        <span>按钮5</span>
+    </div>
+    <div class="bottom">
+        <ul>
+            <li class="bt-current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</div>
+<div class="out" id="secondDiv">
+    <div class="top">
+        <span>按钮1</span>
+        <span>按钮2</span>
+        <span>按钮3</span>
+        <span>按钮4</span>
+        <span>按钮5</span>
+    </div>
+    <div class="bottom">
+        <ul>
+            <li class="bt-current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</div>
+<div class="out" id="thirdDiv">
+    <div class="top">
+        <span>按钮1</span>
+        <span>按钮2</span>
+        <span>按钮3</span>
+        <span>按钮4</span>
+        <span>按钮5</span>
+    </div>
+    <div class="bottom">
+        <ul>
+            <li class="bt-current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

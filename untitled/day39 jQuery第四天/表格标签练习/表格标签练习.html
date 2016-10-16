@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            /*合并边框的兼容性写法,一般CSSreset中都有*/
+            margin: 100px auto;
+        }
+        th,td {
+            width: 100px;
+            height: 30px;
+            border: 1px solid rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>title</th>
+            <th>title</th>
+            <th>title</th>
+            <th>title</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td rowspan="2">hello</td><!--合并左右两行-->
+        <td colspan="2">hello</td><!--合并上下两列-->
+        <td>hello world</td>
+    </tr>
+    <tr>
+        <td>hello</td>
+        <td>hello</td>
+        <td>hello</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

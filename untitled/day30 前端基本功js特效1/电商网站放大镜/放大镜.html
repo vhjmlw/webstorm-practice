@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        #box {
+            width: 350px;
+            height: 350px;
+            margin: 100px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        #small {
+            position: relative;
+        }
+
+        #mask {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            display: none;
+        }
+
+        #big {
+            width: 450px;
+            height: 450px;
+            position: absolute;
+            top: 0;
+            left: 360px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: none;
+        }
+
+        #big img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $id(id) {
+                return document.getElementById(id);
+            }
+            var box = $id("box");
+            var small = $id("small");
+            var mask = $id("mask");
+            var big = $id("big");
+            var img = big.children[0];
+            small.onmouseover = function () {
+                mask.style.display = "block";
+                big.style.display = "block";
+                this.onmousemove = function (event) {
+                    //获取鼠标离盒子左上角的距离x和y
+                    var event = event || window.event;
+                    var x = event.clientX - box.offsetLeft - mask.offsetWidth / 2;
+                    var y = event.clientY - box.offsetTop - mask.offsetHeight / 2;
+                    //对x和y的取值范围进行规范,不能定位到small盒子的外面
+                    if (x <= 0) {
+                        x = 0;
+                    } else if (x >= box.offsetWidth - mask.offsetWidth) {
+                        x = box.offsetWidth - mask.offsetWidth;
+                    }
+                    if (y <= 0) {
+                        y = 0;
+                    } else if (y >= box.offsetHeight - mask.offsetHeight) {
+                        y = box.offsetHeight - mask.offsetHeight;
+                    }
+                    //将x和y的值赋给mask盒子的left和top,使其产生移动
+                    //当鼠标不断移动时,x和y的值不断的变化,mask盒子随着不断的移动
+                    mask.style.left = x + "px";
+                    mask.style.top = y + "px";
+                    var bigX = -x * big.offsetWidth / small.offsetWidth;
+                    var bigY = -y * big.offsetHeight / small.offsetHeight;
+                    img.style.left = bigX + "px";
+                    img.style.top = bigY + "px";
+                }
+            }
+            small.onmouseout = function () {
+                mask.style.display = "none";
+                big.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <div id="small">
+        <img src="images/001.jpg" alt="">
+        <div id="mask"></div>
+    </div>
+    <div id="big">
+        <img src="images/0001.jpg" alt="">
+    </div>
+</div>
+</body>
+</html>

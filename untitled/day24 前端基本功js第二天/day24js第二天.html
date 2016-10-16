@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: greenyellow;
+            margin: 20px;
+            display: none;
+        }
+        button {
+            width: 60px;
+            height: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var fn = function (a, b, c) {
+                var d = a + b + c;
+                console.log(fn.length);
+                if (fn.length == arguments.length) {
+                    console.log(d);
+                }else{
+                    console.log("您输入的参数有误");
+                }
+            }
+            fn(1, 2, 3);
+            /*function fun(id) {
+                var obj = document.getElementById(id);
+                obj.style.display = "block";
+            }*/
+        }
+        function fun(id) {
+            var obj = document.getElementById(id);
+            obj.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+<button onclick="fun('demo1');">1</button>
+<button onclick="fun('demo2');">2</button>
+<button onclick="fun('demo3');">3</button>
+<button onclick="fun('demo4');">4</button>
+<div id="demo1">1</div>
+<div id="demo2">2</div>
+<div id="demo3">3</div>
+<div id="demo4">4</div>
+</body>
+</html>

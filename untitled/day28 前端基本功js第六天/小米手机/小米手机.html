@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #out {
+            width: 512px;
+            height: 600px;
+            position: relative;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        #image {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #up {
+            width: 512px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #down {
+            width: 512px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $id(id) {return document.getElementById(id);}
+            var num = 0;//img标签定位position的top值
+            var timer = null;
+            $id("up").onmouseover = function () {
+                clearInterval(timer);//设置定时器之前先清除掉之前的定时器
+                timer = setInterval(fn, 10);//设置定时器,每10毫秒上移3px
+                function fn() {
+                    num -= 3;
+                    if (num >= -870) {
+                        $id("image").style.top = num + "px";
+                    } else {
+                        clearInterval(timer);//图片到底之后清除定时器
+                    }
+                }
+            }
+            $id("down").onmouseover = function () {
+                clearInterval(timer);//设置定时器之前先清除掉之前的定时器
+                timer = setInterval(fun, 10);//设置定时器,每10毫秒下移3px
+                function fun() {
+                    num += 3;
+                    if (num <= 0) {
+                        $id("image").style.top = num + "px";//设置图片的top定位值
+                    } else {
+                        clearInterval(timer);//图片到顶之后清除定时器
+                    }
+                }
+            }
+            $id("out").onmouseout = function () {
+                clearInterval(timer);//鼠标移除的时候清除定时器
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="out">
+    <img src="mi.png" alt="" id="image">
+    <div id="up"></div>
+    <div id="down"></div>
+</div>
+</body>
+</html>

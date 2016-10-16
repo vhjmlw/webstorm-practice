@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn200 = document.getElementById("btn200");
+            var btn400 = document.getElementById("btn400");
+            var box = document.getElementById("box");
+            btn200.onclick = function () {
+                animate(box, 200);
+            }
+            btn400.onclick = function () {
+                animate(box, 400);
+            }
+            function animate(obj, target) {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(fn, 30);
+                function fn() {
+                    var step = (target - obj.offsetLeft) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    box.style.left = box.offsetLeft + step + "px";
+                    if (box.offsetLeft == target) {
+                        clearInterval(obj.timer);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="btn200">200</button>
+<button id="btn400">400</button>
+<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .out {
+            width: 130px;
+            height: 20px;
+            position: relative;
+            margin: 50px auto;
+        }
+        .out label {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 13px;
+            color: #999;
+            cursor: text;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $id(id) {
+                return document.getElementById(id);
+            }
+            $id("inp").focus();
+            $id("inp").oninput = $id("inp").onpropertychange = function () {
+                if ($id("inp").value == "") {
+                    $id("lab").style.display = "block";
+                } else {
+                    $id("lab").style.display = "none";
+                }
+            }
+            $id("inp").onmouseover = function () {
+                this.select();
+            }
+            var arr = [1, 2, 3, 4];
+            var arr = new Array(1, 2, 3, 4);//等同于第一种方式
+            var arr = new Array(1);//声明一个数组,数组的长度为1
+            var arr = new Array("1");//声明一个数组,数组只有一个String类型的值"1"
+        }
+    </script>
+</head>
+<body>
+<div class="out">
+    <input type="text" id="inp">
+    <label for="inp" id="lab">请输入内容</label>
+</div>
+</body>
+</html>

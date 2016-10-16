@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            var box = document.getElementById("box");
+            btn1.onclick = function () {
+                animate(box, "width", 300);
+            }
+            btn2.onclick = function () {
+                animate(box, "height", 300);
+            }
+            //将获取对象CSS属性值和运动动画两个函数结合起来
+            function animate(obj, attr, target) {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function () {
+                    //调用获取对象的CSS属性值函数
+                    var current = parseInt(getStyle(obj, attr));
+                    var step = (target - current) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    obj.style[attr] = current + step + "px";
+                    if (current == target) {
+                        clearInterval(obj.timer);
+                    }
+                    console.log(current);
+                }, 30);
+            }
+            function getStyle(obj, attr) {
+                if (obj.currentStyle) {
+                    return obj.currentStyle[attr];
+                } else {
+                    return window.getComputedStyle(obj, null)[attr];
+                }
+            }
+            function getMove(obj, target) {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(fn, 30);
+                function fn() {
+                    var step = (target - obj.offsetLeft) / 10;
+                    step = target > 0 ? Math.ceil(step) : Math.floor(step);
+                    obj.style.left = obj.offsetLeft + step + "px";
+                    if (obj.offsetLeft == target) {
+                        clearInterval(obj.timer);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="btn1">点击运动1</button>
+<button id="btn2">点击运动2</button>
+<div id="box"></div>
+</body>
+</html>

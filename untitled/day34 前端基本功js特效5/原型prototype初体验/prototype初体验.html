@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            Array.prototype.makeLove = function () {
+                console.log("我爱北京天安门");
+            }
+            var arr = [];
+            arr.makeLove();
+            var arr2 = new Array();
+            arr2.makeLove();
+            console.log(arr.makeLove == arr2.makeLove);
+            console.log(Array.prototype);
+            alert(Array.prototype);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

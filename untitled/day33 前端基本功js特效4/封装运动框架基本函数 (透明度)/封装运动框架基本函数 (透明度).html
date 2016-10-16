@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 0;
+            /*opacity: .3;
+            filter:alpha(opacity = 30);*/
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById("box");
+            var btn1 = document.getElementById("btn1");
+            btn1.onclick = function () {
+                animate(box, {left: 100,top: 100,opacity: 50});
+            }
+
+            function animate(obj, json, fun) {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(fn, 10);
+                function fn() {
+                    var flag = true;//设置一个标记变量,来标记其值有没有被修改
+                    for (var key in json) {
+                        var target = json[key];
+                        if (key == "opacity") {
+                            var current = Math.round(parseInt(getStyle(obj,key)*100)) || 0;
+                        } else {
+                            var current = parseInt(getStyle(obj, key));
+                        }
+                        var step = (target - current) / 10;
+                        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                        if (key == "opacity") {
+                            if ("opacity" in obj.style) {
+                                console.log(current);
+                                console.log(step);
+                                obj.style.opacity = (current + step) / 100;//浏览器能力测试
+                            } else {//兼容IE678的写法
+                                obj.style.filter = "alpha(opacity = " + (current + step) + ")";
+                            }
+                        } else if (key == "zIndex") {
+                            obj.style.zIndex = json[key];
+                        } else {
+                            obj.style[key] = current + step + "px";
+                        }
+                        if (current != target) {
+                            flag = false;
+                        }
+                    }//使用flag判断JSON里面所有的属性有没有都到达目标位置,取消定时器
+                    if (flag) {
+                        clearInterval(obj.timer);
+                        console.log("哎呀,定时器终于结束了");
+                        if (fun) {
+                            fun();
+                        }
+                    }
+                }
+            }
+            function getStyle(obj, attr) {
+                if (obj.currentStyle) {
+                    return obj.currentStyle[attr];
+                } else {
+                    return window.getComputedStyle(obj, null)[attr];
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="btn1">200</button>
+<button id="btn2">400</button>
+<div id="box"></div>
+</body>
+</html>

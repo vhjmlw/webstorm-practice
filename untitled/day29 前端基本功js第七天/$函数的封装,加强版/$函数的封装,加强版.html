@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var getClass = function (id) {
+                if (document.getElementsByClassName) {
+                    return document.getElementsByClassName(id);
+                }
+                var arr = [];
+                var arr1 = document.getElementsByTagName("*");
+                for (var i = 0; i < arr1.length; i++) {
+                    var arr2 = arr1[i].className.split(" ");
+                    for (var j = 0; j < arr2.length; j++) {
+                        if (arr2[j] == id) {
+                            arr.push(arr1[i]);
+                            break;
+                        }
+                    }
+                }
+                return arr;
+            }
+            function $(id) {
+                var s = id.charAt(0);
+                var ss = id.substr(1);
+                switch (s) {
+                    case "#":
+                        return document.getElementById(ss);
+                    break;
+                    case ".":
+                        return getClass(ss);
+                    break;
+                    default :
+                        return document.getElementsByTagName(id);
+                    break;
+                }
+            }
+            $("#one").style.backgroundColor = "black";
+            var arr = $(".demo");
+            for (var i = 0; i < arr.length; i++) {
+                arr[i].style.backgroundColor = "green";
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="one"></div>
+<div></div>
+<div class="demo"></div>
+<div class="demo"></div>
+<div class="demo"></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>
