@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3渐变</title>
+    <style>
+        body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F7F7F7;
+        }
+
+        .wrapper {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 20px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header h3 {
+            line-height: 1;
+            font-weight: normal;
+            font-size: 28px;
+        }
+
+        .main {
+            /*overflow: hidden;*/
+        }
+
+        .main:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .main .item {
+            width: 210px;
+            height: 210px;
+            margin: 0 30px 30px 0;
+            display: flex;
+            position: relative;
+            background-color: #FFF;
+            float: left;
+            box-shadow: 2px 2px 5px #CCC;
+        }
+
+        .main .item:after {
+            content: attr(data-brief);
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 210px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FFF;
+            font-family: '微软雅黑';
+            font-size: 18px;
+            background-color: rgba(170, 170, 170, 0);
+            z-index: -1;
+            transition: all 0.3s ease-in;
+        }
+
+        .main .item:hover:after {
+            background-color: rgba(170, 170, 170, 0.6);
+            z-index: 100;
+        }
+
+        .main .item:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        /*.main .item:nth-last-child(-n+5) {
+            margin-bottom: 0;
+        }*/
+
+        /* 以上是骨架样式 */
+        .radial-gradient,
+        .linear-gradient {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+        .item:nth-child(1) .linear-gradient {
+            width: 200px;
+            height: 80px;
+            background-color: green;
+            border-radius: 5px;
+            /*巧妙的使用透明度,由透明到不透明的渐变,背景图片的渐变放在背景颜色上面
+            实现了立体的效果*/
+            background-image: linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.5));
+        }
+        .item:nth-child(2) .radial-gradient {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            border-radius:100px;
+            /*巧妙的使用透明度,由透明到不透明的渐变,背景图片的渐变放在背景颜色上面
+            实现了立体的效果*/
+            background-image: radial-gradient(120px at 30px 30px,rgba(0,0,0,0),rgba(0,0,0,.5));
+        }
+        .item:nth-child(3) .linear-gradient {
+            width:200px;
+            height: 50px;
+            background: yellow;
+            /*使用background-size将背景裁剪为小正方形,每个小正方形的背景图片都是以下背景,
+            利用背景图片的repeat平铺达到滚动条的效果.注意一定要将背景图片设置为0-100%*/
+            background-image: linear-gradient(135deg,green 20%,transparent 20%,
+                                transparent 50%,green 50%,green 70%,transparent 70%);
+            background-size: 50px 50px;
+            /*background-repeat:no-repeat;*/
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h3>CSS3渐变应用</h3>
+    </header>
+    <div class="main">
+        <div class="item" data-brief="立体感按钮">
+            <div class="linear-gradient">保存</div>
+        </div>
+        <div class="item" data-brief="球体">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="动态进度条">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #out {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 100px auto;
+            perspective: 700px;
+        }
+        #in {
+            width: 300px;
+            height: 300px;
+            background: rgba(0,255,0,.3);
+            margin: 100px auto;
+            text-align: center;
+            line-height: 300px;
+            font-size: 50px;
+            transform: rotateX(180deg) translateX(100px) translateZ(100px) translateY(50px);
+            transform-origin: bottom;
+        }
+        body {
+            /*perspective: 700px;*/
+            transform-style: preserve-3D;
+        }
+        #second {
+            width: 150px;
+            height: 100px;
+            margin: 200px auto;
+            background: pink;
+            border-right: 5px solid blue;
+            transition: transform 3s;
+        }
+        #second:hover {
+            transform: rotateY(360deg) translateZ(200px);
+        }
+    </style>
+</head>
+<body>
+<div id="out">
+    <div id="in">这里子盒子</div>
+</div>
+<div id="second">这是一个文本</div>
+</body>
+</html>

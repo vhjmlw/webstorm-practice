@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 动画</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ball-wrap {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        /*乒乓球*/
+        .ball {
+            width: 200px;
+            height: 200px;
+            margin-left: -100px;
+            border-radius: 100px;
+            background-color: blue;
+            background-image: radial-gradient(140px at center 40px, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            /*乒乓球的动画*/
+            animation: move 1s  infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in;
+        }
+        /*底部阴影*/
+        .ball-wrap::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 276px;
+            width: 200px;
+            height: 10px;
+            margin-left: -100px;
+            border-radius: 100px/5px;
+            background-color: #CCC;
+            /*底部阴影的动画,为了让乒乓球和阴影的配合更加的自然
+            让两者的动画保持同步:duration direction timing-function等*/
+            animation-name: shadow;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+        }
+        /*声明乒乓球的动画序列*/
+        @keyframes move {
+            0% {
+                /*乒乓球在垂直方向上的位置发生改变
+                在垂直方向不断下降*/
+                top: 30px;
+            }
+            100% {
+                top: 499px;
+            }
+        }
+        /*声明阴影的动画序列*/
+        @keyframes shadow {
+            0% {
+                /*阴影的宽高不断地变小
+                同时边框椭圆的半径也同时缩小*/
+                width: 200px;
+                height: 10px;
+                border-radius: 100px/5px;
+                /*为了让阴影一直位于乒乓球的正下方
+                特设置margin-left发生改变*/
+                margin-left: -100px;
+            }
+            100% {
+                width: 0;
+                height: 0;
+                border-radius: 0;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="rotate"></div>
+<div class="ball-wrap">
+    <div class="ball"></div>
+</div>
+</body>
+</html>

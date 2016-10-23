@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 1000px;
+            height: 1000px;
+            background: pink;
+            margin: 100px auto;
+        }
+
+        #box ul {
+            height: 1000px;
+            list-style: none;
+            display: flex;
+            /*设置主轴的方向*/
+            flex-direction:row;//(默认)主轴从左向右
+            flex-direction:row-reverse;//主轴从右向左
+            flex-direction:column;//主轴从上向下
+            flex-direction: column-reverse;//主轴从下向上
+            /*设置盒子在主轴方向上的对齐方式*/
+            justify-content: flex-start;//(默认)(row)主轴左对齐,(column)主轴上对齐
+            justify-content: flex-end;//(row)主轴右对齐,(column)主轴下对齐
+            justify-content: center;//主轴居中对齐
+            justify-content: space-between;//主轴两端对齐
+            justify-content: space-around;//主轴分散对齐(子盒子及其周围的空间均分父盒子的空间)
+            justify-content: inherit;
+            /*设置盒子在侧轴方向上的对齐方式*/
+            align-items: flex-start;//(默认)侧轴左对齐(主轴column)或上对齐(主轴row)
+            align-items: flex-end;//侧轴右对齐(主轴column)或下对齐(主轴row)
+            align-items: center;//侧轴居中对齐
+            align-items: baseline;//侧轴基准线对齐
+            align-items: stretch;//拉伸子盒子的高度铺满父盒子的高度(如果主轴为row的话)
+        }
+
+        #box ul li {
+            width: 200px;
+            height: 200px;
+            background: red;
+            text-align: center;
+            line-height: 200px;
+        }
+        #secBox {
+            width: 1000px;
+            height: 1000px;
+            background: pink;
+            margin: 100px auto;
+        }
+        #secBox ul {
+            list-style: none;
+            width: 1000px;
+            height: 1000px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /*设置子盒子超出父盒子的宽度或高度的时候是否换行
+            wrap:换行;nowrap:不换行
+            如果nowrap不换行的话,水平排列的话会强制压缩子盒子以排满父盒子*/
+            flex-wrap: nowrap;//不换行
+            flex-wrap: wrap;//换行
+            /*堆栈排列，可对应用flex-wrap: wrap后产生的换行进行控制，
+            控制换行后的盒子的排列方式,包括flex-start、flex-end、center、
+            space-between、space-around、stretch
+            默认为stretch,效果类似于align-items控制盒子在侧轴的对齐方式
+            align-content只适用于存在换行的情况,对单行的子盒子无效,只对多行的子盒子有效*/
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content:center;
+            align-content: space-around;
+            align-content: space-between;
+            align-content:stretch;//(默认)如果子盒子没有声明高度的话,高度会被拉伸至铺满父盒子的高度
+            /*设置align-items无效
+            align-items和align-content的区别???*/
+            align-items: center;
+            /*flex-flow是flex-direction+flex-wrap的简写形式*/
+            flex-flow: column wrap;
+        }
+        #secBox ul li {
+            width: 200px;
+            height: 200px;
+            background: red;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid black;
+        }
+        #third {
+            width: 1000px;
+            height: 1000px;
+            background: pink;
+            margin: 100px auto;
+        }
+        #third ul {
+            list-style: none;
+            width: 1000px;
+            height: 1000px;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        #third ul li {
+            width: 200px;
+            height: 200px;
+            background: red;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid black;
+        }
+        /*单独设置每个子盒子的伸缩权重
+        将父盒子可伸缩的空间分为1+2+3=6份,三个子盒子分别占1/6 2/6 3/6份
+        如果有盒子确定了宽度且没有flex权重,如子盒子3,则分配父盒子减去子盒子3的高度后剩下的空间为3份
+        两个子盒子分别占1/3 2/3*/
+        #third ul li:nth-child(1) {
+            flex: 1;
+            order:30;
+        }
+        #third ul li:nth-child(2) {
+            flex:2;
+            order:20;
+        }
+        #third ul li:nth-child(3) {
+            /*flex:3;*/
+            /*单独设置子盒子3在侧轴的对齐方式,会覆盖掉父盒子的align-items对其的影响*/
+            align-self: flex-start;
+            align-self: center;
+            align-self: baseline;
+            align-self: stretch;
+            align-self: flex-end;
+            /*设置子盒子在主轴排列的先后顺序,以order数字的先后顺序来设置子盒子的先后顺序
+            order越小越靠前
+            如果子盒子3没有设置order,则会放在最前面,设置了order的子盒子在后面按照order排序
+            如果多个子盒子都没有设置order,则同时会放在最前面,,按照其先后顺序排列
+            如果有的子盒子的order相同,则相同order的子盒子放在一起,按照其先后顺序排列*/
+            /*order:10;*/
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <section id="section">
+        <ul id="ul">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </section>
+</div>
+<div id="secBox">
+    <ul id="secUl">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+</div>
+<div id="third">
+    <ul id="thirdUl">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</body>
+</html>

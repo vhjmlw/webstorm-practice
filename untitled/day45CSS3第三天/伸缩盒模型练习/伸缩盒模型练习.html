@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #out {
+            width: 800px;
+            height: 800px;
+            /*background: pink;*/
+            margin: 100px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        #out>div {
+        }
+        #out>div:nth-child(1) {
+            background: green;
+            flex: 2;
+        }
+        #out>div:nth-child(2) {
+            /*background: yellow;*/
+            flex: 10;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+        #inner2 div:nth-child(1) {
+            flex: 1;
+            background: pink;
+        }
+        #inner2 div:nth-child(2) {
+            flex: 3;
+            background: purple;
+        }
+        #out>div:nth-child(3) {
+            background: blue;
+            flex:2;
+        }
+        #out>div:nth-child(4) {
+            flex:2;
+            background: bisque;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            align-content: flex-start;
+        }
+        #inner4 div {
+            border: 1px solid black;
+            flex:1;
+        }
+    </style>
+</head>
+<body>
+<div id="out">
+    <div id="inner1">header</div>
+    <div id="inner2">
+        <div id="first">侧边栏</div>
+        <div id="second">主体内容</div>
+    </div>
+    <div id="inner3">footer</div>
+    <div id="inner4">
+        <div>导航1</div>
+        <div>导航2</div>
+        <div>导航3</div>
+        <div>导航4</div>
+    </div>
+</div>
+</body>
+</html>

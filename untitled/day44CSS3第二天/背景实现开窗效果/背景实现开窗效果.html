@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #out {
+            width: 130px;
+            height: 130px;
+            background-image: url(bg.jpg);
+            background-origin: padding-box;
+            margin: 100px auto;
+            position: relative;
+        }
+        #inner1,#inner2 {
+            width: 130px;
+            height: 130px;
+            padding: 30px;
+            box-sizing: border-box;
+            /*效果等同于width:70px;height:70px;*/
+            border: 1px solid red;
+            background-clip: content-box;
+            background-origin: padding-box;
+            position: absolute;
+        }
+        #inner1 {
+            background-image: url(bg.jpg);
+            right: -100px;
+        }
+        #inner2 {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="out">
+    <div id="inner1"></div>
+    <div id="inner2"></div>
+</div>
+</body>
+</html>

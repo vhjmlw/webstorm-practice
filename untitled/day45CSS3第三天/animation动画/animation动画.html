@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            margin: 100px auto;
+            /*animation属性的简写形式*/
+            animation: myanimation linear 5s;
+            /*animation属性共有8个属性,其中有3个同transition过渡相同
+            delay timing-function duration*/
+            /*执行的动画序列的名字*/
+            animation-name: myanimation;
+            /*动画序列执行完成之后,倒着执行序列动画返回,alternate:交替
+            默认为执行完毕之后,恢复到原始的状态重新开始*/
+            animation-direction: alternate;
+            /*动画重复执行的次数,无限次重复播放,可以为具体的数字
+            iteration:重复;infinite:无限*/
+            animation-iteration-count: infinite;
+            /*动画序列执行完一次持续的时间,duration是必须设置的,
+            否则时间为0,动画不播放*/
+            animation-duration: 5s;
+            /*动画延迟3s才开始执行*/
+            animation-delay: 3s;
+            /*设置动画播放的速度*/
+            animation-timing-function: ease-in-out;
+            /*动画单次执行完毕之后保持的状态,
+            forwards:保持动画执行完毕之后最后的状态*/
+            animation-fill-mode: forwards;
+            /*设置动画播放的状态,paused:暂停*/
+            animation-play-state: paused;
+
+        }
+        /*定义动画序列,并声明动画序列的名字*/
+        @keyframes myanimation {
+            0% {
+                width: 200px;
+                height: 200px;
+                background: pink;
+            }
+            20% {
+                width: 400px;
+                height: 200px;
+                background: green;
+            }
+            50% {
+                width: 400px;
+                height: 400px;
+                background: yellow;
+            }
+            70% {
+                width: 200px;
+                height: 400px;
+                background: green;
+            }
+            100% {
+                width: 200px;
+                height: 200px;
+                background: pink;
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

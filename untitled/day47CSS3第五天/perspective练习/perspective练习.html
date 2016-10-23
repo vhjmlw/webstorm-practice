@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #out {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 100px auto;
+            /*perspective和perspective-origin是添加在运动元素的父盒子身上
+            perspective控制景深的程度,数值越大离得越远立体感越弱,数字越小离得越近立体感越强*/
+            perspective: 500px;
+            /*控制视觉灭点的位置,取值同background-position相同*/
+            perspective-origin: center center;
+        }
+        #in {
+            width: 300px;
+            height: 300px;
+            background: pink;
+            margin:100px auto;
+            border-left: 1px solid blue;
+            transform: rotateY(60deg);
+            transform-origin: left;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var i = 0;
+            var box = document.getElementById("in");
+            setInterval(function () {
+                box.style.transform = "rotateY("+i+"deg)";
+                i++;
+                if(i >= 360) {
+                    i = 0;
+                }
+            },5);
+
+        }
+    </script>
+</head>
+<body>
+<div id="out">
+    <div id="in">现在是在示范perspective的效果</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body {
+            width: 100%;
+            height: 100%;
+            background: skyblue;
+        }
+        #first {
+            height: 100px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        #first span {
+            font: normal normal 100px/100px "micro yahei";
+            color: #FFFFFF;
+            margin: 0 30px;
+        }
+        #first:hover span {
+            /*当鼠标悬停的时候,更改每个字体间的margin,控制每个字体的间隙*/
+            margin: 0 10px;
+            transition: margin 1s;
+        }
+        #second {
+            width: 300px;
+            height: 300px;
+            margin:100px auto;
+            border: 1px solid red;
+            background-image: url(12.png);
+            /*将原背景图片压缩为 100px*100px 尺寸大小*/
+            background-size: 100px 100px;
+            /*对压缩后的新图片进行定位*/
+            background-position: center;
+        }
+        #second:hover {
+            /*鼠标悬停的时候更改背景图片的尺寸为 400px*400px */
+            background-size: 400px 400px;
+            transition: background-size 1s;
+        }
+    </style>
+</head>
+<body>
+<div id="first">
+    <span>四</span><span>万</span><span>网</span><span>友</span><span>共</span><span>同</span><span>信</span><span>赖</span>
+</div>
+<div id="second"></div>
+</body>
+</html>

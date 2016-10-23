@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3边框</title>
+    <style>
+        body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F7F7F7;
+        }
+
+        .wrapper {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 20px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header h3 {
+            line-height: 1;
+            font-weight: normal;
+            font-size: 28px;
+        }
+
+        .main {
+            /*overflow: hidden;*/
+        }
+
+        .main:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .main .item {
+            width: 210px;
+            height: 210px;
+            margin: 0 30px 30px 0;
+            display: flex;
+            position: relative;
+            background-color: #FFF;
+            float: left;
+            box-shadow: 2px 2px 5px #CCC;
+        }
+
+        .main .item:after {
+            content: attr(data-brief);
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 210px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FFF;
+            font-family: '微软雅黑';
+            font-size: 18px;
+            background-color: rgba(170, 170, 170, 0);
+            z-index: -1;
+            transition: all 0.3s ease-in;
+        }
+
+        .main .item:hover:after {
+            background-color: rgba(170, 170, 170, 0.6);
+            z-index: 100;
+        }
+
+        .main .item:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        /*.main .item:nth-last-child(-n+5) {
+            margin-bottom: 0;
+        }*/
+
+        /* 以上是骨架样式 */
+        .border-image {
+            margin: auto;
+            /*border-image-source用来设置边框的图片*/
+            border-image-source: url(images/border.png);
+            /*border-image-width的效果等同于border-width
+            用来设置边框的宽度
+            如果该值增大,则元素的空间被挤压,空间变小*/
+            border-image-width: 10px;
+        }
+        .item:nth-child(1) .border-image {
+            width: 150px;
+            height: 150px;
+            background: pink;
+            /*border-image-slice用来设置边框图片的切割方法
+            一共可以切割四次,按照上右下左的顺序
+            可以分别设置四次的切割大小,单位为px,单位省略
+            等同于border-image-slice:27 27 27 27;*/
+            border-image-slice: 27;
+            /*border-image-repeat用来设置边框图片被切割后
+            的显示样式,默认为stretch,拉伸
+            除此之外还有repeat:平铺;round:平铺并自适应*/
+            border-image-repeat: stretch;
+        }
+        .item:nth-child(2) .border-image {
+            width: 200px;
+            height: 100px;
+            background: pink;
+            border-image-slice: 27;
+            border-image-source: url(images/border.png);
+            border-image-width: 10px;
+            /*round进行平铺,与repeat不同,round会自动适应
+            不会显示不够一整个的部分,即round显示的都是都是完整的部分*/
+            border-image-repeat: round;
+        }
+        .item:nth-child(3) .border-image {
+            width: 200px;
+            height: 100px;
+            background: pink;
+            border-image-source: url(images/border.png);
+            border-image-width: 10px;
+            border-image-slice: 27;
+            border-image-repeat: stretch;
+        }
+        .item:nth-child(4) .border-image {
+            width: 200px;
+            height: 100px;
+            background: pink;
+            border-image-source: url(images/border.png);
+            border-image-width: 10px;
+            border-image-slice: 27;
+            /*repeat只是简单粗暴的进行平铺(四个角固定,四条边进行平铺)
+            剩余不够一整个的部分直接显示*/
+            border-image-repeat: repeat;
+        }
+        .item:nth-child(5) .border-image {
+            width: 100px;
+            height: 200px;
+            background: pink;
+            border-image-source: url(images/border.png);
+            border-image-width: 10px;
+            border-image-slice: 27;
+            border-image-repeat: stretch;
+        }
+        .item:nth-child(6) .border-image {
+            width: 200px;
+            height: 100px;
+            background: pink;
+            border-image-source: url(images/border.png);
+            border-image-width: 10px;
+            border-image-slice: 27;
+            /*border-image-repeat可以同时设置两个属性值
+            同时设置两个不同的排列样式,设置两个属性值的话
+            第一个为上下边框,第二个为左右边框*/
+            border-image-repeat: stretch round;
+        }
+        .item:nth-child(7) .border-image {
+            width: 200px;
+            height: 100px;
+            background: pink;
+            border-image-source: url(images/border.png);
+            border-image-width: 10px;
+            border-image-slice: 27;
+            /*上下边框为round,左右边框为stretch*/
+            border-image-repeat: round stretch;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h3>CSS3边框图片</h3>
+    </header>
+    <div class="main">
+        <div class="item" data-brief="标准写法">
+            <div class="border-image"></div>
+        </div>
+        <div class="item" data-brief="round平铺">
+            <div class="border-image"></div>
+        </div>
+        <div class="item" data-brief="stretch平铺">
+            <div class="border-image"></div>
+        </div>
+        <div class="item" data-brief="repeat平铺">
+            <div class="border-image"></div>
+        </div>
+        <div class="item" data-brief="四边stretch">
+            <div class="border-image"></div>
+        </div>
+        <div class="item" data-brief="分别设置水平和垂直边的平铺效果">
+            <div class="border-image"></div>
+        </div>
+        <div class="item" data-brief="slice参数">
+            <div class="border-image"></div>
+        </div>
+        <div class="item" data-brief="一些介绍">
+            <div class="border-image"></div>
+        </div>
+        <div class="item" data-brief="一些介绍">
+            <div class="border-image"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

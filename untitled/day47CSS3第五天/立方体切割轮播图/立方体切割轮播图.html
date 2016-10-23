@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 3D切割轮播图</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        ul {
+            list-style: none;
+            position: relative;
+            /*该案例不能够添加perspective属性,按道理应该给旋转的li标签的父盒子
+            ul盒子添加在perspective,但添加该属性之后会出现错乱的现象.*/
+            /*perspective: 700px;*/
+        }
+        body {
+            margin: 0;
+            padding-top: 0;
+            background-color: #F7F7F7;
+        }
+        .cut {
+            width: 560px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: pink;
+            position: relative;
+        }
+
+        .prev, .next {
+            display: block;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            margin-top: -30px;
+            font-size: 40px;
+            color: #FFF;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 50%;
+        }
+        .next {
+            right: 0;
+        }
+        .cut li {
+            width: 112px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            transform-style: preserve-3D;
+            transition: transform 1s;
+        }
+        .cut li div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /*li标签里面的四个div的旋转定位*/
+        /*前盒子*/
+        .cut li div:nth-child(1) {
+            background: url("images/1.png") no-repeat;
+            transform: rotateX(0deg) translateZ(150px);
+        }
+        /*上盒子*/
+        .cut li div:nth-child(2) {
+            background: url("images/2.png") no-repeat;
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        /*后盒子*/
+        .cut li div:nth-child(3) {
+            background: url("images/3.png") no-repeat;
+            transform: rotateX(180deg) translateZ(150px);
+        }
+        /*下盒子*/
+        .cut li div:nth-child(4) {
+            background: url("images/4.png") no-repeat;
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+    </style>
+<script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            $(".cut li").each(function (index,ele) {
+//                json内的key的两种写法
+//                 一:transitionDelay:0.2s;二:"transition-delay":0.2s;
+//                以下两个属性也可以写为transitionDelay,backgroundPosition
+
+//                li标签旋转定时属性transition-delay最好添加在此处,当然添加在点击事件里面也可以
+
+//                使用jQuery动态的对li标签进行定位,设置li标签内的每个div的背景图片的定位,
+//                li标签的索引号和li标签的left,li标签内的div的background-position相对应
+                $(ele).css({left:index*560/5+"px","transition-delay":+index*0.2+"s"});
+                $(ele).children("div").css({"background-position":-index*560/5+"px top"});
+            });
+//            num变量的使用特别的巧妙
+            var num = 0;
+//            右按钮的点击事件,当点击右按钮时,每个li标签反方向旋转90deg
+            $(".next").on("click",function () {
+                num++;
+                $(".cut li").css({transform:"rotateX("+-num*90+"deg)"});
+            });
+//            左按钮的点击事件,当点击左按钮时,每个li标签正方向旋转90deg
+            $(".prev").on("click",function () {
+                num--;
+                $(".cut li").css({transform:"rotateX("+-num*90+"deg)"});
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="cut">
+    <ul>
+        <li>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </li>
+        <li>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </li>
+        <li>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </li>
+        <li>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </li>
+        <li>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </li>
+    </ul>
+    <a href="javascript:;" class="prev">&lt;</a>
+    <a href="javascript:;" class="next">&gt;</a>
+</div>
+</body>
+</html>

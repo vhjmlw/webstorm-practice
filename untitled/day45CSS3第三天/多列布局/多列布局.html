@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3多列布局</title>
+    <style>
+        body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F7F7F7;
+        }
+
+        .wrapper {
+            width: 1024px;
+            padding: 30px;
+            line-height: 1.75;
+            margin: 0 auto;
+            font-family: '微软雅黑';
+            color: #333;
+            box-sizing: border-box;
+            /*-webkit-column-count: 3;
+            -webkit-column-gap: 40px;
+            -webkit-column-rule: 2px dashed #CCC;*/
+            /*设置列数,分成几列*/
+            -webkit-column-count: 3;
+            /*设置每列的宽度,如果列数*每列的宽度>盒子的总宽,则会自动换行*/
+            -webkit-column-width: 400px;
+            /*设置每列之间的空隙*/
+            -webkit-column-gap: 50px;
+            /*设置每列之间的横线,其语法同border完全相同*/
+            -webkit-column-rule: 3px solid red;
+        h4 {
+            font-size: 24px;
+            /*all代表所有列
+            all:代表标题的样式对所有的列都有效*/
+            -webkit-column-span: all;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <h4>CSS3简介</h4>
+    <p>
+        CSS即层叠样式表（Cascading StyleSheet）。 在网页制作时采用层叠样式表技术，可以有效地对页面的布局、字体、颜色、背景和其它效果实现更加精确的控制。 只要对相应的代码做一些简单的修改，就可以改变同一页面的不同部分，或者页数不同的网页的外观和格式。CSS3是CSS技术的升级版本，CSS3语言开发是朝着模块化发展的。以前的规范作为一个模块实在是太庞大而且比较复杂，所以，把它分解为一些小的模块，更多新的模块也被加入进来。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。
+    </p>
+    <p>1、
+        CSS3圆角表格
+        CSS3圆角表格
+        圆角表格，对应属性：border-radius。
+        2、以往对网页上的文字加特效只能用filter这个属性，这次CSS3中专门制订了一个加文字特效的属性，而且不止加阴影这种效果。对应属性：font-effect。
+        3、丰富了对链接下划线的样式，以往的下划线都是直线，这次可不一样了，有波浪线、点线、虚线等等，更可对下划线的颜色和位置进行任意改变。（还有对应顶线和中横线的样式，效果与下划线类似）对应属性：text-underline-style，text-underline-color，text-underline-mode，text-underline-position。
+        4、在文字下点几个点或打个圈以示重点，CSS3也开始加入了这项功能，这应该在某些特定网页上很有用。对应属性：font-emphasize-style和font-emphasize-position。
+        边框
+
+        border-color:控制边框颜色，并且有了更大的灵活性，可以产生渐变效果
+    </p>
+    <p>
+        变形(transform)、转换(transition)和动画(animation)
+        transform: rotate | scale | skew | translate |matrix;
+        旋转rotate、扭曲skew、缩放scale和移动translate以及矩阵变形matrix。
+        transition主要包含四个属性值：执行变换的属性：transition-property,变换延续的时间：transition-duration,在延续时间段，变换的速率变化transition-timing-function,变换延迟时间transition-delay。下面分别来看这四个属性值
+        在开始介绍Animation之前我们有必要先来了解一个特殊的东西，那就是"Keyframes",我们把他叫做“关键帧”，玩过flash的朋友可能对这个东西并不会陌生。下面我们就一起来看看这个“Keyframes”是什么东西。前面我们在使用transition制作一个简单的transition效果时，我们包括了初始属性和最终属性，一个开始执行动作时间和一个延续动作时间以及动作的变换速率，其实这些值都是一个中间值，如果我们要控制的更细一些，比如说我要第一个时间段执行什么动作，第二个时间段执行什么动作（换到flash中说，就是第一帧我要执行什么动作，第二帧我要执行什么动作），这样我们用Transition就很难实现了，此时我们也需要这样的一个“关键帧”来控制。那么CSS3的Animation就是由“keyframes”这个属性来实现这样的效果。下面我们一起先来看看Keyframes:
+        <img src="./images/pic.jpg" alt="">
+        Keyframes具有其自己的语法规则，他的命名是由"@keyframes"开头，后面紧接着是这个“动画的名称”加上一对花括号“{}”，括号中就是一些不同时间段样式规则，有点像我们css的样式写法一样。对于一个"@keyframes"中的样式规则是由多个百分比构成的，如“0%”到"100%"之间，我们可以在这个规则中创建多个百分比，我们分别给每一个百分比中给需要有动画效果的元素加上不同的属性，从而让元素达到一种在不断变化的效果，比如说移动，改变元素颜色，位置，大小，形状等，不过有一点需要注意的是，我们可以使用“fromt”“to”来代表一个动画是从哪开始，到哪结束，也就是说这个 "from"就相当于"0%"而"to"相当于"100%",值得一说的是，其中"0%"不能像别的属性取值一样把百分比符号省略，我们在这里必须加上百分符号（“%”）如果没有加上的话，我们这个keyframes是无效的，不起任何作用。因为keyframes的单位只接受百分比值。[2]
+    </p>
+</div>
+</body>
+</html>
+</html>

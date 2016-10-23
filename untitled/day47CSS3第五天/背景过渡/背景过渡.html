@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 200px;
+            margin: 100px auto;
+            border-radius: 20px;
+            background: url("images/paopao.png") no-repeat top left,
+            url("images/paopao.png") no-repeat bottom right purple;
+            /*transition: all 1s;*/
+            transition-property: background-position;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+        }
+        #box:hover {
+            /*鼠标悬停的时候,过渡更改两张背景图片的定位*/
+            background-position: bottom right,top left;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

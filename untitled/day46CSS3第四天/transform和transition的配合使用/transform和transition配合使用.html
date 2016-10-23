@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #one {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            margin: 100px auto;
+        }
+        #one {
+            animation-name: myanimation;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+            animation-delay: 1s;
+        }
+        @keyframes myanimation {
+            frome {
+                /*在animation动画中执行transform转换*/
+                transform: translate(0px) scale(1) rotate(0deg);
+            }
+            50% {
+                transform: translate(-500px) scale(.5);
+            }
+            to {
+                transform: translate(500px) scale(2) rotate(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="one"></div>
+</body>
+</html>

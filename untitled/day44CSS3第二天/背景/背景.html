@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #color {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            margin: 20px auto;
+            padding: 20px;
+            border: 10px dotted purple;
+            background-clip: border-box;
+            background-clip: padding-box;
+            background-clip: content-box;
+        }
+        #picture {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 10px dashed purple;
+            background-image: url(abc.png);
+            /*添加no-repeat后效果才会明显*/
+            background-repeat: no-repeat;
+            background-origin: border-box;
+            background-origin: padding-box;
+            background-origin: content-box;
+        }
+        #fix {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-image: url(border.png);
+            background-repeat: no-repeat;
+            background-color: yellow;
+            border: 10px dotted purple;
+            background-clip: content-box;
+            background-origin: padding-box;
+            /*background-size: 100% 100%;*/
+            /*background-size: auto 100% ;*/
+            background-size: 200px 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="color"></div>
+<div id="picture"></div>
+<div id="fix"></div>
+</body>
+</html>

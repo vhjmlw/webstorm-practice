@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 500px;
+            margin: 0 auto;
+            perspective: 1000px;
+            position: relative;
+        }
+        #box ul {
+            width: 500px;
+            height: 300px;
+            margin: 100px auto;
+            list-style: none;
+            position: relative;
+            border: 1px solid blue;
+            transform-style: preserve-3D;
+            transition: transform 1s;
+        }
+        #box ul li {
+            width: 500px;
+            height: 300px;
+            background: pink;
+            font: normal normal 100px/300px "micro yahei";
+            color: white;
+            text-align: center;
+            /*子盒子宽高未知的情况下,以下方法仍然可以让子盒子在父盒子内定位水平垂直居中*/
+            position: absolute;
+            top:0;
+            left:0;
+            /*如果在这里使用transform,则下面的transform会覆盖掉这里的*/
+            /*transform: translateX(-50%) translateY(-50%);*/
+
+
+        }
+        /*前盒子*/
+        #box ul li:nth-child(1) {
+            background: url("images/1.jpg") no-repeat;
+            background-size: cover;
+            transform: translateZ(150px);
+        }
+        /*后盒子*/
+        #box ul li:nth-child(2) {
+            background: url("images/2.jpg") no-repeat;
+            background-size: cover;
+            transform: rotateX(180deg) translateZ(150px);
+        }
+        /*上盒子*/
+        #box ul li:nth-child(3) {
+            background: url("images/3.jpg") no-repeat;
+            background-size: cover;
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        /*下盒子*/
+        #box ul li:nth-child(4) {
+            background: url("images/4.jpg") no-repeat;
+            background-size: cover;
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+        /*左盒子,左右盒子为正方形,ul上下旋转,看不到左右盒子,故左右盒子不需要背景图片
+        左右盒子的宽高与其他盒子不同,需要重新设置,并重新在水平和垂直方向上定位居中*/
+        #box ul li:nth-child(5) {
+            width: 300px;
+            height: 300px;
+            left:50%;
+            top:50%;
+            margin-left: -150px;
+            margin-top: -150px;
+            transform: rotateY(-90deg) translateZ(250px);
+        }
+        /*右盒子*/
+        #box ul li:nth-child(6) {
+            width: 300px;
+            height: 300px;
+            left:50%;
+            top:50%;
+            margin-left: -150px;
+            margin-top: -150px;
+            transform: rotateY(90deg) translateZ(250px);
+        }
+        #box ul:hover {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        #box span {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+        /*右点击按钮*/
+        #box .next {
+            border-top: 5px solid white;
+            border-right: 5px solid white;
+            transform: rotate(45deg);
+            top: 50%;
+            right: 0;
+        }
+        /*左点击按钮*/
+        #box .previous {
+            border-left: 5px solid white;
+            border-bottom:5px solid white;
+            transform: rotate(45deg);
+            top: 50%;
+            left:0;
+        }
+    </style>
+    <script src="js/jquery-1.11.3.min.js"></script>
+        <script>
+            $(function () {
+                var num = 0;
+//                点击next时,num+1,ul正方向旋转90deg
+                $(".next").on("click",function () {
+                    num++;
+                    $("#box ul").css("transform","rotateX("+num*90+"deg)");
+                });
+//                点击previous时,num-1,ul负方向旋转90deg
+                $(".previous").on("click",function () {
+                    num--;
+                    $("#box ul").css("transform","rotateX("+num*90+"deg)");
+                });
+            });
+        </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>前</li>
+        <li>后</li>
+        <li>上</li>
+        <li>下</li>
+        <li>左</li>
+        <li>右</li>
+    </ul>
+    <span class="next"></span>
+    <span class="previous"></span>
+</div>
+</body>
+</html>

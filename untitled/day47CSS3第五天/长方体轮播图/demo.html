@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background: pink;
+            position: relative;
+        }
+        #small {
+            background: yellow;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*margin-left的-50%是指width*50%*/
+            margin-left: -50%;
+            /*margin-top的-50%是指width*50%,并不是我所想的height*50%*/
+            /*所以使用该方法并不能让子盒子相对于父盒子垂直水平居中*/
+            margin-top: -50%;
+            
+        }
+    </style>
+</head>
+<body>
+<div id="big">
+    <div id="small"></div>
+</div>
+</body>
+</html>

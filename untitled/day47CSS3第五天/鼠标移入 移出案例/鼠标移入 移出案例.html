@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #boss {
+            width:1030px;
+            margin: 50px auto;
+            /*border:1px solid red;*/
+        }
+        .list {
+            width:300px;
+            height: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            margin: 10px;
+        }
+        .list div {
+            position: absolute;
+            top:0;
+            left:0;
+            transform: rotate(-100deg);
+            transform-origin: top left;
+            transition: transform 300ms;
+        }
+        .current div{
+            transform: rotate(0deg);
+        }
+        .list div.top {
+            transform-origin: top left;
+        }
+        .list div.left {
+            transform-origin: bottom left;
+        }
+        .list div.right {
+            transform-origin: top right;
+        }
+        .list div.bottom {
+            transform-origin: bottom right;
+        }
+    </style>
+    <script src="js/jquery-1.11.3.min.js"></script>
+        <script>
+            $(function () {
+//案例说明:list内的div初始状态为transform:rotate(-100deg),移出到list盒子的外面,由于list设置了overflow:hidden,故其初始状态为隐藏的
+//当鼠标移入list时,div变为transform:rotate(0deg),list内可以显示div图片.根据鼠标移入的方向动态的更改div的transform-origin,
+// 让div跟随鼠标移入的方向移入.
+//当鼠标移出时,div重新变为transform:rotate(-100deg),并且重新检测鼠标移出的方向,更改div的transform-origin,让div的图片跟随鼠标移出的方向移出
+                //给div元素添加mouseenter和mouseleave事件，以下为鼠标移入和移出时的业务逻辑 （div选择器可更改）
+                $(".list").on("mouseenter mouseleave",function(e) {
+                    var that = $(this);
+                    var w = $(this).width(); // 得到盒子宽度
+                    var h = $(this).height();// 得到盒子高度
+                    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+                    // 获取x值
+                    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+                    // 获取y值
+                    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;                                      //direction的值为“0,1,2,3”分别对应着“上，右，下，左”；如果direction返回0，说明鼠标是从div的上方移入，返回1则从div的右方移入，以此类推。
+                    //以下为鼠标移入、移出div时执行的逻辑，可根据需要进行更改
+                    if(e.type == 'mouseenter'){
+                        switch (direction) {
+                            case 0:
+                                comeOn("top",that);
+                                break;
+                            case 1:
+                                comeOn("right",that);
+                                break;
+                            case 2:
+                                comeOn("bottom",that);
+                                break;
+                            case 3:
+                                comeOn("left",that);
+                                break;
+                        }
+                    }else{
+//                        当鼠标移出的时候,会再次检测鼠标移出的方向,根据鼠标移出的方向
+//                        动态的更改list内的div的transform-origin定位
+                        switch (direction) {
+                            case 0:
+                                comeOut("top",that);
+                                break;
+                            case 1:
+                                comeOut("right",that);
+                                break;
+                            case 2:
+                                comeOut("bottom",that);
+                                break;
+                            case 3:
+                                comeOut("left",that);
+                                break;
+                        }
+                    }
+                });
+//                自定义函数,当鼠标移入时的逻辑
+//                list标签rotate:0deg,list内的div盒子transform-origin定位根据鼠标移入的方向
+//                动态的进行改变,让其跟随鼠标移入的方向移入
+                function comeOn(str,obj) {
+//                    通过添加和移除current类名,来控制div的transform:rotate
+                    obj.addClass("current");
+//                    每次给list内的div盒子添加类名动态的更改transform-origin定位的时候
+//                    先清除之前添加的类
+//                    通过添加和移除类名,来控制div的transform-origin
+                    obj.children("div").removeClass().addClass(str);
+                }
+//                自定义函数,当鼠标移出时的逻辑
+                function comeOut(str,obj) {
+                    obj.removeClass("current");
+//                    鼠标移出的时候,再次检测鼠标移出的方向,根据鼠标移出的方向,动态的更改list内的div
+//                    的transform-origin定位,让其跟随鼠标的方向移出
+                    obj.children("div").removeClass().addClass(str);
+                }
+            });
+        </script>
+</head>
+<body>
+<div id="boss">
+    <div class="list">
+        <img src="images/00.jpg" alt="">
+        <div>
+            <img src="images/1.jpg" alt="">
+        </div>
+    </div>
+    <div class="list">
+        <img src="images/00.jpg" alt="">
+        <div>
+            <img src="images/2.jpg" alt="">
+        </div>
+    </div>
+    <div class="list">
+        <img src="images/00.jpg" alt="">
+        <div>
+            <img src="images/3.jpg" alt="">
+        </div>
+    </div>
+    <div class="list">
+        <img src="images/00.jpg" alt="">
+        <div>
+            <img src="images/4.jpg" alt="">
+        </div>
+    </div>
+    <div class="list">
+        <img src="images/00.jpg" alt="">
+        <div>
+            <img src="images/5.jpg" alt="">
+        </div>
+    </div>
+    <div class="list">
+        <img src="images/00.jpg" alt="">
+        <div>
+            <img src="images/6.jpg" alt="">
+        </div>
+    </div>
+    <div class="list">
+        <img src="images/00.jpg" alt="">
+        <div>
+            <img src="images/7.jpg" alt="">
+        </div>
+    </div>
+    <div class="list">
+        <img src="images/00.jpg" alt="">
+        <div>
+            <img src="images/8.jpg" alt="">
+        </div>
+    </div>
+    <div class="list">
+        <img src="images/00.jpg" alt="">
+        <div>
+            <img src="images/9.jpg" alt="">
+        </div>
+    </div>
+</div>
+</body>
+</html>

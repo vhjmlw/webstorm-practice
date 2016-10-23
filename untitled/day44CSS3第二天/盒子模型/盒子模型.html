@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .out {
+            width: 300px;
+            height: 300px;
+            border: 5px solid black;
+            margin: 20px auto;
+        }
+        #inner {
+            height: 300px;
+            /*显示的写明子盒子的宽度的话,则子盒子的宽度已经确定
+            如果再添加padding的话,子盒子的宽度增加,超出父盒子*/
+            width: 100%;
+            background: pink;
+            padding-left: 20px;
+        }
+        #second {
+            height: 300px;
+            /*不显示的写明子盒子width的话,默认继承父元素的宽度
+            子盒子的宽度始终保持等于父盒子的宽度
+            再添加padding的话会向内挤压子盒子的空间,子盒子总得宽度不变
+            padding增加,content变小
+            始终保持宽度等于父盒子*/
+            background: pink;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="out">
+    <div id="inner"></div>
+</div>
+<div class="out">
+    <div id="second"></div>
+</div>
+</body>
+</html>

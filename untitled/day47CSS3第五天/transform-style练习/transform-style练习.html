@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            transform-style: preserve-3D;
+        }
+        #out {
+            width: 400px;
+            height: 400px;
+            background: pink;
+            margin: 100px auto;
+            /*overflow: hidden;*/
+            transform-style: preserve-3D;
+            transform: rotateY(100deg);
+        }
+        #in {
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: 100px auto;
+            transform: rotateY(45deg);
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+        <script>
+            $(function () {
+                var i = 0;
+                var j = 0;
+                setInterval(function () {
+                    $("#out").css("transform","rotateY("+i+"deg)");
+                    $("#in").css("transform","rotateY("+j+"deg");
+                    i++;
+                    j+=2;
+                    if(i>=360) {
+                        i = 0;
+                    }
+                    if (j>=360) {
+                        j = 0;
+                    }
+                },40);
+            });
+        </script>
+</head>
+<body>
+<div id="out">
+    <div id="in"></div>
+</div>
+</body>
+</html>

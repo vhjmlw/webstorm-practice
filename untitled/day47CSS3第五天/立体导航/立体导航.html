@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        nav {
+            margin: 100px auto;
+            text-align: center;
+        }
+        .anchor {
+            display: inline-block;
+            text-decoration: none;
+            /*由于span盒子转动,故给span的父盒子anchor添加景深perspective*/
+            perspective: 200px;
+        }
+        .span {
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            background: #2195de;
+            color: white;
+            /*由于span盒子发生转动,故给span盒子添加transition*/
+            transition: transform .4s;
+            transform-style: preserve-3D;
+            /*一定要将transform-origin放在这里,让span的origin
+            一直保持为top,不能放在anchor:hover里面,如果放在hover里面,hover的时候
+            origin为top,鼠标离开的时候则origin就又恢复为center了*/
+            transform-origin: top;
+        }
+        .span::after {
+            content: attr(data-hover);
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background: #0965a0;
+            transform-origin: top;
+            transform: rotateX(-90deg);
+        }
+        .anchor:hover .span {
+            /*当鼠标悬停anchor标签时,span标签转动rotateY:90deg,同时上移20px*/
+            /*rotate为正,则origin的上方(盒子的上方)向内转动*/
+            transform: rotateX(90deg) translateY(-20px);
+            /*如果这么写的话,由于书姓名相同,下面的transform会覆盖掉上面的transform属性*/
+            /*transform: translateY(-20px);*/
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="#" class="anchor">
+        <span data-hover="选项1" class="span">传智前端</span>
+    </a>
+    <a href="#" class="anchor">
+        <span data-hover="选项2" class="span">传智前端</span>
+    </a>
+    <a href="#" class="anchor">
+        <span data-hover="选项3" class="span">传智前端</span>
+    </a>
+    <a href="#" class="anchor">
+        <span data-hover="选项4" class="span">传智前端</span>
+    </a>
+    <a href="#" class="anchor">
+        <span data-hover="选项5" class="span">传智前端</span>
+    </a>
+    <a href="#" class="anchor">
+        <span data-hover="选项6" class="span">传智前端</span>
+    </a>
+</nav>
+</body>
+</html>

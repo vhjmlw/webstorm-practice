@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background: pink;
+            margin: 100px auto;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+        <script>
+            $(function () {
+                //给div元素添加mouseenter和mouseleave事件，以下为鼠标移入和移出时的业务逻辑 （div选择器可更改）
+                $("#box").on("mouseenter mouseleave",function(e) {
+                    var w = $(this).width(); // 得到盒子宽度
+                    var h = $(this).height();// 得到盒子高度
+                    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+                    // 获取x值
+                    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+                    // 获取y值
+                    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;                                      //direction的值为“0,1,2,3”分别对应着“上，右，下，左”；如果direction返回0，说明鼠标是从div的上方移入，返回1则从div的右方移入，以此类推。
+                    // 将点的坐标对应的弧度值换算成角度度数值
+                    var dirName = new Array('上方','右侧','下方','左侧');
+                    //以下为鼠标移入、移出div时执行的逻辑，可根据需要进行更改
+                    if(e.type == 'mouseenter'){
+                        $(this).html(dirName[direction]+'进入');
+                    }else{
+                        $(this).html(dirName[direction]+'离开');
+                    }
+                });
+            });
+        </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

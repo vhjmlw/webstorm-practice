@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+        }
+        #box ul {
+            width: 210px;
+            height: 210px;
+            list-style: none;
+            margin: 100px auto;
+            position: relative;
+            transform-style: preserve-3D;
+            transition: transform 1s;
+            transform: rotateY(45deg) rotateX(45deg) rotateZ(45deg);
+        }
+        #box li {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            border: 1px solid red;
+            text-align: center;
+            font: normal normal 100px/200px "micor yahei";
+            color: white;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #box li:nth-child(1) {
+            transform: rotate(0deg);
+        }
+        #box li:nth-child(2) {
+            transform: translateZ(-200px);
+            background: rgba(255,0,0,.4);
+        }
+        #box li:nth-child(3) {
+            transform: rotateX(-90deg);
+            transform-origin: top;
+            background: rgba(0,255,0,.4);
+        }
+        #box li:nth-child(4) {
+            transform: rotateX(90deg);
+            transform-origin: bottom;
+            background: rgba(0,0,255,.4);
+        }
+        #box li:nth-child(5) {
+            transform: rotateY(90deg);
+            transform-origin: left;
+            background: rgba(255,255,0,.4);
+        }
+        #box li:nth-child(6) {
+            transform: rotateY(-90deg);
+            transform-origin: right;
+            background: rgba(255,0,255,.4);
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>前</li>
+        <li>后</li>
+        <li>上</li>
+        <li>下</li>
+        <li>左</li>
+        <li>右</li>
+    </ul>
+</div>
+</body>
+</html>

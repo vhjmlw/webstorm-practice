@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+        }
+        #box ul {
+            width: 210px;
+            height: 210px;
+            list-style: none;
+            margin: 100px auto;
+            position: relative;
+            transform-style: preserve-3D;
+            transition: transform 10s;
+        }
+        #box li {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            border: 1px solid red;
+            text-align: center;
+            font: normal normal 100px/200px "micor yahei";
+            color: white;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        /*立方体的各个平面在进行旋转的时候,都是以中心为origin,没有改变默认的origin*/
+        /*前盒子*/
+        #box li:nth-child(1) {
+            transform: rotate(0deg) translateZ(100px);
+        }
+        /*后盒子*/
+        #box li:nth-child(2) {
+            background: rgba(255,0,0,.4);
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        /*上盒子*/
+        #box li:nth-child(3) {
+            background: rgba(0,255,0,.4);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        /*下盒子*/
+        #box li:nth-child(4) {
+            background: rgba(0,0,255,.4);
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        /*左盒子*/
+        #box li:nth-child(5) {
+            background: rgba(255,255,0,.4);
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        /*右盒子*/
+        #box li:nth-child(6) {
+            background: rgba(0,255,255,.4);
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        #box ul:hover {
+            transform: rotateX(-225deg) rotateY(225deg) rotateZ(-225deg);
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>前</li>
+        <li>后</li>
+        <li>上</li>
+        <li>下</li>
+        <li>左</li>
+        <li>右</li>
+    </ul>
+</div>
+</body>
+</html>

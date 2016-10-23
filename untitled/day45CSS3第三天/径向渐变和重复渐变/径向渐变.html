@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3渐变</title>
+    <style>
+        body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F7F7F7;
+        }
+
+        .wrapper {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 20px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header h3 {
+            line-height: 1;
+            font-weight: normal;
+            font-size: 28px;
+        }
+
+        .main {
+            /*overflow: hidden;*/
+        }
+
+        .main:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .main .item {
+            width: 210px;
+            height: 210px;
+            margin: 0 30px 30px 0;
+            display: flex;
+            position: relative;
+            background-color: #FFF;
+            float: left;
+            box-shadow: 2px 2px 5px #CCC;
+        }
+
+        .main .item:after {
+            content: attr(data-brief);
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 210px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FFF;
+            font-family: '微软雅黑';
+            font-size: 18px;
+            background-color: rgba(170, 170, 170, 0);
+            z-index: -1;
+            transition: all 0.3s ease-in;
+        }
+
+        .main .item:hover:after {
+            background-color: rgba(170, 170, 170, 0.6);
+            z-index: 100;
+        }
+
+        .main .item:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        /*.main .item:nth-last-child(-n+5) {
+            margin-bottom: 0;
+        }*/
+
+        /* 以上是骨架样式 */
+        .radial-gradient {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+
+        .item:nth-child(1) .radial-gradient {
+            background-image: radial-gradient(yellow, green);
+        }
+
+        .item:nth-child(2) .radial-gradient {
+            /*径向渐变和重复渐变:由圆心向四周渐变
+            100px:指颜色渐变的范围,渐变的半径
+            center center指渐变圆心在盒子内的定位,也可以是具体的px数字,这样定位更加的具体
+            这里的定位同position定位相同*/
+            background-image: radial-gradient(100px at center center, yellow, green);
+        }
+
+        .item:nth-child(3) .radial-gradient {
+            background-image: radial-gradient(100px at left center, yellow, green);
+        }
+
+        .item:nth-child(4) .radial-gradient {
+            background-image: radial-gradient(100px at right center, yellow, green);
+        }
+        .item:nth-child(5) .radial-gradient {
+            background-image: radial-gradient(100px at bottom left,yellow,green);
+        }
+        .item:nth-child(6) .radial-gradient {
+            /*可以使用具体的px数值来对渐变圆心来进行精确的定位
+            渐变圆心在(80px 80px)位置*/
+            background-image: radial-gradient(100px at 80px 80px,yellow,green);
+        }
+        .item:nth-child(7) .radial-gradient {
+            /*可以设置渐变区域为椭圆形,椭圆X轴半径为100px,Y轴半径为50px
+            渐变区域为X轴半径为100px,Y轴半径为50px的椭圆区域*/
+            background-image: radial-gradient(100px 50px at center center,yellow,green);
+        }
+        .item:nth-child(8) .radial-gradient {
+            background-image: radial-gradient(50px 100px at center center,yellow,green);
+        }
+        .item:nth-child(9) .radial-gradient {
+            /*渐变的半径可以使用circle(圆)和ellipse(椭圆)关键字*/
+            background-image: radial-gradient(circle at center center,yellow,green);
+        }
+        .item:nth-child(10) .radial-gradient {
+            background-image: radial-gradient(ellipse at center center,yellow,green);
+        }
+        .item:nth-child(11) .radial-gradient {
+            /*多重渐变:多重线性渐变
+            多重渐变的语法同单重渐变的语法相同*/
+            background-image: repeating-linear-gradient(90deg,yellow 50%,green 90%);
+        }
+        .item:nth-child(12) .radial-gradient {
+            /*多重渐变:多重径向渐变
+            多重径向渐变的语法同单重渐变的语法相同*/
+            background-image: repeating-radial-gradient(circle at center center,yellow 30%,green 70%);
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h3>CSS3径向渐变</h3>
+    </header>
+    <div class="main">
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+            <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+        <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+        <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+        <div class="radial-gradient"></div>
+        </div>
+        <div class="item" data-brief="">
+        <div class="radial-gradient"></div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3渐变</title>
+    <style>
+        body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F7F7F7;
+        }
+
+        .wrapper {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 20px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header h3 {
+            line-height: 1;
+            font-weight: normal;
+            font-size: 28px;
+        }
+
+        .main {
+            /*overflow: hidden;*/
+        }
+
+        .main:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .main .item {
+            width: 210px;
+            height: 210px;
+            margin: 0 30px 30px 0;
+            display: flex;
+            position: relative;
+            background-color: #FFF;
+            float: left;
+            box-shadow: 2px 2px 5px #CCC;
+        }
+
+        .main .item:after {
+            content: attr(data-brief);
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 210px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FFF;
+            font-family: '微软雅黑';
+            font-size: 18px;
+            background-color: rgba(170, 170, 170, 0);
+            z-index: -1;
+            transition: all 0.3s ease-in;
+        }
+
+        .main .item:hover:after {
+            background-color: rgba(170, 170, 170, 0.6);
+            z-index: 100;
+        }
+
+        .main .item:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        /*.main .item:nth-last-child(-n+5) {
+            margin-bottom: 0;
+        }*/
+
+        /* 以上是骨架样式 */
+        .linear-gradient {
+            width: 180px;
+            height: 50px;
+            margin: auto;
+        }
+        .item:nth-child(1) .linear-gradient {
+            /*不指定渐变的角度,默认从上往下*/
+            background-image: linear-gradient(green,yellow);
+        }
+        .item:nth-child(2) .linear-gradient {
+            background-image: linear-gradient(to top,green,yellow);
+        }
+        .item:nth-child(3) .linear-gradient {
+            /*使用具体的deg角度来控制渐变的方向,0deg:从下往上
+            90deg:从左往右,180deg:从上往下...顺时针旋转*/
+            background-image: linear-gradient(270deg,green,yellow);
+        }
+        .item:nth-child(4) .linear-gradient {
+            /*效果等同于linear-gradient(to right top,green,yellow)
+            或linear-gradient(225deg,green,yellow)
+            使用关键字,共有8个关键字,代表8个方向:top,bottom,left,right,
+            top left,top right,bottom left,bottom right*/
+            background-image: linear-gradient(to top right,green,yellow);
+        }
+        .item:nth-child(5) .linear-gradient {
+            /*可以同时设置多个颜色的渐变*/
+            background-image: linear-gradient(to right,green,yellow,pink);
+        }
+        .item:nth-child(6) .linear-gradient {
+            /*设置多个颜色的渐变范围,0-30%为绿色,30%-60%为绿黄渐变,60%-100%为黄色*/
+            background-image: linear-gradient(90deg, green 30%, yellow 60%);
+        }
+        .item:nth-child(7) .linear-gradient {
+            /*0-50%为绿色,50%-100%为黄色,由于两者刚好切分,姑没有渐变色范围*/
+            background-image: linear-gradient(90deg,green 50%,yellow 50%);
+        }
+        .item:nth-child(8) .linear-gradient {
+            /*由于green的50%截点大于yellow的40%,40%-50%的yellow被覆盖,姑效果等同于
+            green 50%,yellow 50%;yellow的截点取成50%
+            颜色渐变的顺序按照书写的先后顺序*/
+            background-image: linear-gradient(to right,green 50%,yellow 40%);
+        }
+        .item:nth-child(9) .linear-gradient {
+            /*使用rgba的方式来表示颜色*/
+            background-image: linear-gradient(to right,rgba(50,50,50,.1) 50%,yellow 40%);
+        }
+        .item:nth-child(10) .linear-gradient {
+            /*0-50%为绿色,50%-80%为黄蓝渐变色,80%-100%为蓝色*/
+            background-image: linear-gradient(90deg,green 50%,yellow 40%,blue 80%);
+        }
+        .item:nth-child(11) .linear-gradient {
+            /*0-50%为绿色,50%-100%为蓝色,黄色被掩盖掉*/
+            background-image: linear-gradient(to right,green 50%,yellow 40%,blue 50%);
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h3>CSS3线性渐变</h3>
+    </header>
+    <div class="main">
+        <div class="item" data-brief="">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+        <div class="item">
+            <div class="linear-gradient"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

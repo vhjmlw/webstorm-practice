@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #first {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            margin: 100px auto;
+        }
+        #first:hover {
+            width: 200px;
+            height: 200px;
+            background: green;
+            border-radius:100px;
+            transition: all 1s;
+        }
+        #second {
+            width: 100px;
+            height: 100px;
+            background: green;
+            position:absolute;
+            left: 20px;
+        }
+        #second:hover {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            left: 500px;
+            /*设置所有发生变化的属性,属性过渡改变,同时设置变化的时间
+            并不是所有的属性变化都可以使用过渡动画*/
+            transition: all 1s;
+            /*设置制定的属性,属性过度改变,同时设置变化持续的时间*/
+            transition:left 1s;
+            /*设置过渡变化的属性*/
+            transition-property:left;
+            /*设置过度变化的持续时间*/
+            transition-duration: 1s;
+            /*设置过度动画的效果,linear为匀速运动*/
+            transition-timing-function: linear;
+            /*ease为变速运动*/
+            transition-timing-function: ease;
+            /*设置过渡动画的延迟时间,延迟3秒钟再执行过度动画*/
+            transition-delay: 3s;
+        }
+        #thirld {
+            width: 300px;
+            height: 300px;
+            margin: 300px auto;
+            background-image: url(12.png);
+            background-position: top left;
+            border:1px solid red;
+            background-size: 400px 400px;
+            background-repeat: no-repeat;
+        }
+        #thirld:hover {
+            /*鼠标悬停时改变背景图片定位,过度改变图片的尺寸*/
+            background-size: 100px 100px;
+            transition: background-size 1s;
+            background-position: bottom right;
+        }
+    </style>
+</head>
+<body>
+<div id="first"></div>
+<div id="second"></div>
+<div id="thirld"></div>
+</body>
+</html>

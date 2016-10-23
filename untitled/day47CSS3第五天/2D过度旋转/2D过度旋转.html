@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #rotate {
+            text-align: center;
+            margin-top: 100px;
+            /*过渡更改transform属性*/
+            transition: transform 1s;
+            background: pink;
+        }
+        .zhuan {
+            transform: rotate(720deg);
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+        <script>
+            $(function () {
+                $("#rotate").on("click",function () {
+//                    使用toggleClass动态的添加和删除zhuan类,巧妙
+                    $(this).toggleClass("zhuan");
+                });
+            });
+        </script>
+</head>
+<body>
+<div id="rotate">
+    <img src="zhuan.jpg" alt="">
+</div>
+</body>
+</html>

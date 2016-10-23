@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #first {
+            width: 200px;
+            height: 200px;
+            border: 1px dashed red;
+            margin: 50px auto;
+        }
+        #first div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            /*顺时针为正,逆时针为负*/
+            transform: rotate(-45deg);
+        }
+        #second {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+        #second div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            /*只有一个参数的话,Y轴默认为0
+            水平逆时针为正,垂直顺时针为正*/
+            transform: skew(-30deg,-10deg);
+            transform: skewX(30deg);
+            transform: skewY(30deg);
+        }
+        #third {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background: purple;
+            margin: 50px auto;
+        }
+        #third:hover {
+            transform: scaleX(2);
+            transform: scaleY(2);
+            /*如果第二个参数省略,表示X轴和Y轴缩放相同的倍数*/
+            transform: scale(2,.5);
+        }
+        #four {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 50px auto;
+            position: relative;
+        }
+        #four div {
+            width: 30%;
+            padding: 50px;
+            background: pink;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*让盒子向左,向上移动自身宽度和高度的一半*/
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+        #five {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+        #five div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            -webkit-transform: matrix(1,0,0,1,50,50);
+        }
+        #six {
+            width:200px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+        #six div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            transform: rotate(45deg);
+            transform-origin: top left;
+            transform-origin: 30px 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="first">
+    <div>rotate</div>
+</div>
+<div id="second">
+    <div>skew</div>
+</div>
+<div id="third">
+    scale
+</div>
+<div id="four">
+    <div>translate,让不知道宽度和高度的元素实现水平、垂直居中。</div>
+</div>
+<div id="five">
+    <div>matrix</div>
+</div>
+<div id="six">
+    <div>rotate 45deg,origin top left</div>
+</div>
+</body>
+</html>
