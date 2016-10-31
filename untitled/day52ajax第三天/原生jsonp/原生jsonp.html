@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="这是一个按钮">
+<div id="box"></div>
+<script>
+    function callBack(data) {
+            console.log(data);//{name: "建磊", age: "26"}
+        }
+    var scr = document.createElement("script");
+    var url = "http://localhost:8888/myweb/原生jsonp.php?_jsonp=callBack";
+    scr.src = url;
+    document.body.appendChild(scr);
+</script>
+</body>
+</html>

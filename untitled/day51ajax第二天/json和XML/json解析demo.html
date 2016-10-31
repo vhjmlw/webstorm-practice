@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //json里面只能使用""双引号,不能使用''单引号,这里只能外单内双
+    var str = '{"name":"建磊","age":"26"}';//json内容的字符串
+    var data = JSON.parse(str);//将json内容的字符串解析为json对象
+    console.log(data);//Object {name: "建磊", age: "26"}
+    console.log(data.name);//"建磊"
+    console.log(data.age);//"26"
+
+    var str2 = JSON.stringify(data);//将json对象转变为json内容的字符串
+    console.log(str2);//'{"name":"建磊","age":"26"}'
+</script>
+</body>
+</html>

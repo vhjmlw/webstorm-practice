@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<input type="button" id="btn" value="我是一个按钮">
+<div id="box"></div>
+<script>
+    $(function () {
+        $.ajax({
+            url:"http://localhost:8888/myweb/jsonp.php",
+            type:"GET",
+            dataType:"jsonp",//dataType必须为jsonp
+            jsonp:"_jsonp",
+            jsonpCallback:"callBack",
+//          jsonp jsonpCallback会被自动添加到URL当中
+//          URL等同于:http://localhost:8888/myweb/jsonp.php?_jsonp=callBack
+            success:function (da) {
+//                success函数的内部调用了callBack函数
+//                为何不起作用???dataType必须为jsonp才可以
+                console.log(da);
+            },
+            error:function () {
+                console.log("error");
+            }
+        });
+    });
+</script>
+</body>
+</html>

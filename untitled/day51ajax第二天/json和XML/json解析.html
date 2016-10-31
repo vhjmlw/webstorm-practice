@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="我是一个按钮">
+<div>
+    <table id="tab">
+
+    </table>
+</div>
+<script defer>
+    var btn = document.getElementById("btn");
+    var tab = document.getElementById("tab");
+    btn.onclick = function () {
+        tab.innerHTML = "";//每次点击的是否轻松table标签里面的内容
+        var xhr = null;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        var url = "http://localhost:8888/myweb/data.json";
+        xhr.open("get",url,true);
+        var tag = "";
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4&&xhr.status == 200) {
+//                xhr.responseText返回的是json内容的字符串"{json内容}"
+                var str = xhr.responseText;
+//                将json内容的字符串解析为json对象
+                var data = JSON.parse(str);
+//                下面开始解析json
+//                调用json对象的total和data属性
+                var total = data.total;//数组的长度
+                var datas = data.data;//数组的内容,数组里面又是json
+                for (var i = 0; i < total; i++) {
+//                    取出数组里面每个json的name category desc属性,拼接字符串
+                    tag += "<tr><td>"+datas[i].name+"</td><td>"+datas[i].category+"</td><td>"+datas[i].desc+"</td></tr>";
+                }
+                var tbody = document.createElement("tbody");
+                tbody.innerHTML = tag;
+                tab.appendChild(tbody);
+            }
+        }
+        xhr.send(null);
+    }
+</script>
+</body>
+</html>

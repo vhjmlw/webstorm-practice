@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="result"></div>
+<form action="">
+    <label for="name">用户名 : </label><input type="text" id="name" name="username">
+    <label for="pass">密码 : </label><input type="password" id="pass" name="password">
+    <input type="button" id="btn" name="button" value="按钮">
+</form>
+</body>
+<script>
+    window.onload = function () {
+        var result = document.getElementById("result");
+        var btn = document.getElementById("btn");
+// // // // // // // // //
+//        创建XMLHttpRequest对象的第一个方法
+        var xhr = null;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+//// // // // // // // //
+// // // // // // // //
+//创建XMLHttpRequest对象的第二种方法
+        /*var xhr = null;
+        try{
+            xhr = new XMLHttpRequest();//正常浏览器
+        }catch (e) {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");//IE浏览器
+        }*/
+// // // // // // // //
+        btn.onclick = function () {
+            var name = document.getElementById("name").value;
+            var pass = document.getElementById("pass").value;
+            var url = "http://localhost:63342/untitled/day50ajax第一天/原生ajax实现异步局部刷新效果/demo.php?username="+name+"&password="+pass;
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var result = xhr.responseText;
+                        if (result == 1) {
+                            console.log(1);
+                            result.innerHTML = "登陆成功";
+                        } else {
+                            console.log(0);
+                            result.innerHTML = "登录失败";
+                        }
+                    }
+                }
+            }
+            xhr.send(null);
+        };
+
+    }
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="username">用户名: </label><input type="text" id="username">
+<label for="password">密码: </label><input type="text" id="password">
+<button id="btn">按钮</button>
+<script>
+    window.onload = function () {
+        var btn = document.getElementById("btn");
+        var xhr = null;
+//        浏览器能力测试
+        if (window.XMLHttpRequest) {
+//            正常浏览器的写法
+            xhr = new XMLHttpRequest();
+        } else {
+//            IE浏览器6 7 8的写法
+            xhr = ActiveXObject("Microsoft.XMLHTTP");
+        }
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+//        发送GET请求
+        btn.onclick = function () {
+//            URI中包含的参数,不能直接使用汉字,有汉字的时候需要对汉字进行编码encodeURIComponent()
+            var url = "http://localhost:8888/myweb/demo2.php?username=" +
+                    encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
+//            发送GET请求,参数添加在URL链接里面,链接和参数之间使用?隔开,多个参数之间使用&隔开,链接有大小限制
+//            传递的参数不能直接使用汉字,有汉字的时候需要编码encodeURIComponent()
+            xhr.open("get", url, true);
+            xhr.onreadystatechange = function () {
+                console.log("这是请求处理的状态:" + xhr.readyState);
+                console.log("这是服务器返回的数据:" + xhr.responseText);
+            }
+//            发送GET请求的时候,为了兼容低版本的浏览器,需要添加null实参
+            xhr.send(null);
+        }
+//        发送POST请求
+        btn.onclick = function () {
+//            POST请求的URL不需要添加参数
+            var url = "http://localhost:8888/myweb/demo2.php";
+//            打开链接,准备发送请求
+            xhr.open("post", url, true);
+//            服务器对请求处理的状态发生变化时调用的函数
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log("服务器完成请求的处理,且处理成功");
+                }
+            }
+//            对form表单提交的数据进行编码
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+//            POST请求的参数在xhr.send(param)中被发送
+            var param = "username=" + username + "&password=" + password;
+//            POST请求使用send()发送页面提交的参数
+            xhr.send(param);
+        }
+    }
+</script>
+</body>
+</html>

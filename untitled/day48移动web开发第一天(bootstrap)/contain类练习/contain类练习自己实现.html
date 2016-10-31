@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        /*mycontainer类的默认样式*/
+        .mycontainer {
+            width: 2000px;
+            height: 500px;
+            background: pink;
+            padding: 30px;
+            margin: 0 auto;
+        }
+        /*浏览器窗口宽度<=500px时,设置mycontainer类的样式*/
+        @media (max-width: 500px) {
+            .mycontainer {
+                background: red;
+                width: 300px;
+            }
+        }
+        /*使用min-width条件时,遵循先小后大的原则*/
+        /*浏览器窗口宽度>=500px时,设置mycontainer类的样式*/
+        @media (min-width: 500px) {
+            .mycontainer {
+                background: blue;
+                width: 300px;
+            }
+        }
+        /*浏览器窗口宽度>=700px时,设置mycontainer类的样式*/
+        @media (min-width: 700px) {
+            .mycontainer {
+                background: yellow;
+                width: 500px;
+            }
+        }
+        /*浏览器窗口宽度>=1000px时,设置mycontainer类的样式*/
+        @media (min-width: 1000px) {
+            .mycontainer {
+                background: purple;
+                width: 700px;
+            }
+        }
+        /*浏览器窗口宽度>=1500px时,设置mycontainer类的样式*/
+        @media (min-width: 1500px) {
+            .mycontainer {
+                background: green;
+                width: 100%;
+            }
+        }
+        div:nth-child(2) {
+            height: 300px;
+            background: pink;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="mycontainer"></div>
+<!--bootstrap中contain类的样式-->
+<div class="container"></div>
+<script src="jquery.js"></script>
+<script src="bootstrap.js"></script>
+</body>
+</html>

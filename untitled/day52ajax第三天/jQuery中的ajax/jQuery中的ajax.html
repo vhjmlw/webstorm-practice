@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<script>
+    $(function () {
+        $.ajax({
+            url:"http://localhost:63342/untitled/day52ajax第三天/jQuery中的ajax/07ems.php",
+            type:"GET",
+            data:{code:'123'},
+            dataType:"json",
+            success:function (da) {
+                var dt = JSON.parse(da);
+                console.log(dt);
+            },
+            error:function () {
+                console.log("error");
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="我是一个按钮">
+<div>
+    <table id="tab">
+
+    </table>
+</div>
+<script defer="defer">
+    var btn = document.getElementById("btn");
+    var tab = document.getElementById("tab");
+    btn.onclick = function () {
+        tab.innerHTML = "";
+        var xhr = null;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        var url = "http://localhost:8888/myweb/data.xml";
+        xhr.open("get", url, true);
+        var tag = "";
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+//                xhr.responseXML返回的是XML文档对象,类似HTML中的document
+                var data = xhr.responseXML;
+                console.log(data);
+//                下面开始解析XML文档
+//                在XML文档对象中查找bookstore标签对象
+                var bookstore = data.getElementsByTagName("bookstore")[0];
+//                在bookstore标签对象中查找book标签对象,返回一个数组
+                var books = bookstore.getElementsByTagName("book");
+//                遍历book标签对象数组,获取book标签中的name category desc标签取出节点的文本
+                for (var i = 0; i < books.length; i++) {
+                    var name = books[i].getElementsByTagName("name")[0];
+                    var category = books[i].getElementsByTagName("category")[0];
+                    var desc = books[i].getElementsByTagName("desc")[0];
+//                    将取出的文本拼接字符串,放在tag变量里面
+                    tag += "<tr><td>"+getNodeText(name)+"</td><td>"+getNodeText(category)+"</td><td>"+getNodeText(desc)+"</td></tr>";
+                }
+//                创建tbody标签对象,将tag字符串中的内容添加进tbody里面,将tbody添加进table标签
+                var tbody = document.createElement("tbody");
+                tbody.innerHTML = tag;
+                tab.appendChild(tbody);
+            }
+        }
+        xhr.send(null);
+    }
+//    自定义函数,传入元素对象,取出元素中的文本
+    function getNodeText(node) {
+//        浏览器能力测试
+//        为什么先检测IE浏览器????
+        if (window.ActiveXObject) {//IE浏览器
+            return node.text;//取出节点的文本
+        }else{//正常浏览器
+            if (node.nodeType == 1){//判断是否为元素节点_NODE
+                return node.textContent;//取出节点的文本
+            }
+        }
+    }
+</script>
+</body>
+</html>
