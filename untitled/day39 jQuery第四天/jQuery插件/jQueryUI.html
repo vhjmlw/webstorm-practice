@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <!--1 jQueryUI中需要引入js文件和CSS文件-->
+    <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
+    <script>
+        $(function () {
+            //3 调用tab栏的tabs()方法,搞定
+            $("#tabs").tabs();
+            $(".dialog").dialog();
+        });
+    </script>
+</head>
+<body>
+<!--2 复制粘贴网页教程中的HTML结构-->
+<!-- Tabs -->
+<h2 class="demoHeaders">Tabs</h2>
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">First</a></li>
+        <li><a href="#tabs-2">Second</a></li>
+        <li><a href="#tabs-3">Third</a></li>
+    </ul>
+    <div id="tabs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    <div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+    <div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+</div>
+<div class="dialog" title="我是一个标题">
+    这里是dialog的内容
+</div>
+</body>
+</html>

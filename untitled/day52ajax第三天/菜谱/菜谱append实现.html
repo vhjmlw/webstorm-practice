@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .all {
+            margin-top: 30px;
+        }
+
+        .xh {
+            float: left;
+            margin-right: 20px;
+            color: red;
+            font-style: italic;
+            font-size: 30px;
+        }
+
+        #menu {
+            width: 500px;
+        }
+    </style>
+
+    <script src="js/jquery-2.2.0.js"></script>
+
+    <script>
+        //http://apis.juhe.cn/cook/query?key=819b9a45354b7c53b1ee936ead3c2a31&menu=%E8%A5%BF%E7%BA%A2%E6%9F%BF&rn=10&pn=3
+        $(document).ready(function () {
+            $("#btnSearch").on("click", function () {
+                //在连接网络的间隙,设置menu的内容,给予用户友好的提示
+                $("#menu").text("不管了,为了你我愿意玩命的加载...");
+                var input = $("#txtSearch").val();
+                $.ajax({
+                    url: "http://apis.juhe.cn/cook/query",
+                    type: "get",
+                    data:"key=819b9a45354b7c53b1ee936ead3c2a31&rn=4&dtype=jsonp&pn=0&menu=" + input,
+                    dataType: "jsonp",//dataType一定要是jsonp
+                    //jsonp和jsonpCallback是可选的
+                    /*jsonp:"callback",
+                    jsonpCallback:"handle",*/
+                    async: true,
+                    success: function (data) {
+                        if (data.resultcode == 200) {
+                            //一旦请求处理成功,并成功返回数据,马上清空menu的内容,重新拼接menu里面的html标签内容
+                            $("#menu").text("");
+                            //取得了数据
+                            var dishes = data.result.data;
+                            for (var i = 0; i < dishes.length; i++) {
+                                var dish = dishes[i];
+                                var all = $("<div class='all'></div>");
+                                $("#menu").append(all);
+                                var h2 = $("<h2>" + dish.title + "</h2>");
+                                all.append(h2);
+                                var p = $("<p class='intro'>" + dish.imtro + "</p>");
+                                all.append(p);
+                                for (var j = 0; j < dish.albums.length; j++) {
+                                    var img = $("<img src=" + dish.albums[j] + ">");
+                                    all.append(img);
+                                }
+                                var zl = $("<p class='zl'>主料" + dish.ingredients + "</p>");
+                                all.append(zl);
+                                var fl = $("<p class='fl'>辅料：" + dish.burden + "</p>");
+                                all.append(fl);
+
+                                for (var m = 0; m < dish.steps.length; m++) {
+                                    var buzhou = dish.steps[m];
+                                    var steps = $("<div class='steps'>");
+                                    all.append(steps);
+                                    var em = $("<em class='xh'>" + (m + 1) + "</em>")
+                                    steps.append(em);
+                                    var c = $("<div class='c'>");
+                                    steps.append(c);
+                                    var wenzi = $("<p>"+buzhou.step+"</p>");
+                                    c.append(wenzi);
+                                    var tupian = $("<img src='"+buzhou.img+"'>");
+                                    c.append(tupian);
+                                }
+                                $("#menu").append("<hr>");
+                            }
+                        } else {
+                            $("#menu").text("数据丢失,从我专业的角度来看,这是个问题...");
+                        }
+                    },
+                    error: function () {
+                        console.log("error");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="text" id="txtSearch"> <input type="button" value="搜索" id="btnSearch">
+
+<div id="menu">
+    <!--<div class="all">
+        <h2>秘制红烧肉</h2>
+        <p class="intro">简介简介</p>
+        <img src="">
+        <p class="zl">主料：哈哈</p>
+        <p class="fl">辅料：哈哈</p>
+        <div class="steps">
+            <em class="xh">1.</em>
+            <div class="c">
+                <p>第一步你猜是啥</p>
+                <p>图片哈</p>
+            </div>
+        </div>
+    </div>-->
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    var rectH = 5;
+    var rectW = 5;
+    for (var i = 0; i < canvas.width / rectH; i++) {
+        context.moveTo(0,i*rectH);
+        context.lineTo(canvas.width,i*rectH);
+        context.moveTo(i*rectW,0);
+        context.lineTo(i*rectW,canvas.height);
+    }
+    context.strokeStyle = "rgba(0,0,0,.2)";
+    context.stroke();
+    context.beginPath();
+    context.moveTo(100,500);
+    context.lineTo(100,100);
+//    context.strokeStyle = "red";
+    context.lineTo(90,110);
+    context.moveTo(100,100);
+    context.lineTo(110,110);
+    context.moveTo(100,500);
+    context.lineTo(500,500);
+    context.lineTo(490,490);
+    context.moveTo(500,500);
+    context.lineTo(490,510);
+    context.strokeStyle = "red";
+    context.stroke();
+    //beginPath开启一个新的状态
+    context.beginPath();
+    context.moveTo(100,500);
+    context.lineTo(200,400);
+    context.lineTo(250,450);
+    context.lineTo(300,350);
+    context.lineTo(350,300);
+    context.lineTo(400,250);
+    context.lineTo(450,400);
+    context.strokeStyle = "green";
+    context.stroke();
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #lists {
+            list-style: none;
+            font-size: 0;/*清楚同一行显示内容间的默认间距*/
+        }
+        #lists li {
+            display: inline-block;
+            float: left;
+            font-size: 40px;
+            color: red;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#lists").on("mouseenter","li",function (event) {//设置li标签的mouseenter事件
+                console.log(event);//查看事件对象event中的内容
+
+                $(this).text("★").prevAll().text("★")//链条进入到prevAll()
+                        .end()//end()函数结束当前的prevAll()链条,回到上一级链条$(this)
+                        .nextAll().text("☆");//链条进入到nextAll()
+
+            }).on("mouseleave","li",function (event) {//设置li标签的mouseleave事件
+                $(this).text("☆").siblings().text("☆");//鼠标离开的时候先将所有的li标签内容改为☆
+                //然后将current类及其之前li标签的内容改为★,之后的li标签的内容改为☆
+                $(".current").text("★").prevAll().text("★").end().nextAll().text("☆");
+            }).on("click","li",function (event) {//设置li标签的click事件
+                //点击当前li标签的时候,为当前li标签添加current类,删除他的兄弟li标签的current类
+                $(this).addClass("current").siblings().removeClass("current");
+                //将当前current类及其之前li标签的内容设为★,之后的li标签的内容改为☆
+                $(".current").text("★").prevAll().text("★").end().nextAll().text("☆");
+//                $("#lists").off("mouseenter");
+                console.log($("#lists li").text());//★☆☆☆☆☆返回所有被选中的元素的text内容拼接成的字符串
+            });
+        });
+    </script>
+</head>
+<body>
+<!--★☆-->
+<div id="box">
+    <ul id="lists">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+    </ul>
+</div>
+</body>
+</html>

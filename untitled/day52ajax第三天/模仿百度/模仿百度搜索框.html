@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            //设置keyword盒子的onkeyup按键抬起事件,每次按键抬起的时候执行以下逻辑
+            $("#keyword").on("keyup",function () {
+                var keyword = $("#keyword").val();//获取input标签的value值
+                console.log($("#box").html());//不传参数是获取html内容
+
+                $.ajax({
+                    //百度开放的查询接口
+                    url:"https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + keyword,
+                    type:"get",
+                    dataType:"jsonp",
+                    jsonp:"cb",//百度规定的名称
+                    jsonpCallback:"callback",//自定义
+                    success:function (data) {
+                        var arr = data.s;
+                        //在jsonp中使用tag拼接字符串,简直是妙
+                        var tag = "";
+                        tag += "<ul>";
+                        for (var i = 0; i < arr.length; i++) {
+                            tag += "<li>"+arr[i]+"</li>";
+                        }
+                        tag += "</ul>";
+                        $("#box").html(tag);
+                        $("#box li").on("click",function () {
+                            var value = $(this).text();
+                            $("#keyword").val(value);
+                        });
+                    },
+                    error:function () {
+                        console.log("error");
+                    }
+                });
+
+            });
+
+            //设置按钮的点击事件,当点击的时候,获取input标签的value值
+            //借用百度的搜索链接,对该值进行搜索
+            $("#btn").on("click",function () {
+                var valu = $("#keyword").val();
+                window.location = "https://www.baidu.com/s?rsv_spt=1&rsv_iqid=0xf71643ca0001cb7c&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=5&rsv_sug1=4&rsv_sug7=101&rsv_t=c2e9ranLZ4V9fnbt2aBQibPxG%2FTlorbM1NHT8wXjy4d%2Bv7SyvX0vT1s0b%2BdhmT0bcjzK&rsv_sug2=0&inputT=1015&rsv_sug4=2159&rsv_sug=1&wd=" + valu;
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="text" id="keyword">
+<input type="button" id="btn" value="点击搜索">
+<div id="box">
+    <!--<ul>
+        <li></li>
+    </ul>-->
+</div>
+
+
+<!--https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=-->
+<!--https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=j&json=1&p=3&sid=1467_21422_18194_21116_17001_21455_21395_21378_21192_21321&req=2&bs=java%E5%9F%B9%E8%AE%AD%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2&pbs=java%E5%9F%B9%E8%AE%AD%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2&csor=1&pwd=java&cb=jQuery110208044276618482851_1478033788243&_=1478033788252-->
+
+<!--https://www.baidu.com/s?wd=java&rsv_spt=1&rsv_iqid=0xf71643ca0001cb7c&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=5&rsv_sug1=4&rsv_sug7=101&rsv_t=c2e9ranLZ4V9fnbt2aBQibPxG%2FTlorbM1NHT8wXjy4d%2Bv7SyvX0vT1s0b%2BdhmT0bcjzK&rsv_sug2=0&inputT=1015&rsv_sug4=2159&rsv_sug=1-->
+</body>
+</html>

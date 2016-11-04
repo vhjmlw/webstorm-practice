@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="paint" width="600" height="600"></canvas>
+<script>
+    var paint = document.querySelector("#paint");//获得canvas对象
+    paint.width = 500;//设置canvas的宽和高,不能使用paint.style.width的方式
+    paint.height = 500;
+    var context = paint.getContext("2d");//获得canvas的上下文环境
+    context.moveTo(100,100);//将画笔移动到点(100,100).如果不显示的设置moveTo()的话,第一次的lineTo()就是起始点的位置
+    context.lineTo(200,100);//从(100,100)到(200,100)画条路径.如果不设置moveTo(),这就是起始点的位置
+    context.lineTo(100,200);//从(200,100)到(100,200)画条路径
+    context.lineTo(0,200);//从(100,200)到(0,200)画条路径
+    context.closePath();//闭合路径,将起始点和结束点闭合
+    context.lineWidth = 4;//设置描边的宽度,canvas画布的内外各2px,padding:2px;margin:2px;
+    context.strokeStyle = "red";//设置描边的颜色(关键字 rgb rgba #)
+    context.stroke();//对画出的路径进行描边,描边颜色默认为黑色
+    paint.style.border = "1px solid red";//设置canvas的边框
+    context.fillStyle = "rgba(255,255,0,.8)";//设置填充canvas的颜色
+    context.fill();//填充canvas的颜色,默认为黑色
+</script>
+</body>
+</html>

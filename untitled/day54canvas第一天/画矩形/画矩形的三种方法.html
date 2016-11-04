@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    //分别画出矩形的四条路径,然后描边
+    context.beginPath();
+    context.moveTo(100,100);
+    context.lineTo(200,100);
+    context.lineTo(200,200);
+    context.lineTo(100,200)
+    context.closePath();
+    context.strokeStyle = "red";
+    context.stroke();
+    //开启一个新的状态,新的路径,新的状态可以自定义strokeStyle
+    //如果不自定义strokestyle的话,就继承上一个状态的
+    context.beginPath();
+    context.strokestyle = "pink";
+    //直接绘制一个矩形的路径,矩形左上角坐标为(250,250),width:100;height:100;
+    context.rect(250,250,100,100);
+    context.stroke();
+    context.beginPath();
+    context.strokeStyle = "blue";//为啥strokeStyle没有效果???
+    //直接绘制一个矩形同时描边,矩形左上角坐标为(400,400),width:100;height:100;
+    context.strokeRect(400,400,100,100);
+    context.beginPath();
+    context.fillStyle = "purple";
+    //直接填充一个矩形区域,矩形左上角坐标为(100,400),width:100;height:100;
+    context.fillRect(100,400,100,100);
+</script>
+</body>
+</html>

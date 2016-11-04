@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .all {
+            margin-top: 30px;
+        }
+
+        .xh {
+            float: left;
+            margin-right: 20px;
+            color: red;
+            font-style: italic;
+            font-size: 30px;
+        }
+
+        #menu {
+            width: 500px;
+        }
+    </style>
+
+    <script src="js/jquery-2.2.0.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btnSearch").on("click", function () {
+                var menu = $("#menu");
+                menu.text("正在玩命的加载...");
+                var text = $("#txtSearch").val();
+                $.ajax({
+                    url: "http://apis.juhe.cn/cook/query?key=819b9a45354b7c53b1ee936ead3c2a31&rn=10&pn=3&dtype=jsonp&menu=" + text,
+                    type: "get",
+                    dataType: "jsonp",
+                    async: true,
+                    success: function (data) {
+                        if (data.resultcode == 200) {
+                            menu.text("");
+                            var dishes = data.result.data;
+                            for (var i = 0; i < dishes.length; i++) {
+                                var dish = dishes[i];
+                                var tag = "";
+                                tag += "<div class='all'>";
+                                tag += "<h2>" + dish.title + "</h2>";
+                                tag += "<p class='intro'>" + dish.imtro + "</p>";
+                                var albums = dish.albums;
+                                for (var j = 0; j < albums.length; j++) {
+                                    tag += "<img src='" + albums[j] + "'>";
+                                }
+                                tag += "<p class='zl'>主料：" + dish.ingredients + "</p>";
+                                tag += "<p class='fl'>辅料：" + dish.burden + "</p>";
+
+                                var steps = dish.steps;
+                                for (var m = 0; m < steps.length; m++) {
+                                    var step = steps[m];
+                                    tag += "<div class='steps'>";
+                                    tag += '<em class="xh">' + (m + 1) + '</em>';
+                                    tag += "<div class='c'>";
+                                    tag += "<p>"+step.step+"</p>";
+                                    tag += "<p><img src='"+step.img+"'></p>";
+                                    tag += "</div>";
+                                    tag += "</div>";
+                                }
+                                tag += "</div>";
+                                tag += "<hr>";
+                                menu.append(tag);
+                            }
+                        } else {
+                            menu.text("您查找的数据没有查到...");
+                        }
+
+
+                    },
+                    error: function () {
+                        console.log("error");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="text" id="txtSearch"> <input type="button" value="搜索" id="btnSearch">
+
+<div id="menu">
+    <!--<div class="all">
+        <h2>秘制红烧肉</h2>
+        <p class="intro">简介简介</p>
+        <img src="">
+        <p class="zl">主料：哈哈</p>
+        <p class="fl">辅料：哈哈</p>
+        <div class="steps">
+            <em class="xh">1.</em>
+            <div class="c">
+                <p>第一步你猜是啥</p>
+                <p>图片哈</p>
+            </div>
+        </div>
+    </div>-->
+</div>
+</body>
+</html>

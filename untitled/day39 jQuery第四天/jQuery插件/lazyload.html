@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            height: 5000px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<!--一定要给img标签添加class属性,类名可以自定义,将之前的src属性改为data-original,一定要设置width height属性-->
+<img class="lazy" data-original="传智播客优惠码.png" width="877px" height="403">
+<script src="jquery-1.11.1.min.js"></script>
+<script src="jquery_lazyload-1.9.5/jquery_lazyload-1.9.5/jquery.lazyload.min.js"></script>
+<script>
+    $(".lazy").lazyload();//通过类名选择器获取到img标签对象,调用该对象的lazyload()方法对该图片执行懒加载
+</script>
+</body>
+</html>
