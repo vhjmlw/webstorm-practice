@@ -35,7 +35,8 @@
     context.lineTo(490,510);
     context.strokeStyle = "red";
     context.stroke();
-    //beginPath开启一个新的状态
+    //beginPath开启一个新的状态,该新的状态可以继承上一个状态的strokeStyle和fillStyle等
+    //也可以自定义自己的绘画样式,如果不自定义,则继承上一个状态的
     context.beginPath();
     context.moveTo(100,500);
     context.lineTo(200,400);

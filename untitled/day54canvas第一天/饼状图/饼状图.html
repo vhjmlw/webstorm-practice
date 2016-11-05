@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500">
+    您的浏览器不支持canvas,请升级浏览器
+</canvas>
+<script>
+    var data = [{
+        "value": .2,
+        "color": "red",
+        "title": "应届生"
+    },{
+        "value": .3,
+        "color": "blue",
+        "title": "社会招生"
+    },{
+        "value": .4,
+        "color": "green",
+        "title": "老学员推荐"
+    },{
+        "value": .1,
+        "color": "#ccc",
+        "title": "公开课"
+    },];
+    var canvas = document.getElementById("canvas");
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    var arcX = 250;
+    var arcY = 250;
+    var radius = 200;
+    var tmp = -90;
+    //o	ctx.arc(x,y,r,sAngle,eAngle,counterclockwise);
+    for (var i = 0; i < data.length; i++) {
+        var angle = data[i].value*360;
+        var sAngle = tmp*Math.PI/180;
+        var eAngle = (tmp+angle)*Math.PI/180;
+        context.beginPath();
+        context.moveTo(arcX,arcY);
+        context.arc(arcX,arcY,radius,sAngle,eAngle);
+        context.closePath();
+        context.fillStyle = data[i].color;
+        context.fill();
+        tmp += data[i].value*360;
+    }
+</script>
+</body>
+</html>

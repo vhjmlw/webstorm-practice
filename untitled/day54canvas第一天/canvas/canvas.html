@@ -11,6 +11,7 @@
     paint.width = 500;//设置canvas的宽和高,不能使用paint.style.width的方式
     paint.height = 500;
     var context = paint.getContext("2d");//获得canvas的上下文环境
+    context.beginPath();//开启一个新的状态
     context.moveTo(100,100);//将画笔移动到点(100,100).如果不显示的设置moveTo()的话,第一次的lineTo()就是起始点的位置
     context.lineTo(200,100);//从(100,100)到(200,100)画条路径.如果不设置moveTo(),这就是起始点的位置
     context.lineTo(100,200);//从(200,100)到(100,200)画条路径

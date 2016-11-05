@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <canvas id="canvas" width="600" height="600">
+        您的浏览器版本太低,请升级至最新版本的浏览器
+    </canvas>
+</div>
+<button>向后</button>
+<button>向左</button>
+<button>向右</button>
+<button>向前</button>
+<script>
+    var canvas = document.querySelector("canvas");
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    var image = new Image();
+    image.src = "DMMban.png";
+    var frame = 0;
+    var dirIndex = 0;
+    image.onload = function () {//图片加载完成之后,执行定时器
+        setInterval(function () {
+            context.clearRect(300,300,80,130);//每次绘制新的图片的时候,将之前的图片清除掉
+            context.drawImage(image,frame*40,dirIndex*65,40,65,300,300,80,130);//绘制图片
+            frame++;
+            frame%=4;
+        },1000/6);//控制帧数
+    }
+    var btns = document.querySelectorAll("button");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].data = i;//dirIndex=i;但是在点击事件内无法实时获取到i的值,如果使用i的话,每个按钮的i都等于4;由于闭包的原因.
+        btns[i].addEventListener("click",function () {//给每个按钮添加点击事件,当点击按钮的时候,裁剪图片裁剪点的从左边发生改变
+            dirIndex = this.data;
+        });
+    }
+
+    //以下方法更具有通用性
+   /* btns[0].onclick = function () {
+        dirIndex = 0;
+    }
+    btns[1].onclick = function () {
+        dirIndex = 1;
+    }
+    btns[2].onclick = function () {
+        dirIndex = 2;
+    }
+    btns[3].onclick = function () {
+        dirIndex = 3;
+    }*/
+</script>
+</body>
+</html>

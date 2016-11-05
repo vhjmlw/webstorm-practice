@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.onload = function () {
+        //自定义构造函数,this关键字不可以省略
+        function Person(name,age,degree) {
+            this.name = name;
+            this.age = age;
+            this.degree = degree;
+            this.eat = function () {
+                console.log(this.name+"可以吃饭");
+            }
+        }
+        var xunan = new Person("徐楠",23,"本科");
+        var jianlei = new Person("建磊",26,"本科");
+        xunan.eat();
+        jianlei.eat();
+        //实例对象的_proto_指向了构造函数的prototype
+        //实例对象从原型对象继承了constructor,constructor指向了构造函数
+        console.log(xunan.__proto__ === Person.prototype);
+        console.log(xunan.constructor === Person);
+        //在对象的原型对象上添加show()函数,Person构造函数new出来的对象都具有show函数
+        Person.prototype.show = function () {
+            console.log("hello world");
+        }
+        xunan.show();
+
+        //Person构造函数对象的_proto_指向了Function.prototype
+        //JavaScript中所有函数对象的_proto_都指向了Function.prototype
+        Function.prototype.speak = function () {
+            console.log("我可以说话");
+        }
+        Function.prototype.speech = "I can speech";
+        Person.speak();//我可以说话
+        console.log(Person.speech);//I can speech
+
+        //JavaScript中Object.prototype是所有对象的原型对象
+        Object.prototype.sing = function () {
+            console.log("I can sing");
+        }
+        Object.prototype.song = "这是一首歌";
+        Person.prototype.sing();// I can sing
+        console.log(Person.prototype.song);//这是一首歌
+    }
+</script>
+</body>
+</html>

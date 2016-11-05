@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600"></canvas>
+<script>
+    var canvas = document.querySelector("canvas");
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    context.moveTo(0,300);
+    context.lineTo(600,300);
+    context.strokeStyle = "red";
+    context.stroke();
+    context.beginPath();
+    context.moveTo(300,0);
+    context.lineTo(300,600);
+    context.strokestyle = "blue";
+    context.stroke();
+    context.font = "40px 'microsoft yahei'";
+    //填充文字水平方向上的对齐方式,以fillText()设置的坐标点为基准.
+    context.textAlign = "end";
+    context.textAlign = "center";
+    context.textAlign = "left";
+    context.textAlign = "right";
+    context.textAlign = "start";//默认
+    //填充文字垂直方向上的对齐方式,以fillText()设置的坐标点为基准.
+    context.textBaseline = "top";
+    context.textBaseline = "bottom";
+    context.textBaseline = "middle";
+    context.textBaseline = "hanging";
+    context.textBaseline = "ideographic";
+    context.textBaseline = "alphabetic";//默认
+    context.strokeText("hello 张建磊",300,300);//绘制空心的字体,(300,300)为基准点
+    context.beginPath();//重新开启一个状态
+    context.font = "30px '宋体'";//设置字体font-size和font-family
+    context.textAlign = "end";//设置水平方向相对于基准点的对齐方式
+    context.textBaseline = "top";//设置垂直方向上的对齐方式
+    context.fillStyle = "blue";//设置文字填充的颜色
+    context.fillText("hello world",300,300);//填充实心的字体,(300,300)为基准点
+    console.log(context.font);//获取font属性值
+    console.log(context.measureText("hello world"));//测量指定文本的宽度
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas">
+    您的浏览器暂不支持canvas标签,请升级最新版本
+</canvas>
+<script>
+    var canvas = document.querySelector("canvas");
+    canvas.style.border = "1px solid black";
+    canvas.width = 3000;
+    canvas.height = 3000;
+    var context = canvas.getContext("2d");
+    //按照图片的原始大小绘制图片
+    var image1 = new Image();//新创建一个image图片对象
+    image1.src = "imgs/b.jpg";//设置image图片对象的src属性
+    image1.onload = function () {   //等到图片加载完成之后再绘制图片
+        context.drawImage(image1,50,50);//绘制图片,image1是被复制的目标,图片左上角基准点的坐标为(50,50)
+    }
+
+    //绘制图片,将图片的宽高设置为100 200,图片比例失调
+    var image2 = new Image();
+    image2.src = "imgs/a.jpg";
+    image2.onload = function () {
+        context.drawImage(image2,50,300,100,200);//设置图片左上角基准点坐标(50,300),设置图片宽100px,高200px
+    }
+
+    //等比例绘制图片,按照原图片的比例进行缩放
+    var image3 = new Image();
+    image3.src = "imgs/a.jpg";
+    var wid = image3.width;//获取图片的原始宽度
+    var hei = image3.height;//获取图片的原始高度
+    image3.onload = function () {
+        context.drawImage(image3,270,300,200,200*hei/wid);//通过计算,等比例设置图片的宽200px,高200*hei/wid
+    }
+
+    //裁剪图片
+    var image4 = new Image();
+    image4.src = "imgs/DMMban.png";
+    image4.onload = function () {
+        context.drawImage(image4,80,65,40,65,500,100,40,65);//从(80,65)坐标点开始裁剪,裁剪一个宽40高65的矩形区域.设置裁剪好小图的左上角的坐标为(500,100),设置小图的宽40,高65
+    }
+
+    //设置帧动画
+    var image5 = new Image();
+    image5.src = "imgs/DMMban.png";
+    var frame = 0;
+    image5.onload = function () {
+        setInterval(function () {
+            context.clearRect(600,100,40,65);//设置一个矩形区域,左上角基准点坐标为(600,100),矩形宽40,高65,清除该矩形区域里的内容
+            context.drawImage(image5,
+                    frame*40,//裁剪点的X轴坐标
+                    0,//裁剪点的Y轴坐标
+                    40,//裁剪的宽度
+                    65,//裁剪的高度
+                    600,//设置裁剪好的小图左上角的X轴坐标
+                    100,//设置裁剪好的小图左上角的Y轴坐标
+                    40,//设置裁剪好的小图的宽度
+                    65);//设置裁剪好的小图的高度
+            frame++;
+            frame%=4;
+        },1000/5);
+    }
+
+</script>
+</body>
+</html>

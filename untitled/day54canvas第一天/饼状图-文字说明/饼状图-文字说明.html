@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas">
+    不好意思,您的浏览器暂不支持canvas标签,请升级至最新版本
+    <!--处理浏览器兼容性问题,如果浏览器不支持,则给出友好的提示-->
+</canvas>
+<script>
+    var data = [{
+        "value": .2,
+        "color": "red",
+        "title": "应届生"
+    },{
+        "value": .3,
+        "color": "blue",
+        "title": "社会招生"
+    },{
+        "value": .4,
+        "color": "green",
+        "title": "老学员推荐"
+    },{
+        "value": .1,
+        "color": "#ccc",
+        "title": "公开课"
+    },];
+    var canvas = document.querySelector("canvas");
+    canvas.style.border = "1px solid black";
+    canvas.width = 600;//设置画布的宽
+    canvas.height = 600;//设置画布的高
+    var context = canvas.getContext("2d");
+    var tmp = -90;//开始线条的起始位置
+    var arcX = 300;//圆心的X轴坐标
+    var arcY = 300;//圆心的Y轴坐标
+    var radius = 200;//圆的半径
+    for (var i = 0; i < data.length; i++) {
+        context.beginPath();//每次循环都要开启一个新的状态,因为每次循环的fillSytle都不一样
+        var angle = data[i].value*360;//每个扇形的度数
+        var sAngle = tmp*Math.PI / 180;//扇形开始线条的角度,要转换成弧度
+        var eAngle = (tmp + angle)*Math.PI / 180;//扇形结束线条的角度,要转换成弧度
+        context.moveTo(arcX,arcY);//画笔移动到圆心的位置
+        context.arc(arcX,arcY,radius,sAngle,eAngle);//画一个扇形的路径
+        context.fillStyle = data[i].color;//设置填充扇区的颜色
+        //以上为画饼图的代码
+        //以下为绘制文字的代码
+        context.font = "12px 'microsoft yahei'";//设置绘制文字的font-size font-family
+        context.textAlign = "center";//设置绘制文字的水平对齐方式
+        context.textBaseline = "middle";//设置绘制文字的垂直对齐方式
+        var deg = (tmp + angle / 2)*Math.PI / 180;//文字基准点所在的线的角度
+        var x = arcX + Math.cos(deg)*(radius + 50);//文字基准点的x轴坐标,固定公式
+        var y = arcY + Math.sin(deg)*(radius + 50);//文字基准点的y轴坐标,固定公式
+        context.fillText(data[i].title,x,y);//设置绘制文字的内容和x轴 y轴坐标
+        context.fill();//开始绘制文字
+        tmp += angle;//绝妙,将开始线条设置到结束线条处,下一次循环的开始线条就是上一次循环的结束线条
+    }
+
+</script>
+</body>
+</html>
