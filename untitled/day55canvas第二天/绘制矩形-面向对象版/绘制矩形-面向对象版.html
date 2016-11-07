@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script src="myrect.js"></script>
+<script>
+    var canvas = document.querySelector("#canvas");
+    canvas.width = 500;
+    canvas.height = 500;
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    var firstRect = new Rect({
+        x:0,
+        y:0,
+        width:100,
+        height:100,
+        strokeStyle:"red",
+        fillStyle:"yellow",
+        translateX:150,
+        translateY:150,
+        rotate:45,
+        scaleX:1,
+        scaleY:2,
+        globalAlpha:.2
+    });
+    firstRect.render(context);
+    var secondRect = new Rect({
+        x:150,
+        y:150,
+        width:200,
+        height:100,
+        strokeStyle:"green",
+        fillStyle:"pink"
+    });
+    //由于render方法中第一步save()最后一步restore(),
+    //每次绘制的时候都是在之前正常状态下进行操作的
+    secondRect.render(context);
+</script>
+</body>
+</html>

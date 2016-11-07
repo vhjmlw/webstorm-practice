@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    var canvas = document.querySelector("#canvas");
+    canvas.width = 600;
+    canvas.height = 600;
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    context.shadowColor = "yellow";
+    context.shadowBlur = 5;
+    context.shadowOffsetX = 10;
+    context.shadowOffsetY = 10;
+    context.fillStyle = "blue";
+    context.strokeStyle = "red";
+    context.strokeRect(100,100,100,100);
+    context.beginPath();
+    context.shadowColor = "blue";
+    context.shadowBlur = 5;
+    context.shadowOffsetX = -10;
+    context.shadowOffsetY = -10;
+    context.fillStyle = "yellow";
+    context.fillRect(220,220,100,100);
+</script>
+</body>
+</html>

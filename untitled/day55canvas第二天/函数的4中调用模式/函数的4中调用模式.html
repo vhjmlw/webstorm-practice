@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    ////1 直接调用(window调用)////
+    function code() {
+        console.log(this);//输出调用code()函数的当前对象
+    }
+    code();//this指向window对象,效果等同于window.code();
+    //JavaScript中全局的对象和函数都是添加在window对象身上,可以通过window对象来调用.调用的时候window对象也可以省略
+    ////2 在构造函数当中调用////
+    function Person(option) {
+        this.name = option.name;
+        this.fn = function () {
+            console.log("hello world");
+        }
+    }
+    var jianlei = new Person({name:"建磊"});//构造函数中的this指向了jianlei对象,new的时候执行了构造函数中的代码,但没有执行fn方法中的代码
+    ////3 通过实例化的对象调用////
+    function Person(option) {
+        this.name = option.name;
+        this.fn = function () {
+            console.log(this);
+        }
+    }
+    var xunan = new Person({name:"旭楠"});
+    xunan.fn();//fn函数中的this指向了xunan对象
+    ////4 第四种方法暂不学习////
+</script>
+</body>
+</html>

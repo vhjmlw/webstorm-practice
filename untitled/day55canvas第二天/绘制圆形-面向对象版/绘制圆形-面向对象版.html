@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script src="myArc.js"></script>
+<script>
+    var canvas = document.querySelector("#canvas");
+    canvas.width = 500;
+    canvas.height = 500;
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    var firstArc = new Arc({
+        x : 0,
+        y : 0,
+        radius : 100,
+        sAngle : 0,
+        eAngle : 360,
+        reverse : false,
+        fillStyle : "red",
+//        strokeStyle : "blue",
+        translateX : 200,
+        translateY : 200,
+        rotate : 90,
+        scaleX : 1,
+        scaleY : 2,
+        globalAlpha : .2
+    });
+    firstArc.render(context);
+    var secondArc = new Arc({
+        x : 250,
+        y : 250,
+        radius : 50,
+        sAngle : 0,
+        eAngle : 360,
+        reverse : false,
+        fillStyle : "blue"
+    });
+    secondArc.render(context);
+</script>
+</body>
+</html>

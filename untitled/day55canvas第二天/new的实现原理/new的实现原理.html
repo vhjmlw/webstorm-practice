@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--new的实现原理-->
+<script>
+    function Person(name,age) {
+        //首先创建一个空的对象
+        //this = {};
+        //将当前空对象的_proto_指向构造函数的prototype
+        this.__proto__ = Person.prototype;
+        this.name = name;
+        this.age = age;
+        this.speak = function () {
+            console.log(this.name + "can speak");
+        }
+        return this;//返回当前空对象
+    }
+    //new出来的实例对象就是构造函数当中的this对象
+    var jianlei = new Person("建磊",26);
+    console.log(jianlei.name);//建磊
+    jianlei.speak();//建磊can speak
+</script>
+</body>
+</html>

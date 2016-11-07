@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas">
+    您的浏览器暂不支持canvas,请升级至最新版本的浏览器以获得更好的体验
+</canvas>
+<script src="myrect.js"></script>
+<script>
+    var canvas = document.querySelector("#canvas");
+    canvas.width = 2000;
+    canvas.height = 500;
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    var movingRect = new Rect({
+        x : 0,
+        y : 0,
+        width : 50,
+        height : 200,
+        strokeStyle : "red",
+        fillStyle : "yellow"
+    });
+    setInterval(function () {
+        movingRect.render(context);
+        movingRect.x++;
+    },10);
+
+</script>
+</body>
+</html>

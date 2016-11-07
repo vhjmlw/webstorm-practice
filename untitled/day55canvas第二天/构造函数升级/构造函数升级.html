@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    ////完美的写法////
+    function Person(option) {
+        this._init(option);//调用在原型对象中自定义的_init方法,初始化对象
+    }
+    Person.prototype = {
+        _init : function (option) {
+        this.name = option.name;
+        this.age = option.age;
+    },//将方法添加在原型对象里面
+        //如果方法是让实例化的对象调用的,则方法名可以不使用_前缀;如果方法是内部自己使用的,则方法名建议使用_前缀,以进行区分.
+        speech : function () {
+            console.log(this.name+"can speech");
+        }
+    }
+    var jianlei = new Person({name:"建磊",age:26});
+    jianlei.speech();
+    console.log(jianlei.age);
+    ////稍乱的写法////
+    function Man(option) {
+        this._init(option);//初始化方法
+    }
+    //这样每次在原型对象上添加函数太乱了,应该一次性全部添加在原型对象当中
+    Man.prototype._init =  function (option) {
+            this.name = option.name;
+            this.age = option.age;
+        //将方法间接添加在构造函数内
+            this.speech = function () {
+                console.log(this.name + "can speech");
+            }
+        }
+    Man.prototype.ran = function () {
+        console.log(this.name + "can ran");
+    }
+    Man.prototype.code = function () {
+        console.log(this.name + "的编码水平堪称大神");
+    }
+    var jianlei = new Man({name:"建磊",age:26});
+    jianlei.speech();
+    console.log(jianlei.age);
+    jianlei.ran();
+    jianlei.code();
+    var xunan = new Man({name:"旭楠",age:23});
+    xunan.ran();
+    xunan.code();
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas">
+    您的浏览器版本太低,请升级至最新的版本
+</canvas>
+<script>
+    var canvas = document.querySelector("#canvas");
+    canvas.width = 600;
+    canvas.height = 600;
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    console.log(context.canvas);//能够从context上下文环境当中获取canvas画布
+    ////状态一////通过save()保存状态一
+    context.beginPath();
+    context.rect(50,50,100,100);
+    context.fillStyle = "yellow";//无效???fillStyle中的S大写
+    context.strokeStyle = "red";//无效???strokeStyle中的S大写
+    context.stroke();
+    context.fill();
+    context.save();
+    ////状态二////
+    context.beginPath();
+    var image = new Image();
+    image.src = "111.png";
+    var pat = context.createPattern(image,"repeat");
+    context.translate(300,300);
+    context.scale(2,2);
+    context.rotate(45*Math.PI/180);
+    context.globalAlpha = .5;
+    context.rect(0,0,100,100);
+    //context.fillStyle = pat;//无效???
+    context.fillStyle = "red";
+    context.fill();
+    ////状态三////通过restore()恢复到状态一
+    //先restore()准备好画布的状态,后绘制路径
+    //一般save()放在当前状态的最后面,存贮当前画布的状态;restore()放在当前状态的最前面,准备好当前画布的状态
+    context.beginPath();
+    context.restore();//要将restore()放在绘制路径的前面,将canvas的状态恢复到状态一,相当于先准备好画布
+    context.rect(400,100,100,100);
+    context.fill();//要进行fill操作,fillStyle才能有效,进行绘制
+    context.stroke();//要进行stroke操作,strokeStyle才能有效
+</script>
+</body>
+</html>
