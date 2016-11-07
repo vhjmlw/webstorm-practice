@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas">
+    您的浏览器暂不支持canvas,请升级至最新版本以获得更好的体验
+</canvas>
+<script>
+    var canvas = document.querySelector("#canvas");
+    canvas.width = 600;
+    canvas.height = 600;
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    //设置渐变内圆的圆心(300,300)半径50;外圆的圆心(300,300)半径200
+    var radial = context.createRadialGradient(300,300,50,300,300,200);
+    //设置渐变的区间段,内圆全部为黄色,内圆的外面圆环的部分为具体的渐变范围,0从内圆的圆环处开始算,而不是内圆的圆心
+    //0-50%黄色蓝色渐变;50%-100%蓝色红色渐变
+    radial.addColorStop(0,"yellow");
+    radial.addColorStop(.5,"blue");
+    radial.addColorStop(1,"red");
+    context.fillStyle = radial;//最关键的一点,将创建的圆形渐变设置为填充的样式
+    context.fillRect(100,100,500,500);
+</script>
+</body>
+</html>
