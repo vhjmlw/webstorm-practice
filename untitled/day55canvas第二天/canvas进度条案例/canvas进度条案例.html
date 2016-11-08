@@ -24,6 +24,7 @@
         height : 50,
         stroke : "red",
         strokeWidth : 20,
+        cornerRadius : 30,//设置矩形边框圆弧的半径
         fill : "yellow",
         opacity : .3,
         draggable : false
@@ -34,18 +35,22 @@ var rect2 = new Konva.Rect({
     width : 10,
     height : 50,
     fill : "blue",
+    cornerRadius : 30,//设置矩形边框圆弧的半径
     draggable : true
 });
     group.add(rect);
     group.add(rect2);
     rect.draw();
     rect2.draw();
+//设置矩形rect2属性发生改变的动画效果
     rect2.to({
         width : 1000,
-        duration : 4,
-        easing : Konva.Easings.BounceEaseIn,
-        yoyo : true
+        duration : 4,//动画持续的时间
+        easing : Konva.Easings.BounceEaseIn,//动画的效果
+        yoyo : true//是否循环播放动画
     });
+    console.log(stage.width());//获取舞台stage的宽度,注意不是使用width属性,而是使用的width()方法
+    console.log(stage.height());//获取舞台stage的高度//Kanvo框架中都是使用方法来获取数据,没有使用属性的
 </script>
 </body>
 </html>

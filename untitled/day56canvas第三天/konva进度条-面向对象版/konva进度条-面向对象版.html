@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="konva.js"></script>
+<script src="myRect.js"></script>
+<script>
+    var stage = new Konva.Stage({
+        container : "container",
+        width : window.innerWidth,
+        height : window.innerHeight
+    });
+    var layer = new Konva.Layer();
+    stage.add(layer);
+
+    var firstProgress = new MyProgress({
+        x : 100,
+        y : 500,
+        width : 1000,
+        height : 50,
+        fill : "green",
+        stroke : "red"
+    });
+    console.log(firstRect);
+    firstProgress.addToGroupOrLayer(layer);
+    layer.draw();
+    firstProgress.animateTo({
+        width : 200,
+        duration : 3,
+        easing : Konva.Easings.BounceEaseIn,
+        yoyo : true
+    });
+    //创建一个进度条
+    var secondProgress = new MyProgress({
+        x : stage.width() / 12,
+        y : stage.height() / 12,
+        width : 2/3 * stage.width,
+        height : 1/3 * stage.height,
+        fill : "red",
+        stroke : "green"
+    });
+    //将内部创建的包含进度条的group添加到外部创建的layer里面
+    secondProgress.addToGroupOrLayer(layer);
+    //让进度条执行动画
+    secondProgress.animateTo({
+        width : .8,
+        duration : 3,
+        easing : Konva.Easings.EaseInOut,
+        yoyo : true
+    });
+</script>
+</body>
+</html>
