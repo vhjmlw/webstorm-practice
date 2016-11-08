@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas">
+    请升级至最新版本的浏览器,以获取到更好的体验
+</canvas>
+<script>
+    var canvas = document.querySelector("#canvas");
+    canvas.width = 600;
+    canvas.height = 600;
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    //先通过moveTO()和lineTO()画出一条线
+    context.moveTo(0,100);
+    context.lineTo(100,100);
+    //设置弧的两个端点(200,100) (200,300),这两个端点形成一条直线,这条直线和之前的一条直线相交,形成一个夹角
+    //然后通过设置弧度的半径100,来控制弧度的大小
+    context.arcTo(200, 100, 200, 300, 100);
+    context.strokeStyle = "red";
+    context.stroke();
+    //判断(50,100)这个点是否在路径中,如果在路径中则返回true;否则返回false
+    var isPointInPath = context.isPointInPath(50,100);
+    console.log(isPointInPath);//true
+    //获取文本"河南科技大学"的宽度
+    context.measureText("河南科技大学").width;//60
+</script>
+</body>
+</html>

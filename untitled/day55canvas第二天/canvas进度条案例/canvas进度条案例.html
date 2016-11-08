@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="konva.js"></script>
+<script>//注意类名 首字母都要大写
+    var stage = new Konva.Stage({
+        container : "container",
+        width : window.innerWidth,
+        height : window.innerHeight
+    });
+    var layer = new Konva.Layer();
+    stage.add(layer);
+    var group = new Konva.Group();
+    layer.add(group);
+    var rect = new Konva.Rect({
+        x : 100,
+        y : 500,
+        width : 1000,
+        height : 50,
+        stroke : "red",
+        strokeWidth : 20,
+        fill : "yellow",
+        opacity : .3,
+        draggable : false
+    });
+var rect2 = new Konva.Rect({
+    x : 100,
+    y : 500,
+    width : 10,
+    height : 50,
+    fill : "blue",
+    draggable : true
+});
+    group.add(rect);
+    group.add(rect2);
+    rect.draw();
+    rect2.draw();
+    rect2.to({
+        width : 1000,
+        duration : 4,
+        easing : Konva.Easings.BounceEaseIn,
+        yoyo : true
+    });
+</script>
+</body>
+</html>

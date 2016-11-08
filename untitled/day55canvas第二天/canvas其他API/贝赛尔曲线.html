@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas">
+    您的浏览器暂不支持canvas,请升级至最新版本的浏览器以获取更好的体验
+</canvas>
+<script>
+    var canvas =  document.querySelector("#canvas");
+    canvas.width = 600;
+    canvas.height = 600;
+    canvas.style.border = "1px dashed red";
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    //通过moveTo()设置曲线的开始节点
+    context.moveTo(100,100);
+    //设置曲线的控制节点为(200,400),结束节点为(500,100)
+    context.quadraticCurveTo(200,400,500,100);
+    context.strokeStyle = "blue";
+    context.stroke();
+    context.beginPath();
+    //同quadraticCurveTo()相同,moveTo()设置曲线开始节点的坐标
+    context.moveTo(100,300);
+    //设置两个控制节点的坐标轴(200,400),(300,50),设置结束节点的坐标轴(400,500)
+    context.bezierCurveTo(200,400,300,50,400,500);
+    context.strokeStyle = "green";
+    context.stroke();
+</script>
+</body>
+</html>

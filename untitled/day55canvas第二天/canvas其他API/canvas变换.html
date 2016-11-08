@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas">
+    您的浏览器暂不支持canvas,请升级至最新的浏览器以获取更好的体验
+</canvas>
+<canvas id="canvas2">
+    您的浏览器暂不支持canvas,请升级至最新的浏览器
+</canvas>
+<script>
+    var canvas = document.querySelector("#canvas");
+    canvas.width = 400;
+    canvas.height = 400;
+    canvas.style.border = "1px solid black";
+    var context = canvas.getContext("2d");
+    context.save();
+    context.beginPath();
+    context.scale(2,2);
+    context.translate(50,50);
+    context.rotate(30*Math.PI/180);
+    context.fillStyle = "red";
+    context.fillRect(0,0,100,100);
+    context.beginPath();
+    context.restore();
+    context.fillStyle = "blue";
+    context.globalAlpha = .4;
+    context.fillRect(0,0,50,50);
+    //将画布转换为base64格式
+    var dataURL = canvas.toDataURL("image/jpeg",1);
+    console.log(dataURL);
+    var canvas2 = document.querySelector("#canvas2");
+    canvas2.width = 400;
+    canvas2.height = 400;
+    canvas2.style.border = "1px dashed blue";
+    var context2 = canvas2.getContext("2d");
+    context2.beginPath();
+    //将canvas画布绘制到canvas2画布上去
+    context2.drawImage(canvas,0,0);
+</script>
+</body>
+</html>

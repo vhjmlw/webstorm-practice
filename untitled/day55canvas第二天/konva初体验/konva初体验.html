@@ -10,25 +10,56 @@
 <script>
     var stage = new Konva.Stage({
         container : "container",
-        width : window.innerWidth,
-        height : window.innerHeight
+        width : window.innerWidth,//浏览器窗口的宽度,不包含浏览器工具栏的内容,仅仅是页面能看到的宽度
+        height : window.innerHeight//浏览器窗口的高度,不包含浏览器上方工具栏的高度,仅包含能看到的页面的高度
     });
-    var layer = new Konva.Layer();
+    var layer = new Konva.Layer({
+        x : 100,//layer在stage中的定位
+        y : 200
+    });
     stage.add(layer);
+    var group = new Konva.Group({
+        x : 300,//group在layer中的定位
+        y : 300
+    });
+    layer.add(group);
     var rect = new Konva.Rect({
-        x : 0,
-        y : 0,
+        x : 100,//rect中的x和y定位,是相对于group的定位,在group身上的定位
+        y : 100,//如果group本身也有定位的话,rect会被带着一起移动
         width : 100,
         height : 100,
-        fill : "red",
-        stroke : "blue",
+        strokeWidth : 10,
+        stroke : "red",
+        fill : "yellow",
         draggable : true,
-        rotation : 45,
-        scale : 2,//无效???
-        opacity : .3
+        opacity : 1,
+        scale : 2,
+        rotation : 30,
+        cornerRadius : 30,
+        id : "firstRect",
+        name : "rect"
     });
-    layer.add(rect);
-    layer.draw();
+    group.add(rect);//rect——group-layer-stage
+    layer.draw();//绘制图层
+    //添加矩形rect的事件,鼠标移入的时候,鼠标变成小手;鼠标移出的时候,鼠标恢复正常
+    rect.addEventListener("mouseenter",function () {
+        document.body.style.cursor = "pointer";
+    });
+    rect.addEventListener("mouseout",function () {
+        document.body.style.cursor = "default";
+    });
+    //对rect矩形对象进行播放动画
+    rect.to({
+        x : 50,
+        y : 50,
+        width : 200,
+        height : 200,
+        duration : 1,//动画持续的时间
+        stroke : "yellow",
+        fill : "red",
+        easing : Konva.Easings.ElasticEaseInOut,//播放动画的效果
+        yoyo : true//是否进行循环播放
+    });
 </script>
 </body>
 </html>
