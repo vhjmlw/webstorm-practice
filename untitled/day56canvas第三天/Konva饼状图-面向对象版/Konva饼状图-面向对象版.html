@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="konva.js"></script>
+<script src="myWedge.js"></script>
+<script>
+    var stage = new Konva.Stage({
+    container: "container",
+    width: window.innerWidth,
+    height: window.innerHeight
+});
+    var layer = new Konva.Layer();
+    stage.add(layer);
+    var centX = stage.getWidth() / 2;
+    var centY = stage.getHeight() / 2;
+
+    //新建第一个饼状图
+    var myWedge = new MyWedge({
+        data: [{
+            name: "前端",
+            value: .25,
+            color: '#e0e'
+        }, {
+            name: "php",
+            value: .2,
+            color: 'orange'
+        }, {
+            name: "UI",
+            value: .3,
+            color: 'blue'
+        }, {
+            name: "C++",
+            value: .05,
+            color: 'green'
+        }, {
+            name: "游戏",
+            value: .1,
+            color: 'purple'
+        }, {
+            name: "Java",
+            value: .1,
+            color: 'red'
+        }],
+        x: centX,
+        y: centY,
+        radius: 200,
+        rotation: -90,
+    });
+    myWedge.addToGroupOrLayer(layer);
+    layer.draw();
+    myWedge.myAnimate();//执行动画
+    //添加stage舞台的contentClick点击事件,contentClick点击事件不同于click点击事件,
+    // 点击到stage空白的地方也能够触发该事件,而click事件则不可以
+    //注意contentClick中的C大写
+    stage.on("contentClick",function () {
+        myWedge.myAnimate();
+        secondWedge.myAnimate();
+    });
+
+    //新建第二个饼状图
+    var secondWedge = new MyWedge({
+        x: 150,
+        y: 150,
+        radius: 100,
+        rotation: 0,
+        data: [{
+            name: "前端",
+            value: .4,
+            color: '#e0e'
+        }, {
+            name: "游戏",
+            value: .3,
+            color: 'purple'
+        }, {
+            name: "Java",
+            value: .3,
+            color: 'red'
+        }],
+    });
+    secondWedge.addToGroupOrLayer(layer);
+    secondWedge.myAnimate();//执行动画
+</script>
+</body>
+</html>

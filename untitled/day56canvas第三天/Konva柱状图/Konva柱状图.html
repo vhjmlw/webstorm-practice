@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="konva.js"></script>
+<script>
+    var stage = new Konva.Stage({
+        container: "container",
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
+    var layer = new Konva.Layer();
+    stage.add(layer);
+    var data = [
+        {name: '百度', value: .2, color: 'blue'},
+        {name: '阿里', value: .4, color: 'red'},
+        {name: '新浪', value: .1, color: 'purple'},
+        {name: '搜狐', value: .1, color: 'navy'},
+        {name: '360', value: .2, color: 'orange'}
+    ];
+    var startPoint = stage.getWidth() / 8;
+    var endPoint = stage.getWidth() * 7 / 8;
+    var per = (endPoint - startPoint) / data.length;
+    var h = stage.getHeight() * 3 / 4;
+    var line = new Konva.Line({
+        points: [startPoint, h, endPoint, h],//数组,线条的开始节点 结束节点
+        stroke: "skyblue",
+        strokeWidth: 3
+    });
+    layer.add(line);
+    var rectGroup = new Konva.Group();
+    var textGroup = new Konva.Group();
+    layer.add(rectGroup);
+    layer.add(textGroup);
+    //(startPoint, h) (endPoint, h)
+    data.forEach(function (item, index) {
+        //新建一个矩形
+        var rect = new Konva.Rect({
+            x: startPoint + (index + 1 / 4) * per,
+            y: h - (stage.getHeight() * item.value),
+            width: per / 2,
+            height: stage.getHeight() * item.value,
+            fill: item.color,
+            cornerRadius: 5,//设置矩形的圆角
+        });
+        rectGroup.add(rect);//将所有的矩形都添加到rectGroup里面
+        //新建一个文本内容,文本内容位于矩形的正上方
+        var topText = new Konva.Text({
+            x: rect.x() - per / 4,
+            y: rect.y() - 15,
+            fill: item.color,
+            width: per,
+            align: "center",
+            fontSize: 15,
+            text: item.value * 100 + "%"
+        });
+        textGroup.add(topText);//举行上方的所有的文本内容都添加到textGroup里面
+        //新建一个文本内容,文本内容位于矩形的正下方,旋转30度
+        var bottomText = new Konva.Text({
+            x: rect.x() + per / 4,
+            y: h,
+            fill: item.color,
+            rotation: 30,//文本内容旋转的角度
+            fontSize: 15,
+            text: item.name,
+        });
+        layer.add(bottomText);//矩形下方的文本内容直接添加到layer里面,不再添加到任何的group里面
+    });
+
+    //封装一个函数动画,将动画的逻辑放在函数里面
+    function animate() {
+        //遍历rectGroup里面的Rect矩形,为每个举行设置动画
+        rectGroup.find("Rect").each(function (item,index) {
+            item.y(h);//更改当前矩形左上角的Y坐标为h,调用函数时传入参数为设置,不传参数为获取
+            item.height(0);//更改当前矩形的高度
+            item.to({//为当前矩形设置动画
+                y: h - (stage.getHeight() * data[index].value),//恢复左上角的Y坐标
+                height: stage.getHeight() * data[index].value,//回复高度
+                duration: 1,
+                easing: Konva.Easings.BounceEaseInOut,//动画的特效
+                yoyo: false//动画是否循环播放:否
+            });
+        });
+        //遍历textGroup里面的Text本文,为每个文本设置动画
+        textGroup.find("Text").each(function (item,index) {
+            item.y(h - 15);
+            item.to({
+                y: h - (stage.getHeight() * data[index].value) - 15,
+                duration: 1,
+                easing: Konva.Easings.BounceEaseInOut,
+                yoyo: false
+            });
+        });
+    }
+   animate();//页面加载的时候,先首先加载一次动画
+
+    //设置stage的点击动画contentClick,注意contentClick中的C大写
+    stage.on("contentClick",function () {
+        animate();
+    });
+    layer.draw();
+</script>
+</body>
+</html>

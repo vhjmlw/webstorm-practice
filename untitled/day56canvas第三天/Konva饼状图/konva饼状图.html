@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Konva饼状图</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="konva.js"></script>
+<script>
+    var data = [{
+        name: "前端",
+        value: .25,
+        color: '#e0e'
+    }, {
+        name: "php",
+        value: .2,
+        color: 'orange'
+    }, {
+        name: "UI",
+        value: .3,
+        color: 'blue'
+    }, {
+        name: "C++",
+        value: .05,
+        color: 'green'
+    }, {
+        name: "游戏",
+        value: .1,
+        color: 'purple'
+    }, {
+        name: "Java",
+        value: .1,
+        color: 'red'
+    }];
+    var stage = new Konva.Stage({
+        container: "container",
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
+    var layer = new Konva.Layer();
+    stage.add(layer);
+    var tmpAngle = -90;
+    var centX = stage.getWidth() / 2,
+            centY = stage.getHeight() / 2;
+    //遍历data数组,根据数组里面的每个内容新建一个wedge和text
+    data.forEach(function (item, index) {
+        var dataAngle = data[index].value * 360;
+        var dataColor = data[index].color;
+        var dataText = data[index].name + data[index].value * 100 + "%";
+        var textAngle = tmpAngle + dataAngle / 2;
+        //新建一个wedge扇形
+        var wedge = new Konva.Wedge({
+            x: centX,//扇形圆心点的坐标
+            y: centY,
+            radius: 200,//扇形的半径
+            angle: dataAngle,//开始线条顺时针旋转的角度
+            rotation: tmpAngle,//开始线条的角度
+            fill: dataColor,//扇形区域填充的颜色
+        });
+        //每个扇形对应新建一个文本内容
+        var text = new Konva.Text({
+            x: centX + (200 + 20) * Math.cos(textAngle * Math.PI / 180),
+            y: centY + (200 + 20) * Math.sin(textAngle * Math.PI / 180),
+            text: dataText,
+            fill: dataColor,
+            fontSize: 12
+        });
+        //判断,如果角度位于(90-270)的区间,则让文本的x轴坐标向左移自身的宽度,以免文本的内容靠扇形太近
+        if (textAngle > 90 && textAngle < 270) {
+            text.x(text.x() - text.getWidth());
+        }
+        tmpAngle += dataAngle;
+        layer.add(wedge);
+        layer.add(text);
+    });
+    layer.draw();
+    var index = 0;
+    //自定义一个函数,在函数的内部使用递归,实现循环的效果
+    function wedgeAnimate() {
+        if (index == 0) {//若果index==0则让扇形wedge旋转的角度angle变为0,文本text隐藏hide()
+            layer.find("Wedge").each(function (item,index) {
+                item.angle(0);
+            });
+            layer.find("Text").each(function (item,index) {
+                item.hide();//index==0的时候,先让文本内容隐藏
+            });
+        }
+        var wedgeArray = layer.find("Wedge");
+        var textArray = layer.find("Text");
+        //设置动画,让扇形的角度从0旋转到data[index].value*360,文本text显示show()
+        wedgeArray[index].to({
+            duration: 3 * data[index].value,
+            angle: data[index].value * 360,
+            onFinish: function () {
+                textArray[index].show();//扇形区域的角度展开完毕之后,让文本内容显示
+                index++;
+                //对index进行判断,如果index大于等于data.length,则说明data数组被遍历完毕,让index的值充值为0,return
+                if (index >= data.length) {
+                    index = 0;
+                    return;
+                }
+                wedgeAnimate();//注意wedgeAnimate()函数调用的位置不能乱放
+            }
+        });
+    }
+    wedgeAnimate();//页面打开的时候,先主动加再一次动画
+    //绑定stage舞台的点击事件,contentClick不同于click,click事件只有点击到绘制的形状上的时候点击事件才会生效,点击到空白地方的时候则不会生效
+    //而contentClick事件只要点击到stage的区域,即使是空白的地方,也可以生效
+    stage.on("contentClick",function (event) {
+        wedgeAnimate();
+    });
+</script>
+</body>
+</html>

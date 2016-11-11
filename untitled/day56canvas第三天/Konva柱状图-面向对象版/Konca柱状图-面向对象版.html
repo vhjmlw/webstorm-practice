@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0, user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="konva.js"></script>
+<script src="myRect.js"></script>
+<script>
+    var stage = new Konva.Stage({
+        container: "container",
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
+    var layer = new Konva.Layer();
+    stage.add(layer);
+
+    var myRect = new MyRect({
+        x: stage.getWidth() / 8,
+        y: stage.getHeight() * 3 / 4,
+        width: stage.getWidth() * 6 / 8,
+        height: stage.getHeight(),
+        data: [
+            {name: '百度', value: .2, color: 'blue'},
+            {name: '阿里', value: .4, color: 'red'},
+            {name: '新浪', value: .1, color: 'purple'},
+            {name: '搜狐', value: .1, color: 'navy'},
+            {name: '360', value: .2, color: 'orange'}
+        ],
+    });
+    myRect.addToGroupOrLayer(layer);
+    layer.draw();
+    myRect.myAnimate();
+    //添加stage舞台的contentClick点击事件,当点击到stage的范围的时候,会触发contentClick事件
+    stage.on("contentClick", function () {
+        myRect.myAnimate();
+    });
+</script>
+</body>
+</html>
