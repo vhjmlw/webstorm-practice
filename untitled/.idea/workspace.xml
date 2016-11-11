@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9671f73-cb4b-4137-84ea-84230f662ba4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/Konva柱状图-面向对象版/Konca柱状图-面向对象版.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/Konva柱状图-面向对象版/konva.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/Konva柱状图-面向对象版/myRect.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/Konva柱状图/Konva柱状图.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/Konva柱状图/konva.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/Konva饼状图-面向对象版/Konva饼状图-面向对象版.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/Konva饼状图-面向对象版/konva.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/Konva饼状图-面向对象版/myWedge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/Konva饼状图/konva.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/Konva饼状图/konva饼状图.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/传智官网特效/konva.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/传智官网特效/myGroup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/传智官网特效/传智官网特效.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/微信案例/09weixin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/微信案例/07微信案例.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day56canvas第三天/微信案例/js/konva.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day56canvas第三天/konva进度条-面向对象版/konva进度条-面向对象版.html" afterPath="$PROJECT_DIR$/day56canvas第三天/konva进度条-面向对象版/konva进度条-面向对象版.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day56canvas第三天/微信案例/js/ItcastScence.js" afterPath="$PROJECT_DIR$/day56canvas第三天/微信案例/js/ItcastScence.js" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,56 +26,28 @@
     <favorites_list name="untitled" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="09weixin.html" pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/10 canvas/03-Canvas-第3天Konva框架与项目实战/03-Canvas-第3天Konva框架与项目实战/4-源代码/09weixin.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="174">
-                  <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="weixin.js" pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/10 canvas/03-Canvas-第3天Konva框架与项目实战/03-Canvas-第3天Konva框架与项目实战/4-源代码/js/weixin.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="261">
-                  <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="09weixin.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/day56canvas第三天/微信案例/09weixin.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="ItcastScence.js" pinned="false" current-in-tab="true">
-            <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/10 canvas/03-Canvas-第3天Konva框架与项目实战/03-Canvas-第3天Konva框架与项目实战/4-源代码/js/ItcastScence.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="522">
-                  <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="09weixin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day56canvas第三天/微信案例/09weixin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="07微信案例.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day56canvas第三天/微信案例/07微信案例.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,8 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/day39 jQuery第四天/jQuery插件/lazyload.html" />
-        <option value="$PROJECT_DIR$/day39 jQuery第四天/jQuery插件/jQueryUI.html" />
         <option value="$PROJECT_DIR$/day54canvas第一天/画矩形/画矩形.html" />
         <option value="$PROJECT_DIR$/day54canvas第一天/坐标轴K线图/坐标轴K线图.html" />
         <option value="$PROJECT_DIR$/day54canvas第一天/绘制文本/绘制文本.html" />
@@ -142,7 +102,6 @@
         <option value="$PROJECT_DIR$/day56canvas第三天/konva矩形-面向对象版/meRect.js" />
         <option value="$PROJECT_DIR$/day56canvas第三天/konva进度条-面向对象版/meRect.js" />
         <option value="$PROJECT_DIR$/day56canvas第三天/konva进度条-面向对象版/myRect.js" />
-        <option value="$PROJECT_DIR$/day56canvas第三天/konva进度条-面向对象版/konva进度条-面向对象版.html" />
         <option value="$PROJECT_DIR$/day56canvas第三天/传智官网特效/myGroup.js" />
         <option value="$PROJECT_DIR$/day56canvas第三天/传智官网特效/传智官网特效.html" />
         <option value="$PROJECT_DIR$/day56canvas第三天/kanvas饼状图/konva饼状图.html" />
@@ -153,6 +112,9 @@
         <option value="$PROJECT_DIR$/day56canvas第三天/Konva饼状图/konva饼状图.html" />
         <option value="$PROJECT_DIR$/day56canvas第三天/Konva饼状图-面向对象版/Konva饼状图-面向对象版.html" />
         <option value="$PROJECT_DIR$/day56canvas第三天/微信案例/微信案例.html" />
+        <option value="$PROJECT_DIR$/day56canvas第三天/微信案例/js/ItcastScence.js" />
+        <option value="$PROJECT_DIR$/day56canvas第三天/konva进度条-面向对象版/konva进度条-面向对象版.html" />
+        <option value="$PROJECT_DIR$/day56canvas第三天/微信案例/07微信案例.html" />
       </list>
     </option>
   </component>
@@ -257,6 +219,46 @@
               <option name="myItemId" value="day56canvas第三天" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="微信案例" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="day56canvas第三天" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="传智官网特效" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="day56canvas第三天" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -295,11 +297,11 @@
       <recent name="$PROJECT_DIR$/day32 前端基本功js特效3/改变页面颜色" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day56canvas第三天/微信案例/js" />
       <recent name="$PROJECT_DIR$/day56canvas第三天/微信案例" />
       <recent name="$PROJECT_DIR$/day56canvas第三天/Konva柱状图-面向对象版" />
       <recent name="$PROJECT_DIR$/day56canvas第三天/Konva柱状图" />
       <recent name="$PROJECT_DIR$/day56canvas第三天/canvas饼状图-面向对象版" />
-      <recent name="$PROJECT_DIR$/day56canvas第三天/kanvas饼状图" />
     </key>
   </component>
   <component name="RunManager">
@@ -463,12 +465,12 @@
       <workItem from="1478660128086" duration="15803000" />
       <workItem from="1478719681356" duration="1224000" />
       <workItem from="1478795086022" duration="25338000" />
-      <workItem from="1478829875380" duration="806000" />
+      <workItem from="1478829875380" duration="5436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="686443000" />
+    <option name="totallyTimeSpent" value="691073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -481,26 +483,45 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="23" width="1858" height="1057" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1257485" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12520413" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32815734" sideWeight="0.5087241" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47362977" sideWeight="0.4912759" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47357512" sideWeight="0.4912759" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12704471" sideWeight="0.5053929" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988626" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32815734" sideWeight="0.5087241" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988626" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47357512" sideWeight="0.4912759" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12532912" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12704471" sideWeight="0.5053929" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -520,34 +541,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/day55canvas第二天/canvas变换/canvas变换.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1218">
-          <caret line="42" column="71" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day55canvas第二天/new的实现原理/new的实现原理.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day55canvas第二天/绘制圆形-面向对象版/绘制圆形-面向对象版.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="967">
-          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day55canvas第二天/帧动画变换方向-面向对象版/帧动画变换方向-面向对象版.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day55canvas第二天/绘制圆形-面向对象版/myArc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
@@ -707,13 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day56canvas第三天/konva进度条-面向对象版/konva进度条-面向对象版.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1363">
-          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day56canvas第三天/konva进度条-面向对象版/myRect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
@@ -732,6 +718,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc;n#MyGroup#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -753,6 +742,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -777,13 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day56canvas第三天/传智官网特效/传智官网特效.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3230">
-          <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day56canvas第三天/Konva柱状图/konva.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -798,13 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day56canvas第三天/Konva柱状图-面向对象版/Konca柱状图-面向对象版.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/10 canvas/01-Canvas-第1天Canvas基础和面向对象铺垫/01-Canvas-第1天Canvas基础和面向对象铺垫/4-源代码/demos/36柱状图面向对象版本.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="812">
@@ -816,43 +792,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1566">
           <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day56canvas第三天/Konva柱状图/Konva柱状图.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day56canvas第三天/Konva饼状图/konva饼状图.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day56canvas第三天/Konva饼状图-面向对象版/Konva饼状图-面向对象版.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/10 canvas/03-Canvas-第3天Konva框架与项目实战/03-Canvas-第3天Konva框架与项目实战/4-源代码/js/ItcastScence.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/10 canvas/03-Canvas-第3天Konva框架与项目实战/03-Canvas-第3天Konva框架与项目实战/4-源代码/09weixin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
+          <folding>
+            <element signature="n#!!doc;n#MyRect#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -866,16 +808,130 @@
     </entry>
     <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/10 canvas/03-Canvas-第3天Konva框架与项目实战/03-Canvas-第3天Konva框架与项目实战/4-源代码/js/weixin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="199">
+          <caret line="34" column="10" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="10" />
+          <folding>
+            <element signature="n#!!block;n#builderC3Scene#0" expanded="false" />
+            <element signature="n#!!block;n#builderDemoScene#0" expanded="false" />
+            <element signature="e#2916#3229#0" expanded="false" />
+            <element signature="e#3294#3602#0" expanded="false" />
+            <element signature="e#3333#3420#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/10 canvas/03-Canvas-第3天Konva框架与项目实战/03-Canvas-第3天Konva框架与项目实战/4-源代码/09weixin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/10 canvas/03-Canvas-第3天Konva框架与项目实战/03-Canvas-第3天Konva框架与项目实战/4-源代码/js/ItcastScence.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day56canvas第三天/微信案例/js/weixin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1914">
+          <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day56canvas第三天/微信案例/js/ItcastScence.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day56canvas第三天/Konva柱状图/Konva柱状图.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day56canvas第三天/Konva柱状图-面向对象版/Konca柱状图-面向对象版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day56canvas第三天/Konva饼状图/konva饼状图.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day56canvas第三天/Konva饼状图-面向对象版/Konva饼状图-面向对象版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="e#611#1240#0" expanded="false" />
+            <element signature="e#1623#1981#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day56canvas第三天/传智官网特效/传智官网特效.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="879">
+          <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+          <folding>
+            <element signature="e#2577#2789#0" expanded="false" />
+            <element signature="e#2826#3039#0" expanded="false" />
+            <element signature="e#3076#3287#0" expanded="false" />
+            <element signature="e#3324#3538#0" expanded="false" />
+            <element signature="e#4352#4569#0" expanded="false" />
+            <element signature="e#4606#4821#0" expanded="false" />
+            <element signature="e#4858#5071#0" expanded="false" />
+            <element signature="e#5108#5323#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day56canvas第三天/konva进度条-面向对象版/konva进度条-面向对象版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day56canvas第三天/微信案例/09weixin.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day56canvas第三天/微信案例/js/konva.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day56canvas第三天/微信案例/07微信案例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding />
         </state>
       </provider>

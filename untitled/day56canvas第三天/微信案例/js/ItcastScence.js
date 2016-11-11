@@ -4,14 +4,14 @@ function ItcastScene( options ) {
     this.stage = options.stage;
 
     //执行场景的初始化
-    this.init = options.init || ItcastScene.voidFn;
+    this.init = options.init || ItcastScene.prototype.voidFn;
 
     //执行场景的进场动画
-    this.pre = options.pre || ItcastScene.voidFn;
+    this.pre = options.pre || ItcastScene.prototype.voidFn;
 
 
     //执行场景的出场动画
-    this.post = options.post || ItcastScene.voidFn;
+    this.post = options.post || ItcastScene.prototype.voidFn;
 
     //当前场景的所有的层
     this.layers = options.layers || [new Konva.Layer()];
