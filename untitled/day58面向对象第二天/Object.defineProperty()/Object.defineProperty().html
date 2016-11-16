@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person() {
+        this.name = "建磊";
+        this.age = 26;
+        this.degree;
+        Object.defineProperty(this, "degree",{
+            /*set:function (value) {
+                degree = value;
+            },
+            get:function () {
+                return degree;
+            },*/
+            value: "本科",
+            configurable: true,
+            writable: false,
+            enumerable: false
+        });
+
+    }
+    var jianlei = new Person();
+    console.log(jianlei.degree);
+    jianlei.degree = "硕士";
+    console.log(jianlei.degree);//本科
+</script>
+</body>
+</html>

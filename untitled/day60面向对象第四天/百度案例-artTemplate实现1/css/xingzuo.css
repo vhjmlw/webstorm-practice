@@ -1,0 +1,86 @@
+
+.xingzuo{padding: 20px;}
+.item{
+    margin-right: 10px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    width: 170px;
+    height: 52px;
+    float: left;
+    position: relative;
+}
+.no-mr{margin-right: 0;}
+.image{
+    float: left;
+    width: 52px;
+    height: 52px;
+    background: url('../xingzuo/xingzuo.png') no-repeat 0 52px;
+}
+.description{
+    width: 115px;
+    height: 43px;
+    border: 2px solid #f1f1f1;
+    border-left: none;
+    float: left;
+    padding-top: 6px;
+}
+.description p{
+    padding-left: 8px;
+    width: 90px;
+    height: 18px;
+    line-height: 18px;
+    color: #222;
+    text-align: left;
+}
+.mark{
+    display: none;
+}
+.selected .mark{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: url('../xingzuo/xingzuo.png') no-repeat 0 -624px;
+    display: block;
+}
+.is-hover .description{
+    border-color: #389CFF;
+    border-width: 2px;
+}
+.num-0 .image{
+    background-position: 0 0;
+}
+.num-1 .image{
+    background-position: 0 -52px;
+}
+.num-2 .image{
+    background-position: 0 -104px;
+}
+.num-3 .image{
+    background-position: 0 -156px;
+}
+.num-4 .image{
+    background-position: 0 -208px;
+}
+.num-5 .image{
+    background-position: 0 -260px;
+}
+.num-6 .image{
+    background-position: 0 -312px;
+}
+.num-7 .image{
+    background-position: 0 -364px;
+}
+.num-8 .image{
+    background-position: 0 -416px;
+}
+.num-9 .image{
+    background-position: 0 -468px;
+}
+.num-10 .image{
+    background-position: 0 -520px;
+}
+.num-11 .image{
+    background-position: 0 -572px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person() {
+        this.name = "";//共有属性
+        this.age = 0;
+        this.speech = function () {
+            console.log(this.name + "can speech");
+        }
+        var degree = "本科";//私有属性
+        this.config = {//将临时的数据存储在config里面
+            firstProperty: "",
+            secondProperty: "",
+            thirdProperty: "",
+        }
+    }
+    Person.prototype = {
+        eat : function () {
+            console.log(this.name + "对吃没什么讲究的");
+        },
+        school: "河南科技大学",
+    }
+    var jianlei = new Person();
+    console.log(jianlei.degree);//undefined
+    console.log (jianlei.school);
+    jianlei.name = "建磊";
+    jianlei.eat();
+</script>
+</body>
+</html>

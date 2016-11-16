@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/boutiqueGroup.css" rel="stylesheet" type="text/css"/>
+    <link href="css/common.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="conBottomT" id='container'></div>
+<script src="Product.js"></script>
+<script>
+    window.onload = function () {
+        var product1 = new Product();
+        product1.imgSrc = "images/product.jpg";
+        product1.discount = "5";
+        product1.brand = "雅诗兰黛";
+        product1.price = "4899.99";
+        product1.originPrice = "8899.99";
+        product1.sales = "三天销量一亿瓶,我的天哪";
+        var products = [];
+        var str = "";
+        for (var i = 0; i < 8; i++) {
+            str += product1.bindDOM();
+        }
+        var container = document.querySelector("#container");
+        container.innerHTML = str;
+    }
+</script>
+</body>
+</html>

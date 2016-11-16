@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <label>用户名 </label>
+    <input id="loginname" type="text"  value="18610811912" placeholder="邮箱/用户名/已验证手机">
+</div>
+<div>
+    <label>密 码  </label>
+    <input type="text" id="nloginpwd"  placeholder="密码">
+</div>
+
+<button type='button' id='btn'>提交</button>
+</body>
+</html>
+<script>
+//    function $(){
+//    }
+//    $.prototype={
+//    }
+
+
+    //定义一个对象 - 名字是$
+    var $$ = function() {};
+
+
+$$.prototype.$id=function(id) {
+    return document.getElementById(id)
+}
+    //删除左边的空格
+$$.prototype.ltrim=function(str) {
+        /*^ 以xx开头*/
+        /*\s 表示空格*/
+        /**表示匹配零个或者多个*/
+        /*g 表示匹配全部*/
+        /*(^\s*)表示匹配以空格开头一个或者多个字符*/
+        /*str.replace(/(^\s*)/g,'') 表示用''替换所有的空格*/
+        return str.replace(/(^\s*)/g,'');
+    }
+    //删除右边的空格
+$$.prototype.rtrim=function(str) {
+        /*$以xx结尾*/
+        return str.replace(/(\s*$)/g,'');
+    }
+    //删除左右两端的空格
+$$.prototype.trim=function(str) {
+        /*/表是或的意思*/
+        return str.replace(/(^\s*)|(\s*$)/g, '');
+    }
+
+/*^同类*/
+//    ^	    匹配输入字符串的开始位置。
+//    $	    匹配输入字符串的结束位置。
+//   \b     匹配一个单词边界，也就是指单词和空格间的位置。
+//          例如， 'er\b' 可以匹配"never" 中的'er'，但不能匹配 "verb" 中的 'er'。
+//    \B	和\b相反，匹配非单词边界。
+//          'er\B' 能匹配 "verb" 中的 'er'，但不能匹配 "never" 中的 'er'。
+
+
+
+/*补充 g同类 -- i 表示不区分大小写
+比如：/a/i，表示“a”或“A”都是满足条件的*/
+
+
+/**同类*/
+//星号(*): 星号代表匹配它前面一个字符任意遍(0或任意次)
+//加号(+): 表示匹配前面的字符一次或多次（至少一次).
+//问号(?): 问号也是一个数量词，它代表匹配前一个字符0或1次。
+
+//中括号[]： 中括号用来表示一个字符集合，
+//如果这个集合有很多元素，如26个字母，数字等，一个个地写在中括号里，未免太麻烦太蠢笨，
+//这时可以用连字符(hyphen)来表示一个范围，
+// 如:[a-z]表示小写字母的集合，
+// [a-zA-Z]表示大小写字母的集合。
+// 脱字符^ (caret).
+// 这种写法表示，匹配任何不在该集合中的字符，与上面的用法刚好相反
+
+//    大括号:{}
+//    大括号的作用是指定重复前面一个字符多少遍:
+//    {N} 重复N遍
+//    {n,m} 重复 n~m 遍
+//    {n,}  至少重复n遍
+//    {,m} 至多重复m遍
+
+
+
+/*\s同类*/
+//    \w -- (小写w) 表示字母或数字，等价于 [a-zA-Z0-9]
+//    \W -- (大写W)非字母且非数字，与\w相反 等价于 '[^A-Za-z0-9_]'
+//    \s  --  (小写s)匹配一个空格字符，包括：空格，换行，回车,tab,等价于[ \n\r\t\f]
+//    \S --  (大写S)匹配非空格字符，\s的相反 等价于 [^ \f\n\r\t\v]。
+//    \d -- 表示10进制数字，等价于 [0-9]
+//    \D --	匹配一个非数字字符。等价于 [^0-9]。
+
+
+
+//在框架中实例化，
+//前面讲过了，对象使用之前需要先实例化
+$$ = new $$();
+
+
+
+    //使用封装好的对象
+    var btn = $$.$id('btn')
+    btn.onclick = function(){
+        var userName= $$.$id('loginname').value
+        var data =  $$.trim(userName)
+        console.log(data)
+        //ajax提交数据
+    }
+</script>
+

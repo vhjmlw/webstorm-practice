@@ -1,0 +1,14 @@
+*{margin: 0 auto;padding: 0;list-style: none;border: 0; text-align: center;}
+body{background: url(../baidu/bg.jpg); -webkit-background-size: cover;
+    background-size: cover;}
+.logo{margin-top: 30px; display: block;}
+.links{width: 740px; margin: 0 auto;}
+.links a{color: #fff; margin-right: 10px;}
+.search{margin-bottom: 40px; margin-top: 10px;}
+.search input{width: 537px; height: 40px;}
+.search button{width: 104px; height: 40px;}
+.container{width: 911px;}
+.menu{width: 80px; height: 318px; float: left; background: rgba(0,0,0,0.4);}
+.menu span{width: 80px; height: 35px; line-height: 35px; color: #fff; display: inline-block; font-weight: bold; font-size: 14px;}
+.menu span.choose{background: rgba(255,255,255,0.6) url(../baidu/menu.png);}
+.card{width: 813px; height: 318px; float: right; background: rgba(255,255,255,0.6)  url(../baidu/xingzuo.png);}

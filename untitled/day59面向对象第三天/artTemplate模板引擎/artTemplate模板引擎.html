@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="first"></div>
+<br>
+<br>
+<div id="second"></div>
+<br>
+<br>
+<div id="third"></div>
+<br>
+<br>
+<div id="forth"></div>
+<script src="template.js"></script>
+<script id="firstTemplate" type="text/html">
+    <h1>使用artTemplate模板引擎进行each循环</h1>
+    <h1>{{name}}</h1>
+    <h2>票价: {{price}}</h2>
+    <h3>评价: {{star}} 颗星</h3>
+    <h4>概述: {{description}}</h4>
+    <!--{{each tag as value index}}
+        <span>{{index+1}}:{{value}}</span>
+    {{/each}}-->
+    {{each tag}}
+        <span>{{$index + 1}}:{{$value}} </span>
+    {{/each}}
+</script><!--固定写法,id必须要指定;type="text/html"为固定的写法-->
+<script id="secondTemplate" type="text/html">
+    <h1>使用artTemplate模板引擎进行条件判断</h1>
+    {{if number == 10}}
+        <h3>判断的条件成立: {{text}}</h3>
+    {{else}}
+        <h3>判断的条件不成立: {{error}}</h3>
+    {{/if}}
+</script>
+<script id="thirdTemplate" type="text/html">
+    <h1>{{name}}</h1>
+    <ul>
+        {{each films as value index}}
+            <li>
+                <strong>{{value.title}}</strong><br>
+                <strong>导演: {{value.lead}}</strong><br>
+                <strong>主演: {{value.role}}</strong>
+            </li>
+        {{/each}}
+    </ul>
+</script>
+<script>
+    var data1 = {
+        name: "老无所依",
+        price: 30,
+        star: 5,
+        description: "科恩兄弟历时三年的时间完成的电影,电影讲述了先当下老的传统被遗弃,老一辈的人感觉到老无所依,无法适应现在充斥着金钱与毒品的潮流的社会.",
+        tag: ["悬疑", "反传统", "高智商", "看不懂"]
+    };
+    var html1 = template("firstTemplate",data1);//该方法将模板和数据绑定在一起,firstTemplate是自定义模板的id;data1是JSON格式的数据,必须是JSON格式的.方法返回一个HTML内容的字符串.
+    document.getElementById("first").innerHTML = html1;
+
+    var data2 = {
+        number: 10,
+        text: "这里的文本只有number==10的时候才会显示",
+        error: "这里的文本只要number!=10的时候就会显示"
+    };
+    var html2 = template("secondTemplate",data2);
+    document.getElementById("second").innerHTML = html2;
+
+    var data3 ={
+        name:'电影列表',
+        films:
+                [
+                    {
+                        title: '复仇者联盟2',
+                        lead: '乔斯·韦登',
+                        role: '小罗伯特·唐尼'
+                    },
+                    {
+                        title: '速度与激情7',
+                        lead: '范·迪塞尔',
+                        role: '范·迪塞尔'
+                    },
+                    {
+                        title: '左耳',
+                        lead: '苏有朋',
+                        role: '苏有朋'
+                    },
+                    {
+                        title: '万物生长',
+                        lead: '范冰冰',
+                        role: '范冰冰 韩庚'
+                    },
+                    {
+                        title: '盗墓笔记',
+                        lead: '苏有朋',
+                        role: '美人鱼'
+                    }
+                ]
+    };
+    var html3 = template("thirdTemplate",data3);
+    document.getElementById("third").innerHTML = html3;
+
+    var data4 = {name: "鬼子来了", leader: "姜文", description: "讲得很真实,真实的不能让大众看到"};
+    var str = "";
+    str += "<h1>{{name}}</h1>"
+    str += "<h2>导演: {{leader}}</h2>"
+    str += "<h3>概述: {{description}}</h3>";
+    var fn = template.compile(str);//传入一个模板内容的字符串,返回一个渲染函数.字符串的内容就是模板的内容.
+    var html4 = fn(data4);//调用返回的渲染函数,传入JSON格式的数据,返回HTML内容的字符串
+    document.getElementById("forth").innerHTML = html4;//相当于将template()方法拆分为两个方法.
+</script>
+</body>
+</html>
