@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var jianlei = {
+        name: "建磊",
+        age: 26,
+        fn: function () {
+            console.log(this.name + this.age);//这里的this指向了jianlei对象
+        }
+    };
+    var xunan = {
+        name: "旭楠",
+        age: 23
+    };
+    jianlei.fn.call(xunan);//旭楠23,xunan对象调用fn()方法,里面的this指向了xunan对象
+
+    function fun() {
+        console.log(this);//这里的this指向了window对象
+    }
+    fun.call(xunan);//{name: "旭楠", age: 23},xunan对象调用了fun()函数,里面的this重新指向了xunan对象
+</script>
+</body>
+</html>

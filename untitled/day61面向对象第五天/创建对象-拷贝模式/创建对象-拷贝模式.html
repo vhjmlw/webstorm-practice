@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //拷贝模式的第一种方法,也是最简单的方法,一次只能拷贝一个对象的属性和方法
+    function extend1(target, source) {
+        for (var attr in source) {
+            target[attr] = source[attr];
+        }
+        return target;
+    }
+    //拷贝模式的第二种方法,可以一次拷贝多个对象的属性和方法
+    function extend2() {
+        //arguments数组,包含了调用extend2()函数时传入的实参.
+        var len = arguments.length;
+        var target = null;
+        var i = 0;//变量i很是巧妙
+        if (len === 0) {
+            return;
+        } else if (len === 1) {
+            //这里的this指向了window对象,如果只传入一个参数的话,
+            // 会将传入参数的属性和方法全部添加在window对象身上
+            target = this;
+        } else {
+            i++;
+            target = arguments[0];
+        }
+        //如果传入一个参数,实现的效果是将传入参数的属性和方法,
+        // 全部添加在window对象身上,最终返回的是window对象
+        for (; i < len; i++) {
+            for (var attr in arguments[i]) {
+                target[attr] = arguments[i][attr];//拷贝对象的属性和方法
+            }
+        }
+        return target;
+    }
+
+
+    //使用第一种方法
+    var source1 = {
+        name: "建磊",
+        age: 26,
+        fn: function () {
+            console.log(this.name + this.age)
+        }
+    };
+    var obj1 = extend1({}, source1);
+    obj1.name;//建磊
+    obj1.age;//26
+    obj1.fn();//建磊26
+
+
+    //使用第二种方法
+    var source2 = {
+        name: "旭楠",
+        age: 23,
+        fn: function () {
+            console.log(this.name+this.age);
+        }
+    };
+    //传入一个对象
+    var obj2 = extend2(source2);//obj2就是window对象,当传入一个参数的时候,会将传入参数所有的属性和方法全部添加在window对象上,然后返回window对象
+    obj2.name;//旭楠
+    obj2.age;//23
+    console.log(obj2);//window
+    console.log(obj2===window);//true
+    //传入两个对象
+    var obj3 = extend2({},source2);//传入的参数>=2个的时候,会将第一个对象作为目标对象,后面对象所有的属性和方法全部添加到第一个目标对象身上,然后返回第一个目标对象
+    obj3.name;//旭楠
+    obj3.age;//23
+    obj3.fn();//旭楠23
+
+    var source3 = {
+        name: "建磊旭楠",
+        sexy: true
+    }
+    //传入三个对象
+    var obj4 = extend2({},source2,source3);//后面source3对象的name属性覆盖掉了前面source2对象的name属性,所以obj4的name属性值为"建磊旭楠"
+    obj4.name;//建磊旭楠
+    obj4.age;//23
+    obj4.sexy;//true
+    obj4.fn();//建磊旭楠23,fn()方法中调用了obj4对象的name属性"建磊旭楠",所以返回的是"建磊旭楠23"
+</script>
+</body>
+</html>

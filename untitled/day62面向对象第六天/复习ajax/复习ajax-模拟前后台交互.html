@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="template.js"></script>
+<script>
+    var xhr = null;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    }else{
+        xhr = ActiveXObject("Microsoft.XMLHTTP");
+    }
+    //向一个JSON文件发送请求,返回一个JSON内容的字符串
+    var url = "http://localhost:63342/untitled/day62面向对象第六天/复习ajax/package.json";
+    xhr.open("GET",url,true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                 var str = xhr.responseText;//返回的是一个JSON内容的字符串
+                var json = JSON.parse(str);//将JSON内容的字符串解析为JSON对象
+                var object = transform(json);
+                //传统拼接字符串的方法
+                var j = "";
+                j += "<h1>"+object.name+"</h1>"
+                j += "<h2>"+object.version+"</h2>"
+                j += "<h3>"+object.description+"</h3>"
+                j += "<h4>"+object.makeLove+"</h4>";
+                var div1 = document.createElement("div");
+                div1.className = "first";
+                div1.innerHTML = j;
+                document.body.appendChild(div1);
+                //使用artTemplate模板
+                var i = "";
+                i += "<h1>{{name}}</h1>"
+                i += "<h2>{{version}}</h2>"
+                i += "<h3>{{description}}</h3>"
+                i += "<h4>{{makeLove}}</h4>";
+                var fn = template.compile(i);
+                var html = fn(json);
+                var div2 = document.createElement("div");
+                div2.className = "second";
+                div2.innerHTML = html;
+                document.body.appendChild(div2);
+            }
+        }
+    }
+    xhr.send(null);
+    //自定义一个函数,将JSON对象的内容添加到一个空对象身上,作为空对象的属性,并返回该对象
+    function transform(data) {
+        var obj = {};
+        obj.name = data.name;
+        obj.version = data.version;
+        obj.description = data.description;
+        obj.makeLove = data.makeLove;
+        return obj;
+    }
+</script>
+</body>
+</html>

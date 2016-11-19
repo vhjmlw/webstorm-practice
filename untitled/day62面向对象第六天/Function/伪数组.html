@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //伪数组
+    //伪数组本质上还是JSON对象,有如下两个特点:
+    //1 key都是0 1 2 3...等自然数
+    //2 有length属性,而且length属性需要自己维护,自己声明
+    var json = {0:"value1",1:"value2",2:"value3",3:"value4",length:4};
+    //真数组
+    var array = ["value1","value2","value3","value4"];
+    //以下都是伪数组的形式
+    //arguments
+    //document.getElementsByTagName document.getElementsByClassName
+    //jQuery中大部分的隐式迭代都是伪数组
+
+    //将伪数组转换为真数组,使用apply()或call()
+    //Array.prototype.slice.call(伪数组);返回一个真数组
+    var arr1 = Array.prototype.slice.apply(json);
+    console.log(arr1);//["value1", "value2", "value3", "value4"]
+    var arr2 = Array.prototype.slice.call(json);
+    console.log(arr2);//["value1", "value2", "value3", "value4"]
+</script>
+</body>
+</html>

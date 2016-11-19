@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //使用递归传统方法计算累加
+    function fn1(n) {
+        if (n > 0) {
+            return n + fn(n - 1);
+        } else {
+            return 0;
+        }
+    }
+    var sum1 = fn1(100);
+    console.log(sum1);//5050
+    //使用callee在递归中计算累加
+    function fn2(n) {
+        if (n > 0) {
+            return n + arguments.callee(n - 1);
+        } else {
+            return 0;
+        }
+    }
+    var sum2 = fn2(10);
+    console.log(sum2);//55
+</script>
+</body>
+</html>

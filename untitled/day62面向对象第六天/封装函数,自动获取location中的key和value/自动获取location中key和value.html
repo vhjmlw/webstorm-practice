@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    //自定义一个函数，实现的功能为：自动获取地址栏location中字符串参数search中的key和value，
+    //将每一对key和value添加到JSON对象中，并返回该JSON对象
+    function simpleQuery() {
+        var address = window.location.search.substring(1);
+        var arr = address.split("&");
+        var json = {};
+        for (var i = 0, len = arr.length; i < len; i++) {
+            var num = arr[i].indexOf("=");
+            if (num === -1) {//如果没找到'='则直接进入下一个循环
+                continue;
+            }
+            var key = arr[i].substring(0, num);
+            var value = arr[i].substring(num + 1);
+            json[key] = value;
+        }
+        return json;
+    }
+</script>
+</body>
+</html>

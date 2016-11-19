@@ -28,7 +28,7 @@
     {{each tag}}
         <span>{{$index + 1}}:{{$value}} </span>
     {{/each}}
-</script><!--固定写法,id必须要指定;type="text/html"为固定的写法-->
+</script><!--模板1,固定写法,id必须要指定;type="text/html"为固定的写法-->
 <script id="secondTemplate" type="text/html">
     <h1>使用artTemplate模板引擎进行条件判断</h1>
     {{if number == 10}}
@@ -36,7 +36,7 @@
     {{else}}
         <h3>判断的条件不成立: {{error}}</h3>
     {{/if}}
-</script>
+</script><!--模板2-->
 <script id="thirdTemplate" type="text/html">
     <h1>{{name}}</h1>
     <ul>
@@ -48,7 +48,7 @@
             </li>
         {{/each}}
     </ul>
-</script>
+</script><!--模板3-->
 <script>
     var data1 = {
         name: "老无所依",
@@ -56,7 +56,7 @@
         star: 5,
         description: "科恩兄弟历时三年的时间完成的电影,电影讲述了先当下老的传统被遗弃,老一辈的人感觉到老无所依,无法适应现在充斥着金钱与毒品的潮流的社会.",
         tag: ["悬疑", "反传统", "高智商", "看不懂"]
-    };
+    };//数据1
     var html1 = template("firstTemplate",data1);//该方法将模板和数据绑定在一起,firstTemplate是自定义模板的id;data1是JSON格式的数据,必须是JSON格式的.方法返回一个HTML内容的字符串.
     document.getElementById("first").innerHTML = html1;
 
@@ -64,7 +64,7 @@
         number: 10,
         text: "这里的文本只有number==10的时候才会显示",
         error: "这里的文本只要number!=10的时候就会显示"
-    };
+    };//数据2
     var html2 = template("secondTemplate",data2);
     document.getElementById("second").innerHTML = html2;
 
@@ -98,11 +98,11 @@
                         role: '美人鱼'
                     }
                 ]
-    };
+    };//数据3
     var html3 = template("thirdTemplate",data3);
     document.getElementById("third").innerHTML = html3;
 
-    var data4 = {name: "鬼子来了", leader: "姜文", description: "讲得很真实,真实的不能让大众看到"};
+    var data4 = {name: "鬼子来了", leader: "姜文", description: "讲得很真实,真实的不能让大众看到"};//数据4
     var str = "";
     str += "<h1>{{name}}</h1>"
     str += "<h2>导演: {{leader}}</h2>"

@@ -133,7 +133,8 @@
     //使用for循环来创建星座对象,数组中有多少条星座的数据,就创建多少个星座对象
     for (var i = 0,len = data.length; i < len; i++) {
         var constellation = new Constellation(data[i],i);//传入数据和索引
-        constellation.init();//调用init函数,函数内部执行了bindDOM函数,bindDOM函数内容调用了自定义的formateString函数,实现了数据data[i]的绑定
+        constellation.init();//调用init函数,函数内部执行了bindDOM函数,
+        // bindDOM函数内容调用了自定义的formateString函数,实现了数据data[i]的绑定
     }
 </script>
 </body>

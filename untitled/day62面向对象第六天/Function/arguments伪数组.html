@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fn() {
+        console.log(arguments伪数组);//这里的arguments是伪数组,还是JSON对象
+    }
+    fn(1, 2, 3);//“Object”原型{0:1,1:2,2:3,length:3}
+</script>
+</body>
+</html>

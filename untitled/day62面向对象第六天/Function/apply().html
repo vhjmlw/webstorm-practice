@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr1 = [1, 11, 222, 9, 44, -1, 1000];
+    //求数组中的最大值
+    var max = Math.max.apply(null, arr1);
+    console.log(max);//1000
+    //求数组中的最小值
+    var min = Math.min.apply(null, arr1);
+    console.log(min);//-1
+
+    //使用array(),将一个数组合并到另一个数组当中
+    //将arr2合并到arr1当中
+    var arr2 = [333, 222, 111];
+    Array.prototype.push.apply(arr1, arr2);
+    console.log(arr1);//[1, 11, 222, 9, 44, -1, 1000, 333, 222, 111]
+
+    //传统的方法,将一个数组合并到另一个数组当中
+    var arr3 = [1,2,3,4];
+    for(var i = 0,len = arr2.length; i < len; i++) {
+        arr3.push(arr2[i]);
+    }
+    console.log(arr3);//[1, 2, 3, 4, 333, 222, 111]
+</script>
+</body>
+</html>
