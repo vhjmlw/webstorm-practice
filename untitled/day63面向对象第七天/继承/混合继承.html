@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
+        this.speak = function () {
+            console.log(this.name + "can speak");
+        }
+        var attr = "这是Person构造函数中没有使用this指向的一个变量";
+    }
+    Person.prototype= {
+        eat: function () {
+            console.log(this.name + "can eat");
+        }
+    }
+    function Student(number,degree,name,age) {
+        Person.call(this,name,age);//构造函数继承,将name age 属性添加在Student构造函数里面
+        this.number = number;
+        this.degree = degree;
+    }
+    Student.prototype = new Person();
+    var jianlei = new Student(1,"本科","建磊",26);//初始化name age属性的步骤放在这里,将name age属性添加在Student构造函数里面
+   /*注意不可以写成下面这样:
+    Student.prototype = new Person("建磊",26);//原型继承,将name age属性添加在Student.prototype原型对象里面
+    var jianlei = new Student(1,"本科");//在new Student的时候,没有初始化name age属性,默认为undefined,
+    则name age属性就在构造函数内被赋值为undefined,在调用name age属性的时候优先在自身查找,在自身查找不到的话才到原型对象查找,
+    由于在自身查找到name age属性并且值为undefined,所以导致jianlei.name和jianlei.age最终的结果为undefined
+
+    Student构造函数中:this.name = undefined ; this.age = undefined;
+    Student.prototype原型对象中:this.name = "建磊" ; this.age = 26;
+    优先在构造函数中查找name age属性,找到了为undefined,则直接返回undefined,不再在原型对象中查找.
+
+    jianlei.name;//undefined
+    jianlei.age;//undefined*/
+
+    //总而言之一句话:原型继承将继承的内容添加在子类的原型对象里面,构造函数继承将继承的内容添加在子类的构造函数里面.
+
+    console.log(jianlei.name);//建磊
+    console.log(jianlei.age);//26
+    jianlei.speak();//建磊can speak
+    console.log(jianlei.number);//1
+    console.log(jianlei.degree);//本科
+</script>
+</body>
+</html>

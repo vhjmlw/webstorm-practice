@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
+        this.speak = function () {
+            console.log(this.name + "can speak");
+        }
+        var attr = 123;
+    }
+    Person.prototype = {
+        eat: function () {
+            console.log(this.name + "can eat");
+        }
+    }
+    function Student(number,degree,name,age) {
+        //获取Person构造方法中this指向的属性和方法,
+        // 但是这种方式无法获取Person.prototype中的内容
+        //这种方式类似于Java语言中的super关键字,调用父类的构造器来初始化
+        Person.call(this,name,age);
+        this.number = number;
+        this.degree = degree;
+    }
+    Student.prototype = {
+        learn: function () {
+            console.log(this.name + "can learn");
+        }
+    }
+    var jianlei = new Student(1,"本科","建磊",26);
+    //从Person构造函数中继承过来的属性和方法
+    console.log(jianlei.name);//建磊
+    console.log(jianlei.age);//26
+    jianlei.speak();//建磊can speak
+
+    //undefined原因:虽然Person构造函数中有attr属性,
+    // 但是没有使用this关键字,所有jianlei对象无法获取该属性
+    console.log(jianlei.attr);
+
+    //自己的属性和方法
+    console.log(jianlei.number);//1
+    console.log(jianlei.degree);//本科
+    //调用Person.prototype中的eat()方法,无法调用
+    jianlei.eat();//jianlei.eat is not a function
+</script>
+</body>
+</html>
