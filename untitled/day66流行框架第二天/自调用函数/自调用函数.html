@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //普通自调用匿名函数,匿名函数内部声明的变量为局部变量,防止了全局污染
+    //以下两种自调用匿名函数都可以,当然为函数命名也可以
+    (function () {
+        var a = 123;
+        console.log(a);
+    })();
+    (function () {
+        var a = 321;
+        console.log(a);
+    }());
+
+    //在自调用匿名函数中传入window对象实参,匿名函数内部获得了window全局对象
+    //推荐以后使用这种方法
+    (function (attr) {
+        var div = attr.document.getElementById("id");
+    })(window);
+
+    //声明一个fn函数,声明之后马上就调用
+    var fn = function () {
+
+    }();
+    /*相当于:先声明,都调用
+    var fn = function () {
+
+    };
+    fn();*/
+
+    //在声明函数的时候调用该函数的几种方式:
+    //1 小括号
+    //2 赋值操作
+    //3 逻辑运算符
+    //4 数学运算符
+
+    //1 小括号
+    (function () {
+        console.log(111);
+    })();
+    //2 赋值操作
+    var fn = function () {
+        console.log(222);
+    }();
+    //3 逻辑运算符
+    !function () {
+        console.log(333);
+    }();
+    //4 数学运算符
+    +function () {
+        console.log(444);
+    }();
+</script>
+</body>
+</html>

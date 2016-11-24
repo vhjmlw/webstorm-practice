@@ -1,7 +1,7 @@
 /**
  * Created by zhangjianlei on 2016/11/23.
  */
-var gulp = require("gulp");//引入插件
+var gulp = require("gulp");//引入插件,传入require()函数的实参就是 插件的名字
 var less = require("gulp-less");//将less编译为CSS
 var cleanCss = require("gulp-clean-css");//压缩CSS文件
 var concat = require("gulp-concat");//合并多个js文件
@@ -21,7 +21,7 @@ gulp.task("less",function () {
     gulp.src("./*.less")
         .pipe(less())//将less编译为CSS
         .pipe(cleanCss())//对CSS文件进行压缩
-        .pipe(gulp.dest("./../gulp-demo2文件被复制到这里"));
+        .pipe(gulp.dest("./../gulp-demo2文件被复制到这里"));//dest的目录如果不存在,则会自动创建该目录
 });
 
 //实现实时同步demo.html到gulp-demo2文件夹的功能

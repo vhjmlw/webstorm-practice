@@ -1,0 +1,2 @@
+###使用当前文件夹下的package.json配置文件,在当前文件夹下,直接npm install就可以自动下载package.json文件中dependencies和devDependencies节点内所有的依赖包.
+###所以我们只需要一个配置文件package.json就可以了,有了配置文件,在当前文件夹下直接npm install就可以下载所有的依赖包.
