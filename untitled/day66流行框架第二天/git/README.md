@@ -104,7 +104,7 @@ git status -s // -s 是输出简要的变更日志
 
 git add
 可以将一个没有被跟踪的文件添加到跟踪列表,git add .将当前文件夹所有的文件添加追踪,'.'表示当前文件夹
-git add . === git add -all
+git add . === git add --all
 
 类似于node_modules这种性质的文件不应该被跟踪,因为不属于我们的源代码
 
@@ -164,7 +164,57 @@ https://github.com/jobbole/awesome-css-cn
 
 
 - GIT分支
+- 将本地代码库同步到GitHub服务器的remote远端仓库
+- 1 首先在GitHub创建一个repository仓库,创建的时候不要自动创建README.md文件,创建完成之后该仓库会生成一个https地址
+- 2 将本地被追踪的文件git init,git add --all,git commit -m "",也就是将被追踪的文件全部提交
+- 3 将本地与远端仓库remote建立连接,使用到远端仓库的https地址,
+    给远端的仓库起个别名origin-git便于以后本地和remote交流(默认为origin),
+    输入指令之后,会要求输入GitHub的账号和密码,对本地进行校验,输入正确之后则建立连接成功:
+    git remote add origin-git https://github.com/vhjmlw/practice-git.git
+    当然也可以使用ssh建立连接,这样的话,需要本地先创建一对秘钥,将公钥填写到GitHub账号,之后就可以使用ssh进行连接了
+- 4 将本地的文件推送到remote远端仓库:git push -u origin-git master
+    -u的意思是使用流的方式推送本地文件,此时远端仓库便拥有了我们本地上传的文件
+- 5 将远端仓库的文件拉回本地:git pull origin-git master
+    本地的文件与远端的保持一致
 
+- 如果本地有多个分支的话,需要单独的推送每个分支到远端仓库.
+    在master分支上创建一个新的分支的时候,将master主分支在创建分支的那一时刻的状态拷贝一份给新的分支;
+    而不是将最近一次commit提交时的状态拷贝一份给新的分支.
+    也就是说,新创建的分支拷贝的是创建分支时的状态,而不是最后一次提交时的状态.
+
+- gist:GitHub提供的功能模块,用来保存我们日常收集的代码块.
+
+### 使用GitHub+hexo创建自己的博客,搭建自己的个人站点:pages.github.com;hexo.io;
+### 使用GitHub Pages展示页面的两种方式:
+    1 Project site
+    在仓库里面创建一个gh-pages分支,将文件push到远程gh-pages分支,利用gh-pages分支,对页面进行预览,
+    使用 "用户ID.github.io/仓库名" 的方式可以查看仓库里面gh-pages分支的文件,自动查看仓库名gh-pages分支的内容.
+    实际上是将该仓库gh-pages分支的内容作为服务器的文件夹,默认访问index.html文件,当然也可以访问其他的文件或目录.
+
+    2 User site
+    创建一个 "用户ID.github.io" 命名的仓库,该仓库的master也可以被预览,stormzhang的博客就是这么搭建的.
+    直接使用 "用户ID.github.io" 的方式来访问仓库master分支的内容.
+    "用户ID.github.io"仓库的master作为服务器的文件夹,默认访问index.html文件,当然也可以访问其他的文件或目录.
+
+### 关于GitHub Pages的使用方法,详见官方网址:pages.github.com
+
+DNS服务商:www.dnspod.cn,进行域名绑定,将我们自己的域名绑定到GitHub上的页面.
+在项目根目录,添加CNAME文件,注意该文件没有扩展名,在该文件里面添加我们自己的域名,就可以实现域名绑定.
+
+>   使用pages.github.com推送自己的页面,页面可以被预览;使用hexo.io自动生成静态页面,搭建自己的博客;
+    可以将hexo生成的静态页面推送到GitHub Pages上,两者搭配,就实现了搭建自己的博客和个人站点.
+    hexo用来自动生成一套页面,GitHub Pages用来展示该页面.
+    类似hexo功能的还有jekyll和WordPress等.静态页面生成器.
+    GitHub的仓库有一个Launch automatic page generator的功能,也可以自动创建一套页面.
+
+### 总结:使用GitHub Pages展示页面的几种方式:
+    1 在仓库中创建一个gh-pages分支,gh-pages为展示的默认分支
+    2 在仓库的settings选项中,设置use master branch for GitHub Pages,设置master为展示分支
+    3 在创建仓库的时候,使用Launch automatic page generator 自动创建一套页面,同时创建一个gh-pages分支
+    4 创建一个以 "用户ID.github.io" 命名的仓库
+    其中1 2 3使用 "用户ID.github.io/仓库名" 访问,4使用 "用户ID.github.io" 访问
+
+    但是,GitHub Pages上面只能展示静态页面,不能展示PHP文件.
 
 
 
