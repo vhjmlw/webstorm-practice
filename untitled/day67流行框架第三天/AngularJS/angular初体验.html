@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--对angular先有个大概的体验,被angular管理的代码都要被包裹在ng-app中-->
+<!--ng-model是MVC中的M,model模型;module模块 组件-->
+<!--param相当于声明的一个变量-->
+<div ng-app>
+    <input type="text" ng-model="param" placeholder="请输入内容"/>
+    <p>hello: <strong>{{param}}</strong></p>
+</div>
+<!--在body标签的最底部引入js文件,这样可以加快首屏加载-->
+<script src="node_modules/angular/angular.js"></script>
+</body>
+</html>

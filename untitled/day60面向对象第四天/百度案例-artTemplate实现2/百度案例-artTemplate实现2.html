@@ -123,7 +123,7 @@
         }
     ]};//数据,对原始的数据进行了处理,在此种情况下,只能使用标准的JSON格式的数据
     var html = template("template",json);
-    console.log(html)
+    console.log(html);
     $(".xingzuo").html(html);
     $(".item").on("mouseenter",function () {
         $(this).siblings(".item").removeClass("is-hover");

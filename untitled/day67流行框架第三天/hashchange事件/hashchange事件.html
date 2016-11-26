@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    (function (window) {//当URL中的hash锚点变化时,触发该事件
+        window.addEventListener("hashchange",function (e) {
+            console.log(window.location.hash);//URL中的hash变化时,打印当前的hash
+            console.log(e);//URL中的hash变化时,打印hashchange事件,e是一个hashchange对象
+        });
+    })(window);
+</script>
+</body>
+</html>
