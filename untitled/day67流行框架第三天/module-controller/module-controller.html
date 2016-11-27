@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-app="moduleName" ng-controller="controllerName">
+    用户名: <input type="text" ng-model="user.username">
+    密码: <input type="password" ng-model="user.password">
+    <p>{{user.username}}</p>
+    <p>{{user.password}}</p>
+    <p>{{message}}</p>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<!--
+<script>
+    //声明一个模块,命名为moduleName.第二个参数为数组,可以传入第三方的模块,
+    //如果省略第二个参数表示获取moduleName模块,一个参数为获取;两个参数为创建.
+    var module = angular.module("moduleName",[]);
+    //为模块创建一个控制器,命名controllerName.第二个参数表示控制器操作的逻辑.
+    module.controller("controllerName",function ($scope) {//声明的形参必须为$scope,否则会报错
+        $scope.user = {
+            username: "123",
+            password: "123"
+        };
+        $scope.message = "";
+        //$scope对象的$watch()方法,对第一个参数指定的内容进行监听,
+        // 当user.username属性值变化时,调用后面的回调函数
+        $scope.$watch("user.username",function () {
+            $scope.message = "username的内容发生了变化";
+            //this.message = "username的内容发生了变化";不可以这样写.
+            console.log(this);//此时的this指向的是window对象
+        });
+    });
+</script>-->
+<script>
+    var module = angular.module("moduleName",[]);
+    //建议以后使用这种方式来声明controller,不建议使用上面的方法
+    //第二个参数是数组,数组最后一个是匿名函数,前面的都是该匿名函数的参数
+    module.controller("controllerName",["$scope",function ($scope) {
+        $scope.user = {
+            username: "",
+            password: ""
+        };
+        $scope.message = "";
+        $scope.$watch("user.username",function () {
+            $scope.message = "哎呀,内容被改动了";
+            console.log(this);
+        });
+    }]);
+</script>
+</body>
+</html>
