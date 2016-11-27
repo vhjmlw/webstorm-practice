@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--一个页面只有一个ng-app指令-->
+<!--只需要绑定总的模块module即可,总的模块里面已经引入了两个小的模块-->
+<!--两个button分别绑定两个控制器,绑定两个点击事件,点击的时候打印不同的内容-->
+<div ng-app="module"><!--绑定总的模块-->
+    <input type="button" value="按钮1" ng-click="hit()" ng-controller="controller1">
+    <input type="button" value="按钮2" ng-click="hit()" ng-controller="controller2">
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var module1 = angular.module("module1",[]);
+    module1.controller("controller1",["$scope",function ($scope) {
+        $scope.hit = function () {
+            console.log("这是按钮1");
+        }
+    }]);
+    var module2 = angular.module("module2",[]);
+    module2.controller("controller2",["$scope",function ($scope) {
+        $scope.hit = function () {
+            console.log("这是按钮2");
+        }
+    }]);
+    //创建一个总的模块module,在总的模块里面引入两个小的模块module1和module2
+    angular.module("module",["module1","module2"]);
+</script>
+</body>
+</html>

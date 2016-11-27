@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    (function (window) {
+        /////////////////快速获取URL链接中的各个组成部分//////////////////
+        var url = "https://www.baidu.com:8080/aaa/index.html?name=admin&age=26#hash";
+        var aLink = window.document.createElement("a");//1 创建一个a标签
+        aLink.href = url;//2 将a标签的href设置为url
+        //3 下面分别获取URL链接中的各个组成部分
+        console.log(aLink.protocol);//"https:"
+        console.log(aLink.href);//"https://www.baidu.com:8080/aaa/index.html?name=admin&age=26#hash"
+        console.log(aLink.origin);//"https://www.baidu.com:8080"
+        console.log(aLink.host);//www.baidu.com:8080
+        console.log(aLink.hostname);//www.baidu.com
+        console.log(aLink.pathname);// /aaa/index.html
+        console.log(aLink.search);//?name=admin&age=26
+        console.log(aLink.hash);//#hash
+    })(window);
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-app="module1" ng-controller="controller1">
+    <input type="button" value="按钮1" ng-click="click()">
+</div>
+<div ng-app="module2" ng-controller="controller2">
+    <input type="button" value="按钮2" ng-click="click()">
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    (function (window) {
+        var module1 = angular.module("module1",[]);
+        module1.controller("controller1",["$scope",function ($scope) {
+            $scope.click = function () {
+                console.log("这是按钮1");
+            }
+        }]);
+        var module2 = angular.module("module2",[]);
+        module2.controller("controller2",["$scope",function ($scope) {
+            $scope.click = function () {
+                console.log("这是按钮2");
+            }
+        }]);
+        //如果没有下面的代码,只有按钮1的点击事件才会生效,按钮2的点击事件无效
+        //因为当有多个ng-app指令的时候,只有第一个才会生效
+        //不过不建议这样使用,一个页面最好只有一个ng-app指令
+        angular.bootstrap(window.document.querySelector("[ng-app='module2']"),["module2"]);
+    })(window);
+</script>
+</body>
+</html>

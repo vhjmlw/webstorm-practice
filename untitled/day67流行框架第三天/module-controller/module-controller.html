@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body><!--绑定一个模块-->
+<!--在标签中绑定一个模块,使得标签内部都可以使用模块的数据-->
 <div ng-app="moduleName" ng-controller="controllerName">
     用户名: <input type="text" ng-model="user.username">
     密码: <input type="password" ng-model="user.password">
     <p>{{user.username}}</p>
     <p>{{user.password}}</p>
     <p>{{message}}</p>
+    <!--给button添加点击事件,当点击按钮的时候,调用$scope对象的conlog()方法-->
+    <input type="button" value="这是一个按钮" ng-click="conlog()">
 </div>
 <script src="node_modules/angular/angular.js"></script>
 <!--
@@ -19,6 +22,8 @@
     //如果省略第二个参数表示获取moduleName模块,一个参数为获取;两个参数为创建.
     var module = angular.module("moduleName",[]);
     //为模块创建一个控制器,命名controllerName.第二个参数表示控制器操作的逻辑.
+    //使用这种方法的话,一旦js代码混淆,传入的$scope参数就会被替换为其他的变量,
+    //这样的话代码就会报错,所以建议使用 ["$scope","$http",function($scope,$http){}] 的方式
     module.controller("controllerName",function ($scope) {//声明的形参必须为$scope,否则会报错
         $scope.user = {
             username: "123",
@@ -35,6 +40,7 @@
     });
 </script>-->
 <script>
+    //新建一个模块
     var module = angular.module("moduleName",[]);
     //建议以后使用这种方式来声明controller,不建议使用上面的方法
     //第二个参数是数组,数组最后一个是匿名函数,前面的都是该匿名函数的参数
@@ -43,6 +49,9 @@
             username: "",
             password: ""
         };
+        $scope.conlog = function () {
+            alert("/(ㄒoㄒ)/~~");
+        }
         $scope.message = "";
         $scope.$watch("user.username",function () {
             $scope.message = "哎呀,内容被改动了";
