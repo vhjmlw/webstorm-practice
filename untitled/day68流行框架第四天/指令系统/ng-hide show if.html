@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
-<body>
-<div></div>
+<body ng-app>
+<div ng-show="true">这是第一个盒子</div><!--显示盒子-->
+<div ng-hide="true">这是第二个盒子</div><!--隐藏-->
+<div ng-if="true">这是第三个盒子</div><!--不删除-->
+<div ng-if="false">这是第四个盒子</div><!--删除-->
+<div ng-if="true">这是第五个盒子</div><!--不删除-->
+<script src="node_modules/angular/angular.js"></script>
 </body>
 </html>
