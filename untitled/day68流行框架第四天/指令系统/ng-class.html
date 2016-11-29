@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red {
+            background: red;
+        }
+        .purple {
+            background: purple;
+        }
+        div div {
+            width: 200px;
+            height: 200px;
+            transition: background 1s ease;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body ng-app="myModule">
+<script src="node_modules/angular/angular.js"></script>
+<!--ng-class-->
+ng-class
+<div>
+    <div ng-class="{red:true}">第一个盒子</div>
+    <div ng-class="{purple:true}">第二个盒子</div>
+</div>
+<!--ng-class-->
+ng-class:select选取不同的值,下面的div的background跟着改变
+<div>
+    <select name="" id="" ng-model="param">
+        <option value="red">红色</option>
+        <option value="purple">紫色</option>
+    </select>
+    <div ng-class="param"></div>
+    <div ng-class="{red:param=='red',purple:param=='purple'}"></div>
+</div>
+<!--ng-repeat-->
+ng-repeat
+<div ng-controller="myController">
+    <ul>
+        <li ng-repeat="item in array track by $index" ng-class="{red:$even,purple:$odd}">{{item}}</li>
+    </ul>
+    <input type="text" ng-model="attr">
+    <ul>
+        <li ng-repeat="element in array track by $index" ng-class="{red:attr&&element.startsWith(attr),purple:attr&&element.endsWith(attr)}">{{element}}</li>
+    </ul>
+</div>
+<!--ng-src ng-href-->
+ng-src ng-hre
+<div ng-init="imgSrc='angular.png'">
+    <img ng-src="{{imgSrc}}" alt="">
+    <a ng-href="{{imgSrc}}">你点我试试</a>
+</div>
+<script>
+    var module = angular.module("myModule",[]);
+    module.controller("myController",["$scope",function ($scope) {
+        $scope.array = ["one","two","three","four","five","owo"];
+
+    }]);
+</script>
+</body>
+</html>

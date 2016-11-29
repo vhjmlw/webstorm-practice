@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <ul ng-app="myModule" ng-controller="myController">
+        <li ng-repeat="element in obj track by $index" data-id="{{element.id}}">
+            <span ng-bind="$first?'这是第一个':''"></span>
+            <span ng-bind="element.name"></span>
+            <span ng-bind="element.age"></span>
+            <span ng-bind="$last?'这是最后一个':''"></span>
+        </li>
+    </ul>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var module = angular.module("myModule",[]);
+    module.controller("myController",["$scope",function ($scope) {
+        $scope.obj = [];
+        for (var i = 0; i < 7; i++) {
+            $scope.obj[$scope.obj.length] = {
+                id: i + 1,
+                name: "hello " + i,
+                age: "age26 " + (i + 1),
+            }
+        }
+    }]);
+
+</script>
+</body>
+</html>

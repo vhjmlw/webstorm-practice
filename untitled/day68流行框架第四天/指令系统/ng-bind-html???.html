@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/sanitize/lib/sanitize.js"></script>
+<script>
+    (function (window) {
+        var model = angular.module("myModule",["ngSanitize"]);
+    })(window);
+</script>
+<div ng-app="myModule" ng-init="param='<span>helloworld</span>'">
+    <strong ng-bind-html="param"></strong>
+</div>
+</body>
+</html>

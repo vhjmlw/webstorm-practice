@@ -1,0 +1,22 @@
+{
+  "name": "jianlei",
+  "version": "1.0.0",
+  "description": "主要是联系angular的各个指令",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [
+    "指令系统"
+  ],
+  "author": "建磊",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.9",
+    "sanitize": "^2.0.1"
+  }
+}

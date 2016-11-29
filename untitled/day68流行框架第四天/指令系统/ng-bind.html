@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-app>
+    <div>
+        <input type="text" ng-model="param">
+        <strong ng-bind="param"></strong>
+    </div>
+    <div ng-init="something='<span>hello world</span>'">
+        <strong ng-bind="something"></strong>
+    </div>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    (function (window) {
+
+    })(window);
+</script>
+</body>
+</html>
