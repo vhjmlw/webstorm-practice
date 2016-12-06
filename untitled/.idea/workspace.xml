@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9671f73-cb4b-4137-84ea-84230f662ba4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/day70流行框架第五天/TODO案例/todomvc-app-template" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/day70流行框架第五天/TODO案例/TODO案例.html" afterPath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/TODO案例.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template" afterPath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day70流行框架第六天/moviecat" afterPath="$PROJECT_DIR$/day70流行框架第六天/moviecat" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,8 +94,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/13 主流框架/12.主流框架/06 流行框架第6天 2016-02-17/2016-02-17/crossdomain/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="702">
+              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -486,12 +485,12 @@
       <workItem from="1480495303011" duration="1028000" />
       <workItem from="1480514353656" duration="92000" />
       <workItem from="1480680843988" duration="4221000" />
-      <workItem from="1480866477273" duration="3538000" />
+      <workItem from="1480866477273" duration="3612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="856456000" />
+    <option name="totallyTimeSpent" value="856530000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -886,8 +885,8 @@
     </entry>
     <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/13 主流框架/12.主流框架/06 流行框架第6天 2016-02-17/2016-02-17/crossdomain/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="702">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
           <folding />
         </state>
       </provider>
