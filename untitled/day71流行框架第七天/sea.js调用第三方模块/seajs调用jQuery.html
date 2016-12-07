@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="node_modules/seajs/dist/sea.js"></script>
+<script>
+    //创建配置文件,通过alias设置js文件路径的别名,
+    // 在调用js文件的时候,直接使用别名module jquery即可
+    //注意:在调用js文件的时候,文件的.js扩展名可以省略
+    seajs.config({
+        alias:{
+            module:"./module.js",//可以简写为module
+            jquery:"./jquery-1.11.1.js"//可以简写为jquery-1.11.1
+        }
+    });
+seajs.use("module",function (e) {
+    console.log(e);
+});
+</script>
+</body>
+</html>

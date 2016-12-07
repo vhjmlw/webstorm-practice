@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="node_modules/seajs/dist/sea.js"></script>
+<script>
+    //第一个参数是使用相对路径的方式调用模块的js文件,
+    // 第二个参数是回调函数,js文件调用成功后执行
+    //回调函数中的形参i指的是调用computer.js后,模块导出的对象exports
+    //在i对象的内部可以获取模块exports暴露出来的内容
+    //注意:调用js文件的时候,一定要使用相对路径的方式,并且是完整的写法,以./或者../开头
+    //也可以用项目的绝对路径:/untitled/day71流行框架第七天/sea.js初体验/computer.js
+    //绝对路径中的'/'表示当前项目的根目录
+    //模块的js文件,只需要使用seajs.use()来调用,不需要使用script的src引入
+    seajs.use("./computer.js",function (i) {
+        console.log(i.add2(11,22));//33,调用模块exports的函数add2
+        console.log(i.divide2(20,4));//5
+        console.log(i.multiply2(11,11));//121
+        console.log(i.subtract2(14,3));//11
+    });
+    //定义模块:define(function(require,exports,module){});
+    //使用模块:seajs.use("模块js文件的完整路径",function(模块导出的对象){});
+    //seajs.use()是入口模块,一个程序一般只使用一次
+    //多个模块之间依赖使用的话,使用require(),require()返回的就是被依赖的模块暴露出的exports对象
+</script>
+</body>
+</html>

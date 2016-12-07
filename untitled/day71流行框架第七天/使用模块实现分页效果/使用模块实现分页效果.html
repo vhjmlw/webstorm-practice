@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+</head>
+<body>
+<ul class="pagination"></ul>
+<ul class="pagination"></ul>
+<script src="./sea.js"></script>
+<script>
+seajs.use("./main.js",function (obj) {
+console.log(obj);
+    //这是主文件
+    //主文件里面调用了main.js文件
+    //main.js文件调用了pagination.js文件
+    //将实现分页效果的代码封装在Pagination类中
+});
+</script>
+</body>
+</html>

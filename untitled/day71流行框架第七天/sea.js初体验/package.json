@@ -1,0 +1,21 @@
+{
+  "name": "sea.js",
+  "version": "1.0.0",
+  "description": "sea.js",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [
+    "sea.js"
+  ],
+  "author": "建磊",
+  "license": "ISC",
+  "dependencies": {
+    "seajs": "^3.0.2"
+  }
+}

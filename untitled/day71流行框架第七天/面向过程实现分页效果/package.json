@@ -1,0 +1,22 @@
+{
+  "name": "面向过程实现分页效果",
+  "version": "1.0.0",
+  "description": "面向过程实现分页效果",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [
+    "bootstrap",
+    "分页效果"
+  ],
+  "author": "建磊",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

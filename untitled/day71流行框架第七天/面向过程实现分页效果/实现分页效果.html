@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<ul class="pagination"></ul>
+<script defer>
+    (function (window) {
+        var current = 14;//当前选中的页数
+        var show = 5;//每次显示的页数
+        var total = 30;//总页数
+        var region = parseInt(show / 2);//中间页两边的页数
+        var begin = current - region;
+        begin = begin < 1 ? 1 : begin;//对开始页数进行校验,如果小于1则重置为1
+        var end = begin + show;
+        end = end > total ? total + 1 : end;//对结束页数进行校验,如果大于总页数,则重置为总页数+1
+        begin = (end - show) < 1 ? 1 : (end - show);//结束页数被重置后,开始页数也要被重置,并进行校验.
+        ////////////////////////以上为核心代码////////////////////////
+        var ul = window.document.querySelector(".pagination");
+
+        ////////////创建上一页按钮///////////
+        var liLeft = window.document.createElement("li");
+        liLeft.innerHTML = '<a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>';
+        //当选中第一页的时候,给上一页按钮添加disabled类,禁止点击上一页按钮
+        if (current === 1) {
+            liLeft.classList.add("disabled");
+        }
+        ul.appendChild(liLeft);
+
+        //////////////创建中间页数按钮///////////
+        for (var i = begin; i < end; i++) {
+            var li = window.document.createElement("li");
+            li.innerHTML = '<a href="#">' + i + '</a>';
+            //给当前被选中的按钮添加active类
+            if (current === i) {
+                li.classList.add("active");
+            }
+            ul.appendChild(li);
+        }
+
+        //////////////创建下一页按钮/////////////
+        var liRight = window.document.createElement("li");
+        liRight.innerHTML = '<a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>';
+        //当选中最后一页的时候,给下一页按钮添加disabled类,禁止点击下一页按钮
+        if (current === total) {
+            liRight.classList.add("disabled");
+        }
+        ul.appendChild(liRight);
+    })(window);
+</script>
+</body>
+</html>

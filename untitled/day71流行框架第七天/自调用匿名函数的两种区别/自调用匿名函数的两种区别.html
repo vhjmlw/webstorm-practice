@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    (function (window) {
+        //以下是两种自调用函数
+        //fn和fun都是指函数执行之后返回的内容,而不是指函数本身.
+        var fn = function () {
+            return "这是fn函数";
+        }();
+        var fun = (function () {
+            return "这是fun函数";
+        })();
+        //fn和fun都是指向的匿名函数执行之后返回的内容,而不是指匿名函数本身.
+        console.log(fn);//"这是fn函数"
+        console.log(fun);//"这是fun函数"
+    })(window);
+</script>
+</body>
+</html>

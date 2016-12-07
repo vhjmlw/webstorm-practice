@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+    //使用命名空间避免全局污染 封装对象
+    (function (window) {
+        //新建window.computer,添加add方法
+        (function (computer) {
+            var convert = function (data) {
+                return parseInt(data);
+            }
+            computer.add = function (a,b) {
+                return convert(a) + convert(b);
+            }
+            window.computer = computer;
+        })(window.computer || {});
+        console.log(computer.add(11,22));//33
+
+        //更新window.computer
+        //给window.computer添加新的方法subtract
+        (function (computer) {
+            var convert = function (data) {
+                return parseFloat(data);
+            }
+            computer.subtract = function (a,b) {
+                return convert(a) - convert(b);
+            }
+            window.computer = computer;
+        })(window.computer || {});
+        console.log(computer.subtract(12,4));//8
+
+        //高内聚,低耦合
+        (function (window,jQuery) {
+            //在我们的匿名函数内部,需要使用到window和jQuery等全局对象
+            //在这种情况下,不要直接在匿名函数的内部使用这些全局对象,
+            //否则会形成对外部全局对象的依赖,耦合度提高
+            //建议将需要使用的全局对象作为实参,传入到匿名函数的内部使用,
+            //降低耦合度,减少对外部全局对象的依赖
+        })(window,jQuery);
+    })(window);
+</script>
+</body>
+</html>
