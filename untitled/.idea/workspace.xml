@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9671f73-cb4b-4137-84ea-84230f662ba4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/sea.js初体验/SeaJS初体验.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/sea.js初体验/computer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/sea.js初体验/converse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/sea.js调用第三方模块/jquery-1.11.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/sea.js调用第三方模块/module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/sea.js调用第三方模块/seajs调用jQuery.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/pagination.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/sea.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/使用模块实现分页效果.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/模块的扩展和维护/jquery-1.11.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/模块的扩展和维护/模块的扩展和维护.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/自调用匿名函数的两种区别/自调用匿名函数的两种区别.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day71流行框架第七天/面向过程实现分页效果/实现分页效果.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template" afterPath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day70流行框架第六天/moviecat" afterPath="$PROJECT_DIR$/day70流行框架第六天/moviecat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,62 +23,7 @@
     <favorites_list name="untitled" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="实现分页效果.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day71流行框架第七天/面向过程实现分页效果/实现分页效果.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1377">
-              <caret line="51" column="15" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="使用模块实现分页效果.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/使用模块实现分页效果.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pagination.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/pagination.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#48#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#48#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seajs调用jQuery.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day71流行框架第七天/sea.js调用第三方模块/seajs调用jQuery.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -249,20 +178,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="day71流行框架第七天" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -493,12 +408,12 @@
       <workItem from="1480514353656" duration="92000" />
       <workItem from="1480680843988" duration="4221000" />
       <workItem from="1480866477273" duration="3612000" />
-      <workItem from="1481021077886" duration="33623000" />
+      <workItem from="1481021077886" duration="35803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="890153000" />
+    <option name="totallyTimeSpent" value="892333000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -511,9 +426,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="23" width="1858" height="1057" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.118671745" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.118671745" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885212" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4705274" sideWeight="0.5106036" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988626" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -923,14 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day71流行框架第七天/sea.js调用第三方模块/seajs调用jQuery.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -955,21 +862,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/使用模块实现分页效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/day71流行框架第七天/面向过程实现分页效果/实现分页效果.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="51" column="15" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -983,10 +888,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/使用模块实现分页效果.html">
+    <entry file="file://$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day71流行框架第七天/sea.js调用第三方模块/seajs调用jQuery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding />
         </state>
       </provider>
