@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9671f73-cb4b-4137-84ea-84230f662ba4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72nodejs/字符画/frames/1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72nodejs/字符画/frames/2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72nodejs/字符画/frames/3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72nodejs/字符画/frames/4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72nodejs/字符画/frames/5.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72nodejs/字符画/frames/6.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72nodejs/字符画/我要装逼.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72nodejs/字符画/猪头.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template" afterPath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day70流行框架第六天/moviecat" afterPath="$PROJECT_DIR$/day70流行框架第六天/moviecat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -484,12 +475,12 @@
       <workItem from="1480680843988" duration="4221000" />
       <workItem from="1480866477273" duration="3612000" />
       <workItem from="1481021077886" duration="35803000" />
-      <workItem from="1481230275064" duration="3176000" />
+      <workItem from="1481230275064" duration="3356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="895509000" />
+    <option name="totallyTimeSpent" value="895689000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
