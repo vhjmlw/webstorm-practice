@@ -2,26 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9671f73-cb4b-4137-84ea-84230f662ba4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72node第一天/console.time/console.time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72node第一天/console.time/使用setTimeout0实现异步的效果.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72node第一天/人机交互/人机交互.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day72node第一天/回调函数的设计/回调函数的设计.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/fs.stat读取文件状态/fs.stat读取文件状态.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/创建一个server/创建一个server.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/day73node第二天/fs.stat读取文件状态/demo.md" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/day72nodejs/两次Ctrl+c退出REPL环境/两次Ctrl+c退出REPL环境.js" afterPath="$PROJECT_DIR$/day72node第一天/两次Ctrl+c退出REPL环境/两次Ctrl+c退出REPL环境.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/day72nodejs/字符画/frames/1.txt" afterPath="$PROJECT_DIR$/day72node第一天/字符画/frames/1.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/day72nodejs/字符画/frames/2.txt" afterPath="$PROJECT_DIR$/day72node第一天/字符画/frames/2.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/day72nodejs/字符画/frames/3.txt" afterPath="$PROJECT_DIR$/day72node第一天/字符画/frames/3.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/day72nodejs/字符画/frames/4.txt" afterPath="$PROJECT_DIR$/day72node第一天/字符画/frames/4.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/day72nodejs/字符画/frames/5.txt" afterPath="$PROJECT_DIR$/day72node第一天/字符画/frames/5.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/day72nodejs/字符画/frames/6.txt" afterPath="$PROJECT_DIR$/day72node第一天/字符画/frames/6.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/day72nodejs/字符画/我要装逼.js" afterPath="$PROJECT_DIR$/day72node第一天/字符画/我要装逼.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/day72nodejs/字符画/猪头.js" afterPath="$PROJECT_DIR$/day72node第一天/字符画/猪头.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/实现require()函数/module1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/实现require()函数/module2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/实现require()函数/实现require函数.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/计算器-模块化实现/module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/计算器-模块化实现/计算器.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/计算器/计算器.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/计算器/计算器eval实现.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template" afterPath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day70流行框架第六天/moviecat" afterPath="$PROJECT_DIR$/day70流行框架第六天/moviecat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -61,14 +51,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/day67流行框架第三天/AngularJS/angular初体验.html" />
-        <option value="$PROJECT_DIR$/day67流行框架第三天/hashchange事件/hashchange事件.html" />
-        <option value="$PROJECT_DIR$/day67流行框架第三天/module controller练习/module controller练习.html" />
-        <option value="$PROJECT_DIR$/day67流行框架第三天/module controller/module controller.html" />
-        <option value="$PROJECT_DIR$/day68流行框架第四天/快速获取URL中的各个组成部分/快速获取URL中的各个组成部分.html" />
-        <option value="$PROJECT_DIR$/day67流行框架第三天/module-controller/module-controller.html" />
-        <option value="$PROJECT_DIR$/day68流行框架第四天/ng-app练习/ng-app.html" />
-        <option value="$PROJECT_DIR$/day68流行框架第四天/ng-app/ng-app.html" />
         <option value="$PROJECT_DIR$/day68流行框架第四天/ng-app/ng-app不推荐使用.html" />
         <option value="$USER_HOME$/Downloads/传智播客-前端-淘宝/13 主流框架/12.主流框架/04 流行框架第4天 01-30/code/06-ng-repeat.html" />
         <option value="$USER_HOME$/Downloads/传智播客-前端-淘宝/13 主流框架/12.主流框架/04 流行框架第4天 01-30/code/12-ng-src.html" />
@@ -112,6 +94,14 @@
         <option value="$PROJECT_DIR$/day73node第二天/fs.stat读取文件状态/demo.md" />
         <option value="$PROJECT_DIR$/day73node第二天/fs.stat读取文件状态/fs.stat读取文件状态.js" />
         <option value="$PROJECT_DIR$/day73node第二天/创建一个server/创建一个server.js" />
+        <option value="$PROJECT_DIR$/day73node第二天/计算器/计算器.js" />
+        <option value="$PROJECT_DIR$/day73node第二天/计算器-模块化实现/计算器-模块化实现.js" />
+        <option value="$PROJECT_DIR$/day73node第二天/计算器-模块化实现/计算器.js" />
+        <option value="$PROJECT_DIR$/day73node第二天/计算器-模块化实现/module.js" />
+        <option value="$PROJECT_DIR$/day73node第二天/计算器/计算器eval实现.js" />
+        <option value="$PROJECT_DIR$/day73node第二天/实现require()函数/module2.js" />
+        <option value="$PROJECT_DIR$/day73node第二天/实现require()函数/module1.js" />
+        <option value="$PROJECT_DIR$/day73node第二天/实现require()函数/实现require函数.js" />
       </list>
     </option>
   </component>
@@ -167,21 +157,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="untitled">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -200,14 +176,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="day73node第二天" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="untitled">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -216,21 +220,23 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="ECMAScript 6" />
     <property name="JavaScriptPreferStrict" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="7.1.0" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v7.1.0/bin/node" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day73node第二天/计算器-模块化实现" />
+      <recent name="$PROJECT_DIR$/day72nodejs/字符画" />
+      <recent name="$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果" />
+      <recent name="$PROJECT_DIR$/day71流行框架第七天/sea.js调用第三方模块" />
+      <recent name="$PROJECT_DIR$/day71流行框架第七天/模块的扩展和维护" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/day57面向对象第一天/面向对象简单demo" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/day45CSS3第三天/伸缩盒模型" />
       <recent name="$PROJECT_DIR$/day44CSS3第二天" />
       <recent name="$PROJECT_DIR$/day43CSS3第一天" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/day72nodejs/字符画" />
-      <recent name="$PROJECT_DIR$/day71流行框架第七天/使用模块实现分页效果" />
-      <recent name="$PROJECT_DIR$/day71流行框架第七天/sea.js调用第三方模块" />
-      <recent name="$PROJECT_DIR$/day71流行框架第七天/模块的扩展和维护" />
-      <recent name="$PROJECT_DIR$/day68流行框架第四天/指令系统" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.ng-bind.html">
@@ -431,12 +437,13 @@
       <workItem from="1480866477273" duration="3612000" />
       <workItem from="1481021077886" duration="35803000" />
       <workItem from="1481230275064" duration="3356000" />
-      <workItem from="1481419096558" duration="10380000" />
+      <workItem from="1481419096558" duration="13442000" />
+      <workItem from="1481504708240" duration="4407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="906069000" />
+    <option name="totallyTimeSpent" value="913538000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -491,55 +498,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day71流行框架第七天/模块的扩展和维护/jquery-1.11.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/13 主流框架/12.主流框架/07 流行框架第7天 02-19/2016-02-19/seajs/sea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/13 主流框架/12.主流框架/07 流行框架第7天 02-19/2016-02-19/code/03-seajs/01-calculator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day71流行框架第七天/模块的扩展和维护/模块的扩展和维护.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day71流行框架第七天/自调用匿名函数的两种区别/自调用匿名函数的两种区别.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/13 主流框架/12.主流框架/07 流行框架第7天 02-19/2016-02-19/code/03-seajs/01-convertor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day71流行框架第七天/sea.js初体验/node_modules/sea/.eslintrc" />
     <entry file="file://$PROJECT_DIR$/day71流行框架第七天/sea.js初体验/node_modules/sea/README.md" />
     <entry file="file://$PROJECT_DIR$/day71流行框架第七天/sea.js初体验/node_modules/sea/index.js" />
@@ -717,7 +675,6 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="4914">
             <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -734,9 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -744,7 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,27 +705,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day72nodejs/回调函数的设计/回调函数的设计.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/day72nodejs/回调函数的设计/回调函数的设计.html" />
     <entry file="file://$PROJECT_DIR$/day72node第一天/回调函数的设计/回调函数的设计.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc;n#oddOrEven#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -780,7 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,7 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-378">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -804,7 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -812,32 +748,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day73node第二天/fs.stat读取文件状态/demo.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="27">
-            <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/day73node第二天/fs.stat读取文件状态/demo.md" />
     <entry file="file://$USER_HOME$/Documents/MyGit/simplegit(GitHub上的project site仓库)/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-297">
           <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -845,15 +763,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day73node第二天/创建一个server/创建一个server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day73node第二天/计算器/计算器eval实现.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day73node第二天/计算器/计算器.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day73node第二天/计算器-模块化实现/计算器.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day73node第二天/计算器-模块化实现/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day73node第二天/实现require()函数/module2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc;n#papapa#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day73node第二天/实现require()函数/module1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc;n#papapa#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day73node第二天/实现require()函数/实现require函数.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
           <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding>
             <element signature="e#0#49#0" expanded="false" />
