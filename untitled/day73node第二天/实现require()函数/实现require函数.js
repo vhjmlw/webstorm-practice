@@ -16,20 +16,37 @@ function $require(id) {
     //获取文件的名字,不包含扩展名
     // const basename_文件名 = path.basename(filename,"文件的扩展名");
     //自定义一个module对象和exports对象,并将module.exports赋值给exports
-    const module = {id:filename,exports:{}};
+
+    $require.cache = $require.cache || {};
+    if($require.cache[filename]) {
+        console.log(123);
+        console.log($require.cache[filename]);
+        return $require.cache[filename].exports;
+    }
+
+    let module = {id:filename,exports:{}};
     let exports = module.exports;
     //读取文件的内容,注意:一定要使用同步的方式读取文件内容,code是读取到的文件的内容
-    let code = fs.readFileSync(filename);
+    let code = fs.readFileSync(filename,"utf8");
     //自定义一个自执行函数,在自执行函数的内容调用code的内容
     code = `(function($require,exports,module,dirname,filename){
         ${code}
     })($require,exports,module,dirname,filename);`;
     //执行code的代码,返回module.exports对象
     eval(code);
+    //执行了code代码之后,对module.exports进行了赋值,module的值也变了
+    //module = {id:filename,exports:{module1:{papapa},module2:module2,date:new Date()}}
+    $require.cache[filename] = module;
+    //module.exprots = {module1:{papapa},module2:module2,date:new Date()};
     return module.exprots;
 }
-let obj = $require("./module1.js");
+/*let obj = $require("./module1.js");
 obj.module1.papapa();
-obj.module2.papapa();
+obj.module2.papapa();*/
 //module1啦啦啦
 //module2砰砰砰
+setInterval(()=>{
+    let object = $require("./module1.js");
+    console.log(object);
+    console.log(object.date);
+},2000);
