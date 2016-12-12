@@ -17,10 +17,9 @@ function $require(id) {
     // const basename_文件名 = path.basename(filename,"文件的扩展名");
     //自定义一个module对象和exports对象,并将module.exports赋值给exports
 
+    //给我们自定义的$require()函数添加缓存机制
     $require.cache = $require.cache || {};
     if($require.cache[filename]) {
-        console.log(123);
-        console.log($require.cache[filename]);
         return $require.cache[filename].exports;
     }
 
@@ -36,9 +35,10 @@ function $require(id) {
     eval(code);
     //执行了code代码之后,对module.exports进行了赋值,module的值也变了
     //module = {id:filename,exports:{module1:{papapa},module2:module2,date:new Date()}}
+    //给我们自定义的$require()函数添加缓存机制
     $require.cache[filename] = module;
     //module.exprots = {module1:{papapa},module2:module2,date:new Date()};
-    return module.exprots;
+    return module.exports;
 }
 /*let obj = $require("./module1.js");
 obj.module1.papapa();
@@ -47,6 +47,5 @@ obj.module2.papapa();*/
 //module2砰砰砰
 setInterval(()=>{
     let object = $require("./module1.js");
-    console.log(object);
     console.log(object.date);
 },2000);

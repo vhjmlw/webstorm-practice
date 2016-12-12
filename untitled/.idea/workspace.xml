@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9671f73-cb4b-4137-84ea-84230f662ba4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/require缓存/module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day73node第二天/require缓存/require缓存.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template" afterPath="$PROJECT_DIR$/day69流行框架第五天/TODO案例/todomvc-app-template" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day70流行框架第六天/moviecat" afterPath="$PROJECT_DIR$/day70流行框架第六天/moviecat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -32,8 +30,8 @@
       <file leaf-file-name="实现require函数.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/day73node第二天/实现require()函数/实现require函数.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+            <state relative-caret-position="182">
+              <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
               <folding>
                 <element signature="e#0#49#0" expanded="false" />
               </folding>
@@ -44,31 +42,11 @@
       <file leaf-file-name="module1.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/day73node第二天/实现require()函数/module1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="135">
+              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
               <folding>
                 <element signature="e#0#49#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="13.js" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/15 node/02-2016-03-03/代码/day02/code/13.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="date.js" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/15 node/02-2016-03-03/代码/day02/code/module/date.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -140,8 +118,8 @@
         <option value="$PROJECT_DIR$/day73node第二天/实现require()函数/module2.js" />
         <option value="$PROJECT_DIR$/day73node第二天/require缓存/module.js" />
         <option value="$PROJECT_DIR$/day73node第二天/require缓存/require缓存.js" />
-        <option value="$PROJECT_DIR$/day73node第二天/实现require()函数/module1.js" />
         <option value="$USER_HOME$/Downloads/传智播客-前端-淘宝/15 node/02-2016-03-03/代码/day02/code/13.js" />
+        <option value="$PROJECT_DIR$/day73node第二天/实现require()函数/module1.js" />
         <option value="$PROJECT_DIR$/day73node第二天/实现require()函数/实现require函数.js" />
       </list>
     </option>
@@ -498,12 +476,12 @@
       <workItem from="1481230275064" duration="3356000" />
       <workItem from="1481419096558" duration="13442000" />
       <workItem from="1481504708240" duration="4807000" />
-      <workItem from="1481547147808" duration="7148000" />
+      <workItem from="1481547147808" duration="8856000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="921086000" />
+    <option name="totallyTimeSpent" value="922794000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -861,6 +839,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc;n#papapa#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -892,28 +873,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/15 node/02-2016-03-03/代码/day02/code/13.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/day73node第二天/实现require()函数/module1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        <state relative-caret-position="135">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
           <folding>
             <element signature="e#0#49#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/传智播客-前端-淘宝/15 node/02-2016-03-03/代码/day02/code/13.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day73node第二天/实现require()函数/实现require函数.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+        <state relative-caret-position="182">
+          <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
           <folding>
             <element signature="e#0#49#0" expanded="false" />
           </folding>
