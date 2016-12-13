@@ -1,0 +1,20 @@
+{
+  "name": "lrc",
+  "version": "1.1.1",
+  "description": " ",
+  "main": " ",
+  "dependencies": {
+    "iconv-lite": "^0.4.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [],
+  "author": "建磊",
+  "license": "ISC"
+}
