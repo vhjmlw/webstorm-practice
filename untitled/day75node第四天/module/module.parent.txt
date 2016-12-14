@@ -1,0 +1,23 @@
+Module {
+  id: '.',
+  exports: {},
+  parent: null,
+  filename: '/Users/zhangjianlei/WebstormProjects/untitled/day75node第四天/递归创建目录/递归创建目录.js',
+  loaded: false,
+  children: 
+   [ Module {
+       id: '/Users/zhangjianlei/WebstormProjects/untitled/day75node第四天/module/mkdir.js',
+       exports: {},
+       parent: [Circular],
+       filename: '/Users/zhangjianlei/WebstormProjects/untitled/day75node第四天/module/mkdir.js',
+       loaded: false,
+       children: [],
+       paths: [Object] } ],
+  paths: 
+   [ '/Users/zhangjianlei/WebstormProjects/untitled/day75node第四天/递归创建目录/node_modules',
+     '/Users/zhangjianlei/WebstormProjects/untitled/day75node第四天/node_modules',
+     '/Users/zhangjianlei/WebstormProjects/untitled/node_modules',
+     '/Users/zhangjianlei/WebstormProjects/node_modules',
+     '/Users/zhangjianlei/node_modules',
+     '/Users/node_modules',
+     '/node_modules' ] }
