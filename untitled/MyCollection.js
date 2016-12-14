@@ -148,4 +148,18 @@ MyCollection.prototype = {
         console.log(array);
         return array;
     },
+    //将日期转换为指定的显示格式,返回一个字符串
+    formateDate: function (date) {
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+        //转换为"yy/mm/dd hh:mm:ss"
+        const dateStr1 = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
+        //转换为"yy年mm月dd日 hh时mm分ss秒"
+        const dateStr2 = `${year}年${month}月${day}日 ${hours}时${minutes}分${seconds}秒`;
+        return dateStr2;
+    },
 }

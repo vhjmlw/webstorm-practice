@@ -1,0 +1,88 @@
+├─appendFile
+| ├─appendFile.js
+| └─demo1.txt
+├─path模块
+| └─path模块.js
+├─writeFile
+| ├─demo.txt
+| ├─demo2.txt
+| └─writeFile.js
+├─模拟目录树状图
+| ├─tree.txt
+| └─模拟目录树状图.js
+├─歌词显示
+| ├─node_modules
+| | ├─iconv-lite
+| | | ├─encodings
+| | | | ├─tables
+| | | | | ├─big5-added.json
+| | | | | ├─cp936.json
+| | | | | ├─cp949.json
+| | | | | ├─cp950.json
+| | | | | ├─eucjp.json
+| | | | | ├─gb18030-ranges.json
+| | | | | ├─gbk-added.json
+| | | | | └─shiftjis.json
+| | | | ├─dbcs-codec.js
+| | | | ├─dbcs-data.js
+| | | | ├─index.js
+| | | | ├─internal.js
+| | | | ├─sbcs-codec.js
+| | | | ├─sbcs-data-generated.js
+| | | | ├─sbcs-data.js
+| | | | ├─utf16.js
+| | | | └─utf7.js
+| | | ├─lib
+| | | | ├─bom-handling.js
+| | | | ├─extend-node.js
+| | | | ├─index.d.ts
+| | | | ├─index.js
+| | | | └─streams.js
+| | | ├─.npmignore
+| | | ├─.travis.yml
+| | | ├─Changelog.md
+| | | ├─LICENSE
+| | | ├─README.md
+| | | └─package.json
+| ├─package.json
+| ├─歌词显示.js
+| └─血染的风采.lrc
+├─歌词显示-readline实现
+| ├─node_modules
+| | ├─iconv-lite
+| | | ├─encodings
+| | | | ├─tables
+| | | | | ├─big5-added.json
+| | | | | ├─cp936.json
+| | | | | ├─cp949.json
+| | | | | ├─cp950.json
+| | | | | ├─eucjp.json
+| | | | | ├─gb18030-ranges.json
+| | | | | ├─gbk-added.json
+| | | | | └─shiftjis.json
+| | | | ├─dbcs-codec.js
+| | | | ├─dbcs-data.js
+| | | | ├─index.js
+| | | | ├─internal.js
+| | | | ├─sbcs-codec.js
+| | | | ├─sbcs-data-generated.js
+| | | | ├─sbcs-data.js
+| | | | ├─utf16.js
+| | | | └─utf7.js
+| | | ├─lib
+| | | | ├─bom-handling.js
+| | | | ├─extend-node.js
+| | | | ├─index.d.ts
+| | | | ├─index.js
+| | | | └─streams.js
+| | | ├─.npmignore
+| | | ├─.travis.yml
+| | | ├─Changelog.md
+| | | ├─LICENSE
+| | | ├─README.md
+| | | └─package.json
+| ├─package.json
+| ├─readStream.js
+| └─歌词显示-readline实现.js
+├─获取一个根目录中所有的文件
+| └─获取一个根目录中所有的文件.js
