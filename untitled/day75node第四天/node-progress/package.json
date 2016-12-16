@@ -1,0 +1,16 @@
+{
+  "name": "node_progress",
+  "version": "1.0.0",
+  "description": "node-progress",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": ["node-progress","读取文件第三方进度条模块"],
+  "author": "建磊",
+  "license": "ISC"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "markdowntohtml",
+  "version": "1.0.0",
+  "description": "chang markdown to html",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [
+    "marked",
+    "github-markdown-css"
+  ],
+  "author": "建磊",
+  "license": "ISC",
+  "dependencies": {
+    "github-markdown-css": "^2.4.1",
+    "marked": "^0.3.6"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.5"
+  }
+}

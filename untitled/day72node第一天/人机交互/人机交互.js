@@ -5,11 +5,13 @@ var user = {
         "degree": "本科"
     }
     //REPL环境进入了待输入状态，每次输入完内容回车的时候，都会触发data事件
-    // input是输入的内容，是一个包含换行符的二进制数组，
+    // input是输入的内容，是一个包含换行符的二进制数组，是一个Buffer对象
     // 想要使用的话需要使用input.toString.trim()来转变为正常的字符串
 var keys = Object.keys(user);
 // var flag = true;
 var key = '';
+//当控制台输入完内容按下回车,会触发该事件,input是读取到的我们在控制台输入的内容,是一个Buffer对象
+//需要将其转换为字符串:input.toString().trim();
 process.stdin.on("data", (input) => {
     input = input.toString().trim();
     if (!key) {
