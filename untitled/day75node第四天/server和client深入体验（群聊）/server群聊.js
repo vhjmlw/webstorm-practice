@@ -12,7 +12,8 @@ const server = net.createServer((socket) => { //connectListener
     // let i = 0;
     socket.on("data", (buffer) => {
         console.log(buffer.toString().trim());
-        //以下是client和server一对一的关系，socket绑定的就是一个client和一个server，谁给server发了信息，下面的信息就返回给谁。信息仅仅返回给server发信息的那个client。
+        //以下是client和server一对一的关系，socket绑定的就是一个client和一个server，
+        //谁给server发了信息，下面的信息就返回给谁。信息仅仅返回给server发信息的那个client。
         //socket.write("server：说得对" + i);
 
         //以下代码实现server群发的功能：当server接收到信息后，给目前连接服务器的每个client都回复相同的信息
@@ -22,7 +23,8 @@ const server = net.createServer((socket) => { //connectListener
             //将接收到的信息原样的群发返回
             socket.write(buffer.toString().trim());
         });
-        //但是如果从一个client切换到另外一个client，则该回调函数会重新执行，socket切换到另外一个，socket与之前的不一样了，变量i又从0开始了。server返回的信息还是群发。
+        //但是如果从一个client切换到另外一个client，则该回调函数会重新执行，socket切换到另外一个，
+        //socket与之前的不一样了，变量i又从0开始了。server返回的信息还是群发。
 
         // i++;
     });
