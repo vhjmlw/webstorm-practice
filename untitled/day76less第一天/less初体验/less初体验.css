@@ -1,0 +1,80 @@
+@charset "utf-8";
+/*这种注释会被编译，less文件编译之后，这种注释会被保留*/
+.one {
+  width: 200px;
+  height: 200px;
+  background: #ffc0cb;
+  border: solid 5px green;
+}
+.border {
+  border: solid 5px green;
+}
+.two {
+  width: 200px;
+  height: 200px;
+  background: #ffc0cb;
+  border: solid 5px green;
+  border: solid 5px yellow;
+  border-radius: 30px;
+}
+.two {
+  border: dashed #800080 10px;
+  border-radius: 100px;
+}
+.two {
+  border: dotted #0000ff 10px;
+  border-radius: 100px;
+}
+.two {
+  border: dotted #ff0000 10px;
+  border-radius: 50px;
+}
+.three {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  background-color: skyblue;
+  /*被编译之后为：
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color: skyblue;*/
+}
+.four {
+  height: 100px;
+  background-color: #800080;
+  width: 300px;
+}
+.list {
+  width: 500px;
+  margin: 0 auto;
+}
+.list li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+}
+.list li:hover {
+  background-color: pink;
+}
+.list a {
+  font: normal bold 30px "microsoft yahei";
+  float: left;
+}
+.list a:hover {
+  color: red;
+}
+.list span {
+  float: right;
+  font: normal bold 30px "microsoft yahei";
+}
+.five {
+  width: 300px;
+  height: 300px;
+  border: dashed 20px #ff0000;
+}
+.six {
+  width: calc(200px - 50px) !important;
+  height: calc(200px - 50px) !important;
+  background: #ffc0cb !important;
+}

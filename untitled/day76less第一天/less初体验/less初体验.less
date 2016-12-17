@@ -1,0 +1,142 @@
+@charset "utf-8";//字符编码声明
+//这种注释不会被编译，less文件编译之后，这种注释不会被保留
+/*这种注释会被编译，less文件编译之后，这种注释会被保留*/
+
+///////////////////////变量///////////////////////////
+@one_width:200px;//声明一个变量, @变量名:变量值;
+@one_height:200px;
+@one_background:pink;
+
+/////////////////////////混合/////////////////////////
+.one {
+    width:@one_width;//使用变量
+    height:@one_height;
+    background:@one_background;
+    .border;//混合，借用其他选择器的样式，添加在自己身上
+}
+.border {
+    border:solid 5px green;
+}
+.two {
+    .one;//混合
+    border:solid 5px yellow;//覆盖借用的样式
+    border-radius: 30px;//添加自己的样式
+}
+//混合，可带参数,类似于函数的声明，声明混合的时候声明形参，在内部使用形参
+.border-color(@border_color,@border_radius){
+    border: dashed @border_color 10px;
+    border-radius: @border_radius;
+}
+//使用混合，调用的时候传入实参
+.two {
+    .border-color(purple, 100px)
+}
+//混合，参数有默认值，在声明形参的时候设置默认值，
+//调用混合的时候如果不传实参，则使用默认值，如果参入实参则使用传入的参数
+.border-color2(@border_color:blue,@border_radius:100px){
+    border: dotted @border_color 10px;
+    border-radius: @border_radius;
+}
+//调用混合，如果不传入实参则使用参数默认的值，如果传入参数则使用传入的值
+.two {
+    .border-color2();//调用混合，不传入参数使用默认值
+}
+.two {
+    .border-color2(red,50px);//调用魂环，传入参数使用传入的值
+}
+
+//////////////////////////匹配模式///////////////////////////
+//匹配模式，有多个混合的名字相同，形参相同，只是关键字（在这里是absolute、relative、fixed）不同，
+//在调用的使用根据关键字来判断调用的是哪个混合
+.position(absolute) {
+    position: absolute;
+}
+.position(relative) {
+    position: relative;
+}
+.position(fixed) {
+    position: fixed;
+}
+//‘@_’是固定写法，表示无论调用哪个模式的混合，都会带上以下混合的内容
+.position(@_){
+    height: 300px;
+    width: 300px;
+    background-color: skyblue;
+}
+.three {
+    .position(relative);//调用匹配模式，通过关键字来判断调用哪个混合
+    /*被编译之后为：
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color: skyblue;*/
+}
+
+////////////////////////运算//////////////////////////////
+//运算，可以对属性的值进行数学运算
+.div (@height:200px,@backgroundColor:pink) {
+    height: @height;
+    background-color: @backgroundColor;
+}
+@width: 200px;
+.four {
+    .div(100px,purple);
+    width: @width + 100;//对属性值进行运算，运算表达式中只要有一个带了单位就可以。
+}
+
+////////////////////////嵌套规则/////////////////////////
+//选择器之间的嵌套规则：选择器里面可以嵌套选择器，就像标签里面嵌套标签一样
+.list {
+    width: 500px;
+    margin: 0 auto;
+    //由于li标签在ul标签的里面，所以可以将li标签的选择器放在ul标签选择器的里面，表示是ul标签中的li标签
+    li {
+        width:100%;
+        height: 50px;
+        line-height: 50px;
+        //&表示上一级选择器，给li标签添加悬浮样式
+        //注意：&就是上一级选择器，相当于一个占位符，上一级选择器是什么他就是什么
+        &:hover {
+            background-color: pink;
+        }
+    }
+    //表示ul中的a标签，实际上a标签位于li标签的里面，如果放在li标签的里面，编译之后选择器就变成了 .list li a{}。
+    //如果放在li标签的外面，则编译后变成了 .list a{}。为了避免选择器嵌套太深，不建议放在li标签的里面。
+    a {
+        font: normal bold 30px "microsoft yahei";
+        float: left;
+        //给a标签添加悬浮样式
+        &:hover {
+            color: red;
+        }
+    }
+    //表示ul中的span标签
+    span {
+        float: right;
+        font: normal bold 30px "microsoft yahei";
+    }
+}
+
+//////////////////////@arguments变量//////////////////////
+//同JavaScript中的arguments类似，包含了使用混合的时候，所有传递进来的参数
+.five_div(@border_style:solid,@border_size:10px,@border_color:green) {
+    width: 300px;
+    height: 300px;
+    //@arguments表示的就是调用.five_div混合的时候传入的所有的实参，如果没有传入实参的话则就调用默认的值。
+    border: @arguments; 
+}
+.five {
+    .five_div(dashed,20px,red);
+}
+
+////////////////避免编译、!important、///////////////////
+//~'属性值'或者~"属性值"，属性值会原样输出，不会被less编译
+//!important类似于CSS中的!important，优先级最高，使用不多
+.six_div(@background:pink){
+    width: ~'calc(200px - 50px)';//~'属性值'避免属性值被less编译
+    height: ~'calc(200px - 50px)';
+    background: @background;
+} 
+.six {
+    .six_div()!important;
+}
