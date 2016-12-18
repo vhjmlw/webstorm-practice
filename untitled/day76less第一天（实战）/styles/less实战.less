@@ -1,0 +1,147 @@
+@charset "utf-8";
+*,ul,a{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+/*清除浮动的最佳方式
+ *:before,*:after{
+     content: "";
+     display: table;
+ }
+ *:after {
+     clear: both;
+ }*/
+@mainWidth: 616px;
+.borderTop(@borderStyle:solid,@borderSize:1px,@borderColor:black){
+    border-top: @arguments;
+}
+.float(@float:left) {
+    float: @float;
+}
+.tudou-main {
+    width: @mainWidth;
+    margin: 0 auto;
+}
+.title {
+    @height:62px;
+    @color:#575757;
+    @fontSize: 14px;
+    height: @height;
+    .borderTop(solid,1px,#D0D0D0);
+    margin-top: 50px;
+    line-height: @height;
+    color: @color;
+    h3 {
+        font: normal normal 22px/62px "microsoft yahei";
+        width: 106px;
+        .borderTop(solid,2px,#F97374);
+        margin-top: -1px;
+        .float();
+        height: 61px;
+    }
+    &-nav {
+        .float(right);
+        // font-size: @fontSize;
+        font: normal normal @fontSize/@height "microsoft yahei";
+        li {
+            .float();
+        }
+        a{
+            color: @color;
+            &:hover {
+                color:red;
+            }
+            }
+        span {
+            color: @color;
+            margin: 0 11px;
+        }
+    }
+}
+// .content:before,.content:after {
+//     content: "";
+//     display: table;
+// }
+// .content:after {
+//     clear: both;
+// }
+//设置清楚浮动的混合，调用该混合，会清除浮动。
+.clearfix(){
+    &:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    zoom: 1;
+}
+.content {
+    margin-right: -32px;
+    .clearfix();
+    .item {
+        @width: 130px;
+        @height: 143px;
+        .backgroundImage(@backImg) {
+            background-image: @backImg;
+        }
+        width: @width;
+        // height: @height;
+        float: left;
+        margin-right: 32px;
+        margin-bottom: 21px;
+        // margin-bottom: 5px;
+        &-image {
+            width: @width;
+            height: 78px;
+            position: relative;
+            margin-bottom: 10px;
+            img {
+                width: @width;
+                height: 78px;
+                display: block;
+            }
+            span {
+                font: normal normal 12px "microsoft yahei";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                color: white;
+                text-indent: 9px;
+                background-position: left center;
+                background-repeat: no-repeat;
+            }
+            .cq {
+                .backgroundImage(url(../images/cq.png));
+            }
+            .gq {
+                .backgroundImage(url(../images/gq.png));
+            }
+        }
+        &-list {
+            font: normal normal 12px/22px "microsoft yahei";
+            color: #575757;
+            a {
+                color: #575757;
+                &:hover {
+                    color: red;
+                }
+            }
+            .username,.play,.mess {
+                padding-left: 17px;
+                background-position: left center;
+                background-repeat: no-repeat;
+            }
+            .username {
+                .backgroundImage(url(../images/01.jpg));
+            }
+            .play {
+                .backgroundImage(url(../images/02.jpg));
+            }
+            .mess {
+                margin-left: 5px;
+                .backgroundImage(url(../images/03.jpg));
+            }
+        }
+    }
+}

@@ -1,0 +1,122 @@
+@charset "utf-8";
+*,
+ul,
+a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+/*清除浮动的最佳方式
+ *:before,*:after{
+     content: "";
+     display: table;
+ }
+ *:after {
+     clear: both;
+ }*/
+.tudou-main {
+  width: 616px;
+  margin: 0 auto;
+}
+.title {
+  height: 62px;
+  border-top: solid 1px #d0d0d0;
+  margin-top: 50px;
+  line-height: 62px;
+  color: #575757;
+}
+.title h3 {
+  font: normal normal 22px/62px "microsoft yahei";
+  width: 106px;
+  border-top: solid 2px #f97374;
+  margin-top: -1px;
+  float: left;
+  height: 61px;
+}
+.title-nav {
+  float: right;
+  font: normal normal 14px/62px "microsoft yahei";
+}
+.title-nav li {
+  float: left;
+}
+.title-nav a {
+  color: #575757;
+}
+.title-nav a:hover {
+  color: red;
+}
+.title-nav span {
+  color: #575757;
+  margin: 0 11px;
+}
+.content {
+  margin-right: -32px;
+  zoom: 1;
+}
+.content:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.content .item {
+  width: 130px;
+  float: left;
+  margin-right: 32px;
+  margin-bottom: 21px;
+}
+.content .item-image {
+  width: 130px;
+  height: 78px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.content .item-image img {
+  width: 130px;
+  height: 78px;
+  display: block;
+}
+.content .item-image span {
+  font: normal normal 12px "microsoft yahei";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: white;
+  text-indent: 9px;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.content .item-image .cq {
+  background-image: url(../images/cq.png);
+}
+.content .item-image .gq {
+  background-image: url(../images/gq.png);
+}
+.content .item-list {
+  font: normal normal 12px/22px "microsoft yahei";
+  color: #575757;
+}
+.content .item-list a {
+  color: #575757;
+}
+.content .item-list a:hover {
+  color: red;
+}
+.content .item-list .username,
+.content .item-list .play,
+.content .item-list .mess {
+  padding-left: 17px;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.content .item-list .username {
+  background-image: url(../images/01.jpg);
+}
+.content .item-list .play {
+  background-image: url(../images/02.jpg);
+}
+.content .item-list .mess {
+  margin-left: 5px;
+  background-image: url(../images/03.jpg);
+}
