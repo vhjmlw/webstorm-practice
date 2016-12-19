@@ -1,0 +1,14 @@
+@charset "utf-8";
+.one {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+.two {
+  width: 200px;
+  height: 200px;
+  background: green;
+}
+.two {
+  border: solid 10px pink;
+}

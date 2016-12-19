@@ -1,0 +1,26 @@
+@charset "utf-8";
+@width: 100px;
+@height: 100px;
+@background: red;
+.one {
+    width: @width;
+    height:@height;
+    background: @background;
+}
+
+.@{two} {
+    @{width2}:200px;
+    @{height2}:200px;
+    background:green;
+}
+//延迟加载，先使用后声明。
+@width2: width;
+@height2: height;
+@two: two;
+@border_color: red;
+@border_color: blue;
+.@{two} {
+    border: solid 10px @border_color;
+    @border_color: pink;
+} 
+@border_color: purple;
