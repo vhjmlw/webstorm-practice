@@ -84,39 +84,39 @@
 ~~***斜体粗体删除线***~~、***~~斜体粗体删除线~~***
 
 # 图片  
-语法一：
+语法一：  
 ![alt，图片加载失败显示的内容](https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif	"title 鼠标悬浮图片上的时候显示的内容")
-语法二：
+语法二：  
 ![alt，图片加载失败显示的内容][imageId]
 [imageId]:https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif
-语法三：
+语法三：  
 ![imageAlt][]
 [imageAlt]:https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif
 
 # 链接  
-语法一：
+语法一：  
 [谷歌](https://www.google.com)
-语法二：
+语法二：  
 [谷歌][id]
 [id]:https://www.google.com
-语法三：
+语法三：  
 [谷歌][]
 [谷歌]:https://www.google.com
 ##### 显示一个链接    
-语法一：https://www.google.com
+语法一：https://www.google.com  
 语法二：<https://www.google.com>
 ##### 显示一个邮箱地址  
-语法一：lei1028362931@gmail.com
+语法一：lei1028362931@gmail.com  
 语法二：<lei1028362931@gmail.com>
 
 # 图片链接  
 **外层是网址链接，里层是图片链接**
 **网址链接里面嵌套了一个图片链接**
-语法一：
+语法一：  
 [![谷歌](https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif)](https://www.google.com)
-语法二：
+语法二：  
 [![][imageAlt]](https://www.google.com)
-语法三：
+语法三：  
 [![][imageAlt]][谷歌]
 
 ##### 锚点  
