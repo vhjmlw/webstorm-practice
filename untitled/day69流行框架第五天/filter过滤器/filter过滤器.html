@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-app="module">
+    <input type="text" ng-model="inputText">
+    <ul ng-controller="controller">
+        <!--按照inputText的内容过滤数据,按照关键字过滤.filter:内容-->
+        <li ng-repeat="todo in todos | filter : inputText">
+            <span>{{todo.id}}</span>
+            <strong>{{todo.text}}</strong>
+            <span>{{todo.completed}}</span>
+        </li>
+    </ul>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    angular.module("module", []).controller("controller", ["$scope", function ($scope) {
+        $scope.todos = [{
+            id: 1,
+            text: "helloworld",
+            completed: true
+        }, {
+            id: 2,
+            text: "askdfjka",
+            completed: false
+        }, {
+            id: 3,
+            text: "hello",
+            completed: false
+        }, {
+            id: 4,
+            text: "world",
+            completed: true
+        }];
+    }]);
+</script>
+</body>
+</html>

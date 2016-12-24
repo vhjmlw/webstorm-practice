@@ -1,0 +1,22 @@
+{
+  "name": "ng-switch",
+  "version": "1.0.0",
+  "description": "ng-switch",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [
+    "ng-switch",
+    "ng-switch-when"
+  ],
+  "author": "建磊",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.1"
+  }
+}

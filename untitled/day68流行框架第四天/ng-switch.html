@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body ng-app>
+    <select ng-model="selectedValue">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <div ng-switch="selectedValue">
+        <div ng-switch-when="1">您选择的是1</div>
+        <div ng-switch-when="2">您选择的是2</div>
+        <div ng-switch-when="3">您选择的是3</div>
+        <div ng-switch-default>您什么也没有选择</div>
+    </div>
+    <script src="./node_modules/angular/angular.js"></script>
+</body>
+
+</html>

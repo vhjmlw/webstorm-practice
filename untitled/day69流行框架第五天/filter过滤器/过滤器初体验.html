@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="module" ng-controller="controller">
+<h1>{{data | currency}}</h1>
+<h1>{{data | date}}</h1>
+<h1>{{data | number}}</h1>
+<h1>{{"helloworld" | uppercase}}</h1>
+<h1>{{"ASKDFJKASDJFK" | lowercase}}</h1>
+<h1>{{[1,2,3,4,5] | json}}</h1>
+<h1>{{{name:123,age:34123,aksd:12312} | json}}</h1>
+<h1>{{"helloworld zhangjianlei" | limitTo:10:10}}</h1>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    (function (angular) {
+        angular.module("module",[]).controller("controller",["$scope",function ($scope) {
+            $scope.data = 123123123;
+        }]);
+    })(angular);
+</script>
+</body>
+</html>
