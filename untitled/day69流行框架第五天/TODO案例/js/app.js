@@ -94,7 +94,7 @@ appModule.controller("appController", ["$scope", "$location", "$routeParams", fu
                 break;
         }
     });
-
+    //自定义比较函数,filter过滤器在过滤的时候的过滤规则
     $scope.compare = function (source,target) {
         return source===target;
     }

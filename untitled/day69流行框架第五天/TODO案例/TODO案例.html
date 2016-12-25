@@ -50,13 +50,13 @@
             <!-- Remove this if you don't implement routing -->
             <ul class="filters">
                 <li><!--根据URL中的hash值来添加selected样式类-->
-                    <a ng-class="{selected:$location.hash()=='/'}" href="#/">All</a>
+                    <a ng-class="{selected:selector.completed==undefined}" href="#/">All</a>
                 </li>
                 <li>
-                    <a ng-class="{selected:$location.hash()=='/active'}" href="#/active">Active</a>
+                    <a ng-class="{selected:selector.completed==false}" href="#/active">Active</a>
                 </li>
                 <li>
-                    <a ng-class="{selected:$location.hash()=='/completed'}" href="#/completed">Completed</a>
+                    <a ng-class="{selected:selector.completed==true}" href="#/completed">Completed</a>
                 </li>
             </ul>
             <!-- Hidden if no completed items are left ↓ -->
