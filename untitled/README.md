@@ -88,10 +88,10 @@
 ![alt，图片加载失败显示的内容](https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif	"title 鼠标悬浮图片上的时候显示的内容")  
 语法二：  
 ![alt，图片加载失败显示的内容][imageId]
-[imageId]:https://www.google.com/logos/doodles/2016/summer-solstice-2016-southern-hemisphere-5137503691472896.2-hp2x.gif
+[imageId]:https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif
 语法三：  
 ![imageAlt][]
-[imageAlt]:https://www.google.com/logos/doodles/2016/first-day-of-fall-2016-northern-hemisphere-5139283208830976-hp2x.gif
+[imageAlt]:https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif
 
 # 链接  
 语法一：
@@ -113,7 +113,7 @@
 **外层是网址链接，里层是图片链接**
 **网址链接里面嵌套了一个图片链接**  
 语法一：  
-[![谷歌](https://www.google.com/logos/doodles/2016/first-day-of-spring-2016-southern-hemisphere-5095436156141568.2-hp2x.gif)](https://www.google.com)
+[![谷歌](https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif)](https://www.google.com)
 语法二：  
 [![][imageAlt]](https://www.google.com)  
 语法三：  
