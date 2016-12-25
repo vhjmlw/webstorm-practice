@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body ng-app="myApp">
+    <ul>
+        <li>
+            <!--#后面要加一个！，否则会无效-->
+            <a href="#!/student/one">/student/one</a>
+        </li>
+        <li>
+            <a href="#!/student/two">/student/two</a>
+        </li>
+        <li>
+            <a href="#!/man/one">/man/one</a>
+        </li>
+        <li>
+            <a href="#!/man/two">/man/two</a>
+        </li>
+    </ul>
+    <div ng-view></div>
+    <!--自定义一个我们自己的模板-->
+    <script id="ngTemplate" type="text/ng-template">
+        <h1>{{title}}</h1>
+    </script>
+    <script src="angular.js"></script>
+    <script src="angular-route.js"></script>
+    <script>
+        var myApp = angular.module("myApp", ["ngRoute"]);
+        myApp.config(["$routeProvider", function($routeProvider) {
+            $routeProvider //使用"/:categary/:number?"对URL中的锚点值进行匹配，匹配成功之后返回一个$routeParams对象
+                .when("/:categary/:number?", {
+                    controller: "mycontroller", //调用控制器
+                    templateUrl: "ngTemplate" //通过模板的ID名调用模板
+                })
+                .otherwise({
+                    redirectTo: "/student/one", //如果上面的内容匹配不到的话，会重定向到锚点：/student/one
+                });
+        }]);
+        myApp.controller("mycontroller", ["$scope", "$routeParams", function($scope, $routeParams) {
+            //$routeParams=={categary:"student"/"man",routeParams:"one"/"two"}
+            //使用"/:categary/:number?"匹配/student/one，返回的$routeParams={categary:"student",number:"one"}
+            //根据不同的锚点值显示不同的内容
+            $scope.title = "categary: " + $routeParams.categary + "-------number: " + $routeParams.number;
+        }]);
+    </script>
+</body>
+
+</html>

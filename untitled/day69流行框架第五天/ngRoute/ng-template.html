@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body ng-app="app">
+    <ul>
+        <li><a href="#!/a">a</a></li>
+        <li><a href="#!/b">b</a></li>
+        <li><a href="#!/c">c</a></li>
+        <li><a href="#!/d">d</a></li>
+    </ul>
+    <div ng-view></div>
+    <!--创建一个我们自己的模板，声明一个ngTemplate的ID名，注意type=“text/ng-template”-->
+    <!--有点类似于artTemplate第三方的模板，实际上第三方的模板都是使用script标签实现的，
+    因为script标签，只有type=text/javascript的时候才会被当做js代码来执行，
+    除此之外，script标签里面的内容不会被当做js代码被执行，但是也不会显示在页面上-->
+    <script id="ngTemplate" type="text/ng-template">
+        <h1>{{title}}</h1>
+    </script>
+
+    <!--引入的两个文件不要跨文件夹-->
+    <script src="angular.js"></script>
+    <script src="angular-route.js"></script>
+    <script>
+        var myApp = angular.module("app", ["ngRoute"]);
+        myApp.config(["$routeProvider", function($routeProvider) {
+            $routeProvider
+                .when("/a", {
+                    controller: "Acontroller", //锚点值为/a的时候，调用Acontroller控制器
+                    templateUrl: "ngTemplate" //使用模板的ID名，调用我们自己声明的模板，
+                })
+                .when("/b", {
+                    controller: "Bcontroller",
+                    templateUrl: "ngTemplate"
+                })
+                .when("/c", {
+                    controller: "Ccontroller",
+                    templateUrl: "ngTemplate"
+                })
+                .when("/d", {
+                    controller: "Dcontroller",
+                    templateUrl: "ngTemplate"
+                })
+                .otherwise({ //default，如果上面的四个都匹配不到的话，就执行otherwise
+                    redirectTo: "/a" //重定向，如果上面的四个锚点都匹配不到的话，就重定向到锚点/a
+                });
+        }]);
+        myApp.controller("Acontroller", ["$scope", function($scope) {
+            $scope.title = "这里是Acontroller的内容";
+        }]);
+        myApp.controller("Bcontroller", ["$scope", function($scope) {
+            $scope.title = "这里是Bcontroller的内容";
+        }]);
+        myApp.controller("Ccontroller", ["$scope", function($scope) {
+            $scope.title = "这里是Ccontroller的内容";
+        }]);
+        myApp.controller("Dcontroller", ["$scope", function($scope) {
+            $scope.title = "这里是Dcontroller的内容";
+        }]);
+    </script>
+</body>
+
+</html>

@@ -113,7 +113,7 @@
 **外层是网址链接，里层是图片链接**
 **网址链接里面嵌套了一个图片链接**  
 语法一：  
-[![谷歌](https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif)](https://www.google.com)  
+[![谷歌](https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif)](https://www.google.com)
 语法二：  
 [![][imageAlt]](https://www.google.com)  
 语法三：  
