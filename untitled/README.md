@@ -88,7 +88,7 @@
 ![alt，图片加载失败显示的内容](https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif	"title 鼠标悬浮图片上的时候显示的内容")  
 语法二：  
 ![alt，图片加载失败显示的内容][imageId]
-[imageId]:https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif  
+[imageId]:https://www.google.co.jp/logos/doodles/2016/holidays-2016-day-3-4668988412919808-hp.gif
 语法三：  
 ![imageAlt][]
 [imageAlt]:https://www.google.co.jp/logos/doodles/2016/winter-solstice-2016-northern-hemisphere-4788310770712576-hp.gif  

@@ -31,7 +31,7 @@
             <ul class="todo-list">
                 <!-- These are here just to show the structure of the list items -->
                 <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
-                <li ng-repeat="todo in todos track by $index" ng-class="{completed:todo.completed,editing:todo.id===currentEditingId}" data-id="{{todo.id}}">
+                <li ng-repeat="todo in todos | filter : selector : compare" ng-class="{completed:todo.completed,editing:todo.id===currentEditingId}" data-id="{{todo.id}}"><!--selector对象是过滤器的过滤规则,通过selector:{completed:true/false}对象来对todos中的内容进行过滤-->
                     <div class="view">
                         <input class="toggle" type="checkbox" ng-model="todo.completed">
                         <label ng-dblclick="currentEditing(todo.id)">{{todo.text}}</label>
@@ -49,14 +49,14 @@
             <span class="todo-count"><strong>{{todos.length}}</strong> item left</span>
             <!-- Remove this if you don't implement routing -->
             <ul class="filters">
-                <li>
-                    <a ng-class="{selected:filter==='default'}" href="#/">All</a>
+                <li><!--根据URL中的hash值来添加selected样式类-->
+                    <a ng-class="{selected:$location.hash()=='/'}" href="#/">All</a>
                 </li>
                 <li>
-                    <a ng-class="{selected:filter==='active'}" href="#/active">Active</a>
+                    <a ng-class="{selected:$location.hash()=='/active'}" href="#/active">Active</a>
                 </li>
                 <li>
-                    <a ng-class="{selected:filter==='completed'}" href="#/completed">Completed</a>
+                    <a ng-class="{selected:$location.hash()=='/completed'}" href="#/completed">Completed</a>
                 </li>
             </ul>
             <!-- Hidden if no completed items are left ↓ -->
