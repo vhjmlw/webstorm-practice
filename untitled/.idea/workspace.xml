@@ -49,8 +49,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="710">
-                <caret line="118" column="6" selection-start-line="118" selection-start-column="6" selection-end-line="118" selection-end-column="6" />
+              <first_editor relative-caret-position="629">
+                <caret line="115" column="143" selection-start-line="115" selection-start-column="143" selection-end-line="115" selection-end-column="143" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -534,12 +534,12 @@
       <workItem from="1482210952985" duration="55000" />
       <workItem from="1482212759383" duration="219000" />
       <workItem from="1482573075809" duration="9620000" />
-      <workItem from="1482624480006" duration="1880000" />
+      <workItem from="1482624480006" duration="1944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="992469000" />
+    <option name="totallyTimeSpent" value="992533000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -917,8 +917,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="710">
-            <caret line="118" column="6" selection-start-line="118" selection-start-column="6" selection-end-line="118" selection-end-column="6" />
+          <first_editor relative-caret-position="629">
+            <caret line="115" column="143" selection-start-line="115" selection-start-column="143" selection-end-line="115" selection-end-column="143" />
             <folding />
           </first_editor>
           <second_editor />
