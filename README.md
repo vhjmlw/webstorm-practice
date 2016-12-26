@@ -155,13 +155,21 @@ alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置
 ```
 使用插件介绍：  
 1. `git`：当处于一个 git 受控的目录下时，Shell 会明确显示 「git」和 branch，另外对 git 很多命令进行了简化，例如 gco=’git checkout’、gd=’git diff’、gst=’git status’、g=’git’等等，熟练使用可以大大减少 git 的命令长度，命令内容可以参考~/.oh-my-zsh/plugins/git/git.plugin.zsh  
+
 2. `textmate`：一种古老的代码编辑器  
+
 3. `autojump`：目录的自动跳转，使用"j 目录名"的方式快速跳转到以前打开过的历史目录，需要单独安装。安装方式：***brew  install  autojump***  
+
 4. `osx`：tab增强，quick-look filename 可以直接预览文件，man-preview grep 可以生成 grep手册 的pdf 版本等。  
+
 5. `dirhistory`：使用Alt + ←/→，可以实现历史目录的快速跳转。Alt + ←快速跳转到上一个目录；Alt + →快速跳转到下一个目录  
+
 6. `sublime`：使用sublime软件打开指定的文件  
+
 7. `zsh-autosuggestions`：强烈建议。当我们敲入指令的时候，根据输入的指令匹配历史记录，提示可能会输入的指令。按→键也可以快速的完成指令  
+
 8. zsh-syntax-highlighting：强烈建议。对正在输入的指令进行代码高亮，如果输入的指令有误则显示红色，无误显示绿色。  
+
 > 注意：`zsh-autosuggestions`和`zsh-syntax-highlighting`两个插件需要我们自己单独安装。安装的位置默认存放在：*~/.oh-my-zsh/custom/plugins/*  。第三方的插件，都默认安装在这个目录，当然也可以更改配置文件，修改其安装目录。
 
 > 注意：每次更改完~/.zshrc配置文件之后，都要重新执行下该配置文件：`source ~/.zshrc`
