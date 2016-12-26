@@ -40,7 +40,7 @@ brew cask常用的指令如下：
 	卸载软件：brew cask uninstall 软件名
 ```
 
-> 关于brew的详细信息可以查看官网：http://brew.sh/
+> 关于brew的详细信息可以查看官网：http://brew.sh/  
 > 关于brew cask的详情可以查看官网：https://caskroom.github.io/
 
 ### 3.nvm、node、npm、bower  
@@ -64,18 +64,18 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | b
 切换为io.js社区版本：nvm install iojs
 ```
 安装的node里面包含了npm工具。  
-> 关于nvm，详情可以查看：https://github.com/creationix/nvm/blob/master/README.markdown
-> 关于node，详情可以查看官网：https://nodejs.org/zh-cn/
-> 关于npm，性情可以查看：https://www.npmjs.com/
+> 关于nvm，详情可以查看：https://github.com/creationix/nvm/blob/master/README.markdown  
+> 关于node，详情可以查看官网：https://nodejs.org/zh-cn/  
+> 关于npm，性情可以查看：https://www.npmjs.com/  
 
 * bower：  
 是一个类似于npm的包管理工具，一般使用bower安装项目依赖，使用npm安装开发依赖。  
-bower的安装：`m install -g bower`  
+bower的安装：`npm install -g bower`  
 > bower的官网：	https://bower.io/
 
 ### 4. zsh  
 
-常用的Shell有这么几种，sh、bash、csh等，想知道你的系统有几种shell，可以通过以下命令查看：  `cat /etc/shells`  
+常用的Shell有sh、bash、csh等，想知道自己的系统有几种shell，可以通过以下命令查看：  `cat /etc/shells`  
 显示如下：  
 ```
 	/bin/bash
@@ -154,6 +154,7 @@ alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置
 	plugins=(git textmate autojump osx dirhistory sublime zsh-autosuggestions zsh-syntax-highlighting)  
 ```
 使用插件介绍：  
+
 1. `git`：当处于一个 git 受控的目录下时，Shell 会明确显示 「git」和 branch，另外对 git 很多命令进行了简化，例如 gco=’git checkout’、gd=’git diff’、gst=’git status’、g=’git’等等，熟练使用可以大大减少 git 的命令长度，命令内容可以参考~/.oh-my-zsh/plugins/git/git.plugin.zsh  
 
 2. `textmate`：一种古老的代码编辑器  
