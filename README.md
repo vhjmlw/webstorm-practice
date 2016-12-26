@@ -168,7 +168,7 @@ alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置
 
 7. `zsh-autosuggestions`：强烈建议。当我们敲入指令的时候，根据输入的指令匹配历史记录，提示可能会输入的指令。按→键也可以快速的完成指令  
 
-8. zsh-syntax-highlighting：强烈建议。对正在输入的指令进行代码高亮，如果输入的指令有误则显示红色，无误显示绿色。  
+8. `zsh-syntax-highlighting`：强烈建议。对正在输入的指令进行代码高亮，如果输入的指令有误则显示红色，无误显示绿色。  
 
 > 注意：`zsh-autosuggestions`和`zsh-syntax-highlighting`两个插件需要我们自己单独安装。安装的位置默认存放在：*~/.oh-my-zsh/custom/plugins/*  。第三方的插件，都默认安装在这个目录，当然也可以更改配置文件，修改其安装目录。
 
@@ -177,9 +177,10 @@ alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置
 > 关于oh-my-zsh更多的信息，可以参考池建强的播客：http://macshuo.com/?p=676
 
 ### 6. iterm2
-
+```
 item2是替代terminal终端的一款命令行软件。功能比terminal更加的强大。  
 iterm2具有丰富的主题可以下载，自定义程度也要比terminal要高。如：设置不同的快捷键打开不同的窗口，为不同的窗口设置不同的主题，为不同的窗口指定不同的开启目录。将窗口拆分为不同的布局。  
+```
 可以使用brew安装：`brew cask install iterm2`  
 iterm2里面有一个***install  shell  integration***选项，建议安装，包含了shell集成，扩展了iterm2的功能。  
 > 详情可以参考官网：https://www.iterm2.com/
