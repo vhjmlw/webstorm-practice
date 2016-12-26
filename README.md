@@ -1,5 +1,6 @@
 # webstorm-practice
-webstorm上的练习项目
+## webstorm上的练习项目
+*******************************
 
 ## 开发环境的搭建(Mac)
 
@@ -20,12 +21,12 @@ git是一款目前主流的分布式的版本控制工具。
 
 ***The missing package manager for macOS***：  
 brew：macOS系统的包管理工具，可以安装不同的软件。 
-brew的安装： 
+* brew的安装： 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-brew cask：macOS系统的软件安装工具，可以安装我们日常使用的APP。使用brew cask可以一条指令安装、卸载、升级我们的软件。  
+* brew cask：macOS系统的软件安装工具，可以安装我们日常使用的APP。使用brew cask可以一条指令安装、卸载、升级我们的软件。  
 brew cask的安装： 
 ```
 	brew tap caskroom/cask  
@@ -47,17 +48,17 @@ brew cask常用的指令如下：
 nvm：node version manager，node版本管理工具  
 node：JavaScript语言在服务器端的运行环境  
 npm：node package manager，node包管理工具  
-nvm的安装：  
+* nvm的安装：  
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash  
 ```
-node：的安装  
+* node：的安装  
 ```
 安装官方版本：nvm install node
 或者指定安装的具体的版本：nvm install v4.2
 安装io.js即社区版本：nvm install iojs
 ```
-node版本的切换：  
+* node版本的切换：  
 ```
 切换为官方版本：nvm install node
 切换为io.js社区版本：nvm install iojs
@@ -67,7 +68,8 @@ node版本的切换：
 > 关于node，详情可以查看官网：https://nodejs.org/zh-cn/
 > 关于npm，性情可以查看：https://www.npmjs.com/
 
-bower：是一个类似于npm的包管理工具，一般使用bower安装项目依赖，使用npm安装开发依赖。  
+* bower：  
+是一个类似于npm的包管理工具，一般使用bower安装项目依赖，使用npm安装开发依赖。  
 bower的安装：`m install -g bower`  
 > bower的官网：	https://bower.io/
 
@@ -111,22 +113,13 @@ oh-my-zsh是zsh的配置文件，Github 网址是：https://github.com/robbyruss
   如：在终端中输入cls就相当于执行clear指令
   alias cls='clear'
   alias ll='ls -l'
-  alias la='ls -a'
-  alias vi='vim'
   alias javac="javac -J-Dfile.encoding=utf8"
-  alias grep="grep --color=auto"
   针对文件的扩展名指定对应的打开程序：
   alias -s html=mate   # 在命令行直接输入后缀为 html 的文件名，会在 TextMate 中打开
   alias -s rb=mate     # 在命令行直接输入 ruby 文件，会在 TextMate 中打开
   alias -s py=vi       # 在命令行直接输入 python 文件，会用 vim 中打开，以下类似
-  alias -s js=vi
-  alias -s c=vi
   alias -s java=vi
-  alias -s txt=vi
   alias -s gz='tar -xzvf'
-  alias -s tgz='tar -xzvf'
-  alias -s zip='unzip'
-  alias -s bz2='tar -xjvf'
 ```
 
 我自己的电脑设置的别名如下：  
@@ -142,7 +135,7 @@ alias -s log=st
 alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置文件
 ```
 
-设置主题： 
+* 设置主题： 
 ```
 	打开~/.zshrc文件，找到ZSH_THEME="robbyrussell"
 	引号里面的内容是默认主题，更改其内容就可以更改主题
@@ -155,12 +148,12 @@ alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置
 	ZSH_THEME="robbyrussell"
 ```
 
-插件：  
-oh-my-zsh 项目提供了完善的插件体系，相关的文件在~/.oh-my-zsh/plugins目录下，默认提供了100多种，可以根据自己的实际学习和工作环境采用，想了解每个插件的功能，只要打开相关目录下的 zsh 文件看一下就知道了。插件也是在.zshrc里配置，找到plugins关键字，就可以加载自己的插件了，系统默认加载 git ，你可以在后面追加内容，如下：
+* 插件：  
+  oh-my-zsh 项目提供了完善的插件体系，相关的文件在~/.oh-my-zsh/plugins目录下，默认提供了100多种，可以根据自己的实际学习和工作环境采用，想了解每个插件的功能，只要打开相关目录下的 zsh 文件看一下就知道了。插件也是在.zshrc里配置，找到plugins关键字，就可以加载自己的插件了，系统默认加载 git ，可以在后面追加内容，如下：
 ```
 	plugins=(git textmate autojump osx dirhistory sublime zsh-autosuggestions zsh-syntax-highlighting)  
 ```
-使用的插件的介绍：
+使用插件介绍：  
 1. `git`：当处于一个 git 受控的目录下时，Shell 会明确显示 「git」和 branch，另外对 git 很多命令进行了简化，例如 gco=’git checkout’、gd=’git diff’、gst=’git status’、g=’git’等等，熟练使用可以大大减少 git 的命令长度，命令内容可以参考~/.oh-my-zsh/plugins/git/git.plugin.zsh  
 2. `textmate`：一种古老的代码编辑器  
 3. `autojump`：目录的自动跳转，使用"j 目录名"的方式快速跳转到以前打开过的历史目录，需要单独安装。安装方式：***brew  install  autojump***  
