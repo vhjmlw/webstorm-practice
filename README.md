@@ -21,18 +21,19 @@ git是一款目前主流的分布式的版本控制工具。
 
 ***The missing package manager for macOS***：  
 brew：macOS系统的包管理工具，可以安装不同的软件。 
-* brew的安装： 
+**brew的安装：** 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-* brew cask：macOS系统的软件安装工具，可以安装我们日常使用的APP。使用brew cask可以一条指令安装、卸载、升级我们的软件。  
-brew cask的安装： 
+**brew cask：**  
+macOS系统的软件安装工具，可以安装我们日常使用的APP。使用brew cask可以一条指令安装、卸载、升级我们的软件。  
+**brew cask的安装： **
 ```
 	brew tap caskroom/cask  
 ```
 
-brew cask常用的指令如下：
+**brew cask常用的指令如下：**
 ```
 	搜索软件：brew cask search 软件名
 	查看软件信息：brew cask info 软件名
@@ -48,17 +49,17 @@ brew cask常用的指令如下：
 nvm：node version manager，node版本管理工具  
 node：JavaScript语言在服务器端的运行环境  
 npm：node package manager，node包管理工具  
-* nvm的安装：  
+**nvm的安装：**  
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash  
 ```
-* node：的安装  
+**node：的安装**  
 ```
 安装官方版本：nvm install node
 或者指定安装的具体的版本：nvm install v4.2
 安装io.js即社区版本：nvm install iojs
 ```
-* node版本的切换：  
+**node版本的切换：**  
 ```
 切换为官方版本：nvm install node
 切换为io.js社区版本：nvm install iojs
@@ -68,7 +69,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | b
 > 关于node，详情可以查看官网：https://nodejs.org/zh-cn/  
 > 关于npm，性情可以查看：https://www.npmjs.com/  
 
-* bower：  
+**bower：**   
 是一个类似于npm的包管理工具，一般使用bower安装项目依赖，使用npm安装开发依赖。  
 bower的安装：`npm install -g bower`  
 > bower的官网：	https://bower.io/
@@ -94,7 +95,7 @@ macOS系统预装了zsh。
 oh-my-zsh是zsh的配置文件，Github 网址是：https://github.com/robbyrussell/oh-my-zsh     
 官方网址是： http://ohmyz.sh/  
 
-* oh-my-zsh的安装： 
+**oh-my-zsh的安装： **
 ``` 
 自动安装：wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 
 ```
@@ -104,8 +105,9 @@ oh-my-zsh是zsh的配置文件，Github 网址是：https://github.com/robbyruss
 ```
 安装完了之后，就可以打开终端，看到彩色的提示了。  
 
-* zsh的配置：zsh 的配置主要集中在用户当前目录的.zshrc里   
-  打开~/.zshrc文件，在文件的最下面添加设置别名的内容。  
+**zsh的配置：**
+zsh 的配置主要集中在用户当前目录的.zshrc里   
+打开~/.zshrc文件，在文件的最下面添加设置别名的内容。  
 
   设置别名：alias  
 ``` 
@@ -135,7 +137,7 @@ alias -s log=st
 alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置文件
 ```
 
-* 设置主题： 
+**设置主题： **
 ```
 	打开~/.zshrc文件，找到ZSH_THEME="robbyrussell"
 	引号里面的内容是默认主题，更改其内容就可以更改主题
@@ -148,12 +150,12 @@ alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置
 	ZSH_THEME="robbyrussell"
 ```
 
-* 插件：  
+**插件：**   
   oh-my-zsh 项目提供了完善的插件体系，相关的文件在~/.oh-my-zsh/plugins目录下，默认提供了100多种，可以根据自己的实际学习和工作环境采用，想了解每个插件的功能，只要打开相关目录下的 zsh 文件看一下就知道了。插件也是在.zshrc里配置，找到plugins关键字，就可以加载自己的插件了，系统默认加载 git ，可以在后面追加内容，如下：
 ```
 	plugins=(git textmate autojump osx dirhistory sublime zsh-autosuggestions zsh-syntax-highlighting)  
 ```
-使用插件介绍：  
+**使用插件介绍：**   
 
 1. `git`：当处于一个 git 受控的目录下时，Shell 会明确显示 「git」和 branch，另外对 git 很多命令进行了简化，例如 gco=’git checkout’、gd=’git diff’、gst=’git status’、g=’git’等等，熟练使用可以大大减少 git 的命令长度，命令内容可以参考~/.oh-my-zsh/plugins/git/git.plugin.zsh  
 
