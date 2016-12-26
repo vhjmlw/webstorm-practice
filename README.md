@@ -8,29 +8,37 @@ git是一款目前主流的分布式的版本控制工具。
 > 关于git的详情，可以参考官网：https://git-scm.com/ 
 
 > 关于git的学习资料，如下：
-> git教程： https://git-scm.com/book/zh/v2/
-> 菜鸟学院git教程： http://www.runoob.com/git/git-tutorial.html
-> git教程： http://git.oschina.net/progit/
-> coding网git原理解析（强烈推荐）： https://blog.coding.net/blog/principle-of-Git
-> 廖雪峰git教程： http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
-> 掘金git原理解析： http://deweixu.me/2016/11/05/how-git-works/
-> https://lufficc.com/blog/the-core-conception-of-git
-> https://segmentfault.com/a/1190000006570172#shareToWeibo
+> git教程： https://git-scm.com/book/zh/v2/  
+> 菜鸟学院git教程： http://www.runoob.com/git/git-tutorial.html  
+> git教程： http://git.oschina.net/progit/  
+> coding网git原理解析（强烈推荐）： https://blog.coding.net/blog/principle-of-Git  
+> 廖雪峰git教程： http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000  
+> 掘金git原理解析： http://deweixu.me/2016/11/05/how-git-works/  
+> https://lufficc.com/blog/the-core-conception-of-git  
+> https://segmentfault.com/a/1190000006570172#shareToWeibo  
 
 #### 2. brew、brew cask  
 `The missing package manager for macOS`：  
 brew：macOS系统的包管理工具，可以安装不同的软件。 
-brew的安装：  
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew的安装： 
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 brew cask：macOS系统的软件安装工具，可以安装我们日常使用的APP。使用brew cask可以一条指令安装、卸载、升级我们的软件。  
-brew cask的安装：  
+brew cask的安装： 
+```
 	brew tap caskroom/cask  
+```
+
 brew cask常用的指令如下：
+```
 	搜索软件：brew cask search 软件名
 	查看软件信息：brew cask info 软件名
 	安装软件：brew cask install 软件名
 	卸载软件：brew cask uninstall 软件名
+```
+
 > 关于brew的详细信息可以查看官网：http://brew.sh/
 > 关于brew cask的详情可以查看官网：https://caskroom.github.io/
 
@@ -39,14 +47,14 @@ nvm：node version manager，node版本管理工具
 node：JavaScript语言在服务器端的运行环境  
 npm：node package manager，node包管理工具  
 nvm的安装：  
-	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+		curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 node：的安装  
-	安装官方版本：nvm install node
-	或者指定安装的具体的版本：nvm install v4.2
-	安装io.js即社区版本：nvm install iojs
+		安装官方版本：nvm install node
+		或者指定安装的具体的版本：nvm install v4.2
+		安装io.js即社区版本：nvm install iojs
 node版本的切换：  
-	切换为官方版本：nvm install node
-	切换为io.js社区版本：nvm install iojs
+		切换为官方版本：nvm install node
+		切换为io.js社区版本：nvm install iojs
 安装的node里面包含了npm工具。  
 > 关于nvm，详情可以查看：https://github.com/creationix/nvm/blob/master/README.markdown
 > 关于node，详情可以查看官网：https://nodejs.org/zh-cn/
@@ -134,16 +142,16 @@ alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置
 
 插件：  
 oh-my-zsh 项目提供了完善的插件体系，相关的文件在~/.oh-my-zsh/plugins目录下，默认提供了100多种，可以根据自己的实际学习和工作环境采用，想了解每个插件的功能，只要打开相关目录下的 zsh 文件看一下就知道了。插件也是在.zshrc里配置，找到plugins关键字，就可以加载自己的插件了，系统默认加载 git ，你可以在后面追加内容，如下：
-	plugins=(git textmate autojump osx dirhistory sublime zsh-autosuggestions zsh-syntax-highlighting)
+	plugins=(git textmate autojump osx dirhistory sublime zsh-autosuggestions zsh-syntax-highlighting)  
 使用的插件的介绍：
-1. `git`：当处于一个 git 受控的目录下时，Shell 会明确显示 「git」和 branch，另外对 git 很多命令进行了简化，例如 gco=’git checkout’、gd=’git diff’、gst=’git status’、g=’git’等等，熟练使用可以大大减少 git 的命令长度，命令内容可以参考~/.oh-my-zsh/plugins/git/git.plugin.zsh
-2. `textmate`：一种古老的代码编辑器
-3. `autojump`：目录的自动跳转，使用"j 目录名"的方式快速跳转到以前打开过的历史目录，需要单独安装。安装方式：***brew  install  autojump***
-4. `osx`：tab增强，quick-look filename 可以直接预览文件，man-preview grep 可以生成 grep手册 的pdf 版本等。
-5. `dirhistory`：使用Alt + ←/→，可以实现历史目录的快速跳转。Alt + ←快速跳转到上一个目录；Alt + →快速跳转到下一个目录
-6. `sublime`：使用sublime软件打开指定的文件
-7. `zsh-autosuggestions`：强烈建议。当我们敲入指令的时候，根据输入的指令匹配历史记录，提示可能会输入的指令。按→键也可以快速的完成指令。
-8. zsh-syntax-highlighting：强烈建议。对正在输入的指令进行代码高亮，如果输入的指令有误则显示红色，无误显示绿色。
+1. `git`：当处于一个 git 受控的目录下时，Shell 会明确显示 「git」和 branch，另外对 git 很多命令进行了简化，例如 gco=’git checkout’、gd=’git diff’、gst=’git status’、g=’git’等等，熟练使用可以大大减少 git 的命令长度，命令内容可以参考~/.oh-my-zsh/plugins/git/git.plugin.zsh  
+2. `textmate`：一种古老的代码编辑器  
+3. `autojump`：目录的自动跳转，使用"j 目录名"的方式快速跳转到以前打开过的历史目录，需要单独安装。安装方式：***brew  install  autojump***  
+4. `osx`：tab增强，quick-look filename 可以直接预览文件，man-preview grep 可以生成 grep手册 的pdf 版本等。  
+5. `dirhistory`：使用Alt + ←/→，可以实现历史目录的快速跳转。Alt + ←快速跳转到上一个目录；Alt + →快速跳转到下一个目录  
+6. `sublime`：使用sublime软件打开指定的文件  
+7. `zsh-autosuggestions`：强烈建议。当我们敲入指令的时候，根据输入的指令匹配历史记录，提示可能会输入的指令。按→键也可以快速的完成指令  
+8. zsh-syntax-highlighting：强烈建议。对正在输入的指令进行代码高亮，如果输入的指令有误则显示红色，无误显示绿色。  
 > 注意：`zsh-autosuggestions`和`zsh-syntax-highlighting`两个插件需要我们自己单独安装。安装的位置默认存放在：*~/.oh-my-zsh/custom/plugins/*  。第三方的插件，都默认安装在这个目录，当然也可以更改配置文件，修改其安装目录。
 
 > 注意：每次更改完~/.zshrc配置文件之后，都要重新执行下该配置文件：`source ~/.zshrc`
@@ -166,7 +174,7 @@ iterm2里面有一个***install  shell  integration***选项，建议安装，�
 `Alfred`：一款替换Spotlight的效率类工具，可以安装众多的第三方的workflow，提高工作效率  
 `keyboard Maestro`：键盘大师，效率类工具，可以自定义众多的工作流，替换掉第三方的应用软件，大大的提高工作效率。详情请查看：http://sspai.com/36442  
 `sip`：一款好用的取色器  
-`VPN软件`：***鱼摆摆***、***Lantern***
+`VPN软件`：***鱼摆摆***、***Lantern***  
 `shadowsocksX服务提供商`：http://shadowfly.org/    http://sv.mljjlt.cn/    http://www.llout.com/   http://www.feixunwangluo.com/   http://www.fly6fish.co/   
 `Typora`：MarkDown软件，支持GitHub的MarkDown语法，支持语法高亮，支持`command+/`实时预览，就是小问题有点多  
 `MacDown`：MarkDown软件，mou的继承人，小巧高效，但不支持GFM语法  
