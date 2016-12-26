@@ -2,7 +2,18 @@
 ## webstorm上的练习项目
 *******************************
 
-## 开发环境的搭建(Mac)
+## 学习路径  
+
+
+## 开发环境的搭建(Mac)  
+
+[1.git](#1. git)  
+[2. brew、brew cask](#2. brew、brew cask)  
+[3. nvm、node、npm、bower](#3. nvm、node、npm、bower)  
+[4. zsh](#4. zsh)  
+[5. oh-my-zsh](#5. oh-my-zsh)  
+[6. iterm2](#6. iterm2)  
+[7. 开发工具](#7. 开发工具)  
 
 ### 1. git  
 
@@ -44,7 +55,7 @@ macOS系统的软件安装工具，可以安装我们日常使用的APP。使用
 > 关于brew的详细信息可以查看官网：http://brew.sh/  
 > 关于brew cask的详情可以查看官网：https://caskroom.github.io/
 
-### 3.nvm、node、npm、bower  
+### 3. nvm、node、npm、bower  
 
 nvm：node version manager，node版本管理工具  
 node：JavaScript语言在服务器端的运行环境  
@@ -90,7 +101,7 @@ bower的安装：`npm install -g bower`
 zsh为shell的一种，macOS系统自带的shell是bash，但是zsh功能上要比bash强不少。而且zsh完全兼容bash。zsh绝对是马车中的跑车，跑车中的飞行车，史称『终极 Shell』。  
 macOS系统预装了zsh。  
 
-### 5. oh-my-zsh：  
+### 5. oh-my-zsh  
 
 oh-my-zsh是zsh的配置文件，Github 网址是：https://github.com/robbyrussell/oh-my-zsh     
 官方网址是： http://ohmyz.sh/  
@@ -190,7 +201,8 @@ iterm2具有丰富的主题可以下载，自定义程度也要比terminal要高
 iterm2里面有一个***install  shell  integration***选项，建议安装，包含了shell集成，扩展了iterm2的功能。  
 > 详情可以参考官网：https://www.iterm2.com/
 
-### 7. 开发工具   
+### 7. 开发工具
+
 `webstorm`：代码编辑器以webstorm为主，sublime为辅，偶尔使用visual studio code  
 `sublime`：轻量级的编辑器，主要用来读代码  
 `visual studio code`：微软的一款代码编辑器，速度介于webstorm和sublime之间  
@@ -204,3 +216,33 @@ iterm2里面有一个***install  shell  integration***选项，建议安装，�
 `MacDown`：MarkDown软件，mou的继承人，小巧高效，但不支持GFM语法  
 
 ### 以上，未完待续，会不断的补充...
+
+[#git]: 
+
+[#7. 开发工具]: 
+[#6. iterm2]: 
+[#5. oh-my-zsh]: 
+[#4. zsh]: 
+
+[#开发工具]: 
+[#6. iterm2]: 
+[#5. oh-my-zsh]: 
+[#4. zsh]: 
+[#3. nvm、node、npm、bower]: 
+[#2. brew、brew cask]: 
+[#1. git]: 
+
+[#1. git]: 
+
+[#git]: 
+
+[#1.git]: 
+[#6. iterm2]: 
+[#5. oh-my-zsh]: 
+[#4. zsh]: 
+
+[#6. iterm2]: 
+
+[#iterm2]: 
+
+[#3. nvm、node、npm、bower]: 
