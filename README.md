@@ -204,7 +204,3 @@ iterm2里面有一个***install  shell  integration***选项，建议安装，�
 `MacDown`：MarkDown软件，mou的继承人，小巧高效，但不支持GFM语法  
 
 ### 以上，未完待续，会不断的补充...
-
-	helloworldjfksdjfklajsd;lfjaslkdf
-	sdfaksdflasdf
-	asdfkljasdlf
