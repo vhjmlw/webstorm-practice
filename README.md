@@ -161,7 +161,7 @@ alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置
 
 2. `textmate`：一种古老的代码编辑器  
 
-3. `autojump`：目录的自动跳转，使用"j 目录名"的方式快速跳转到以前打开过的历史目录，需要单独安装。安装方式：***brew  install  autojump***  
+3. `autojump`：目录的自动跳转，使用"j 目录名"的方式快速跳转到以前打开过的历史目录，需要单独安装。安装方式：`brew  install  autojump`   
 
 4. `osx`：tab增强，quick-look filename 可以直接预览文件，man-preview grep 可以生成 grep手册 的pdf 版本等。  
 
@@ -192,15 +192,25 @@ iterm2里面有一个***install  shell  integration***选项，建议安装，�
 
 ### 7. 开发工具的安装  
 `webstorm`：代码编辑器以webstorm为主，sublime为辅，偶尔使用visual studio code  
+
 `sublime`：轻量级的编辑器，主要用来读代码  
+
 `visual studio code`：微软的一款代码编辑器，速度介于webstorm和sublime之间  
+
 `dash`：一款开发文档的百库全书，集成了各种语言框架的文档，结合Alfred使用简直酸  
+
 `Alfred`：一款替换Spotlight的效率类工具，可以安装众多的第三方的workflow，提高工作效率  
+
 `keyboard Maestro`：键盘大师，效率类工具，可以自定义众多的工作流，替换掉第三方的应用软件，大大的提高工作效率。详情请查看：http://sspai.com/36442  
+
 `sip`：一款好用的取色器  
+
 `VPN软件`：***鱼摆摆***、***Lantern***  
+
 `shadowsocksX服务提供商`：http://shadowfly.org/    http://sv.mljjlt.cn/    http://www.llout.com/   http://www.feixunwangluo.com/   http://www.fly6fish.co/   
+
 `Typora`：MarkDown软件，支持GitHub的MarkDown语法，支持语法高亮，支持`command+/`实时预览，就是小问题有点多  
+
 `MacDown`：MarkDown软件，mou的继承人，小巧高效，但不支持GFM语法  
 
 ### 以上，未完待续，会不断的补充...
