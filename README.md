@@ -26,14 +26,14 @@ brew：macOS系统的包管理工具，可以安装不同的软件。
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-**brew cask：**  
+**brew cask：**   
 macOS系统的软件安装工具，可以安装我们日常使用的APP。使用brew cask可以一条指令安装、卸载、升级我们的软件。  
-**brew cask的安装： **
+**brew cask的安装：**  
 ```
 	brew tap caskroom/cask  
 ```
 
-**brew cask常用的指令如下：**
+**brew cask常用的指令如下：**  
 ```
 	搜索软件：brew cask search 软件名
 	查看软件信息：brew cask info 软件名
@@ -95,7 +95,7 @@ macOS系统预装了zsh。
 oh-my-zsh是zsh的配置文件，Github 网址是：https://github.com/robbyrussell/oh-my-zsh     
 官方网址是： http://ohmyz.sh/  
 
-**oh-my-zsh的安装： **
+**oh-my-zsh的安装：**  
 ``` 
 自动安装：wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 
 ```
@@ -137,7 +137,7 @@ alias -s log=st
 alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置文件
 ```
 
-**设置主题： **
+**设置主题：**
 ```
 	打开~/.zshrc文件，找到ZSH_THEME="robbyrussell"
 	引号里面的内容是默认主题，更改其内容就可以更改主题
