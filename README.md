@@ -105,7 +105,7 @@ oh-my-zsh是zsh的配置文件，Github 网址是：https://github.com/robbyruss
 ```
 安装完了之后，就可以打开终端，看到彩色的提示了。  
 
-**zsh的配置：**
+**zsh的配置：**  
 zsh 的配置主要集中在用户当前目录的.zshrc里   
 打开~/.zshrc文件，在文件的最下面添加设置别名的内容。  
 
@@ -182,7 +182,8 @@ alias zshconfig="st ~/.zshrc" #在任何路径，使用sublime打开.zshrc配置
 ### 6. iterm2
 ```
 item2是替代terminal终端的一款命令行软件。功能比terminal更加的强大。  
-iterm2具有丰富的主题可以下载，自定义程度也要比terminal要高。如：设置不同的快捷键打开不同的窗口，为不同的窗口设置不同的主题，为不同的窗口指定不同的开启目录。将窗口拆分为不同的布局。  
+iterm2具有丰富的主题可以下载，自定义程度也要比terminal要高。
+如：设置不同的快捷键打开不同的窗口，为不同的窗口设置不同的主题，为不同的窗口指定不同的开启目录。将窗口拆分为不同的布局。  
 ```
 可以使用brew安装：`brew cask install iterm2`  
 iterm2里面有一个***install  shell  integration***选项，建议安装，包含了shell集成，扩展了iterm2的功能。  
