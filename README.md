@@ -1,26 +1,24 @@
 # webstorm-practice
 webstorm上的练习项目
 
-### 开发环境的搭建(Mac)
+## 开发环境的搭建(Mac)
 
-#### 1. git  
+### 1. git  
 
 git是一款目前主流的分布式的版本控制工具。  
 > 关于git的详情，可以参考官网：https://git-scm.com/ 
 
-> 关于git的学习资料，如下：
+> 关于git的学习资料，如下：  
 > git教程： https://git-scm.com/book/zh/v2/  
 > 菜鸟学院git教程： http://www.runoob.com/git/git-tutorial.html  
 > git教程： http://git.oschina.net/progit/  
 > coding网git原理解析（强烈推荐）： https://blog.coding.net/blog/principle-of-Git  
 > 廖雪峰git教程： http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000  
 > 掘金git原理解析： http://deweixu.me/2016/11/05/how-git-works/  
-> https://lufficc.com/blog/the-core-conception-of-git  
-> https://segmentfault.com/a/1190000006570172#shareToWeibo  
 
-#### 2. brew、brew cask  
+### 2. brew、brew cask  
 
-`The missing package manager for macOS`：  
+***The missing package manager for macOS***：  
 brew：macOS系统的包管理工具，可以安装不同的软件。 
 brew的安装： 
 ```
@@ -44,15 +42,14 @@ brew cask常用的指令如下：
 > 关于brew的详细信息可以查看官网：http://brew.sh/
 > 关于brew cask的详情可以查看官网：https://caskroom.github.io/
 
-#### 3.nvm、node、npm、bower  
+### 3.nvm、node、npm、bower  
 
 nvm：node version manager，node版本管理工具  
 node：JavaScript语言在服务器端的运行环境  
 npm：node package manager，node包管理工具  
 nvm的安装：  
 ```
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | 
-bash  
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash  
 ```
 node：的安装  
 ```
@@ -74,7 +71,7 @@ bower：是一个类似于npm的包管理工具，一般使用bower安装项目�
 bower的安装：`m install -g bower`  
 > bower的官网：	https://bower.io/
 
-#### 4. zsh  
+### 4. zsh  
 
 常用的Shell有这么几种，sh、bash、csh等，想知道你的系统有几种shell，可以通过以下命令查看：  `cat /etc/shells`  
 显示如下：  
@@ -90,7 +87,7 @@ bower的安装：`m install -g bower`
 zsh为shell的一种，macOS系统自带的shell是bash，但是zsh功能上要比bash强不少。而且zsh完全兼容bash。zsh绝对是马车中的跑车，跑车中的飞行车，史称『终极 Shell』。  
 macOS系统预装了zsh。  
 
-#### 5. oh-my-zsh：  
+### 5. oh-my-zsh：  
 
 oh-my-zsh是zsh的配置文件，Github 网址是：https://github.com/robbyrussell/oh-my-zsh     
 官方网址是： http://ohmyz.sh/  
@@ -178,7 +175,7 @@ oh-my-zsh 项目提供了完善的插件体系，相关的文件在~/.oh-my-zsh/
 
 > 关于oh-my-zsh更多的信息，可以参考池建强的播客：http://macshuo.com/?p=676
 
-#### 6. iterm2
+### 6. iterm2
 
 item2是替代terminal终端的一款命令行软件。功能比terminal更加的强大。  
 iterm2具有丰富的主题可以下载，自定义程度也要比terminal要高。如：设置不同的快捷键打开不同的窗口，为不同的窗口设置不同的主题，为不同的窗口指定不同的开启目录。将窗口拆分为不同的布局。  
@@ -186,7 +183,7 @@ iterm2具有丰富的主题可以下载，自定义程度也要比terminal要高
 iterm2里面有一个***install  shell  integration***选项，建议安装，包含了shell集成，扩展了iterm2的功能。  
 > 详情可以参考官网：https://www.iterm2.com/
 
-#### 7. 开发工具的安装  
+### 7. 开发工具的安装  
 `webstorm`：代码编辑器以webstorm为主，sublime为辅，偶尔使用visual studio code  
 `sublime`：轻量级的编辑器，主要用来读代码  
 `visual studio code`：微软的一款代码编辑器，速度介于webstorm和sublime之间  
