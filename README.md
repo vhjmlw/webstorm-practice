@@ -6,8 +6,8 @@
 ## 开发环境的搭建(Mac)  
 
 [1.git](#git)  
-[2. brew、brew cask](#brew、brew cask)  
-[3. nvm、node、npm、bower](#nvm、node、npm、bower)  
+[2. brew、brew cask](#brew—brew cask)  
+[3. nvm、node、npm、bower](#nvm—node—npm—bower)  
 [4. zsh](#zsh)  
 [5. oh-my-zsh](#oh-my-zsh)  
 [6. iterm2](#iterm2)  
@@ -26,7 +26,7 @@ git是一款目前主流的分布式的版本控制工具。
 > 廖雪峰git教程： http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000  
 > 掘金git原理解析： http://deweixu.me/2016/11/05/how-git-works/  
 
-###  brew、brew cask  
+###  brew—brew cask  
 
 ***The missing package manager for macOS***：  
 brew：macOS系统的包管理工具，可以安装不同的软件。 
@@ -53,7 +53,7 @@ macOS系统的软件安装工具，可以安装我们日常使用的APP。使用
 > 关于brew的详细信息可以查看官网：http://brew.sh/  
 > 关于brew cask的详情可以查看官网：https://caskroom.github.io/
 
-###  nvm、node、npm、bower  
+###  nvm—node—npm—bower  
 
 nvm：node version manager，node版本管理工具  
 node：JavaScript语言在服务器端的运行环境  
