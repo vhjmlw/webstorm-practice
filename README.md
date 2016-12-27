@@ -270,7 +270,7 @@ gulp同Node相同，本身提供的功能并不多，他都是依赖第三方的
 
 实现一个网页在不同的标签页，同步的操作。并且实时显示对源码修改后的效果。    
 官网：https://www.browsersync.io/docs/gulp  
-browse-sync：自己搭建了一个服务器，服务器默认的访问文件夹为当前文件夹（baseDir:"./"），当然该文件夹可以修改。服务器开启之后自动开启浏览器的页面访问指定目录下的index.html文件。我们对源码修改后，会自动刷新页面，效果实时的显示在页面上。    
+browse-sync：自己搭建了一个服务器，服务器默认的访问文件夹为当前文件夹`baseDir:"./"`，当然该文件夹可以修改。服务器开启之后自动开启浏览器的页面访问指定目录下的index.html文件。我们对源码修改后，会自动刷新页面，效果实时的显示在页面上。    
 服务器的默认访问地址为：http://localhost:3000   
 
 **我自己搭建的自动化工作流程的gulpfile.js源码如下**   
@@ -279,28 +279,29 @@ browse-sync：自己搭建了一个服务器，服务器默认的访问文件夹
 
 使用到的gulp第三方插件有：`browser-sync`、`gulp-less`、`gulp-cssnano`、`gulp-concat`、`gulp-uglify`、`gulp-htmlmin`   
 
-
+目录结构如下：   
 * dist
-  * images
-    * front-end.jpg
-  * styles
-    * app.css
-  * scripts
-    * app.js
-  * index.html
+    * images
+      * front-end.jpg
+    * styles
+      * app.css
+    * scripts
+      * app.js
+    * index.html
 * node_modules
 * src
-  * images
-    * front-end.jpg
-  * styles
-    * app.less
-    * _other.less
-  * scripts
-    * main.js
-    * other.js
-  * index.html
+    * images
+      * front-end.jpg
+    * styles
+      * app.less
+      * _other.less
+    * scripts
+      * main.js
+      * other.js
+    * index.html
 * gulpfile.js
 * README.md
+* package.json
 
 
 ```JavaScript
@@ -377,7 +378,7 @@ gulp.task("default",function(){//开启一个服务，默认端口为3000，base
 ```
 
 > 自动化工作流程的复用性很高，在其他的项目下微调目录结构和文件名后可以直接使用。
-
+> 详情可以查看自动化工作流程搭建目录
 
 
 
