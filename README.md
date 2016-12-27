@@ -11,7 +11,8 @@
 [4. zsh](#4. zsh)  
 [5. oh-my-zsh](#5. oh-my-zsh)  
 [6. iterm2](#6. iterm2)  
-[7. 开发工具](#7. 开发工具)  
+[7. 开发工具](#7. 开发工具)   
+[8. 自动化工作流程搭建(gulp + browser-sync)](#8. 自动化工作流程搭建(gulp + browser-sync))
 
 ### 1.  git  
 
@@ -233,7 +234,7 @@ gulp的作用主要用来机械化的完成重复性质的工作,例如:
 > gulp的机制就是将重复工作抽象成一个个的任务。  
 
 gulp的安装：   
-	
+​	
 	npm install -g gulp
 	npm install --save-dev gulp  
 
