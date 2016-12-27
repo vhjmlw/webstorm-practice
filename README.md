@@ -234,7 +234,7 @@ gulp的作用主要用来机械化的完成重复性质的工作,例如:
 > gulp的机制就是将重复工作抽象成一个个的任务。  
 
 gulp的安装：   
-​	
+	
 	npm install -g gulp
 	npm install --save-dev gulp  
 
@@ -271,6 +271,7 @@ gulp同Node相同，本身提供的功能并不多，他都是依赖第三方的
 
 实现一个网页在不同的标签页，同步的操作。并且实时显示对源码修改后的效果。    
 官网：https://www.browsersync.io/docs/gulp  
+
 browse-sync：自己搭建了一个服务器，服务器默认的访问文件夹为当前文件夹`baseDir:"./"`，当然该文件夹可以修改。服务器开启之后自动开启浏览器的页面访问指定目录下的index.html文件。我们对源码修改后，会自动刷新页面，效果实时的显示在页面上。    
 服务器的默认访问地址为：http://localhost:3000   
 
