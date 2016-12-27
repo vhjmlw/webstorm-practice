@@ -233,9 +233,9 @@ gulp的作用主要用来机械化的完成重复性质的工作,例如:
 > gulp的机制就是将重复工作抽象成一个个的任务。  
 
 gulp的安装：   
-​	
+	
 	npm install -g gulp
-	npm install --save-dev gulp
+	npm install --save-dev gulp  
 
 > 因为要在命令行中使用gulp指令，所有要先全局安装gulp之后再在项目目录中局部安装
 
