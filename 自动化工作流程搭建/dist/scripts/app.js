@@ -1,0 +1,1 @@
+"use strcit";!function(o){console.log(o.location.href+"这里是app.js文件"),age=33;var n={name:this.age,age:26};console.log("这里是app.js文件"+JSON.stringify(n))}(window),function(o){console.log("这里是other.js文件")}(window);

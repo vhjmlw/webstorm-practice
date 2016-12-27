@@ -27,6 +27,8 @@ gulp.task("less",function () {
 //实现实时同步demo.html到gulp-demo2文件夹的功能
 //使用watch()方法监听demo.html文件,一旦该文件被修改,就会触发该事件,
 //调用dest()方法,复制demo.html文件到gulp-demo2文件夹
+//default为gulp默认的方法，在命令行执行命令"gulp"实际上就是默认调用的default方法
+//当然，也可以使用gulp调用指定的方法，如：gulp less等
 gulp.task("default",function () {
     gulp.watch("./demo.html",["dest"]);//监听demo.html文件,文件一旦修改就会调用dest方法
     gulp.watch("./*Js.js",["concat"]);//监听*Js.js多个文件,文件一旦修改就会调用concat方法

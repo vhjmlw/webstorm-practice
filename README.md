@@ -213,4 +213,172 @@ iterm2里面有一个***install  shell  integration***选项，建议安装，�
 `Typora`：MarkDown软件，支持GitHub的MarkDown语法，支持语法高亮，支持`command+/`实时预览，就是小问题有点多  
 `MacDown`：MarkDown软件，mou的继承人，小巧高效，但不支持GFM语法  
 
+### 8. 自动化工作流程搭建(gulp + browser-sync)   
+
+**gulp**   
+
+gulp是前端开发过程中一种基于流的代码自动化构建工具，是自动化项目的构建利器。   
+官网： http://gulpjs.com/   
+中文网：http://www.gulpjs.com.cn/   
+gulp的作用主要用来机械化的完成重复性质的工作,例如:    
+
+	JS文件的压缩混淆
+	JS文件的合并
+	LESS文件的编译
+	CSS文件的压缩
+	HTML文件的压缩
+	图片质量优化
+
+> CSS文件的合并没有意义，因为less语法可以通过   @import   url（"less文件路径"）；  的方式导入其他的less文件，导入之后，主文件就拥有了被导入的less文件的内容。所以只要编译主less文件就可以了，其他的less文件都@import导入到主less文件里面。编译了主less文件后，就拥有了所有的css内容。
+> gulp的机制就是将重复工作抽象成一个个的任务。  
+
+gulp的安装：   
+​	
+	npm install -g gulp
+	npm install --save-dev gulp
+
+> 因为要在命令行中使用gulp指令，所有要先全局安装gulp之后再在项目目录中局部安装
+
+**gulp第三方插件**    
+
+gulp同Node相同，本身提供的功能并不多，他都是依赖第三方的插件来实现复杂的功能。   
+
+较常用的gulp第三方插件有：浏览器同步`browser-sync`、JS文件压缩混淆`gulp-uglify`、JS文件合并`gulp-concat`、less文件编译`gulp-less`、CSS文件压缩`gulp-cssnano`、HTML文件压缩`gulp-htmlmin`   
+- [压缩、混淆js文件：gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
+- [合并文件：gulp-concat](https://www.npmjs.com/package/gulp-concat)
+- [编译Less：gulp-less](https://www.npmjs.com/package/gulp-less)
+- [最小化css文件：gulp-minify-css](https://www.npmjs.com/package/gulp-minify-css)
+- [压缩CSS文件gulp-cssnano](https://www.npmjs.com/package/gulp-cssnano)
+- [压缩HTML文件gulp-htmlmin](https://www.npmjs.com/package/gulp-htmlmin)
+- [压缩html文件gulp-minify-html](https://www.npmjs.com/package/gulp-minify-html)
+- [网页同步：browser-sync](https://www.browsersync.io/)
+- [最小化图像：gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)
+- [重命名文件：gulp-rename](https://www.npmjs.com/package/gulp-rename)
+- [创建本地服务器：gulp-connect](https://www.npmjs.com/package/gulp-connect)
+
+第三方插件的使用步骤：  
+
+	1. 在项目的根目录使用npm install安装插件；
+	2. 在项目的根目录新建一个gulpfile.js文件；
+	2. 在gulpfile.js文件中引入插件require（"插件名"）；
+	3. 在gulpfile.js中使用插件，创建各种任务；
+	4. 在终端中调用相应的task方法，gulp 任务名。
+
+
+
+**browser-sync**   
+
+实现一个网页在不同的标签页，同步的操作。并且实时显示对源码修改后的效果。    
+官网：https://www.browsersync.io/docs/gulp  
+browse-sync：自己搭建了一个服务器，服务器默认的访问文件夹为当前文件夹（baseDir:"./"），当然该文件夹可以修改。服务器开启之后自动开启浏览器的页面访问指定目录下的index.html文件。我们对源码修改后，会自动刷新页面，效果实时的显示在页面上。    
+服务器的默认访问地址为：http://localhost:3000   
+
+**我自己搭建的自动化工作流程的gulpfile.js源码如下**   
+
+实现的效果为：在命令行输入`gulp`指令，`browser-sync`自动打开默认浏览器的网页，加载指定访问目录下的`index.html`文件。对源码进行修改的时候，修改后的效果实时的显示在页面上。   
+
+使用到的gulp第三方插件有：`browser-sync`、`gulp-less`、`gulp-cssnano`、`gulp-concat`、`gulp-uglify`、`gulp-htmlmin`   
+
+
+* dist
+  * images
+    * front-end.jpg
+  * styles
+    * app.css
+  * scripts
+    * app.js
+  * index.html
+* node_modules
+* src
+  * images
+    * front-end.jpg
+  * styles
+    * app.less
+    * _other.less
+  * scripts
+    * main.js
+    * other.js
+  * index.html
+* gulpfile.js
+* README.md
+
+
+```JavaScript
+"use strict";
+/*
+1、安装gulp：npm install -g - gulp;npm install --save-dev gulp
+2、安装gulp第三方插件：npm install：browser-sync、gulp-less、gulp-cssnano、gulp-concat、gulp-uglify、gulp-htmlmin
+3、创建gulpfile.js文件，在文件内容引入gulp及第三方插件，require（gulp）等
+4、使用gulp的API，创建任务
+5、在命令行调用 gulp 方法名 指令执行相应的任务
+ */
+//引包
+var gulp = require("gulp");
+var gulpLess = require("gulp-less");
+var gulpCssnano = require("gulp-cssnano");
+var gulpConcat = require("gulp-concat");
+var gulpUglify = require("gulp-uglify");
+var gulpHtmlmin = require("gulp-htmlmin");
+var browserSync = require("browser-sync");
+
+//less编译，压缩，拷贝
+gulp.task("style",function(){
+	gulp.src(["./src/styles/*.less","!./src/styles/_*.less"])//使用数组声明多个不同的匹配的规则，此处的匹配规则的意思是查找styles目录下的不以'_'开头的less文件
+	.pipe(gulpLess())//编译less文件，由于less语法可以@import url("less文件路径")，所以CSS文件合并没有必要，编译主less文件即可，其他的使用import导入到less主文件
+	.pipe(gulpCssnano())//压缩less文件
+	.pipe(gulp.dest("./dist/styles/"))//拷贝到指定的目录
+	.pipe(browserSync.reload({stream:true}));//任务的最后会使用browser-sync自动刷新页面，效果类似于F5或者command+R
+});
+
+//JS文件的合并，压缩，混淆，拷贝。为了避免混淆之后命名冲突，建议先合并，后混淆压缩
+gulp.task("script",function(){
+	gulp.src("./src/scripts/*.js")
+	.pipe(gulpConcat("app.js"))//合并多个JS文件，并指定合并后新的文件名为app.js。注意：由于是多个文件合并为一个文件，所以使用原文件名的方式就不再适合了，所以合并文件后要指定一个新的文件名
+	.pipe(gulpUglify())//混淆，压缩JS文件
+	.pipe(gulp.dest("./dist/scripts/"))
+	.pipe(browserSync.reload({stream:true}));
+});
+
+//html文件的压缩，拷贝
+gulp.task("html",function(){
+	gulp.src("./src/*.html")
+	.pipe(gulpHtmlmin({collapseWhitespace: true,removeComments:true}))//压缩HTML文件
+	.pipe(gulp.dest("./dist/"))//collapseWhitespace：折叠空格；removeComments：删除注释
+	.pipe(browserSync.reload({stream:true}));
+});
+
+//images文件夹内图片等文件的拷贝
+gulp.task("image",function(){
+	gulp.src("./src/images/*.*")//查找images目录下的所有的文件
+	.pipe(gulp.dest("./dist/images/"))//将所有的文件拷贝到指定的目录
+	.pipe(browserSync.reload({stream:true}));
+});
+
+//使用browser-sync插件实现浏览器的同步
+//default是gulp默认的任务，在命令行输入gulp指令之后，会在当前目录查找gulpfile.js文件，执行里面的default任务
+gulp.task("default",function(){//开启一个服务，默认端口为3000，baseDir用来设置服务器默认访问的目录
+	browserSync({
+		server:{
+			baseDir:"./dist",//设置服务器默认访问的目录
+		},
+		port:9999,//设置服务器的端口，默认为3000
+	});
+
+	console.log("仅仅是用来测试用的");
+
+	//使用gulp.watch()对指定的文件进行监视，当文件被修改，则触发执行指定的任务
+	//注意：对文件的监视是放在开启服务之后的，代码放在default任务的里面，开启服务之后紧接着对文件进行监视
+	//一旦被监视的文件被修改，则触发相应的任务，每个任务的最后都会执行browserSync.reload()方法来自动重新刷新页面
+	gulp.watch("./src/styles/*.less",["style"]);
+	gulp.watch("./src/scripts/*.js",["script"]);
+	gulp.watch("./src/*.html",["html"]);
+	gulp.watch("./src/images/*.*",["image"]);
+});
+```
+
+> 自动化工作流程的复用性很高，在其他的项目下微调目录结构和文件名后可以直接使用。
+
+
+
+
 ### 以上，未完待续，会不断的补充...
