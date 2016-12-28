@@ -71,8 +71,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | b
 ```
 **node版本的切换：**  
 ```
-切换为官方版本：nvm install node
-切换为io.js社区版本：nvm install iojs
+切换为官方版本：nvm use node
+切换为io.js社区版本：nvm use iojs
 ```
 安装的node里面包含了npm工具。  
 > 关于nvm，详情可以查看：https://github.com/creationix/nvm/blob/master/README.markdown  
