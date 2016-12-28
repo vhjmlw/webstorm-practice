@@ -1,5 +1,7 @@
 # webstorm-practice
-## webstorm上的练习项目
+## webstorm上的练习项目   
+###设置了master作为GitHub Pages展示的分支   
+#####
 *******************************
 
 
