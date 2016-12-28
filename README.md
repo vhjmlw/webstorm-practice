@@ -1,7 +1,7 @@
 # webstorm-practice
 ## webstorm上的练习项目   
 ###设置了master作为GitHub Pages展示的分支   
-#####访问站点：https://vhjmlw.github.io/webstorm-practice/
+#####访问地址：https://vhjmlw.github.io/webstorm-practice/
 *******************************
 
 
