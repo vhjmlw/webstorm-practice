@@ -16,6 +16,7 @@
 [7. 开发工具](#7. 开发工具)   
 [8. 自动化工作流程搭建(gulp + browser-sync)](#8. 自动化工作流程搭建(gulp + browser-sync))  
 [9. 项目脚手架scaffold](#9. 项目脚手架scaffold)  
+[10. 测试](#10. 测试)  
 
 ### 1.  git  
 
@@ -399,4 +400,14 @@ gulp.task("default",function(){//开启一个服务，默认端口为3000，base
 [express-generator]:http://expressjs.com/zh-cn/starter/generator.html
 [vue-cli]:https://github.com/vuejs/vue-cli
 
+### 10. 测试
+
+[FEX前端自动化测试探索](http://fex.baidu.com/blog/2015/07/front-end-test)
+[测试框架Mocha实例教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
+[Karma和Jasmine自动化单元测试](http://blog.fens.me/nodejs-karma-jasmine/)
+
+关于测试环境的搭建，后期补充
+
 ### 以上，未完待续，会不断的补充...
+
+[回到顶部](#开发环境的搭建(Mac))
