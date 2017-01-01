@@ -405,6 +405,7 @@ gulp.task("default",function(){//开启一个服务，默认端口为3000，base
 [FEX前端自动化测试探索](http://fex.baidu.com/blog/2015/07/front-end-test)   
 [测试框架Mocha实例教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)   
 [Karma和Jasmine自动化单元测试](http://blog.fens.me/nodejs-karma-jasmine/)   
+[Protractor-专门为AngularJS设计的自动化的测试工具](http://www.protractortest.org)   
 
 关于测试环境的搭建，后期补充
 
