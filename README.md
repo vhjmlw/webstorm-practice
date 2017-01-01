@@ -1,4 +1,4 @@
-# webstorm-practice
+
 ## webstorm上的练习项目   
 ###设置了master作为GitHub Pages展示的分支   
 #####访问地址：https://vhjmlw.github.io/webstorm-practice/
@@ -14,7 +14,8 @@
 [5. oh-my-zsh](#5. oh-my-zsh)  
 [6. iterm2](#6. iterm2)  
 [7. 开发工具](#7. 开发工具)   
-[8. 自动化工作流程搭建(gulp + browser-sync)](#8. 自动化工作流程搭建(gulp + browser-sync))
+[8. 自动化工作流程搭建(gulp + browser-sync)](#8. 自动化工作流程搭建(gulp + browser-sync))  
+[9. 项目脚手架scaffold](#9. 项目脚手架scaffold)  
 
 ### 1.  git  
 
@@ -384,6 +385,18 @@ gulp.task("default",function(){//开启一个服务，默认端口为3000，base
 > 自动化工作流程的复用性很高，在其他的项目下微调目录结构和文件名后可以直接使用。   
 > 详情可以查看自动化工作流程搭建目录
 
+### 9. 项目脚手架scaffold   
 
+> 自动化工作流程能够帮我们完成很多机械性的工作，而且可复用性很高。而脚手架能够让我们连自动化工作流程都不用自己搭建，几条指令就能够帮我们轻松完成，搭建好整个项目的骨架。
+
+##### 脚手架是自动创建自动化工作流程的工具，为整个应用生成一个初始化的模板,快速搭建一个完整的项目的结构。  
+
+>在实际的开发过程中，从零开始建立项目的结构是一件让人头疼的事情，所以各种各样的脚手架工具应运而生。较常见的脚手架工具有[yoeman][]，[express-generator][]和[vue-cli][]。它们功能丰富，但最核心的功能都是能够快速搭建一个完整的项目的结构，开发者只需要在生成的项目结构的基础上进行开发即可，非常简单高效。  
+
+关于脚手架的使用，稍后补充
+
+[yoeman]:http://yeoman.io
+[express-generator]:http://expressjs.com/zh-cn/starter/generator.html
+[vue-cli]:https://github.com/vuejs/vue-cli
 
 ### 以上，未完待续，会不断的补充...
