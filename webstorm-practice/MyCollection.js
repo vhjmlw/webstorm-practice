@@ -131,7 +131,7 @@ MyCollection.prototype = {
     //冒泡排序:从小到大排序
     sortArray: function (array) {
         var tmp;
-        for(var i = 0; i < array.length - 1; i++) {
+        for (var i = 0; i < array.length - 1; i++) {
             var isSort = true;
             for (var j = 0; j < array.length - 1 - i; j++) {
                 if (array[j] > array[j + 1]) {
@@ -162,4 +162,86 @@ MyCollection.prototype = {
         const dateStr2 = `${year}年${month}月${day}日 ${hours}时${minutes}分${seconds}秒`;
         return dateStr2;
     },
+    //判断一个数字是否为质数
+    isZhiShu: function (data) {
+        data = Number(data);
+        //较简单的写法
+        for (var i = 2; i < data / 2; i++) {
+            if (data % i === 0) {
+                console.log("您输入的数字不是质数");
+                return;
+            }
+        }
+        console.log("您输入的数字是质数");
+        //最简单的写法
+        for (var j = 2; j < Math.sqrt(data); j++) {
+            if (data % j === 0) {
+                console.log("您输入的数字不是质数");
+                return;
+            }
+        }
+        console.log("您输入的数字是质数");
+    },
+    //计算一个数字的阶乘
+    jiecheng: function (data) {
+        data = Number(data);
+        var product = 1;
+        for (var i = 1; i <= data; i++) {
+            product *= i;
+        }
+        console.log(`${data}阶乘的结果是:${product}`);
+    },
+    //递归实现阶乘
+    digvjiecheng:function (data) {
+      data = Number(data);
+        if(data===1) {
+            return 1;
+        }
+        return data * MyCollection.prototype.digvjiecheng(data - 1);
+    },
+    //给定一个数字,先阶乘后求和1!+2!+3!...
+    sumAndJieCheng: function (data) {
+        data = Number(data);
+        //方法一
+        var result = 0;
+        for (var i = 1; i <= data; i++) {
+            var product = 1;
+            for (var j = 1; j <= i; j++) {
+                product *= j;
+            }
+            result += product;
+        }
+        console.log(`${data}先阶乘后求和结算的结果为:${result}`);
+        // return result;
+        //方法二
+        var result2 = 0;
+        for (var m = 1; m <= data; m++) {
+            var product2 = 1;
+            for (var n = 1; n <= data - m + 1; n++){
+                product2 *= n;
+            }
+            result2 += product2;
+        }
+        console.log(`${data}先阶乘后求和计算的结果为:${result2}`);
+    },
+    //输入一个数字,使用递归求这个数字的各位之和
+    everNumSum: function (data) {
+        data = Number(data);
+        if(data < 10) {
+            return data;
+        }  
+        return data%10 + MyCollection.prototype.everNumSum(Math.floor(data/10));
+    },
+    //使用递归,求斐波那契数列的第n个数字
+    numAt: function(n){
+        n = Number(n);
+        if(n <= 0) {
+            return -1;
+        }
+        if (n === 1 || n === 2) {
+            return 1;
+        }
+        return MyCollection.prototype.numAt(n - 1) + MyCollection.prototype.numAt(n - 2);
+    },
+    
 }

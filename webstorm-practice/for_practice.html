@@ -22,6 +22,13 @@
             MyCollection.prototype.sortArray([9, 8, 6, 5, 3, 10]);
             const date1 = MyCollection.prototype.formateDate(new Date());
             console.log(date1);
+            MyCollection.prototype.isZhiShu(18);
+            MyCollection.prototype.jiecheng(11);
+            MyCollection.prototype.sumAndJieCheng(15);
+            var digvjiecheng = MyCollection.prototype.digvjiecheng(11);
+            console.log("使用递归实现的阶乘结果是:"+digvjiecheng);
+            console.log("使用递归求得数字的各位之和为:"+MyCollection.prototype.everNumSum(102323));
+            console.log("使用递归求得斐波那契数列的数字为："+MyCollection.prototype.numAt(10));
         })(window);
     </script>
 </body>
