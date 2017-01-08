@@ -243,5 +243,37 @@ MyCollection.prototype = {
         }
         return MyCollection.prototype.numAt(n - 1) + MyCollection.prototype.numAt(n - 2);
     },
+    //自己实现getElementsByClassName()方法，该方法是ES5中的新方法，兼容性不太好
+    getByClassName: function(className){
+        if(document.getElementsByClassName) {
+            return document.getElementsByClassName(className);
+        }
+        var array = [];
+        var elements = documents.getElementsByTagName("*");
+        for(var i = 0; i < elements.length; i++) {
+            var array2 = elements[i].className.split(" ");
+            for (var j = 0; j < array2.length; j++) {
+                if(array2[j]==className) {
+                    array.push(elements[i]);
+                    break;
+                }
+            }
+        }
+        return array;
+    },
+    //使用classlist实现getElementsByClassName()方法
+    getByClassName2: function(className) {
+        if (document.getElementsByClassName) {
+            return document.getElementsByClassName(className);
+        }
+        var array = [];
+        var elements = document.getElementsByTagName("*");
+        for(var i = 0; i < elements.length; i++) {
+            if(elements[i].classList.contains(className)) {
+                array.push(elements[i]);
+            }
+        }
+        return array;
+    }
     
 }
