@@ -62,6 +62,9 @@
                 var y = event.clientY - box.offsetTop;
                 document.onmousemove = function (event) {
                     var event = event || window.event;
+                    //margin-top和margin-left是在定位的基础上向上和向左移动
+                    //每次设置好left和top之后，box又向上和向左移动指定的距离
+                    //为了抵消向上和向左移动的距离，故在left和top上加上该移动的距离
                     box.style.left = event.clientX - x + 205 + "px";
                     box.style.top = event.clientY - y + 155 + "px";
                     window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
