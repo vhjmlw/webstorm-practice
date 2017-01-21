@@ -7,7 +7,7 @@
         ul{list-style: none}
         *{margin:0; padding:0;}
         div{
-            width: 1200px;
+            width: 1150px;
             height: 400px;
             margin:50px auto;
             border:1px solid red;
@@ -20,7 +20,7 @@
             /*border: 1px solid red;*/
         }
         div ul {
-            width: 1200px;
+            width: 1300px;/*为啥ul的width从1200px变为1300px后，就解决了最后一张图片移出的时候闪屏的问题？？？*/
         }
     </style>
     <script src="animate.js"></script>
@@ -38,6 +38,7 @@
                     animate(this, {width: 800});
                 }
                 //为啥要用document？？？为啥用arrul[i]也可以实现相同的效果，不是和mouseover冲突了吗？？？
+                //当onmouseover和onmouseout冲突的时候，他们谁先执行呢？？？就像这个案例
                 //为啥console.log语句每次触发onmouseout事件的时候都打印5次？？？
                 //what the fuck？？？
                 document.onmouseout = function () {
