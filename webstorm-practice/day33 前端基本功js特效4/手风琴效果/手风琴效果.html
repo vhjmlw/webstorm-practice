@@ -37,9 +37,10 @@
                     }
                     animate(this, {width: 800});
                 }
-                document.onmouseout = function () {
+                arrul[i].onmouseout = function () {
                     for (var m = 0; m < arrul.length; m++) {
                         animate(arrul[m], {width: 240});
+                        console.log(123);
                     }
                 }
             }
