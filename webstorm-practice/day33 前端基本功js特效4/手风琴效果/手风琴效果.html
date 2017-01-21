@@ -37,10 +37,13 @@
                     }
                     animate(this, {width: 800});
                 }
-                arrul[i].onmouseout = function () {
+                //为啥要用document？？？为啥用arrul[i]也可以实现相同的效果，不是和mouseover冲突了吗？？？
+                //为啥console.log语句每次触发onmouseout事件的时候都打印5次？？？
+                //what the fuck？？？
+                document.onmouseout = function () {
                     for (var m = 0; m < arrul.length; m++) {
                         animate(arrul[m], {width: 240});
-                        console.log(123);
+                        //console.log(111);
                     }
                 }
             }
