@@ -25,10 +25,17 @@
                         .end()//end()函数结束当前的prevAll()链条,回到上一级链条$(this)
                         .nextAll().text("☆");//链条进入到nextAll()
 
+                        console.log("mouseenter事件触发了");//仅仅是为了验证mouseleave和mouseenter谁先触发：先mouseleave后mouseenter
+
             }).on("mouseleave","li",function (event) {//设置li标签的mouseleave事件
                 $(this).text("☆").siblings().text("☆");//鼠标离开的时候先将所有的li标签内容改为☆
                 //然后将current类及其之前li标签的内容改为★,之后的li标签的内容改为☆
                 $(".current").text("★").prevAll().text("★").end().nextAll().text("☆");
+
+                console.log("mouseleave事件触发了");//仅仅是为了验证mouseleave和mouseenter谁先触发：先mouseleave后mouseenter
+                //横向的从一个li标签移入到另外一个li标签的话，如A移入到B，则A的mouseleave事件和B的mouseenter事件都会触发
+                //经过验证，先触发A的mouseleave后触发B的mouseenter，先mouseleave后mouseenter
+
             }).on("click","li",function (event) {//设置li标签的click事件
                 //点击当前li标签的时候,为当前li标签添加current类,删除他的兄弟li标签的current类
                 $(this).addClass("current").siblings().removeClass("current");
