@@ -32,7 +32,7 @@
                 //然后将current类及其之前li标签的内容改为★,之后的li标签的内容改为☆
                 $(".current").text("★").prevAll().text("★").end().nextAll().text("☆");
 
-                console.log("mouseleave事件触发了");//仅仅是为了验证mouseleave和mouseenter谁先触发：先mouseleave后mouseenter
+                console.log("mouseleave事件触发了，哦也");//仅仅是为了验证mouseleave和mouseenter谁先触发：先mouseleave后mouseenter
                 //横向的从一个li标签移入到另外一个li标签的话，如A移入到B，则A的mouseleave事件和B的mouseenter事件都会触发
                 //经过验证，先触发A的mouseleave后触发B的mouseenter，先mouseleave后mouseenter
 
