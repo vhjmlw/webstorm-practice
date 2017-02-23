@@ -274,9 +274,6 @@ MyCollection.prototype = {
             }
         }
         return array;
-    },
-    fun: function(){
-        console.log(window);
     }
     
 }
