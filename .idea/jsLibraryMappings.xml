@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day65流行框架第一天/gulp-demo" libraries="{WebstormProjects/webstorm-practice/day65流行框架第一天/gulp-demo/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day66流行框架第二天/package.json配置文件体验" libraries="{WebstormProjects/webstorm-practice/day66流行框架第二天/package.json配置文件体验/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day67流行框架第三天/AngularJS" libraries="{WebstormProjects/webstorm-practice/day67流行框架第三天/AngularJS/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day67流行框架第三天/module-controller" libraries="{WebstormProjects/webstorm-practice/day67流行框架第三天/module-controller/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day68流行框架第四天" libraries="{WebstormProjects/webstorm-practice/day68流行框架第四天/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day68流行框架第四天/ng-app" libraries="{WebstormProjects/webstorm-practice/day68流行框架第四天/ng-app/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day68流行框架第四天/指令系统" libraries="{WebstormProjects/webstorm-practice/day68流行框架第四天/指令系统/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day69AngularJS慕课网第一天/karma karma-jasmine" libraries="{WebstormProjects/webstorm-practice/day69AngularJS慕课网第一天/karma karma-jasmine/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day69流行框架第五天/TODO案例" libraries="{WebstormProjects/webstorm-practice/day69流行框架第五天/TODO案例/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day69流行框架第五天/TODO案例/todomvc-app-template" libraries="{WebstormProjects/webstorm-practice/day69流行框架第五天/TODO案例/todomvc-app-template/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day69流行框架第五天/filter过滤器" libraries="{WebstormProjects/webstorm-practice/day69流行框架第五天/filter过滤器/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day70流行框架第六天/moviecat" libraries="{WebstormProjects/webstorm-practice/day70流行框架第六天/moviecat/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day71流行框架第七天/sea.js初体验" libraries="{WebstormProjects/webstorm-practice/day71流行框架第七天/sea.js初体验/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day71流行框架第七天/sea.js调用第三方模块" libraries="{WebstormProjects/webstorm-practice/day71流行框架第七天/sea.js调用第三方模块/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day71流行框架第七天/面向过程实现分页效果" libraries="{WebstormProjects/webstorm-practice/day71流行框架第七天/面向过程实现分页效果/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day74node第三天/歌词显示" libraries="{WebstormProjects/webstorm-practice/day74node第三天/歌词显示/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day74node第三天/歌词显示-readline实现" libraries="{WebstormProjects/webstorm-practice/day74node第三天/歌词显示-readline实现/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day75node第四天/node-progress" libraries="{WebstormProjects/webstorm-practice/day75node第四天/node-progress/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day75node第四天/文件监视且md转换为HTML" libraries="{WebstormProjects/webstorm-practice/day75node第四天/文件监视且md转换为HTML/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webstorm-practice/day79自动化工作流程搭建" libraries="{WebstormProjects/webstorm-practice/day79自动化工作流程搭建/node_modules}" />
+    <file url="file://$PROJECT_DIR$/自动化工作流程搭建" libraries="{WebstormProjects/自动化工作流程搭建/node_modules}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
   </component>
 </project>
