@@ -54,4 +54,5 @@ var arr2 = str.replace(/\d(\w)\d/g, function(match, group, index, origin) {
     索引：5
     原来的文本：a1b2c3d4e5*/
     // hexo-blog推送出错，打个注释测试下
+    // 再加个注释试试
 });
